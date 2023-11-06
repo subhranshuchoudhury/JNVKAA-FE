@@ -1,0 +1,187 @@
+[
+    {
+        "authors": [
+          {
+            "id": 1,
+            "name": "Mateo Danienobi",
+            "category": "Life Style",
+            "subCategory": "Fashion",
+            "post": 50,
+            "postViews": 1056,
+            "likes": 550,
+            "socialMedia": [
+              {
+                "platform": "Facebook",
+                "followers": "3.5K",
+                "likes": "Like",
+                "url": "https://www.facebook.com/"
+              },
+              {
+                "platform": "Twitter",
+                "followers": "60K",
+                "likes": "Follower",
+                "url": "https://www.twitter.com/"
+              },
+              {
+                "platform": "Pinterest",
+                "followers": "25K",
+                "likes": "Follower",
+                "url": "https://www.pinterest.com/"
+              },
+              {
+                "platform": "Instagram",
+                "followers": "75K",
+                "likes": "Follower",
+                "url": "https://www.instagram.com/"
+              }
+            ],
+            "imageUrl": "assets/images/authors/author1-1.jpg"
+          },
+          {
+            "id": 2,
+            "name": "John Doe",
+            "category": "Sports",
+            "subCategory": "Football",
+            "post": 30,
+            "postViews": 800,
+            "likes": 400,
+            "socialMedia": [
+              {
+                "platform": "Facebook",
+                "followers": "2K",
+                "likes": "Like",
+                "url": "https://www.facebook.com/"
+              },
+              {
+                "platform": "Twitter",
+                "followers": "40K",
+                "likes": "Follower",
+                "url": "https://www.twitter.com/"
+              },
+              {
+                "platform": "Pinterest",
+                "followers": "15K",
+                "likes": "Follower",
+                "url": "https://www.pinterest.com/"
+              },
+              {
+                "platform": "Instagram",
+                "followers": "50K",
+                "likes": "Follower",
+                "url": "https://www.instagram.com/"
+              }
+            ],
+            "imageUrl": "assets/images/authors/author2-1.jpg"
+          },
+          {
+            "id": 3,
+            "name": "Emma Johnson",
+            "category": "Lifestyle",
+            "subCategory": "Fitness",
+            "post": 20,
+            "postViews": 500,
+            "likes": 250,
+            "socialMedia": [
+              {
+                "platform": "Facebook",
+                "followers": "1.5K",
+                "likes": "Like",
+                "url": "https://www.facebook.com/"
+              },
+              {
+                "platform": "Twitter",
+                "followers": "30K",
+                "likes": "Follower",
+                "url": "https://www.twitter.com/"
+              },
+              {
+                "platform": "Pinterest",
+                "followers": "10K",
+                "likes": "Follower",
+                "url": "https://www.pinterest.com/"
+              },
+              {
+                "platform": "Instagram",
+                "followers": "40K",
+                "likes": "Follower",
+                "url": "https://www.instagram.com/"
+              }
+            ],
+            "imageUrl": "assets/images/authors/author3-1.jpg"
+          },
+          {
+            "id": 4,
+            "name": "Sophia Lee",
+            "category": "Travel",
+            "subCategory": "Adventure",
+            "post": 40,
+            "postViews": 1200,
+            "likes": 600,
+            "socialMedia": [
+              {
+                "platform": "Facebook",
+                "followers": "4K",
+                "likes": "Like",
+                "url": "https://www.facebook.com/"
+              },
+              {
+                "platform": "Twitter",
+                "followers": "70K",
+                "likes": "Follower",
+                "url": "https://www.twitter.com/"
+              },
+              {
+                "platform": "Pinterest",
+                "followers": "20K",
+                "likes": "Follower",
+                "url": "https://www.pinterest.com/"
+              },
+              {
+                "platform": "Instagram",
+                "followers": "80K",
+                "likes": "Follower",
+                "url": "https://www.instagram.com/"
+              }
+            ],
+            "imageUrl": "assets/images/authors/author4-1.jpg"
+          },
+          {
+            "id": 5,
+            "name": "David Smith",
+            "category": "Fashion",
+            "subCategory": "Trends",
+            "post": 25,
+            "postViews": 900,
+            "likes": 450,
+            "socialMedia": [
+              {
+                "platform": "Facebook",
+                "followers": "2.5K",
+                "likes": "Like",
+                "url": "https://www.facebook.com/"
+              },
+              {
+                "platform": "Twitter",
+                "followers": "50K",
+                "likes": "Follower",
+                "url": "https://www.twitter.com/"
+              },
+              {
+                "platform": "Pinterest",
+                "followers": "30K",
+                "likes": "Follower",
+                "url": "https://www.pinterest.com/"
+              },
+              {
+                "platform": "Instagram",
+                "followers": "60K",
+                "likes": "Follower",
+                "url": "https://www.instagram.com/"
+              }
+            ],
+            "imageUrl": "assets/images/authors/author5-1.jpg"
+          }
+        ]
+      }
+      
+]

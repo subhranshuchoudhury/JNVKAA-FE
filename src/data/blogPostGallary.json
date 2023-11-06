@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "img_Gallary": [
+            {
+                "id": 1,
+                "img": "assets/images/blog-gallery/blog-gallery3-1.jpg"
+            },
+            {
+                "id": 2,
+                "img": "assets/images/blog-gallery/blog-gallery3-2.jpg"
+            },
+            {
+                "id": 3,
+                "img": "assets/images/blog-gallery/blog-gallery3-3.jpg"
+            }
+        ],
+        " post_Auth": "By Jace Emmett",
+        "title": "Tasty Creations: Unleashing Your Inner Chef.",
+        "date": "Nov 15, 2022",
+        "post_view": "1.9k View"
+    },
+    {
+        "id": 2,
+        "img_Gallary": [
+            {
+                "id": 1,
+                "img": "assets/images/blog-gallery/blog-gallery2-1.jpg"
+            },
+            {
+                "id": 2,
+                "img": "assets/images/blog-gallery/blog-gallery2-2.jpg"
+            },
+            {
+                "id": 3,
+                "img": "assets/images/blog-gallery/blog-gallery2-3.jpg"
+            }
+        ],
+        " post_Auth": "By Jace Emmett",
+        "title": "Restaurant Reviews: Navigating the Food Scene.",
+        "date": "Nov 15, 2022",
+        "post_view": "1.9k View"
+    },
+    {
+        "id": 3,
+        "img_Gallary": [
+            {
+                "id": 1,
+                "img": "assets/images/blog-gallery/blog-gallery6-1.jpg"
+            },
+            {
+                "id": 2,
+                "img": "assets/images/blog-gallery/blog-gallery6-2.jpg"
+            },
+            {
+                "id": 3,
+                "img": "assets/images/blog-gallery/blog-gallery6-3.jpg"
+            }
+        ],
+        " post_Auth": "By Jace Emmett",
+        "title": "Travel Tips: Navigating Globetrotting with Ease.",
+        "date": "Nov 15, 2022",
+        "post_view": "1.9k View"
+    }
+]

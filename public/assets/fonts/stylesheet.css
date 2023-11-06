@@ -1,0 +1,234 @@
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-ExtraBold.eot');
+    src: local('Kegina Extra Bold'), local('Kegina-ExtraBold'),
+        url('Kegina-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-ExtraBold.woff2') format('woff2'),
+        url('Kegina-ExtraBold.woff') format('woff'),
+        url('Kegina-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-MediumItalic.eot');
+    src: local('Kegina Medium Italic'), local('Kegina-MediumItalic'),
+        url('Kegina-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-MediumItalic.woff2') format('woff2'),
+        url('Kegina-MediumItalic.woff') format('woff'),
+        url('Kegina-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-BoldItalic.eot');
+    src: local('Kegina Bold Italic'), local('Kegina-BoldItalic'),
+        url('Kegina-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-BoldItalic.woff2') format('woff2'),
+        url('Kegina-BoldItalic.woff') format('woff'),
+        url('Kegina-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-LightItalic.eot');
+    src: local('Kegina Light Italic'), local('Kegina-LightItalic'),
+        url('Kegina-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-LightItalic.woff2') format('woff2'),
+        url('Kegina-LightItalic.woff') format('woff'),
+        url('Kegina-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-ExtraLight.eot');
+    src: local('Kegina Extra Light'), local('Kegina-ExtraLight'),
+        url('Kegina-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-ExtraLight.woff2') format('woff2'),
+        url('Kegina-ExtraLight.woff') format('woff'),
+        url('Kegina-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-ExtraLightItalic.eot');
+    src: local('Kegina Extra Light Italic'), local('Kegina-ExtraLightItalic'),
+        url('Kegina-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-ExtraLightItalic.woff2') format('woff2'),
+        url('Kegina-ExtraLightItalic.woff') format('woff'),
+        url('Kegina-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-BlackItalic.eot');
+    src: local('Kegina Black Italic'), local('Kegina-BlackItalic'),
+        url('Kegina-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-BlackItalic.woff2') format('woff2'),
+        url('Kegina-BlackItalic.woff') format('woff'),
+        url('Kegina-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-Black.eot');
+    src: local('Kegina Black'), local('Kegina-Black'),
+        url('Kegina-Black.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-Black.woff2') format('woff2'),
+        url('Kegina-Black.woff') format('woff'),
+        url('Kegina-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-Thin.eot');
+    src: local('Kegina Thin'), local('Kegina-Thin'),
+        url('Kegina-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-Thin.woff2') format('woff2'),
+        url('Kegina-Thin.woff') format('woff'),
+        url('Kegina-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-ExtraBoldItalic.eot');
+    src: local('Kegina Extra Bold Italic'), local('Kegina-ExtraBoldItalic'),
+        url('Kegina-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-ExtraBoldItalic.woff2') format('woff2'),
+        url('Kegina-ExtraBoldItalic.woff') format('woff'),
+        url('Kegina-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-SemiBold.eot');
+    src: local('Kegina Semi Bold'), local('Kegina-SemiBold'),
+        url('Kegina-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-SemiBold.woff2') format('woff2'),
+        url('Kegina-SemiBold.woff') format('woff'),
+        url('Kegina-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-Bold.eot');
+    src: local('Kegina Bold'), local('Kegina-Bold'),
+        url('Kegina-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-Bold.woff2') format('woff2'),
+        url('Kegina-Bold.woff') format('woff'),
+        url('Kegina-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-Light.eot');
+    src: local('Kegina Light'), local('Kegina-Light'),
+        url('Kegina-Light.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-Light.woff2') format('woff2'),
+        url('Kegina-Light.woff') format('woff'),
+        url('Kegina-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-SemiBoldItalic.eot');
+    src: local('Kegina Semi Bold Italic'), local('Kegina-SemiBoldItalic'),
+        url('Kegina-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-SemiBoldItalic.woff2') format('woff2'),
+        url('Kegina-SemiBoldItalic.woff') format('woff'),
+        url('Kegina-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-Italic.eot');
+    src: local('Kegina Italic'), local('Kegina-Italic'),
+        url('Kegina-Italic.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-Italic.woff2') format('woff2'),
+        url('Kegina-Italic.woff') format('woff'),
+        url('Kegina-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-Medium.eot');
+    src: local('Kegina Medium'), local('Kegina-Medium'),
+        url('Kegina-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-Medium.woff2') format('woff2'),
+        url('Kegina-Medium.woff') format('woff'),
+        url('Kegina-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-Regular.eot');
+    src: local('Kegina Regular'), local('Kegina-Regular'),
+        url('Kegina-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-Regular.woff2') format('woff2'),
+        url('Kegina-Regular.woff') format('woff'),
+        url('Kegina-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kegina';
+    src: url('Kegina-ThinItalic.eot');
+    src: local('Kegina Thin Italic'), local('Kegina-ThinItalic'),
+        url('Kegina-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kegina-ThinItalic.woff2') format('woff2'),
+        url('Kegina-ThinItalic.woff') format('woff'),
+        url('Kegina-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
