@@ -8,7 +8,7 @@ function Login() {
     <main className="form-signin m-auto">
   <form>
     <img className="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" />
-    <h1 className="h3 mb-3 fw-normal">Login</h1>
+    <h1 className="h3 mb-3">Login</h1>
 
     <div className="form-floating mb-2">
       <input type="tel" className="form-control" id="floatingInput" placeholder="824958XXXX" />
