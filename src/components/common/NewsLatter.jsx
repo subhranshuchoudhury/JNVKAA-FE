@@ -9,8 +9,8 @@ function NewsLatter() {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-xl-8 col-lg-10 col-md-10 col-sm-12 text-center">
-            <h2>Get the best blog stories into your inbox Connect Us now.</h2>
-            <form className="newsletter-from">
+            <h2>Get the latest post by your Alumnus.</h2>
+            {/* <form className="newsletter-from">
               <div className="inner-form">
                 <input type="email" placeholder="Enter Your Email..." />
                 <button type="submit">
@@ -25,7 +25,7 @@ function NewsLatter() {
                   </svg>
                 </button>
               </div>
-            </form>
+            </form> */}
           </div>
         </div>
       </div>

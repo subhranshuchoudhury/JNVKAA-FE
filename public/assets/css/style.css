@@ -35,8 +35,10 @@ Template Name: TechGen - Digital Agency Template
   scroll-behavior: smooth;
 }
 
+/* PRIMARY COLORS: SUBHRANSHU CHOUDHURY */
+
 :root {
-  --primary-one: #ff4c60;
+  --primary-one: #7c51ff;
   --primary-one-light: rgba(255, 76, 96, 0.2);
   --primary-one-light-two: #F7E8E1;
   --primary-two: #548F6F;
@@ -46,7 +48,7 @@ Template Name: TechGen - Digital Agency Template
   --text-primary: #101010;
   --text-secondary: rgba(16, 16, 16, 0.5);
   --text-secondary2: rgba(16, 16, 16, 0.7);
-  --white: #fff;
+  --white: #ffffff;
   --border-color: #EEEEEE;
   --border-color2: rgba(16, 16, 16, 0.2);
   --border-color3: #e7e7e7;

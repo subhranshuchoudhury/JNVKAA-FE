@@ -33,7 +33,7 @@ function LatestBlog() {
               </Link>
               <div className="content">
                 <ul>
-                  <li><Link legacyBehavior href="/author-details"><a>By Rison donec</a></Link></li>
+                  <li><Link legacyBehavior href="/author-details"><a>By Abhisek Sahoo</a></Link></li>
                   <li><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Nov 10, 2022</a></Link></li>
                   <li><Link legacyBehavior href="/post-format-no-sidebar-02"><a>1.5k View</a></Link></li>
                 </ul>

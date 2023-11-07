@@ -6,7 +6,7 @@ function CommonFooter() {
     <footer className="style-1">
     <div className="container">
       <div className="row justify-content-start align-items-start pt-90 pb-90 gy-5">
-        <div className="col-xl-3 col-lg-3 col-md-6">
+        {/* <div className="col-xl-3 col-lg-3 col-md-6">
           <div className="footer-info">
             <Link legacyBehavior href="/">
                 <a className="footer-logo">
@@ -24,8 +24,8 @@ function CommonFooter() {
               </div>
             </form>
           </div>
-        </div>
-        <div className="col-xl-4 col-lg-5 col-md-6">
+        </div> */}
+        {/* <div className="col-xl-4 col-lg-5 col-md-6">
           <h4 className="footer-title">Top Article This Week</h4>
           <div className="blog-list-1 mb-25">
             <Link legacyBehavior href="/post-format-no-sidebar-02">
@@ -55,7 +55,7 @@ function CommonFooter() {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-6">
           <h4 className="footer-title">Quick Link</h4>
           <ul className="footer-list">
@@ -119,7 +119,7 @@ function CommonFooter() {
       </div>
       <div className="row copyright-area">
         <div className="col-lg-12 text-center">
-          <p>© 2023 Blogxton is Proudly Powered by <a href="https://www.egenslab.com/">Egens Theme</a></p>
+          <p>© 2023 <a href="https://www.egenslab.com/">JNVKAA</a></p>
         </div>
       </div>
     </div>
