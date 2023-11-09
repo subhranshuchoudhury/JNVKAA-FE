@@ -11,11 +11,16 @@ function Topbar() {
         <div className="header-logo">
           <Link legacyBehavior href="/">
             <a>
-              <img
+              {/* <img
                 alt="image"
                 className="img-fluid"
-                src="assets/images/logo/logo-1.svg"
-              />
+                width={80}
+                src="assets/images/logo/jnvkaa-logo.png"
+              /> */}
+              <h3 style={{
+                color: "black",
+                fontFamily: "sans-serif",
+              }}>JNVKAA</h3>
             </a>
           </Link>
         </div>

@@ -6817,7 +6817,7 @@ ul.social-1 li:hover i {
 ul.social-1 a {
   line-height: 1;
   font-size: 13px;
-  color: var(--white);
+  color: var(--text-primary);
 }
 
 ul.social-1 a i {

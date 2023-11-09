@@ -62,7 +62,9 @@ function Header({ state, dispatch }) {
                 <img
                   alt="image"
                   className="img-fluid"
-                  src="assets/images/logo/logo-2.svg"
+                  width={40}
+                  height={40}
+                  src="assets/images/logo/jnvkaa-logo.png"
                 />
               </a>
             </Link>
@@ -77,7 +79,8 @@ function Header({ state, dispatch }) {
                     <img
                       alt="image"
                       className="img-fluid"
-                      src="assets/images/logo/logo-2.svg"
+                      width={40}
+                      src="assets/images/logo/jnvkaa-logo.png"
                     />
                   </a>
                 </Link>
@@ -90,29 +93,25 @@ function Header({ state, dispatch }) {
               <li className="menu-item-has-children">
                 <a
                   href="#"
-                  className={`drop-down ${
-                    curerntRoute === "/" ? "active" : ""
-                  }`}
+                  className={`drop-down ${curerntRoute === "/" ? "active" : ""
+                    }`}
                   onClick={() => toggleMenu("home-one")}
                 >
                   Home
                 </a>
                 <i
-                  className={`bi bi-chevron-${
-                    state.activeMenu === "home-one" ? "up" : "down"
-                  } dropdown-icon ${
-                    state.activeMenu === "home-one" ? "active" : ""
-                  }`}
+                  className={`bi bi-chevron-${state.activeMenu === "home-one" ? "up" : "down"
+                    } dropdown-icon ${state.activeMenu === "home-one" ? "active" : ""
+                    }`}
                   onClick={() => toggleMenu("home-one")}
                 />
                 <ul
-                  className={`sub-menu ${
-                    state.activeMenu === "home-one" ? "d-block" : ""
-                  }`}
+                  className={`sub-menu ${state.activeMenu === "home-one" ? "d-block" : ""
+                    }`}
                 >
                   <li>
                     <Link legacyBehavior href="/" className="active">
-                      <a className={curerntRoute === "/"? "active":""}>Home 01</a>
+                      <a className={curerntRoute === "/" ? "active" : ""}>Home 01</a>
                     </Link>
                   </li>
                   <li>
@@ -151,13 +150,12 @@ function Header({ state, dispatch }) {
                   />
                 </a>
                 <i
-                    className="bi bi-chevron-down dropdown-icon d-lg-none d-block"
-                    onClick={() => toggleMenu("post")}
-                  />
+                  className="bi bi-chevron-down dropdown-icon d-lg-none d-block"
+                  onClick={() => toggleMenu("post")}
+                />
                 <div
-                  className={`mega-menu ${
-                    state.activeMenu === "post" ? "d-block" : ""
-                  }`}
+                  className={`mega-menu ${state.activeMenu === "post" ? "d-block" : ""
+                    }`}
                 >
                   <div className="container">
                     <div className="row">
@@ -294,17 +292,14 @@ function Header({ state, dispatch }) {
                   <a>Blog</a>
                 </Link>
                 <i
-                  className={`bi bi-chevron-${
-                    state.activeMenu === "blog" ? "up" : "down"
-                  } dropdown-icon ${
-                    state.activeMenu === "blog" ? "active" : ""
-                  }`}
+                  className={`bi bi-chevron-${state.activeMenu === "blog" ? "up" : "down"
+                    } dropdown-icon ${state.activeMenu === "blog" ? "active" : ""
+                    }`}
                   onClick={() => toggleMenu("blog")}
                 />
                 <ul
-                  className={`sub-menu ${
-                    state.activeMenu === "blog" ? "d-block" : ""
-                  }`}
+                  className={`sub-menu ${state.activeMenu === "blog" ? "d-block" : ""
+                    }`}
                 >
                   <li>
                     <Link legacyBehavior href="/blog-classic">
@@ -358,17 +353,14 @@ function Header({ state, dispatch }) {
                   Pages
                 </a>
                 <i
-                  className={`bi bi-chevron-${
-                    state.activeMenu === "blog" ? "up" : "down"
-                  } dropdown-icon ${
-                    state.activeMenu === "blog" ? "active" : ""
-                  }`}
+                  className={`bi bi-chevron-${state.activeMenu === "blog" ? "up" : "down"
+                    } dropdown-icon ${state.activeMenu === "blog" ? "active" : ""
+                    }`}
                   onClick={() => toggleMenu("blog")}
                 />
                 <ul
-                  className={`sub-menu ${
-                    state.activeMenu === "blog" ? "d-block" : ""
-                  }`}
+                  className={`sub-menu ${state.activeMenu === "blog" ? "d-block" : ""
+                    }`}
                 >
                   <li>
                     <Link legacyBehavior href="/author">

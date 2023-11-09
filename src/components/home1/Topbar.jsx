@@ -22,10 +22,9 @@ function Topbar() {
         </div>
         <div className="header-logo">
           <Link legacyBehavior href="/">
-            <h3 style={{
+            <h1 style={{
               color: "black",
-              fontFamily: "sans-serif",
-            }}>JNVKAA</h3>
+            }}>JNVKAA</h1>
           </Link>
         </div>
         <ul className="social-1"></ul>
