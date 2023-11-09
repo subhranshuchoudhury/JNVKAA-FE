@@ -83,7 +83,7 @@ function Banner() {
                           <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                           <li>1.5k View</li>
                         </ul>
-                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>This is a simple titile. Subhranshu Choudhury</a></Link></h4>
+                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>A glance of dance program from our Alumini Meet</a></Link></h4>
                         <div className="bottom-area">
                           <Link legacyBehavior href="/post-format-no-sidebar-02"><a  className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
                           <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +113,7 @@ function Banner() {
                           <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                           <li>1.5k View</li>
                         </ul>
-                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>This is a simple titile. Subhranshu Choudhury</a></Link></h4>
+                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Our future Stars</a></Link></h4>
                         <div className="bottom-area">
                           <Link legacyBehavior href="/post-format-no-sidebar-02"><a  className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
                           <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +143,7 @@ function Banner() {
                           <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                           <li>1.5k View</li>
                         </ul>
-                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>This is a simple titile. Subhranshu Choudhury</a></Link></h4>
+                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Prize Distribution</a></Link></h4>
                         <div className="bottom-area">
                           <Link legacyBehavior href="/post-format-no-sidebar-02"><a  className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
                           <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
@@ -172,7 +172,7 @@ function Banner() {
                           <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                           <li>1.5k View</li>
                         </ul>
-                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>This is a simple titile. Subhranshu Choudhury</a></Link></h4>
+                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Our respected A.K Sir</a></Link></h4>
                         <div className="bottom-area">
                           <Link legacyBehavior href="/post-format-no-sidebar-02"><a  className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
                           <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
@@ -202,7 +202,7 @@ function Banner() {
                           <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                           <li>1.5k View</li>
                         </ul>
-                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>This is a simple titile. Subhranshu Choudhury</a></Link></h4>
+                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Our Lovable Aluminies ❤</a></Link></h4>
                         <div className="bottom-area">
                           <Link legacyBehavior href="/post-format-no-sidebar-02"><a  className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
                           <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
@@ -231,7 +231,7 @@ function Banner() {
                           <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                           <li>1.5k View</li>
                         </ul>
-                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>This is a simple titile. Subhranshu Choudhury</a></Link></h4>
+                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a> A sweet song by our Alumini</a></Link></h4>
                         <div className="bottom-area">
                           <Link legacyBehavior href="/post-format-no-sidebar-02"><a  className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
                           <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
@@ -261,7 +261,7 @@ function Banner() {
                           <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                           <li>1.5k View</li>
                         </ul>
-                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>This is a simple titile. Subhranshu Choudhury</a></Link></h4>
+                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Lovely Rakesh Sir</a></Link></h4>
                         <div className="bottom-area">
                           <Link legacyBehavior href="/post-format-no-sidebar-02"><a  className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
                           <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
@@ -291,7 +291,7 @@ function Banner() {
                           <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                           <li>1.5k View</li>
                         </ul>
-                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>This is a simple titile. Subhranshu Choudhury</a></Link></h4>
+                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Our Lovely Brothers and Sisters</a></Link></h4>
                         <div className="bottom-area">
                           <Link legacyBehavior href="/post-format-no-sidebar-02"><a  className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
                           <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
@@ -320,7 +320,7 @@ function Banner() {
                           <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                           <li>1.5k View</li>
                         </ul>
-                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>This is a simple titile. Subhranshu Choudhury</a></Link></h4>
+                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Our lovable Chief guest</a></Link></h4>
                         <div className="bottom-area">
                           <Link legacyBehavior href="/post-format-no-sidebar-02"><a  className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
                           <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
@@ -349,7 +349,7 @@ function Banner() {
                           <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                           <li>1.5k View</li>
                         </ul>
-                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>This is a simple titile. Subhranshu Choudhury</a></Link></h4>
+                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a> Siten Bhai with his favourite teacher B.K Verma </a></Link></h4>
                         <div className="bottom-area">
                           <Link legacyBehavior href="/post-format-no-sidebar-02"><a  className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
                           <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
@@ -378,7 +378,7 @@ function Banner() {
                           <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                           <li>1.5k View</li>
                         </ul>
-                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>This is a simple titile. Subhranshu Choudhury</a></Link></h4>
+                        <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Dr. Udayabhanu Bhai an inspiration for us</a></Link></h4>
                         <div className="bottom-area">
                           <Link legacyBehavior href="/post-format-no-sidebar-02"><a  className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
                           <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
