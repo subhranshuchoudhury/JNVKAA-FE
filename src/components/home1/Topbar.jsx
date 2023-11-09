@@ -6,18 +6,26 @@ function Topbar() {
     <div className="topbar-1 d-lg-flex d-none">
       <div className="container d-flex justify-content-between align-items-center">
         <div className="date">
-          Novembar 30, 2022 <span>28°C</span>
+          <div className="header-logo">
+            <Link legacyBehavior href="/">
+              <a>
+                <img
+                  width={70}
+                  height={70}
+                  alt="image"
+                  className="img-fluid"
+                  src="assets/images/logo/jnvkaa-logo.png"
+                />
+              </a>
+            </Link>
+          </div>
         </div>
         <div className="header-logo">
           <Link legacyBehavior href="/">
-            <a>
-              {/* <img
-                alt="image"
-                className="img-fluid"
-                src="assets/images/logo/logo-1.svg"
-              /> */}
-             
-            </a>
+            <h3 style={{
+              color: "black",
+              fontFamily: "sans-serif",
+            }}>JNVKAA</h3>
           </Link>
         </div>
         <ul className="social-1"></ul>
