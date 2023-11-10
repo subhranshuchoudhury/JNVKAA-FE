@@ -1,3 +1,5 @@
+// NOT USING THIS COMPONENT
+
 import Link from "next/link";
 import React from "react";
 
@@ -8,7 +10,7 @@ function Topbar() {
         <div style={{
           color: 'black'
         }} className="date">
-          Novembar 30, 2022 <span>28°C</span>
+          Novembar 30, 2022 <span>29°C</span>
         </div>
         <div className="header-logo">
           <Link legacyBehavior href="/">
@@ -42,11 +44,11 @@ function Topbar() {
           <li>
             <a href="https://www.pinterest.com/">
               <i className="bx bxl-pinterest-alt" />
-              2.1K
+              522
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/">
+            <a href="https://www.instagram.com/jnvkaa">
               <i className="bx bxl-instagram" />
               1.9K
             </a>

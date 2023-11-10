@@ -1,0 +1,30 @@
+[
+    {
+        "index": "1",
+        "link": "https://www.youtube.com/@JNVKAA",
+        "count": "637",
+        "icon": "bx bxl-youtube",
+        "platform": "Youtube"
+    },
+    {
+        "index": "2",
+        "link": "https://twitter.com/@JNVKAA",
+        "count": "637",
+        "icon": "bx bxl-twitter",
+        "platform": "X"
+    },
+    {
+        "index": "3",
+        "link": "https://www.facebook.com/@JNVKAA",
+        "count": "637",
+        "icon": "bx bxl-facebook",
+        "platform": "Facebook"
+    },
+    {
+        "index": "4",
+        "link": "https://www.instagram.com/@JNVKAA",
+        "count": "637",
+        "icon": "bx bxl-instagram",
+        "platform": "Instagram"
+    }
+]
