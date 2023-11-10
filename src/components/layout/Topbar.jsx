@@ -5,22 +5,24 @@ function Topbar() {
   return (
     <div className="topbar-1 d-lg-flex d-none">
       <div className="container d-flex justify-content-between align-items-center">
-        <div className="date">
+        <div style={{
+          color: 'black'
+        }} className="date">
           Novembar 30, 2022 <span>28°C</span>
         </div>
         <div className="header-logo">
           <Link legacyBehavior href="/">
             <a>
-              {/* <img
+              <img
                 alt="image"
                 className="img-fluid"
-                width={80}
-                src="assets/images/logo/jnvkaa-logo.png"
-              /> */}
-              <h3 style={{
+                width={200}
+                src="assets/images/logo/jnvkaa-logo-cie.jpeg"
+              />
+              {/* <h3 style={{
                 color: "black",
                 fontFamily: "sans-serif",
-              }}>JNVKAA</h3>
+              }}>JNVKAA</h3> */}
             </a>
           </Link>
         </div>

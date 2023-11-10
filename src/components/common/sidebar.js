@@ -107,7 +107,7 @@ function Sidebar2() {
               </ul>
             </li>
             <li className="menu-item"><Link legacyBehavior href="/about" data-hover="About"><a>About</a></Link></li>
-            <li className="menu-item"><Link legacyBehavior href="/topic" data-hover="Topic"><a>Topic</a></Link></li>
+            <li className="menu-item"><Link legacyBehavior href="/events" data-hover="Events"><a>Events</a></Link></li>
             <li className="menu-item-has-children menu-item">
               <Link legacyBehavior href="/blog-column-three" data-hover="Post"><a>Post</a></Link><i onClick={() => handleMenu("post-formate")} className="bi bi-plus dropdown-icon2" />
               <ul className={
@@ -161,7 +161,7 @@ function Sidebar2() {
                 <li><Link legacyBehavior href="/horizontal-scrolling-blog"><a>Horizontal Blog</a></Link></li>
               </ul>
             </li>
-            <li className="menu-item-has-children menu-item">
+            {/* <li className="menu-item-has-children menu-item">
               <a href="#" data-hover="Pages">Pages</a><i className="bi bi-plus dropdown-icon2" onClick={() => handleMenu("pages")} />
               <ul className={
                 state.activeMenu === "pages"
@@ -172,7 +172,7 @@ function Sidebar2() {
                 <li><Link legacyBehavior href="/author-details"><a>Author Details</a></Link></li>
                 <li><Link legacyBehavior href="/error"><a>Error</a></Link></li>
               </ul>
-            </li>
+            </li> */}
             <li className="menu-item"><Link legacyBehavior href="/contact" data-hover="Contact"><a>Contact</a></Link></li>
           </ul>
         </div>

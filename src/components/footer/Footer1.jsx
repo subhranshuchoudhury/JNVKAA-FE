@@ -54,7 +54,7 @@ function Footer1() {
             <h4 className="footer-title">Quick Link</h4>
             <ul className="footer-list">
               <li><Link legacyBehavior href="/about"><a>About</a></Link></li>
-              <li><Link legacyBehavior href="/topic"><a>Topic</a></Link></li>
+              <li><Link legacyBehavior href="events"><a>Topic</a></Link></li>
               <li><Link legacyBehavior href="/post"><a>Post</a></Link></li>
               <li><Link legacyBehavior href="/feature"><a>Feature</a></Link></li>
               <li><Link legacyBehavior href="/contact"><a>Contact</a></Link></li>

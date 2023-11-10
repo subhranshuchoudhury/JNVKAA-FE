@@ -136,8 +136,13 @@ function CommonHeader({ state, dispatch }) {
                 </Link>
               </li>
               <li className="menu-item-has-children">
-                <Link legacyBehavior href="/topic">
-                  <a className={curerntRoute === "/topic" ? "active" : ""}>Topic</a>
+                <Link legacyBehavior href="/events">
+                  <a className={curerntRoute === "/events" ? "active" : ""}>Events</a>
+                </Link>
+              </li>
+              <li className="menu-item-has-children">
+                <Link legacyBehavior href="/alumnus">
+                  <a className={curerntRoute === "/alumnus" ? "active" : ""}>Alumnus</a>
                 </Link>
               </li>
               <li className="menu-item-has-children position-inherit">

@@ -10,11 +10,10 @@ function Topbar() {
             <Link legacyBehavior href="/">
               <a>
                 <img
-                  width={70}
-                  height={70}
+                  width={55}
                   alt="image"
                   className="img-fluid"
-                  src="assets/images/logo/jnvkaa-logo.png"
+                  src="assets/images/logo/jnvkaa-logo2.png"
                 />
               </a>
             </Link>
@@ -22,9 +21,12 @@ function Topbar() {
         </div>
         <div className="header-logo">
           <Link legacyBehavior href="/">
-            <h1 style={{
-              color: "black",
-            }}>JNVKAA</h1>
+            <img
+              width={190}
+              alt="image"
+              className="img-fluid"
+              src="assets/images/logo/jnvkaa-logo-cie.jpeg"
+            />
           </Link>
         </div>
         <ul className="social-1"></ul>

@@ -1810,7 +1810,8 @@ body.tt-magic-cursor #magic-cursor {
  11 .Header Start
 =======================================*/
 .topbar-1 {
-  background-color: var(--bg-one);
+  /* background-color: var(--bg-one); */
+  background-color: #fff;
   padding: 15px;
 }
 

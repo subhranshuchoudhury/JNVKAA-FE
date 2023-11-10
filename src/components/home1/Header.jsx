@@ -137,10 +137,17 @@ function Header({ state, dispatch }) {
                 </Link>
               </li>
               <li className="menu-item-has-children">
-                <Link legacyBehavior href="/topic">
-                  <a>Topic</a>
+                <Link legacyBehavior href="/events">
+                  <a>Events</a>
                 </Link>
               </li>
+
+              <li className="menu-item-has-children">
+                <Link legacyBehavior href="/alumnus">
+                  <a>Alumnus</a>
+                </Link>
+              </li>
+
               <li className="menu-item-has-children position-inherit">
                 <a href="#">
                   Post
@@ -348,7 +355,7 @@ function Header({ state, dispatch }) {
                   </li>
                 </ul>
               </li>
-              <li className="menu-item-has-children">
+              {/* <li className="menu-item-has-children">
                 <a href="#" className="drop-down">
                   Pages
                 </a>
@@ -378,7 +385,7 @@ function Header({ state, dispatch }) {
                     </Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li>
                 <Link legacyBehavior href="/contact">
                   <a>Contact</a>
