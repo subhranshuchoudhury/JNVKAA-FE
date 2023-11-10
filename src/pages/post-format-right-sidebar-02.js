@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-
+// SELECTED
 function PostFormatRightSidebar02Page() {
   return (
     <section className="post-gallery-details style-5 mt-100">

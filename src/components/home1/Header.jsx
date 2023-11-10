@@ -92,20 +92,20 @@ function Header({ state, dispatch }) {
             <ul className="menu-list">
               <li className="menu-item-has-children">
                 <a
-                  href="#"
+                  href="/"
                   className={`drop-down ${curerntRoute === "/" ? "active" : ""
                     }`}
                   onClick={() => toggleMenu("home-one")}
                 >
                   Home
                 </a>
-                <i
+                {/* <i
                   className={`bi bi-chevron-${state.activeMenu === "home-one" ? "up" : "down"
                     } dropdown-icon ${state.activeMenu === "home-one" ? "active" : ""
                     }`}
                   onClick={() => toggleMenu("home-one")}
-                />
-                <ul
+                /> */}
+                {/* <ul
                   className={`sub-menu ${state.activeMenu === "home-one" ? "d-block" : ""
                     }`}
                 >
@@ -129,7 +129,7 @@ function Header({ state, dispatch }) {
                       <a>Home 04</a>
                     </Link>
                   </li>
-                </ul>
+                </ul> */}
               </li>
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/about">

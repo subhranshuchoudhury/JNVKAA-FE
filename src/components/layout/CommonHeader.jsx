@@ -78,6 +78,7 @@ function CommonHeader({ state, dispatch }) {
                     <img
                       alt="image"
                       className="img-fluid"
+                      width={50}
                       src="assets/images/logo/jnvkaa-logo.png"
                     />
                   </a>
@@ -90,14 +91,14 @@ function CommonHeader({ state, dispatch }) {
             <ul className="menu-list">
               <li className="menu-item-has-children">
                 <a
-                  href="#"
+                  href="/"
                   className={`drop-down ${state.activeMenu === "home-one" ? "active" : ""
                     }`}
                   onClick={() => toggleMenu("home-one")}
                 >
                   Home
                 </a>
-                <i
+                {/* <i
                   className={`bi bi-chevron-${state.activeMenu === "home-one" ? "up" : "down"
                     } dropdown-icon ${state.activeMenu === "home-one" ? "active" : ""
                     }`}
@@ -127,7 +128,7 @@ function CommonHeader({ state, dispatch }) {
                       <a>Home 04</a>
                     </Link>
                   </li>
-                </ul>
+                </ul> */}
               </li>
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/about">
