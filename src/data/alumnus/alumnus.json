@@ -1,0 +1,422 @@
+[
+    {
+        "name": "Liaquat Ali Sekh",
+        "image": "/assets/images/alumnus/Ali.jpeg",
+        "mobile": "+971 50 904 6495",
+        "schoolno": "23",
+        "batch": "2004",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/profile.php?id=100002000395446&mibextid=rS40aB7S9Ucbxw6v",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://instagram.com/sekhali_world?igshid=NzZlODBkYWE4Ng==",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/sk-liaquat-ali-634ba7ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Anil Mishra",
+        "image": "/assets/images/alumnus/Anil.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "67",
+        "batch": "2015",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Bidyaraj Mishra",
+        "image": "/assets/images/alumnus/bidya.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "78",
+        "batch": "2010",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Shakti Prasad Panda",
+        "image": "/assets/images/alumnus/Shakti.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "1",
+        "batch": "2023",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Jyoti Sahoo",
+        "image": "/assets/images/alumnus/jyoti.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "2",
+        "batch": "2024",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Abhinash Behera",
+        "image": "/assets/images/alumnus/Abhinash.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "3",
+        "batch": "2018",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Achhu",
+        "image": "/assets/images/alumnus/Achhu.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "44",
+        "batch": "2020",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Vicky",
+        "image": "/assets/images/alumnus/3.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "66",
+        "batch": "2019",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Subhralin Sethy",
+        "image": "/assets/images/alumnus/girl.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "9",
+        "batch": "2021",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Aniket",
+        "image": "/assets/images/alumnus/Aniket.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "92",
+        "batch": "2021",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Badal",
+        "image": "/assets/images/alumnus/Badal.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "95",
+        "batch": "2021",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Radha Mohan",
+        "image": "/assets/images/alumnus/Radhaa.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "78",
+        "batch": "2021",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Satya Sarthak",
+        "image": "/assets/images/alumnus/Sarthak.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "45",
+        "batch": "2022",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    },
+    {
+        "name": "Taara Prasad",
+        "image": "/assets/images/alumnus/Taaraa.jpeg",
+        "mobile": "9437060000",
+        "schoolno": "34",
+        "batch": "2020",
+        "socials": [
+            {
+                "name": "Facebook",
+                "link": "https://www.facebook.com/shakti.panda.9",
+                "index": "1",
+                "icon": "bx bxl-facebook",
+                "count": "234"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://www.instagram.com/shakti_panda_/",
+                "index": "2",
+                "icon": "bx bxl-instagram",
+                "count": "234"
+            },
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/shakti-prasad-panda-9b0a1a1b3/",
+                "index": "3",
+                "icon": "bx bxl-linkedin",
+                "count": "234"
+            }
+        ]
+    }
+]
