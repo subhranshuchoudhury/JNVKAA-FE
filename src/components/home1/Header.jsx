@@ -64,7 +64,7 @@ function Header({ state, dispatch }) {
                   className="img-fluid"
                   width={40}
                   height={40}
-                  src="assets/images/logo/jnvkaa-logo.png"
+                  src="assets/images/logo/jnvkaa-logo2.png"
                 />
               </a>
             </Link>
@@ -80,7 +80,7 @@ function Header({ state, dispatch }) {
                       alt="image"
                       className="img-fluid"
                       width={40}
-                      src="assets/images/logo/jnvkaa-logo.png"
+                      src="assets/images/logo/jnvkaa-logo2.png"
                     />
                   </a>
                 </Link>

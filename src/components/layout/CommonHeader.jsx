@@ -63,7 +63,7 @@ function CommonHeader({ state, dispatch }) {
                   alt="image"
                   className="img-fluid"
                   width={60}
-                  src="assets/images/logo/jnvkaa-logo.png"
+                  src="assets/images/logo/jnvkaa-logo2.png"
                 />
               </a>
             </Link>
@@ -79,7 +79,7 @@ function CommonHeader({ state, dispatch }) {
                       alt="image"
                       className="img-fluid"
                       width={50}
-                      src="assets/images/logo/jnvkaa-logo.png"
+                      src="assets/images/logo/jnvkaa-logo2.png"
                     />
                   </a>
                 </Link>

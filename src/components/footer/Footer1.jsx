@@ -12,7 +12,7 @@ function Footer1() {
             <div className="footer-info">
               <Link legacyBehavior href="/">
                 <a className="footer-logo">
-                  <img width={100} src="assets/images/logo/jnvkaa-logo.png" alt="image" />
+                  <img width={100} src="assets/images/logo/jnvkaa-logo2.png" alt="image" />
                 </a>
               </Link>
               <h3>We Would Love To Having You.</h3>
