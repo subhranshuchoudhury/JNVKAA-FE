@@ -9,7 +9,7 @@ export function middleware(request) {
 
 
     if (!isPublicPath && !token) {
-        return NextResponse.redirect(new URL('/', request.url))
+        return NextResponse.redirect(new URL('/login', request.url))
     }
 
     if (path === "/login" && token) {

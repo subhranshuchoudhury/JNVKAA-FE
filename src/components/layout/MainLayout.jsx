@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import CommonHeader from "./CommonHeader";
+// import CommonHeader from "./CommonHeader";
 import CommonFooter from "./CommonFooter";
 import NewsLatter from "../common/NewsLatter";
 import Topbar from "../home1/Topbar";
@@ -7,6 +7,7 @@ import Breadcrumb from "../common/Breadcrumb";
 import RightSideBar from "../common/RightSideBar";
 import Head from "next/head";
 import { Toaster } from "react-hot-toast";
+import Header from "../home1/Header";
 const initalState = {
   isRightSidebarOpen: false,
   isleftSidebarOpen: false,
@@ -69,7 +70,8 @@ function MainLayout({ children }) {
       </Head>
       <Topbar />
       <RightSideBar state={state} dispatch={dispatch} />
-      <CommonHeader state={state} dispatch={dispatch} />
+      {/* <CommonHeader state={state} dispatch={dispatch} /> */}
+      <Header state={state} dispatch={dispatch} />
       <Breadcrumb />
       <Toaster />
       {children}

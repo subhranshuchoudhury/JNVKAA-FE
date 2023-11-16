@@ -161,244 +161,38 @@ function Header({ state, dispatch }) {
                 </Link>
               </li>
 
-              <li className="menu-item-has-children position-inherit">
-                <a href="#">
-                  Post
-                  <i
-                    className="bi bi-chevron-down dropdown-icon2 d-lg-block d-none"
-                    onClick={() => toggleMenu("post")}
-                  />
-                </a>
-                <i
-                  className="bi bi-chevron-down dropdown-icon d-lg-none d-block"
-                  onClick={() => toggleMenu("post")}
-                />
-                <div
-                  className={`mega-menu ${state.activeMenu === "post" ? "d-block" : ""
-                    }`}
-                >
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-lg-4 d-lg-flex flex-column align-items-center">
-                        <div className="sub-menu-wrap">
-                          <h6>Post Format</h6>
-                          <ul className="sub-menu1">
-                            <li>
-                              <Link
-                                legacyBehavior
-                                href="/post-format-no-sidebar-01"
-                              >
-                                <a>Post Format 01</a>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                legacyBehavior
-                                href="/post-format-no-sidebar-02"
-                              >
-                                <a>Post Format 02</a>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                legacyBehavior
-                                href="/post-format-no-sidebar-03"
-                              >
-                                <a>Post Format 03</a>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                legacyBehavior
-                                href="/post-format-no-sidebar-04"
-                              >
-                                <a>Post Format 04</a>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                legacyBehavior
-                                href="/post-format-no-sidebar-05"
-                              >
-                                <a>Post Format 05</a>
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="col-lg-4 d-lg-flex flex-column align-items-center">
-                        <div className="sub-menu-wrap">
-                          <h6>Post Format Sidebar</h6>
-                          <ul className="sub-menu1">
-                            <li>
-                              <Link
-                                legacyBehavior
-                                href="/post-format-right-sidebar-01"
-                              >
-                                <a> Post Format Right Sidebar 01</a>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                legacyBehavior
-                                href="/post-format-right-sidebar-02"
-                              >
-                                <a> Post Format Right Sidebar 02</a>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                legacyBehavior
-                                href="/post-format-right-sidebar-03"
-                              >
-                                <a> Post Format Right Sidebar 03</a>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                legacyBehavior
-                                href="/post-format-left-sidebar-01"
-                              >
-                                <a> Post Format Left Sidebar 01</a>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                legacyBehavior
-                                href="/post-format-left-sidebar-02"
-                              >
-                                <a> Post Format Left Sidebar 02</a>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                legacyBehavior
-                                href="/post-format-left-sidebar-03"
-                              >
-                                <a> Post Format Left Sidebar 03</a>
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="col-lg-4 d-lg-flex flex-column align-items-center">
-                        <div className="sub-menu-wrap">
-                          <h6>Standard Post Format</h6>
-                          <ul className="sub-menu1">
-                            <li>
-                              <Link legacyBehavior href="/audio-post-format">
-                                <a> Audio Post Format</a>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link legacyBehavior href="/video-post-format">
-                                <a>Video Post Format</a>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link legacyBehavior href="/gallery-post-format">
-                                <a>Gallery Post Format</a>
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
+
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/feature">
-                  <a>Blog</a>
+                  <a>Posts</a>
                 </Link>
                 <i
-                  className={`bi bi-chevron-${state.activeMenu === "blog" ? "up" : "down"
-                    } dropdown-icon ${state.activeMenu === "blog" ? "active" : ""
+                  className={`bi bi-chevron-${state.activeMenu === "posts" ? "up" : "down"
+                    } dropdown-icon ${state.activeMenu === "posts" ? "active" : ""
                     }`}
-                  onClick={() => toggleMenu("blog")}
+                  onClick={() => toggleMenu("posts")}
                 />
                 <ul
-                  className={`sub-menu ${state.activeMenu === "blog" ? "d-block" : ""
+                  className={`sub-menu ${state.activeMenu === "posts" ? "d-block" : ""
                     }`}
                 >
                   <li>
                     <Link legacyBehavior href="/blog-classic">
-                      <a>Blog Classic</a>
+                      <a>Alumni</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/blog-standard">
-                      <a>Blog Standard</a>
+                      <a>Official</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/wide-thumb-blog">
-                      <a>Blog Wide Thumb</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link legacyBehavior href="/blog-masonary">
-                      <a>Masonary Blog</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link legacyBehavior href="/blog-audio">
-                      <a>Post Audio</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link legacyBehavior href="/blog-gallery">
-                      <a>Post Gallery</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link legacyBehavior href="/blog-quote">
-                      <a>Post Qoute</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link legacyBehavior href="/video-blog">
-                      <a>Post Video</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link legacyBehavior href="/horizontal-scrolling-blog">
-                      <a>Horizontal Blog</a>
+                      <a>Youtube</a>
                     </Link>
                   </li>
                 </ul>
               </li>
-              {/* <li className="menu-item-has-children">
-                <a href="#" className="drop-down">
-                  Pages
-                </a>
-                <i
-                  className={`bi bi-chevron-${state.activeMenu === "blog" ? "up" : "down"
-                    } dropdown-icon ${state.activeMenu === "blog" ? "active" : ""
-                    }`}
-                  onClick={() => toggleMenu("blog")}
-                />
-                <ul
-                  className={`sub-menu ${state.activeMenu === "blog" ? "d-block" : ""
-                    }`}
-                >
-                  <li>
-                    <Link legacyBehavior href="/author">
-                      <a>Author</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link legacyBehavior href="/author-details">
-                      <a>Author Details</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link legacyBehavior href="/error">
-                      <a>Error</a>
-                    </Link>
-                  </li>
-                </ul>
-              </li> */}
               <li>
                 <Link legacyBehavior href="/contact">
                   <a>Contact</a>
@@ -407,8 +201,6 @@ function Header({ state, dispatch }) {
             </ul>
           </div>
           <div className="header-icons d-flex flex-row">
-
-
             {
               IsAuthenticated ? <>
 
@@ -432,29 +224,29 @@ function Header({ state, dispatch }) {
                         Profile
                       </a>
                     </li>
-                    <li>
+                    {/* <li>
                       <a className="dropdown-item" href="#">
                         <i className="bi bi-chat-right-text" />
                         Message
                       </a>
-                    </li>
-                    <li>
+                    </li> */}
+                    {/* <li>
                       <a className="dropdown-item" href="#">
                         <i className="bi bi-file-lock" />
                         Lock screen
                       </a>
-                    </li>
-                    <li>
+                    </li> */}
+                    {/* <li>
                       <a className="dropdown-item" href="#">
                         <i className="bi bi-gear" />
                         Settings
                       </a>
-                    </li>
+                    </li> */}
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <Link className="dropdown-item" href="/logout">
                         <i className="bi bi-box-arrow-left" />
                         Logout
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div></> : <div style={{

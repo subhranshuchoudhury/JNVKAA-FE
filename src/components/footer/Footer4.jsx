@@ -40,7 +40,7 @@ function Footer4() {
             </div>
             <div className="col-lg-3">
               <div className="footer-author">
-                <h4>Become <span>An Author</span> And Share
+                <h4>Become <span>A Member</span> And Share
                   Your Great Stories.</h4>
                 <a href="#" className="eg-btn btn--lg btn--primary-4">Become An Author</a>
               </div>

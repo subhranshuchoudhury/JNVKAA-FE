@@ -5,12 +5,16 @@ import toast from 'react-hot-toast';
 import Link from 'next/link';
 import social from '@/data/topbar/social.json';
 import { checkLogin } from '@/utils/validator';
-import { getCookie, setCookie } from "cookies-next";
+import { setCookie } from "cookies-next";
+import { useRouter } from 'next/router';
+
 function Login() {
 
   const [Data, setData] = useState(null);
   const [Mobile, setMobile] = useState("");
   const [Password, setPassword] = useState("");
+
+  const router = useRouter();
 
   const AsyncLogin = async (event) => {
     event.preventDefault();
@@ -18,46 +22,46 @@ function Login() {
     if (checkLogin(Mobile, Password).response) {
       return toast.error(checkLogin(Mobile, Password).message);
     }
+    const loadingToast = toast.loading("Please wait...");
     const response = await LoginAlumni(Mobile, Password);
+    toast.dismiss(loadingToast);
     setData(response);
 
     if (response.status === 200) {
       toast.success("Welcome " + response.data.name.split(" ")[0] + " 👋");
       setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 });
       localStorage.setItem("userData", JSON.stringify(response.data.data));
+      router.replace("/posts")
     } else {
       toast.error(response.data.message);
     }
+
   }
-
-
-
-
   return (
 
     <section className="contact-section pt-100 pb-100">
       <div className="container">
-        <div className="row gy-4 justify-cotnent-center align-items-center">
+        <div className="row gy-4 justify-content-center align-items-center">
 
           <div className="col-lg-7">
             <div className="form-title">
-              <h2>Login</h2>
+              <h2>Login Here!</h2>
             </div>
             <form className="contact-form">
               <div className="row">
                 <div className="col-6">
                   <div className="form-inner">
-                    <input onChange={e => setMobile(e.target.value)} value={Mobile} type="tel" placeholder="Enter Your Mobile" />
+                    <input onChange={e => setMobile(e.target.value)} value={Mobile} type="tel" placeholder="Mobile" />
                   </div>
                 </div>
                 <div className="col-6">
                   <div className="form-inner">
-                    <input onChange={e => setPassword(e.target.value)} value={Password} type="password" placeholder="Enter Your Password" />
+                    <input onChange={e => setPassword(e.target.value)} value={Password} type="password" placeholder="Password" />
                   </div>
                 </div>
                 <div className="col-12">
                   <button onClick={AsyncLogin} type="submit" className="eg-btn btn--primary btn--lg">
-                    Login
+                    Submit
                   </button>
                 </div>
               </div>
@@ -67,7 +71,7 @@ function Login() {
           <div className="col-lg-5 pe-lg-5 pe-0">
             <div className="contact-box">
               <div className="title">
-                <h3>Facing Issue?</h3>
+                <h3>Any Issues?</h3>
                 <p>
                   If you are facing any problem please contact with us. We will
                   reply you as soon as possible. Otherwise you can forgot your password whenever you want.
@@ -95,7 +99,7 @@ function Login() {
                     <i className="bi bi-telephone-fill" />
                   </div>
                   <div className="info">
-                    <a href="tel:918249587552">+91 8249587552</a>
+                    <a href="tel:8249587552">+91 8249587552</a>
                     {/* <a href="tel:06571111576">+880 657 1111 576</a> */}
                   </div>
                 </div>

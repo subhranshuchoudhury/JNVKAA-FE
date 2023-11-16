@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useRef } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
+import { getCookie } from 'cookies-next';
 function CommonHeader({ state, dispatch }) {
   const headerRef = useRef(null);
-  const curerntRoute = useRouter().pathname;
   const toggleMenu = (menu) => {
     dispatch({ type: "TOGGLE_MENU", menu });
   };
+  const curerntRoute = useRouter().pathname
   const handleRightSidebarToggle = () =>
     dispatch({ type: "TOGGLE_RIGHT_SIDEBAR" });
   const handleLeftSidebarToggle = () =>
@@ -23,6 +23,19 @@ function CommonHeader({ state, dispatch }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const [IsAuthenticated, setIsAuthenticated] = useState(false)
+
+  useEffect(() => {
+
+    const token = getCookie("token");
+
+    if (token) {
+      setIsAuthenticated(true)
+    }
+
+  }, [])
+
   return (
     <>
       <div className={`mobile-search ${state.isModal ? "slide" : ""}`}>
@@ -45,7 +58,7 @@ function CommonHeader({ state, dispatch }) {
       </div>
       <header
         ref={headerRef}
-        className={`header-area style-1 sibling-2 ${state.scrollY > 10 ? "sticky" : ""}`}
+        className={`header-area style-1 ${state.scrollY > 10 ? "sticky" : ""}`}
       >
         <div className="container d-flex justify-content-between align-items-center">
           <div
@@ -62,7 +75,8 @@ function CommonHeader({ state, dispatch }) {
                 <img
                   alt="image"
                   className="img-fluid"
-                  width={60}
+                  width={40}
+                  height={40}
                   src="assets/images/logo/jnvkaa-logo2.png"
                 />
               </a>
@@ -78,7 +92,7 @@ function CommonHeader({ state, dispatch }) {
                     <img
                       alt="image"
                       className="img-fluid"
-                      width={50}
+                      width={40}
                       src="assets/images/logo/jnvkaa-logo2.png"
                     />
                   </a>
@@ -92,7 +106,7 @@ function CommonHeader({ state, dispatch }) {
               <li className="menu-item-has-children">
                 <a
                   href="/"
-                  className={`drop-down ${state.activeMenu === "home-one" ? "active" : ""
+                  className={`drop-down ${curerntRoute === "/" ? "active" : ""
                     }`}
                   onClick={() => toggleMenu("home-one")}
                 >
@@ -103,14 +117,14 @@ function CommonHeader({ state, dispatch }) {
                     } dropdown-icon ${state.activeMenu === "home-one" ? "active" : ""
                     }`}
                   onClick={() => toggleMenu("home-one")}
-                />
-                <ul
+                /> */}
+                {/* <ul
                   className={`sub-menu ${state.activeMenu === "home-one" ? "d-block" : ""
                     }`}
                 >
                   <li>
                     <Link legacyBehavior href="/" className="active">
-                      <a>Home 01</a>
+                      <a className={curerntRoute === "/" ? "active" : ""}>Home 01</a>
                     </Link>
                   </li>
                   <li>
@@ -132,27 +146,33 @@ function CommonHeader({ state, dispatch }) {
               </li>
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/about">
-                  <a className={curerntRoute === "/about" ? "active" : ""}>About</a>
+                  <a>About</a>
                 </Link>
               </li>
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/events">
-                  <a className={curerntRoute === "/events" ? "active" : ""}>Events</a>
+                  <a>Events</a>
                 </Link>
               </li>
+
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/alumnus">
-                  <a className={curerntRoute === "/alumnus" ? "active" : ""}>Alumnus</a>
+                  <a>Alumnus</a>
                 </Link>
               </li>
+
               <li className="menu-item-has-children position-inherit">
                 <a href="#">
                   Post
                   <i
-                    className={`bi bi-chevron-down`}
+                    className="bi bi-chevron-down dropdown-icon2 d-lg-block d-none"
                     onClick={() => toggleMenu("post")}
                   />
                 </a>
+                <i
+                  className="bi bi-chevron-down dropdown-icon d-lg-none d-block"
+                  onClick={() => toggleMenu("post")}
+                />
                 <div
                   className={`mega-menu ${state.activeMenu === "post" ? "d-block" : ""
                     }`}
@@ -168,7 +188,7 @@ function CommonHeader({ state, dispatch }) {
                                 legacyBehavior
                                 href="/post-format-no-sidebar-01"
                               >
-                                <a className={curerntRoute === "/post-format-no-sidebar-01" ? "active" : ""}>Post Format 01</a>
+                                <a>Post Format 01</a>
                               </Link>
                             </li>
                             <li>
@@ -176,7 +196,7 @@ function CommonHeader({ state, dispatch }) {
                                 legacyBehavior
                                 href="/post-format-no-sidebar-02"
                               >
-                                <a className={curerntRoute === "/post-format-no-sidebar-02" ? "active" : ""}>Post Format 02</a>
+                                <a>Post Format 02</a>
                               </Link>
                             </li>
                             <li>
@@ -184,7 +204,7 @@ function CommonHeader({ state, dispatch }) {
                                 legacyBehavior
                                 href="/post-format-no-sidebar-03"
                               >
-                                <a className={curerntRoute === "/post-format-no-sidebar-03" ? "active" : ""}>Post Format 03</a>
+                                <a>Post Format 03</a>
                               </Link>
                             </li>
                             <li>
@@ -192,7 +212,7 @@ function CommonHeader({ state, dispatch }) {
                                 legacyBehavior
                                 href="/post-format-no-sidebar-04"
                               >
-                                <a className={curerntRoute === "/post-format-no-sidebar-04" ? "active" : ""}>Post Format 04</a>
+                                <a>Post Format 04</a>
                               </Link>
                             </li>
                             <li>
@@ -200,7 +220,7 @@ function CommonHeader({ state, dispatch }) {
                                 legacyBehavior
                                 href="/post-format-no-sidebar-05"
                               >
-                                <a className={curerntRoute === "/post-format-no-sidebar-05" ? "active" : ""}>Post Format 05</a>
+                                <a>Post Format 05</a>
                               </Link>
                             </li>
                           </ul>
@@ -215,7 +235,7 @@ function CommonHeader({ state, dispatch }) {
                                 legacyBehavior
                                 href="/post-format-right-sidebar-01"
                               >
-                                <a className={curerntRoute === "/post-format-right-sidebar-01" ? "active" : ""}> Post Format Right Sidebar 01</a>
+                                <a> Post Format Right Sidebar 01</a>
                               </Link>
                             </li>
                             <li>
@@ -223,7 +243,7 @@ function CommonHeader({ state, dispatch }) {
                                 legacyBehavior
                                 href="/post-format-right-sidebar-02"
                               >
-                                <a className={curerntRoute === "/post-format-right-sidebar-02" ? "active" : ""}> Post Format Right Sidebar 02</a>
+                                <a> Post Format Right Sidebar 02</a>
                               </Link>
                             </li>
                             <li>
@@ -231,7 +251,7 @@ function CommonHeader({ state, dispatch }) {
                                 legacyBehavior
                                 href="/post-format-right-sidebar-03"
                               >
-                                <a className={curerntRoute === "/post-format-right-sidebar-03" ? "active" : ""}> Post Format Right Sidebar 03</a>
+                                <a> Post Format Right Sidebar 03</a>
                               </Link>
                             </li>
                             <li>
@@ -239,7 +259,7 @@ function CommonHeader({ state, dispatch }) {
                                 legacyBehavior
                                 href="/post-format-left-sidebar-01"
                               >
-                                <a className={curerntRoute === "/post-format-left-sidebar-01" ? "active" : ""}> Post Format Left Sidebar 01</a>
+                                <a> Post Format Left Sidebar 01</a>
                               </Link>
                             </li>
                             <li>
@@ -247,7 +267,7 @@ function CommonHeader({ state, dispatch }) {
                                 legacyBehavior
                                 href="/post-format-left-sidebar-02"
                               >
-                                <a className={curerntRoute === "/post-format-left-sidebar-02" ? "active" : ""}> Post Format Left Sidebar 02</a>
+                                <a> Post Format Left Sidebar 02</a>
                               </Link>
                             </li>
                             <li>
@@ -255,7 +275,7 @@ function CommonHeader({ state, dispatch }) {
                                 legacyBehavior
                                 href="/post-format-left-sidebar-03"
                               >
-                                <a className={curerntRoute === "/post-format-left-sidebar-03" ? "active" : ""}> Post Format Left Sidebar 03</a>
+                                <a> Post Format Left Sidebar 03</a>
                               </Link>
                             </li>
                           </ul>
@@ -265,15 +285,19 @@ function CommonHeader({ state, dispatch }) {
                         <div className="sub-menu-wrap">
                           <h6>Standard Post Format</h6>
                           <ul className="sub-menu1">
-
+                            <li>
+                              <Link legacyBehavior href="/audio-post-format">
+                                <a> Audio Post Format</a>
+                              </Link>
+                            </li>
                             <li>
                               <Link legacyBehavior href="/video-post-format">
-                                <a className={curerntRoute === "/video-post-format" ? "active" : ""}>Video Post Format</a>
+                                <a>Video Post Format</a>
                               </Link>
                             </li>
                             <li>
                               <Link legacyBehavior href="/gallery-post-format">
-                                <a className={curerntRoute === "/gallery-post-format" ? "active" : ""}>Gallery Post Format</a>
+                                <a>Gallery Post Format</a>
                               </Link>
                             </li>
                           </ul>
@@ -299,52 +323,52 @@ function CommonHeader({ state, dispatch }) {
                 >
                   <li>
                     <Link legacyBehavior href="/blog-classic">
-                      <a className={curerntRoute === "/blog-classic" ? "active" : ""}>Blog Classic</a>
+                      <a>Blog Classic</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/blog-standard">
-                      <a className={curerntRoute === "/blog-standard" ? "active" : ""}>Blog Standard</a>
+                      <a>Blog Standard</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/wide-thumb-blog">
-                      <a className={curerntRoute === "/wide-thumb-blog" ? "active" : ""}>Blog Wide Thumb</a>
+                      <a>Blog Wide Thumb</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/blog-masonary">
-                      <a className={curerntRoute === "/blog-masonary" ? "active" : ""}>Masonary Blog</a>
+                      <a>Masonary Blog</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/blog-audio">
-                      <a className={curerntRoute === "/blog-audio" ? "active" : ""}>Post Audio</a>
+                      <a>Post Audio</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/blog-gallery">
-                      <a className={curerntRoute === "/blog-gallery" ? "active" : ""}>Post Gallery</a>
+                      <a>Post Gallery</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/blog-quote">
-                      <a className={curerntRoute === "/blog-quote" ? "active" : ""}>Post Qoute</a>
+                      <a>Post Qoute</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/video-blog">
-                      <a className={curerntRoute === "/video-blog" ? "active" : ""}>Post Video</a>
+                      <a>Post Video</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/horizontal-scrolling-blog">
-                      <a className={curerntRoute === "/horizontal-scrolling-blog" ? "active" : ""}>Horizontal Blog</a>
+                      <a>Horizontal Blog</a>
                     </Link>
                   </li>
                 </ul>
               </li>
-              <li className="menu-item-has-children">
+              {/* <li className="menu-item-has-children">
                 <a href="#" className="drop-down">
                   Pages
                 </a>
@@ -360,77 +384,99 @@ function CommonHeader({ state, dispatch }) {
                 >
                   <li>
                     <Link legacyBehavior href="/author">
-                      <a className={curerntRoute === "/author" ? "active" : ""}>Author</a>
+                      <a>Author</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/author-details">
-                      <a className={curerntRoute === "/author-details" ? "active" : ""}>Author Details</a>
+                      <a>Author Details</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/error">
-                      <a className={curerntRoute === "/error" ? "active" : ""}>Error</a>
+                      <a>Error</a>
                     </Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li>
                 <Link legacyBehavior href="/contact">
-                  <a className={curerntRoute === "/contact" ? "active" : ""}>Contact</a>
+                  <a>Contact</a>
                 </Link>
               </li>
             </ul>
           </div>
           <div className="header-icons d-flex flex-row">
-            <div className="search-btn" onClick={handelSearchModal}>
-              <i className="bi bi-search" />
-            </div>
-            <div className="admin-area">
-              <button
-                className=" dropdown-toggle d-flex jusify-content-start align-items-center"
-                id="dropdownMenuButton2"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i className="bi bi-person" />
-              </button>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="dropdownMenuButton2"
-              >
-                <li>
-                  <a className="dropdown-item " href="#">
+
+
+            {
+              IsAuthenticated ? <>
+
+                <div className="search-btn" onClick={handelSearchModal}> <i className="bi bi-search" /> </div>
+                <div className="admin-area">
+                  <button
+                    className=" dropdown-toggle d-flex jusify-content-start align-items-center"
+                    id="dropdownMenuButton2"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
                     <i className="bi bi-person" />
-                    Profile
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="bi bi-chat-right-text" />
-                    Message
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="bi bi-file-lock" />
-                    Lock screen
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="bi bi-gear" />
-                    Settings
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="bi bi-box-arrow-left" />
-                    Logout
-                  </a>
-                </li>
-              </ul>
-            </div>
+                  </button>
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton2"
+                  >
+                    <li>
+                      <a className="dropdown-item " href="#">
+                        <i className="bi bi-person" />
+                        Profile
+                      </a>
+                    </li>
+                    {/* <li>
+                      <a className="dropdown-item" href="#">
+                        <i className="bi bi-chat-right-text" />
+                        Message
+                      </a>
+                    </li> */}
+                    {/* <li>
+                      <a className="dropdown-item" href="#">
+                        <i className="bi bi-file-lock" />
+                        Lock screen
+                      </a>
+                    </li> */}
+                    {/* <li>
+                      <a className="dropdown-item" href="#">
+                        <i className="bi bi-gear" />
+                        Settings
+                      </a>
+                    </li> */}
+                    <li>
+                      <Link className="dropdown-item" href="/logout">
+                        <i className="bi bi-box-arrow-left" />
+                        Logout
+                      </Link>
+                    </li>
+                  </ul>
+                </div></> : <div style={{
+                  marginRight: 10
+                }}>
+
+                <Link style={{
+                  padding: 2,
+                  boxShadow: "0px 1px 5px 0px #000000"
+                }} href={"/register"} className="eg-btn btn--primary-4">
+                  Register
+                </Link>
+                <Link style={{
+                  padding: 2,
+                  boxShadow: "0px 1px 5px 0px #000000"
+                }} href={"/login"} className="eg-btn btn--primary mx-3">
+                  Login
+                </Link>
+
+              </div>
+            }
+
             <div
               className="mobile-menu-btn d-lg-none d-block"
               onClick={handleLeftSidebarToggle}

@@ -27,8 +27,11 @@ export const LoginAlumni = async (mobile, password) => {
 
         console.log(error);
         return {
-            status: response.status,
-            data: null
+            status: 500,
+            data: {
+                message: "Internal Server Error",
+                error: String(error)
+            }
         }
 
     }
