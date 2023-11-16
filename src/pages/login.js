@@ -38,10 +38,36 @@ function Login() {
     <section className="contact-section pt-100 pb-100">
       <div className="container">
         <div className="row gy-4 justify-cotnent-center align-items-center">
+
+          <div className="col-lg-7">
+            <div className="form-title">
+              <h2>Login</h2>
+            </div>
+            <form className="contact-form">
+              <div className="row">
+                <div className="col-6">
+                  <div className="form-inner">
+                    <input onChange={e => setMobile(e.target.value)} value={Mobile} type="tel" placeholder="Enter Your Mobile" />
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="form-inner">
+                    <input onChange={e => setPassword(e.target.value)} value={Password} type="password" placeholder="Enter Your Password" />
+                  </div>
+                </div>
+                <div className="col-12">
+                  <button onClick={AsyncLogin} type="submit" className="eg-btn btn--primary btn--lg">
+                    Login
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
           <div className="col-lg-5 pe-lg-5 pe-0">
             <div className="contact-box">
               <div className="title">
-                <h3>Facing Problem ?</h3>
+                <h3>Facing Issue?</h3>
                 <p>
                   If you are facing any problem please contact with us. We will
                   reply you as soon as possible. Otherwise you can forgot your password whenever you want.
@@ -83,30 +109,6 @@ function Login() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-7">
-            <div className="form-title">
-              <h2>Login To Your Account</h2>
-            </div>
-            <form className="contact-form">
-              <div className="row">
-                <div className="col-6">
-                  <div className="form-inner">
-                    <input onChange={e => setMobile(e.target.value)} value={Mobile} type="tel" placeholder="Enter Your Mobile" />
-                  </div>
-                </div>
-                <div className="col-6">
-                  <div className="form-inner">
-                    <input onChange={e => setPassword(e.target.value)} value={Password} type="password" placeholder="Enter Your Password" />
-                  </div>
-                </div>
-                <div className="col-12">
-                  <button onClick={AsyncLogin} type="submit" className="eg-btn btn--primary btn--lg">
-                    Login
-                  </button>
-                </div>
-              </div>
-            </form>
           </div>
         </div>
       </div>
