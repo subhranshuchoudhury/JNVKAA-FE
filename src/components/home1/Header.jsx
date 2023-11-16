@@ -207,7 +207,7 @@ function Header({ state, dispatch }) {
                 <div className="search-btn" onClick={handelSearchModal}> <i className="bi bi-search" /> </div>
                 <div className="admin-area">
                   <button
-                    className=" dropdown-toggle d-flex jusify-content-start align-items-center"
+                    className=" dropdown-toggle d-flex justify-content-start align-items-center"
                     id="dropdownMenuButton2"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
