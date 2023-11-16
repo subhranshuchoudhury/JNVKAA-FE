@@ -394,54 +394,71 @@ function Header({ state, dispatch }) {
             </ul>
           </div>
           <div className="header-icons d-flex flex-row">
-            <div className="search-btn" onClick={handelSearchModal}>
-              <i className="bi bi-search" />
-            </div>
-            <div className="admin-area">
-              <button
-                className=" dropdown-toggle d-flex jusify-content-start align-items-center"
-                id="dropdownMenuButton2"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i className="bi bi-person" />
-              </button>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="dropdownMenuButton2"
-              >
-                <li>
-                  <a className="dropdown-item " href="#">
-                    <i className="bi bi-person" />
-                    Profile
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="bi bi-chat-right-text" />
-                    Message
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="bi bi-file-lock" />
-                    Lock screen
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="bi bi-gear" />
-                    Settings
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="bi bi-box-arrow-left" />
-                    Logout
-                  </a>
-                </li>
-              </ul>
-            </div>
+
+
+            {
+              false ? <><div className="admin-area">
+                <button
+                  className=" dropdown-toggle d-flex jusify-content-start align-items-center"
+                  id="dropdownMenuButton2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i className="bi bi-person" />
+                </button>
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton2"
+                >
+                  <li>
+                    <a className="dropdown-item " href="#">
+                      <i className="bi bi-person" />
+                      Profile
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      <i className="bi bi-chat-right-text" />
+                      Message
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      <i className="bi bi-file-lock" />
+                      Lock screen
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      <i className="bi bi-gear" />
+                      Settings
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      <i className="bi bi-box-arrow-left" />
+                      Logout
+                    </a>
+                  </li>
+                </ul>
+              </div></> : <div style={{
+                marginRight: 10
+              }}>
+
+                <Link style={{
+                  padding: 2,
+                }} href={"/register"} className="eg-btn btn--primary-4">
+                  Register
+                </Link>
+                <Link style={{
+                  padding: 2
+                }} href={"/login"} className="eg-btn btn--primary mx-3">
+                  Login
+                </Link>
+
+              </div>
+            }
+
             <div
               className="mobile-menu-btn d-lg-none d-block"
               onClick={handleLeftSidebarToggle}
