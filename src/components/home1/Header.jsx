@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useRef } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
+import { getCookie } from 'cookies-next';
 function Header({ state, dispatch }) {
   const headerRef = useRef(null);
   const toggleMenu = (menu) => {
@@ -23,6 +23,19 @@ function Header({ state, dispatch }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const [IsAuthenticated, setIsAuthenticated] = useState(false)
+
+  useEffect(() => {
+
+    const token = getCookie("token");
+
+    if (token) {
+      setIsAuthenticated(true)
+    }
+
+  }, [])
+
   return (
     <>
       <div className={`mobile-search ${state.isModal ? "slide" : ""}`}>
@@ -397,61 +410,66 @@ function Header({ state, dispatch }) {
 
 
             {
-              false ? <><div className="admin-area">
-                <button
-                  className=" dropdown-toggle d-flex jusify-content-start align-items-center"
-                  id="dropdownMenuButton2"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i className="bi bi-person" />
-                </button>
-                <ul
-                  className="dropdown-menu"
-                  aria-labelledby="dropdownMenuButton2"
-                >
-                  <li>
-                    <a className="dropdown-item " href="#">
-                      <i className="bi bi-person" />
-                      Profile
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="bi bi-chat-right-text" />
-                      Message
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="bi bi-file-lock" />
-                      Lock screen
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="bi bi-gear" />
-                      Settings
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="bi bi-box-arrow-left" />
-                      Logout
-                    </a>
-                  </li>
-                </ul>
-              </div></> : <div style={{
-                marginRight: 10
-              }}>
+              IsAuthenticated ? <>
+
+                <div className="search-btn" onClick={handelSearchModal}> <i className="bi bi-search" /> </div>
+                <div className="admin-area">
+                  <button
+                    className=" dropdown-toggle d-flex jusify-content-start align-items-center"
+                    id="dropdownMenuButton2"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i className="bi bi-person" />
+                  </button>
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton2"
+                  >
+                    <li>
+                      <a className="dropdown-item " href="#">
+                        <i className="bi bi-person" />
+                        Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        <i className="bi bi-chat-right-text" />
+                        Message
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        <i className="bi bi-file-lock" />
+                        Lock screen
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        <i className="bi bi-gear" />
+                        Settings
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        <i className="bi bi-box-arrow-left" />
+                        Logout
+                      </a>
+                    </li>
+                  </ul>
+                </div></> : <div style={{
+                  marginRight: 10
+                }}>
 
                 <Link style={{
                   padding: 2,
+                  boxShadow: "0px 1px 5px 0px #000000"
                 }} href={"/register"} className="eg-btn btn--primary-4">
                   Register
                 </Link>
                 <Link style={{
-                  padding: 2
+                  padding: 2,
+                  boxShadow: "0px 1px 5px 0px #000000"
                 }} href={"/login"} className="eg-btn btn--primary mx-3">
                   Login
                 </Link>
