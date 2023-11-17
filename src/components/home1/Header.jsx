@@ -243,7 +243,7 @@ function Header({ state, dispatch }) {
                       </a>
                     </li> */}
                     <li>
-                      <Link className="dropdown-item" href="/logout">
+                      <Link className="dropdown-item" href="/auth/logout">
                         <i className="bi bi-box-arrow-left" />
                         Logout
                       </Link>
