@@ -10,18 +10,10 @@ import { useRouter } from 'next/router'
 
 function OTPVerify(props) {
 
-
     const router = useRouter()
     const [Data, setData] = useState(null);
     const [OTP, setOTP] = useState("")
     const [IsOTPSent, setIsOTPSent] = useState(false)
-
-
-
-
-
-
-
 
     const asyncSendOTP = async (event, mobile) => {
         event.preventDefault();
@@ -65,8 +57,8 @@ function OTPVerify(props) {
             toast.success(response.data.message);
             setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 });
             localStorage.setItem("userData", JSON.stringify(response.data.data));
-            router.reload();
             router.replace("/posts")
+            router.reload();
         } else {
             toast.error(response.data.message + " ECODE: " + response.status);
         }

@@ -37,6 +37,7 @@ function Register() {
             // localStorage.setItem("userData", JSON.stringify(response.data.data));
             // router.replace("/posts")
             toast.success("Registered Successfully " + response.status);
+            router.push(`/auth/otp/${Mobile}`);
         } else {
 
             if (response.status === 301) {
@@ -45,7 +46,7 @@ function Register() {
                     icon: "🚀",
                 })
 
-                router.push(`/otp/${Mobile}`);
+                router.push(`/auth/otp/${Mobile}`);
 
             } else {
 

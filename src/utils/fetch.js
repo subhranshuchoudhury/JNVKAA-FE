@@ -1,4 +1,7 @@
-const BASE_URL = "http://localhost:5000"
+const env = process.env.NODE_ENV
+const LOCAL_URL = "http://localhost:5000"
+const PRODUCTION_URL = "https://jnvkaa-backend.onrender.com"
+const BASE_URL = env == "development" ? LOCAL_URL : PRODUCTION_URL
 
 export const LoginAlumni = async (mobile, password) => {
     try {
