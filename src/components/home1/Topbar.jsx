@@ -8,7 +8,14 @@ function Topbar() {
         <div style={{
           color: 'black'
         }} className="date">
-          November 30, 2022 <span>29°C</span>
+          {
+            new Date().toLocaleDateString('en-US', {
+              weekday: 'long',
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })
+          } <span>29°C</span>
         </div>
         <div className="header-logo">
           <Link legacyBehavior href="/">
