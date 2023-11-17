@@ -29,7 +29,7 @@ function Posts() {
                         <div className="blog-standard-1 mb-60">
                             <Link legacyBehavior href="/post-format-no-sidebar-02">
                                 <a className="image">
-                                    <img src="assets/images/blog-grid/blog-standard-1.jpg" alt="image" />
+                                    <img src="/assets/images/blog-grid/blog-standard-1.jpg" alt="image" />
                                 </a>
                             </Link>
                             <div className="content">
@@ -67,7 +67,7 @@ function Posts() {
                                 <div className="video-play">
                                     <div onClick={() => setOpen(true)} data-fancybox="popup-youtube"><i className="bx bx-play" /></div>
                                 </div>
-                                <img src="assets/images/blog-grid/blog-standard-2.jpg" alt="image" />
+                                <img src="/assets/images/blog-grid/blog-standard-2.jpg" alt="image" />
                             </div>
                             <div className="content">
                                 <ul>
@@ -110,13 +110,13 @@ function Posts() {
                                 <Swiper {...slider} className="swiper blog-standard-slider">
                                     <div className="swiper-wrapper">
                                         <SwiperSlide className="swiper-slide">
-                                            <img src="assets/images/blog-grid/blog-standard-3.jpg" alt="image" />
+                                            <img src="/assets/images/blog-grid/blog-standard-3.jpg" alt="image" />
                                         </SwiperSlide>
                                         <SwiperSlide className="swiper-slide">
-                                            <img src="assets/images/blog-grid/blog-standard-2.jpg" alt="image" />
+                                            <img src="/assets/images/blog-grid/blog-standard-2.jpg" alt="image" />
                                         </SwiperSlide>
                                         <SwiperSlide className="swiper-slide">
-                                            <img src="assets/images/blog-grid/blog-standard-1.jpg" alt="image" />
+                                            <img src="/assets/images/blog-grid/blog-standard-1.jpg" alt="image" />
                                         </SwiperSlide>
                                     </div>
                                 </Swiper>
@@ -213,7 +213,7 @@ function Posts() {
                                 <h6 className="title">Popular Post</h6>
                                 <div className="blog-list-1 mb-25">
                                     <Link legacyBehavior href="/post-format-no-sidebar-02">
-                                        <a className="image"><img src="assets/images/blog-list/blog-list1-3.jpg" alt="image" /></a>
+                                        <a className="image"><img src="/assets/images/blog-list/blog-list1-3.jpg" alt="image" /></a>
                                     </Link>
                                     <div className="content">
                                         <h6><Link legacyBehavior href="/post-format-no-sidebar-02"><a>gravida orci sed jaritob laoreet tellus.</a></Link></h6>
@@ -226,7 +226,7 @@ function Posts() {
                                 <div className="blog-list-1 mb-25">
                                     <Link legacyBehavior href="/post-format-no-sidebar-02">
                                         <a className="image">
-                                            <img src="assets/images/blog-list/blog-list1-4.jpg" alt="image" />
+                                            <img src="/assets/images/blog-list/blog-list1-4.jpg" alt="image" />
                                         </a>
                                     </Link>
                                     <div className="content">
@@ -240,7 +240,7 @@ function Posts() {
                                 <div className="blog-list-1">
                                     <Link legacyBehavior href="/post-format-no-sidebar-02">
                                         <a className="image">
-                                            <img src="assets/images/blog-list/blog-list1-5.jpg" alt="image" />
+                                            <img src="/assets/images/blog-list/blog-list1-5.jpg" alt="image" />
                                         </a>
                                     </Link>
                                     <div className="content">
@@ -286,7 +286,7 @@ function Posts() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="sidebar-shop-card" style={{ backgroundImage: 'url("assets/images/bg/shop-bg.jpg")' }}>
+                            <div className="sidebar-shop-card" style={{ backgroundImage: 'url("/assets/images/bg/shop-bg.jpg")' }}>
                                 <span>30% Off</span>
                                 <h3>Apple Macbook </h3>
                                 <a href="#" className="shop-btn">Shop Now</a>

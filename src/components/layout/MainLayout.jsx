@@ -66,7 +66,7 @@ function MainLayout({ children }) {
         <title>Navodaya - The institute of dreamers.</title>
         <meta name="description" content="A media platform for Alumnus." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="assets/images/logo/jnvkaa-logo2.png" />
+        <link rel="icon" href="/assets/images/logo/jnvkaa-logo2.png" />
       </Head>
       <Topbar />
       <RightSideBar state={state} dispatch={dispatch} />

@@ -19,7 +19,7 @@ function Topbar() {
                 alt="image"
                 className="img-fluid"
                 width={200}
-                src="assets/images/logo/jnvkaa-logo-cie.jpeg"
+                src="/assets/images/logo/jnvkaa-logo-cie.jpeg"
               />
               {/* <h3 style={{
                 color: "black",

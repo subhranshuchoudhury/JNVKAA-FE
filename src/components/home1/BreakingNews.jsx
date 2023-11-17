@@ -5,13 +5,13 @@ function BreakingNews() {
   return (
     <div className="breaking-news">
       <div className="ellipse-1">
-        <img src="assets/images/bg/top-ellipse.png" alt="image" />
+        <img src="/assets/images/bg/top-ellipse.png" alt="image" />
       </div>
       <div className="ellipse-2">
-        <img src="assets/images/bg/top-ellipse.png" alt="image" />
+        <img src="/assets/images/bg/top-ellipse.png" alt="image" />
       </div>
       <div className="ellipse-3">
-        <img src="assets/images/bg/top-ellipse.png" alt="image" />
+        <img src="/assets/images/bg/top-ellipse.png" alt="image" />
       </div>
       <span className="d-lg-block d-none">News Update</span>
       <div className="marquee-text">

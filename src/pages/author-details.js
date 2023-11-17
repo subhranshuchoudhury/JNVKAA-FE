@@ -10,7 +10,7 @@ function AuthorDetails() {
             <div className="author-details">
               <img
                 className="image"
-                src="assets/images/authors/author-details-img.jpg"
+                src="/assets/images/authors/author-details-img.jpg"
                 alt="image"
               />
               <div className="author-info">
@@ -38,15 +38,15 @@ function AuthorDetails() {
                 </p>
                 <ul className="meta-list">
                   <li>
-                    <img src="assets/images/icons/total-post.svg" alt="image" />
+                    <img src="/assets/images/icons/total-post.svg" alt="image" />
                     Total Post: <span>209</span>
                   </li>
                   <li>
-                    <img src="assets/images/icons/view.svg" alt="image" />
+                    <img src="/assets/images/icons/view.svg" alt="image" />
                     Total View: <span>25199</span>
                   </li>
                   <li>
-                    <img src="assets/images/icons/like.svg" alt="image" />
+                    <img src="/assets/images/icons/like.svg" alt="image" />
                     Like: <span>11957</span>
                   </li>
                 </ul>
@@ -169,7 +169,7 @@ function AuthorDetails() {
                   <Link legacyBehavior href="/post-format-no-sidebar-02">
                     <a className="image">
                       <img
-                        src="assets/images/blog-list/blog-list1-3.jpg"
+                        src="/assets/images/blog-list/blog-list1-3.jpg"
                         alt="image"
                       />
                     </a>
@@ -198,7 +198,7 @@ function AuthorDetails() {
                   <Link legacyBehavior href="/post-format-no-sidebar-02">
                     <a className="image">
                       <img
-                        src="assets/images/blog-list/blog-list1-4.jpg"
+                        src="/assets/images/blog-list/blog-list1-4.jpg"
                         alt="image"
                       />
                     </a>
@@ -227,7 +227,7 @@ function AuthorDetails() {
                   <Link legacyBehavior href="/post-format-no-sidebar-02">
                     <a className="image">
                       <img
-                        src="assets/images/blog-list/blog-list1-5.jpg"
+                        src="/assets/images/blog-list/blog-list1-5.jpg"
                         alt="image"
                       />
                     </a>
@@ -309,7 +309,7 @@ function AuthorDetails() {
               <div
                 className="sidebar-shop-card"
                 style={{
-                  backgroundImage: 'url("assets/images/bg/shop-bg.jpg")',
+                  backgroundImage: 'url("/assets/images/bg/shop-bg.jpg")',
                 }}
               >
                 <span>30% Off</span>

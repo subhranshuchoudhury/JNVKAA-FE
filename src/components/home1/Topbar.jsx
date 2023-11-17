@@ -8,7 +8,7 @@ function Topbar() {
         <div style={{
           color: 'black'
         }} className="date">
-          Novembar 30, 2022 <span>29°C</span>
+          November 30, 2022 <span>29°C</span>
         </div>
         <div className="header-logo">
           <Link legacyBehavior href="/">
@@ -17,12 +17,9 @@ function Topbar() {
                 alt="image"
                 className="img-fluid"
                 width={200}
-                src="assets/images/logo/jnvkaa-logo-cie.jpeg"
+                src="/assets/images/logo/jnvkaa-logo-wide.jpg"
               />
-              {/* <h3 style={{
-                color: "black",
-                fontFamily: "sans-serif",
-              }}>JNVKAA</h3> */}
+
             </a>
           </Link>
         </div>

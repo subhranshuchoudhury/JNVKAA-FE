@@ -12,7 +12,7 @@ function Footer1() {
             <div className="footer-info">
               <Link legacyBehavior href="/">
                 <a className="footer-logo">
-                  <img width={100} src="assets/images/logo/jnvkaa-logo2.png" alt="image" />
+                  <img width={100} src="/assets/images/logo/jnvkaa-logo2.png" alt="image" />
                 </a>
               </Link>
               <h3>We Would Love To Having You.</h3>
@@ -24,7 +24,7 @@ function Footer1() {
             <div className="blog-list-1 mb-25">
               <Link legacyBehavior href="/post-format-no-sidebar-02">
                 <a className="image">
-                  <img src="assets/images/blog-list/blog-list1-1.jpg" alt="image" />
+                  <img src="/assets/images/blog-list/blog-list1-1.jpg" alt="image" />
                 </a>
               </Link>
               <div className="content">
@@ -38,7 +38,7 @@ function Footer1() {
             <div className="blog-list-1">
               <Link legacyBehavior href="/post-format-no-sidebar-02">
                 <a className="image">
-                  <img src="assets/images/blog-list/blog-list1-2.jpg" alt="image" />
+                  <img src="/assets/images/blog-list/blog-list1-2.jpg" alt="image" />
                 </a>
               </Link>
               <div className="content">

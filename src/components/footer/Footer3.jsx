@@ -11,7 +11,7 @@ function Footer3() {
               <div className="footer-info">
                 <Link legacyBehavior href="/">
                   <a className="footer-logo">
-                    <img src="assets/images/logo/logo-5.svg" alt="image" />
+                    <img src="/assets/images/logo/logo-5.svg" alt="image" />
                   </a>
                 </Link>
                 <h3>We Would Love to Hear From You.</h3>
@@ -32,7 +32,7 @@ function Footer3() {
               <h4 className="footer-title">Top Article This Week</h4>
               <div className="blog-list-1 mb-25">
                 <Link legacyBehavior href="/post-format-no-sidebar-02">
-                  <a className="image"><img src="assets/images/blog-list/blog-list1-1.jpg" alt="image" /></a>
+                  <a className="image"><img src="/assets/images/blog-list/blog-list1-1.jpg" alt="image" /></a>
                 </Link>
                 <div className="content">
                   <h6><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Our Begin Now To Being What You Will Be.</a></Link></h6>
@@ -44,7 +44,7 @@ function Footer3() {
               </div>
               <div className="blog-list-1">
                 <Link legacyBehavior href="/post-format-no-sidebar-02">
-                  <a className="image"><img src="assets/images/blog-list/blog-list1-2.jpg" alt="image" /></a>
+                  <a className="image"><img src="/assets/images/blog-list/blog-list1-2.jpg" alt="image" /></a>
                 </Link>
                 <div className="content">
                   <h6><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Our Begin Now To Being What You Will Be.</a></Link></h6>

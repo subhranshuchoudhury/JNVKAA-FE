@@ -11,7 +11,7 @@ function Category() {
       slidesPerView: "auto",
       speed: 1500,
       spaceBetween: 20,
-     
+
       loop: true,
       autoplay: {
         delay: 3000, // Autoplay duration in milliseconds
@@ -95,7 +95,7 @@ function Category() {
                   <Link legacyBehavior href="/blog-classic">
                     <a className="image">
                       <img
-                        src="assets/images/category/cate1-1.jpg"
+                        src="/assets/images/category/cate1-1.jpg"
                         alt="image"
                       />
                     </a>
@@ -118,7 +118,7 @@ function Category() {
                   <Link legacyBehavior href="/blog-classic">
                     <a className="image">
                       <img
-                        src="assets/images/category/cate1-2.jpg"
+                        src="/assets/images/category/cate1-2.jpg"
                         alt="image"
                       />
                     </a>
@@ -141,7 +141,7 @@ function Category() {
                   <Link legacyBehavior href="/blog-classic">
                     <a className="image">
                       <img
-                        src="assets/images/category/cate1-3.jpg"
+                        src="/assets/images/category/cate1-3.jpg"
                         alt="image"
                       />
                     </a>
@@ -164,7 +164,7 @@ function Category() {
                   <Link legacyBehavior href="/blog-classic">
                     <a className="image">
                       <img
-                        src="assets/images/category/cate1-4.jpg"
+                        src="/assets/images/category/cate1-4.jpg"
                         alt="image"
                       />
                     </a>
@@ -187,7 +187,7 @@ function Category() {
                   <Link legacyBehavior href="/blog-classic">
                     <a className="image">
                       <img
-                        src="assets/images/category/cate1-5.jpg"
+                        src="/assets/images/category/cate1-5.jpg"
                         alt="image"
                       />
                     </a>

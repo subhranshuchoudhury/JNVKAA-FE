@@ -27,7 +27,7 @@ function Testimonial() {
         <div className="container">
           <div className="update-wrapper">
             <div className="update-image">
-              <img src="assets/images/bg/update-girl.png" alt="" />
+              <img src="/assets/images/bg/update-girl.png" alt="" />
             </div>
             <div className="row justify-content-start">
               <div className="col-lg-8">
@@ -81,14 +81,14 @@ function Testimonial() {
                   <SwiperSlide className="swiper-slide">
                     <div className="testimonial-card">
                       <div className="testimonial-card-img">
-                        <img src="assets/images/about/testimonial-card-img1.jpg" alt="" />
+                        <img src="/assets/images/about/testimonial-card-img1.jpg" alt="" />
                       </div>
                       <div className="testimonial-card-content">
                         <p>"I work with Alguneb Johnl on many projects, he always tolda exceei my expectations with his quality work and fastestopa service, veryal smooth and simple communication."</p>
                         <h4>Leslie Alexander</h4>
                         <span>Author</span>
                         <div className="testimonial-card-quotes">
-                          <img src="assets/images/about/testimonial-quotes.svg" alt="" />
+                          <img src="/assets/images/about/testimonial-quotes.svg" alt="" />
                         </div>
                       </div>
                     </div>
@@ -96,14 +96,14 @@ function Testimonial() {
                   <SwiperSlide className="swiper-slide">
                     <div className="testimonial-card">
                       <div className="testimonial-card-img">
-                        <img src="assets/images/about/testimonial-card-img2.jpg" alt="" />
+                        <img src="/assets/images/about/testimonial-card-img2.jpg" alt="" />
                       </div>
                       <div className="testimonial-card-content">
                         <p>"I work with Alguneb Johnl on many projects, he always tolda exceei my expectations with his quality work and fastestopa service, veryal smooth and simple communication."</p>
                         <h4>Mark Jaction</h4>
                         <span>Author</span>
                         <div className="testimonial-card-quotes">
-                          <img src="assets/images/about/testimonial-quotes.svg" alt="" />
+                          <img src="/assets/images/about/testimonial-quotes.svg" alt="" />
                         </div>
                       </div>
                     </div>
@@ -111,14 +111,14 @@ function Testimonial() {
                   <SwiperSlide className="swiper-slide">
                     <div className="testimonial-card">
                       <div className="testimonial-card-img">
-                        <img src="assets/images/about/testimonial-card-img3.jpg" alt="" />
+                        <img src="/assets/images/about/testimonial-card-img3.jpg" alt="" />
                       </div>
                       <div className="testimonial-card-content">
                         <p>"I work with Alguneb Johnl on many projects, he always tolda exceei my expectations with his quality work and fastestopa service, veryal smooth and simple communication."</p>
                         <h4>Harry Kane</h4>
                         <span>Author</span>
                         <div className="testimonial-card-quotes">
-                          <img src="assets/images/about/testimonial-quotes.svg" alt="" />
+                          <img src="/assets/images/about/testimonial-quotes.svg" alt="" />
                         </div>
                       </div>
                     </div>
@@ -126,14 +126,14 @@ function Testimonial() {
                   <SwiperSlide className="swiper-slide">
                     <div className="testimonial-card">
                       <div className="testimonial-card-img">
-                        <img src="assets/images/about/testimonial-card-img4.jpg" alt="" />
+                        <img src="/assets/images/about/testimonial-card-img4.jpg" alt="" />
                       </div>
                       <div className="testimonial-card-content">
                         <p>"I work with Alguneb Johnl on many projects, he always tolda exceei my expectations with his quality work and fastestopa service, veryal smooth and simple communication."</p>
                         <h4>Luka Modric</h4>
                         <span>Author</span>
                         <div className="testimonial-card-quotes">
-                          <img src="assets/images/about/testimonial-quotes.svg" alt="" />
+                          <img src="/assets/images/about/testimonial-quotes.svg" alt="" />
                         </div>
                       </div>
                     </div>

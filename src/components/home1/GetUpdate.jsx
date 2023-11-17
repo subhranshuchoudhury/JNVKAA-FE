@@ -6,7 +6,7 @@ function GetUpdate() {
       <div className="container">
         <div className="update-wrapper">
           <div className="update-image">
-            <img src="assets/images/bg/IMG_9367 (2).jpg" alt="" />
+            <img src="/assets/images/bg/IMG_9367 (2).jpg" alt="" />
           </div>
           <div className="row justify-content-start">
             <div className="col-lg-8">

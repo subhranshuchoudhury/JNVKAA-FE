@@ -26,7 +26,7 @@ function Footer4() {
             </div>
             <div className="col-lg-6">
               <div className="footer-info text-lg-center text-start">
-                <Link legacyBehavior href="/"><a><img src="assets/images/logo/footer-logo.svg" alt="image" /></a></Link>
+                <Link legacyBehavior href="/"><a><img src="/assets/images/logo/footer-logo.svg" alt="image" /></a></Link>
                 <h3><span>Feel</span> Free To <br />
                   <span>Read Article</span>, Anytime.
                 </h3>

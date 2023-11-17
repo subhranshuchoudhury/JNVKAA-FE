@@ -10,7 +10,7 @@ function PostFormatRightSidebar02Page() {
             <div className="col-lg-8">
               <div className="left-sidebar2-inner-img">
                 <img
-                  src="assets/images/post-format/left-sidebar2-inner-img1.jpg"
+                  src="/assets/images/post-format/left-sidebar2-inner-img1.jpg"
                   alt=""
                 />
                 <div className="category">
@@ -24,7 +24,7 @@ function PostFormatRightSidebar02Page() {
                 <div className="author-area">
                   <div className="author-img">
                     <img
-                      src="assets/images/post-gallery-format/post-gallery-meta-author.jpg"
+                      src="/assets/images/post-gallery-format/post-gallery-meta-author.jpg"
                       alt=""
                     />
                   </div>
@@ -113,7 +113,7 @@ function PostFormatRightSidebar02Page() {
                 <div className="col-md-6 ">
                   <div className="sidebar-dt-img">
                     <img
-                      src="assets/images/post-format/post-format-left-sidebar-img1.jpg"
+                      src="/assets/images/post-format/post-format-left-sidebar-img1.jpg"
                       alt=""
                     />
                   </div>
@@ -121,7 +121,7 @@ function PostFormatRightSidebar02Page() {
                 <div className="col-md-6">
                   <div className="sidebar-dt-img">
                     <img
-                      src="assets/images/post-format/post-format-left-sidebar-img2.jpg"
+                      src="/assets/images/post-format/post-format-left-sidebar-img2.jpg"
                       alt=""
                     />
                   </div>
@@ -269,7 +269,7 @@ function PostFormatRightSidebar02Page() {
                     <Link legacyBehavior href="/post-format-no-sidebar-02">
                       <a className="image">
                         <img
-                          src="assets/images/blog-list/blog-list1-3.jpg"
+                          src="/assets/images/blog-list/blog-list1-3.jpg"
                           alt="image"
                         />
                       </a>
@@ -299,7 +299,7 @@ function PostFormatRightSidebar02Page() {
                       <a className="image">
                         {" "}
                         <img
-                          src="assets/images/blog-list/blog-list1-4.jpg"
+                          src="/assets/images/blog-list/blog-list1-4.jpg"
                           alt="image"
                         />
                       </a>
@@ -328,7 +328,7 @@ function PostFormatRightSidebar02Page() {
                     <Link legacyBehavior href="/post-format-no-sidebar-02">
                       <a className="image">
                         <img
-                          src="assets/images/blog-list/blog-list1-5.jpg"
+                          src="/assets/images/blog-list/blog-list1-5.jpg"
                           alt="image"
                         />
                       </a>
@@ -490,7 +490,7 @@ function PostFormatRightSidebar02Page() {
                   </div>
                   <a href="#" className="img">
                     <img
-                      src="assets/images/post-format/post-format-left-sidebar-img1.jpg"
+                      src="/assets/images/post-format/post-format-left-sidebar-img1.jpg"
                       alt=""
                     />
                     <div className="arrow">
@@ -509,7 +509,7 @@ function PostFormatRightSidebar02Page() {
                 <div className="single-navigation two">
                   <a href="#" className="img">
                     <img
-                      src="assets/images/post-format/post-format-left-sidebar-img2.jpg"
+                      src="/assets/images/post-format/post-format-left-sidebar-img2.jpg"
                       alt=""
                     />
                     <div className="arrow">
@@ -547,7 +547,7 @@ function PostFormatRightSidebar02Page() {
                   <li>
                     <div className="author-img">
                       <img
-                        src="assets/images/post-gallery-format/author-comment-img1.jpg"
+                        src="/assets/images/post-gallery-format/author-comment-img1.jpg"
                         alt=""
                       />
                     </div>
@@ -571,7 +571,7 @@ function PostFormatRightSidebar02Page() {
                   <li>
                     <div className="author-img">
                       <img
-                        src="assets/images/post-gallery-format/author-comment-img2.jpg"
+                        src="/assets/images/post-gallery-format/author-comment-img2.jpg"
                         alt=""
                       />
                     </div>

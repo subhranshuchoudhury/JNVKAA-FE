@@ -4,7 +4,7 @@ function NewsLatter() {
   return (
     <section className="newsletter-section-1">
       <div className="paper-fly-icon">
-        <img src="assets/images/icons/paper-fly.svg" alt="image" />
+        <img src="/assets/images/icons/paper-fly.svg" alt="image" />
       </div>
       <div className="container">
         <div className="row justify-content-center">

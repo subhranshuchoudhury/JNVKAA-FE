@@ -24,7 +24,7 @@ function Topic() {
             <div className="category-1">
               <Link legacyBehavior href="/blog-classic">
                 <a className="image">
-                  <img src="assets/images/category/cate1-1.jpg" alt="image" />
+                  <img src="/assets/images/category/cate1-1.jpg" alt="image" />
                 </a>
               </Link>
               <div className="content">
@@ -40,7 +40,7 @@ function Topic() {
             <div className="category-1">
               <Link legacyBehavior href="/blog-classic">
                 <a className="image">
-                  <img src="assets/images/category/cate1-2.jpg" alt="image" />
+                  <img src="/assets/images/category/cate1-2.jpg" alt="image" />
                 </a>
               </Link>
               <div className="content">
@@ -56,7 +56,7 @@ function Topic() {
             <div className="category-1">
               <Link legacyBehavior href="/blog-classic">
                 <a className="image">
-                  <img src="assets/images/category/cate1-3.jpg" alt="image" />
+                  <img src="/assets/images/category/cate1-3.jpg" alt="image" />
                 </a>
               </Link>
               <div className="content">
@@ -72,7 +72,7 @@ function Topic() {
             <div className="category-1">
               <Link legacyBehavior href="/blog-classic">
                 <a className="image">
-                  <img src="assets/images/category/cate1-4.jpg" alt="image" />
+                  <img src="/assets/images/category/cate1-4.jpg" alt="image" />
                 </a>
               </Link>
               <div className="content">
@@ -88,7 +88,7 @@ function Topic() {
             <div className="category-1">
               <Link legacyBehavior href="/blog-classic">
                 <a className="image">
-                  <img src="assets/images/category/cate1-6.jpg" alt="image" />
+                  <img src="/assets/images/category/cate1-6.jpg" alt="image" />
                 </a>
               </Link>
               <div className="content">
@@ -104,7 +104,7 @@ function Topic() {
             <div className="category-1">
               <Link legacyBehavior href="/blog-classic">
                 <a className="image">
-                  <img src="assets/images/category/cate1-5.jpg" alt="image" />
+                  <img src="/assets/images/category/cate1-5.jpg" alt="image" />
                 </a>
               </Link>
               <div className="content">
@@ -120,7 +120,7 @@ function Topic() {
             <div className="category-1">
               <Link legacyBehavior href="/blog-classic">
                 <a className="image">
-                  <img src="assets/images/category/cate1-7.jpg" alt="image" />
+                  <img src="/assets/images/category/cate1-7.jpg" alt="image" />
                 </a>
               </Link>
               <div className="content">
@@ -136,7 +136,7 @@ function Topic() {
             <div className="category-1">
               <Link legacyBehavior href="/blog-classic">
                 <a className="image">
-                  <img src="assets/images/category/cate1-5.jpg" alt="image" />
+                  <img src="/assets/images/category/cate1-5.jpg" alt="image" />
                 </a>
               </Link>
               <div className="content">
