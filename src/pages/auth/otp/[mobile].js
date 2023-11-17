@@ -1,41 +1,75 @@
-import React, { useState } from 'react'
-import "../styles/Login.module.css"
-import { LoginAlumni } from '@/utils/fetch';
+import React, { useEffect, useState } from 'react'
+import { sendOTP, verifyOTP } from '@/utils/fetch';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import social from '@/data/topbar/social.json';
-import { checkLogin } from '@/utils/validator';
 import { setCookie } from "cookies-next";
-import { useRouter } from 'next/router';
+import { checkOTP, checkSendOTP } from '@/utils/validator';
+import { useRouter } from 'next/router'
 
-function Register() {
 
+function OTPVerify(props) {
+
+
+    const router = useRouter()
     const [Data, setData] = useState(null);
-    const [Mobile, setMobile] = useState("");
-    const [Password, setPassword] = useState("");
+    const [OTP, setOTP] = useState("")
+    const [IsOTPSent, setIsOTPSent] = useState(false)
 
-    const router = useRouter();
 
-    const AsyncRegister = async (event) => {
+
+
+
+
+
+
+    const asyncSendOTP = async (event, mobile) => {
         event.preventDefault();
 
-        if (checkLogin(Mobile, Password).response) {
-            return toast.error(checkLogin(Mobile, Password).message);
+        const validatorResponse = checkSendOTP(mobile);
+
+        if (validatorResponse.response) {
+            return toast.error(validatorResponse.message);
         }
         const loadingToast = toast.loading("Please wait...");
-        const response = await LoginAlumni(Mobile, Password);
+        const response = await sendOTP(mobile);
         toast.dismiss(loadingToast);
         setData(response);
 
         if (response.status === 200) {
-            toast.success("Welcome " + response.data.name.split(" ")[0] + " 👋");
-            setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 });
-            localStorage.setItem("userData", JSON.stringify(response.data.data));
-            router.replace("/posts")
+            toast.success(response.data.message);
         } else {
-            toast.error(response.data.message);
+            toast.error(response.data.message + " ECODE: " + response.status);
         }
 
+        if (response.status === 200 || response.status === 400) {
+            setIsOTPSent(true)
+        }
+
+    }
+
+    const asyncVerifyOTP = async (event, mobile, otp) => {
+        event.preventDefault();
+
+        const validatorResponse = checkOTP(otp);
+
+        if (validatorResponse.response) {
+            return toast.error(validatorResponse.message);
+        }
+        const loadingToast = toast.loading("Please wait...");
+        const response = await verifyOTP(mobile, otp);
+        toast.dismiss(loadingToast);
+        setData(response);
+
+        if (response.status === 200) {
+            toast.success(response.data.message);
+            setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 });
+            localStorage.setItem("userData", JSON.stringify(response.data.data));
+            router.reload();
+            router.replace("/posts")
+        } else {
+            toast.error(response.data.message + " ECODE: " + response.status);
+        }
     }
     return (
 
@@ -45,25 +79,49 @@ function Register() {
 
                     <div className="col-lg-7">
                         <div className="form-title">
-                            <h2>Register Here!</h2>
+                            <h2>Verify OTP</h2>
                         </div>
                         <form className="contact-form">
                             <div className="row">
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <input onChange={e => setMobile(e.target.value)} value={Mobile} type="tel" placeholder="Mobile" />
-                                    </div>
-                                </div>
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <input onChange={e => setPassword(e.target.value)} value={Password} type="password" placeholder="Password" />
-                                    </div>
-                                </div>
+
                                 <div className="col-12">
-                                    <button onClick={AsyncRegister} type="submit" className="eg-btn btn--primary btn--lg">
-                                        Submit
-                                    </button>
+                                    <div className="form-inner">
+                                        <input disabled value={router.query.mobile || 0} type="tel" placeholder="Mobile" />
+                                    </div>
                                 </div>
+
+                                {
+                                    IsOTPSent && <div className="col-12">
+                                        <div className="form-inner">
+                                            <input onWheel={
+                                                (e) => {
+                                                    e.target.blur()
+                                                }
+                                            } onChange={e => setOTP(e.target.value)} value={OTP} type="number" placeholder="Enter OTP" />
+                                        </div>
+                                    </div>
+                                }
+
+
+
+                                {
+                                    router.query.mobile && <div className="col-6">
+                                        <button onClick={(e) => asyncSendOTP(e, router.query.mobile)} type="submit" className="eg-btn btn--primary btn--lg">
+                                            {
+                                                IsOTPSent ? "Resend OTP" : "Send OTP"
+                                            }
+                                        </button>
+                                    </div>
+                                }
+
+                                {
+                                    IsOTPSent && <div className="col-6">
+                                        <button onClick={(e) => asyncVerifyOTP(e, router.query.mobile, OTP)} type="submit" className="eg-btn btn--primary btn--lg">
+                                            Verify OTP
+                                        </button>
+                                    </div>
+                                }
+
                             </div>
                         </form>
                     </div>
@@ -105,10 +163,10 @@ function Register() {
                                 </div>
                                 <div className="single-info">
                                     <div className="icon">
-                                        <i className="bi bi-envelope" />
+                                        <i className="bi bi-lock" />
                                     </div>
                                     <div className="info">
-                                        <Link href="/forgot-password">Forgot Password?</Link>
+                                        <Link href="/auth/login">Already have an account?</Link>
                                     </div>
                                 </div>
                             </div>
@@ -120,4 +178,4 @@ function Register() {
     )
 }
 
-export default Register;
+export default OTPVerify;

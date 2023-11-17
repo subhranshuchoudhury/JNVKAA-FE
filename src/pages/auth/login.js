@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import "../styles/Login.module.css"
 import { LoginAlumni } from '@/utils/fetch';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
@@ -31,6 +30,7 @@ function Login() {
       toast.success("Welcome " + response.data.name.split(" ")[0] + " 👋");
       setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 });
       localStorage.setItem("userData", JSON.stringify(response.data.data));
+      router.reload();
       router.replace("/posts")
     } else {
       toast.error(response.data.message);

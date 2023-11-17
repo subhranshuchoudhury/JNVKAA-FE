@@ -12,14 +12,15 @@ export default function logout() {
         toast.success("Logged out successfully");
         deleteCookie("token");
         localStorage.removeItem("userData");
-        router.replace("/login");
+        router.reload();
+        router.replace("/auth/login");
     }
 
     useEffect(() => {
 
         const token = getCookie("token");
         if (!token) {
-            router.replace("/login");
+            router.replace("/auth/login");
         }
 
     }, [])

@@ -256,13 +256,13 @@ function Header({ state, dispatch }) {
                 <Link style={{
                   padding: 2,
                   boxShadow: "0px 1px 5px 0px #000000"
-                }} href={"/register"} className="eg-btn btn--primary-4">
+                }} href={"/auth/register"} className="eg-btn btn--primary-4">
                   Register
                 </Link>
                 <Link style={{
                   padding: 2,
                   boxShadow: "0px 1px 5px 0px #000000"
-                }} href={"/login"} className="eg-btn btn--primary mx-3">
+                }} href={"/auth/login"} className="eg-btn btn--primary mx-3">
                   Login
                 </Link>
 
