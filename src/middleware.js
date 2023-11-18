@@ -20,5 +20,5 @@ export function middleware(request) {
 
 // See "Matching Paths" below to learn more
 export const config = {
-    matcher: ['/events', '/posts', '/profile', '/alumnus', '/auth/login'],
+    matcher: ['/events', '/posts/alumni/:path*', '/profile', '/alumnus', '/auth/login',],
 }

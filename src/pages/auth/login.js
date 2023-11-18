@@ -30,8 +30,7 @@ function Login() {
       toast.success("Welcome " + response.data.name.split(" ")[0] + " 👋");
       setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 });
       localStorage.setItem("userData", JSON.stringify(response.data.data));
-      router.reload();
-      router.replace("/posts")
+      window.location.href = "/posts/alumni";
     } else {
       toast.error(response.data.message);
     }

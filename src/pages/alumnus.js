@@ -2,59 +2,46 @@ import Link from 'next/link'
 import React from 'react'
 import alumnusData from "../data/alumnus/alumnus.json"
 function Author() {
+
+  const searchAlumni = (e) => {
+    e.preventDefault();
+    console.log(e.target.value);
+  }
   return (
     <section className="author-section pt-100 pb-100">
       <div className="container">
         <div className="row gy-2 mb-60">
-          <div className="">
-            <div className="category-wrap">
-              <form>
-                <div className="form-inner">
+
+          <div className="col-lg-4">
+            <div className="search-box" style={{
+              borderRadius: "5px",
+            }}>
+              <div className='category-wrap'>
+
+                <form>
                   <select>
                     <option>All Category</option>
                     <option>Name</option>
                     <option>Batch</option>
                     <option>Location</option>
                     <option>Blood Group</option>
-
-
                   </select>
-                </div>
-                {/* <div className="form-inner">
-                  <select>
-                    <option>Trending</option>
-                    <option>Trending 01</option>
-                    <option>Trending 02</option>
-                    <option>Trending 03</option>
-                  </select>
-                </div> */}
-                {/* <div className="form-inner">
-                  <select>
-                    <option>This Month</option>
-                    <option>This Month 01</option>
-                    <option>This Month 02</option>
-                    <option>This Month 03</option>
-                  </select>
-                </div> */}
-                <div className="col-lg-4">
-                  <div className="search-box">
-                    <form>
-                      <input type="text" placeholder="Search here..." />
-                      <button><i className="bi bi-search" /></button>
-                    </form>
-                  </div>
-                </div>
-              </form>
+                  <button onClick={(e) => e.preventDefault()}><i className="bi bi-funnel-fill" /></button>
+                </form>
+              </div>
             </div>
           </div>
-          {/* <div className="col-lg-4">
-            <div className="search-box">
+          <div className="col-lg-8">
+            <div className="search-box" style={{
+              backgroundColor: "#EEEEEE",
+              borderRadius: "23px",
+            }} >
               <form>
                 <input type="text" placeholder="Search here..." />
                 <button><i className="bi bi-search" /></button>
               </form>
             </div>
-          </div> */}
+          </div>
         </div>
         <div className="row g-4 mb-60">
 

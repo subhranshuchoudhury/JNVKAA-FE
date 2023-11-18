@@ -163,7 +163,7 @@ function Header({ state, dispatch }) {
 
 
               <li className="menu-item-has-children">
-                <Link legacyBehavior href="/feature">
+                <Link legacyBehavior href="/posts/alumni">
                   <a>Posts</a>
                 </Link>
                 <i
@@ -177,7 +177,7 @@ function Header({ state, dispatch }) {
                     }`}
                 >
                   <li>
-                    <Link legacyBehavior href="/blog-classic">
+                    <Link legacyBehavior href="/posts/alumni">
                       <a>Alumni</a>
                     </Link>
                   </li>
@@ -204,6 +204,7 @@ function Header({ state, dispatch }) {
             {
               IsAuthenticated ? <>
 
+
                 <div className="search-btn" onClick={handelSearchModal}> <i className="bi bi-search" /> </div>
                 <div className="admin-area">
                   <button
@@ -222,6 +223,12 @@ function Header({ state, dispatch }) {
                       <a className="dropdown-item " href="#">
                         <i className="bi bi-person" />
                         Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item " href="#">
+                        <i className="bi bi-plus" />
+                        Create Post
                       </a>
                     </li>
                     {/* <li>
