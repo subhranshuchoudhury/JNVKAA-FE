@@ -12,8 +12,7 @@ export default function logout() {
         toast.success("Logged out successfully");
         deleteCookie("token");
         localStorage.removeItem("userData");
-        router.reload();
-        router.replace("/auth/login");
+        window.location.href = "/auth/login";
     }
 
     useEffect(() => {

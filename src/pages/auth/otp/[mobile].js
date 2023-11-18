@@ -57,8 +57,8 @@ function OTPVerify(props) {
             toast.success(response.data.message);
             setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 });
             localStorage.setItem("userData", JSON.stringify(response.data.data));
-            router.replace("/posts")
-            router.reload();
+            window.location.href = "/posts/alumni";
+
         } else {
             toast.error(response.data.message + " ECODE: " + response.status);
         }
