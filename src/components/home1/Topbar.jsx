@@ -34,7 +34,7 @@ function Topbar() {
           {
             social.map((item, index) => {
               return <li key={index}>
-                <a href="https://www.instagram.com/jnvkaa">
+                <a href={item?.link}>
                   <i className={item?.icon} />
                   {item?.count}
                 </a>
