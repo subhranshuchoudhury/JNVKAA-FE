@@ -161,6 +161,18 @@ function Header({ state, dispatch }) {
                 </Link>
               </li>
 
+              <li className="menu-item-has-children">
+                <Link legacyBehavior href="/teachers">
+                  <a>Teachers</a>
+                </Link>
+              </li>
+
+              <li className="menu-item-has-children">
+                <Link legacyBehavior href="/officials">
+                  <a>Officials</a>
+                </Link>
+              </li>
+
 
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/posts/alumni">
