@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
-import alumnusData from "../data/alumnus/alumnus.json"
-function Teachers() {
+import alumnusData from "../data/teachers/teacher.json"
+function Author() {
 
     const searchAlumni = (e) => {
         e.preventDefault();
@@ -49,7 +49,7 @@ function Teachers() {
                         alumnusData.map((alumnus, index) => <div className="col-lg-3 col-md-6 col-sm-6">
                             <div className="author-1">
                                 <div className="author-front">
-                                    <span className="categoty">{alumnus?.batch}</span>
+                                    <span className="categoty">{alumnus?.since}</span>
                                     <Link legacyBehavior href="/author-details">
                                         <a className="image">
                                             <img src={alumnus?.image} alt="image" />
@@ -58,7 +58,7 @@ function Teachers() {
                                     <h4>{alumnus?.name}</h4>
                                     <ul>
                                         <li><span>Mobile</span><span>{alumnus?.mobile}</span></li>
-                                        <li><span>School No</span><span>{alumnus?.schoolno}</span></li>
+                                        <li><span>Designation</span><span>{alumnus?.designation}</span></li>
                                     </ul>
                                 </div>
                                 <div className="author-back">
@@ -94,4 +94,4 @@ function Teachers() {
     )
 }
 
-export default Teachers
+export default Author

@@ -1,6 +1,35 @@
-import React from "react";
-
+import Image from "next/image";
+import React, { useState } from "react";
+import { FileUploader } from "react-drag-drop-files";
+import toast from "react-hot-toast";
 function CreatePost() {
+
+
+    const fileTypes = ['PNG', 'JPEG', 'JPG'];
+    const [PreviewImageBase64, setPreviewImage] = useState(null);
+
+    const previewImage = (event) => {
+
+        var input = event.target;
+        console.log(input.files);
+        if (input.files && input.files[0]) {
+
+            if (input.files[0].size >= 125000) {
+                toast.error("File size is greater than 1MB", {
+                    icon: "⚠"
+                })
+                setPreviewImage(null)
+                return;
+            }
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                setPreviewImage(e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+
+    }
+
     return (
         <section className="contact-section pt-100 pb-100">
             <div className="container">
@@ -35,9 +64,29 @@ function CreatePost() {
                                     />
                                 </div>
                             </div>
+
+                            {
+                                PreviewImageBase64 && <div className="col-12">
+                                    <div className="form-inner">
+                                        <Image alt="preview image" width={200} height={200} src={PreviewImageBase64} />
+                                    </div>
+                                </div>
+                            }
+
+                            <div className="col-12">
+                                <div className="form-inner">
+                                    <input onChange={previewImage} type="file" />
+                                </div>
+                            </div>
+
+                            <div className="col-12">
+                                <div className="form-inner">
+                                    <input onChange={() => { }} type="text" placeholder="External link" />
+                                </div>
+                            </div>
                             <div className="col-12">
                                 <button type="submit" className="eg-btn btn--primary btn--lg">
-                                    Send Message
+                                    POST
                                 </button>
                             </div>
                         </div>
@@ -47,5 +96,7 @@ function CreatePost() {
         </section>
     );
 }
+
+
 
 export default CreatePost;
