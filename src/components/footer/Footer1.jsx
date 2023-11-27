@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import React from 'react'
-
+import Socials from '@/data/topbar/social.json'
 function Footer1() {
   return (
     <footer className="style-1">
@@ -63,42 +63,22 @@ function Footer1() {
           <div className="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6">
             <h4 className="footer-title">Social Media</h4>
             <ul className="social-2">
-              <li>
-                <a href="https://www.facebook.com/">
-                  <div className="icon">
-                    <i className="bx bxl-facebook" />
-                    <span>5.5k</span>
-                  </div>
-                  <p>Facebook</p>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.twitter.com/">
-                  <div className="icon">
-                    <i className="bx bxl-twitter" />
-                    <span>5.5k</span>
-                  </div>
-                  <p>Twitter</p>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.pinterest.com/">
-                  <div className="icon">
-                    <i className="bx bxl-pinterest" />
-                    <span>5.5k</span>
-                  </div>
-                  <p>Pinterest</p>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/">
-                  <div className="icon">
-                    <i className="bx bxl-instagram" />
-                    <span>5.5k</span>
-                  </div>
-                  <p>Instagram</p>
-                </a>
-              </li>
+
+              {
+                Socials?.map((val, i) => (
+                  <li>
+                    <a href={val?.link}>
+                      <div className="icon">
+                        <i className={val?.icon} />
+                        <span>{val?.count}</span>
+                      </div>
+                      <p>{val?.platform}</p>
+                    </a>
+                  </li>
+                ))
+              }
+
+
             </ul>
           </div>
         </div>
