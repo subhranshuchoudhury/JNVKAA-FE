@@ -1,6 +1,10 @@
+
 import React from 'react'
 
 function GetUpdate() {
+
+
+
   return (
     <section className="update pb-100">
       <div className="container">

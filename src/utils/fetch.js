@@ -298,3 +298,33 @@ export const getPostsAlumni = async (skip) => {
     }
 
 }
+
+export const getNewsUpdate = async () => {
+    try {
+
+
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+        };
+
+        const response = await fetch(BASE_URL + "/api/newsupdate", requestOptions);
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error",
+                error: String(error)
+            }
+        }
+
+    }
+}
