@@ -8,21 +8,21 @@
     },
     {
         "index": "2",
-        "link": "https://twitter.com/@JNVKAA",
+        "link": "https://twitter.com/JNVK_AA",
         "count": "323",
         "icon": "bx bxl-twitter",
         "platform": "X"
     },
     {
         "index": "3",
-        "link": "https://www.facebook.com/@JNVKAA",
+        "link": "https://www.facebook.com/jnvkaaofficial",
         "count": "3.5K",
         "icon": "bx bxl-facebook",
         "platform": "Facebook"
     },
     {
         "index": "4",
-        "link": "https://www.instagram.com/@JNVKAA",
+        "link": "https://instagram.com/jnvkaa",
         "count": "525",
         "icon": "bx bxl-instagram",
         "platform": "Instagram"
@@ -32,6 +32,13 @@
         "link": "https://chat.whatsapp.com/DYgYHyPDyiSDeS1Gsx87q8",
         "count": "604",
         "icon": "bx bxl-whatsapp",
+        "platform": "Whatsapp"
+    },
+    {
+        "index": "5",
+        "link": "https://www.linkedin.com/in/jawahar-navodaya-vidyalaya-kendrapara-alumni-association-5317b029b",
+        "count": "123",
+        "icon": "bx bxl-linkedin",
         "platform": "Whatsapp"
     }
 ]

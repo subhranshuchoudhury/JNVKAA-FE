@@ -70,7 +70,7 @@ function Footer1() {
                     <a href={val?.link}>
                       <div className="icon">
                         <i className={val?.icon} />
-                        <span>{val?.count}</span>
+                        {/* <span>{val?.count}</span> */}
                       </div>
                       <p>{val?.platform}</p>
                     </a>

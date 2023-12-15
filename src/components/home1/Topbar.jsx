@@ -36,7 +36,7 @@ function Topbar() {
               return <li key={index}>
                 <a href={item?.link}>
                   <i className={item?.icon} />
-                  {item?.count}
+                  {/* {item?.count} */}
                 </a>
               </li>
             })
