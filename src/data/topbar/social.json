@@ -11,7 +11,7 @@
         "link": "https://twitter.com/JNVK_AA",
         "count": "323",
         "icon": "bx bxl-twitter",
-        "platform": "X"
+        "platform": "Twitter"
     },
     {
         "index": "3",
@@ -39,6 +39,6 @@
         "link": "https://www.linkedin.com/in/jawahar-navodaya-vidyalaya-kendrapara-alumni-association-5317b029b",
         "count": "123",
         "icon": "bx bxl-linkedin",
-        "platform": "Whatsapp"
+        "platform": "LinkedIn"
     }
 ]

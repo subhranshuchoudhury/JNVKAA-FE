@@ -6,9 +6,9 @@ import React from 'react'
 function about() {
   return (
     <>
-     <Title/> 
-     <AboutContent/>
-     <Testimonial/>
+      {/* <Title/>  */}
+      <AboutContent />
+      <Testimonial />
     </>
   )
 }

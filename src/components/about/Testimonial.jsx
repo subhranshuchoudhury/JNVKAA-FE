@@ -26,11 +26,8 @@ function Testimonial() {
       <section className="update pb-100">
         <div className="container">
           <div className="update-wrapper">
-            <div className="update-image">
-              <img src="/assets/images/bg/update-girl.png" alt="" />
-            </div>
             <div className="row justify-content-start">
-              <div className="col-lg-8">
+              <div className="col-lg-12">
                 <div className="update-content">
                   <div className="section-title-1">
                     <div className="subtitle justify-content-center">
@@ -42,7 +39,7 @@ function Testimonial() {
                     <h2>Become A Member And Share
                       Your Great Stories.</h2>
                   </div>
-                  <a href="#" className="eg-btn btn--primary btn--lg">Become An Author</a>
+                  <a href="#" className="eg-btn btn--primary btn--lg">Buy Membership</a>
                 </div>
               </div>
             </div>
