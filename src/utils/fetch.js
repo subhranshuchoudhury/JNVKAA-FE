@@ -328,3 +328,33 @@ export const getNewsUpdate = async () => {
 
     }
 }
+
+export const getEventById = async (id) => {
+    try {
+
+
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+        };
+
+        const response = await fetch(BASE_URL + "/api/event/id/" + id, requestOptions);
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error",
+                error: String(error)
+            }
+        }
+
+    }
+};
