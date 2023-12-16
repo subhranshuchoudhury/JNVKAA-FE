@@ -108,13 +108,13 @@ function BlogSidebar() {
                     RecentEvents?.length > 0 && RecentEvents.map((item, index) => (
                       <div key={index} className="blog-list-2">
                         <div className="date">
-                          <h3>{new Date(item?.created_at).getDay()}</h3>
-                          <p>{new Date(item?.created_at).toLocaleString('default', { month: 'long' })}</p>
+                          <h3>{new Date(item?.date).getDay()}</h3>
+                          <p>{new Date(item?.date).toLocaleString('default', { month: 'long' })}</p>
                         </div>
                         <div className="content">
                           <ul>
                             <li><Link legacyBehavior href={`/events/id/${item?._id}`}><a>By Moderator</a></Link></li>
-                            <li><Link legacyBehavior href={`/events/id/${item?._id}`}><a>{item?.date}</a></Link></li>
+                            <li><Link legacyBehavior href={`/events/id/${item?._id}`}><a>{new Date(item?.created_at).toLocaleString()}</a></Link></li>
                           </ul>
                           <h4><Link legacyBehavior href={`/events/id/${item?._id}`}><a>{item?.name}</a></Link></h4>
                           <div className="bottom-area">
