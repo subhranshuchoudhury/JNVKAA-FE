@@ -68,7 +68,8 @@ export default function page() {
                                     </div>
                                 </div>
                                 <div className="sidebar-thumb">
-                                    <img src="/assets/images/post-format/Post-Format-01thumb-img.jpg" alt="" />
+                                    <img src="https://static.vecteezy.com/system/resources/previews/000/410/289/original/vector-illustration-of-notification-icon-on-blue-background.jpg" alt="Bell icon" />
+                                    {/* <img src="/assets/images/post-format/Post-Format-01thumb-img.jpg" alt="" /> */}
                                 </div>
                             </div>
                         </div>
