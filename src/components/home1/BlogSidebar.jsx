@@ -24,6 +24,10 @@ function BlogSidebar() {
       }
     };
   }, []);
+
+  // concurrent request javascript
+
+  const endpoints = ["/api/post/youtube", ""]
   return (
     <div className="blog-list-slider-section">
       <div className="container">
