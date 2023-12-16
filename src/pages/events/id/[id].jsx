@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { getEventById } from '@/utils/fetch';
 import Link from 'next/link';
+import Socials from '@/data/topbar/social.json';
 export default function page() {
 
     const router = useRouter()
@@ -113,18 +114,21 @@ export default function page() {
                                 </div>
                                 <div className="col-lg-6 col-md-6 col-sm-10">
                                     <div className="social">
-                                        <p>Share On:</p>
+                                        <p>Social Handles</p>
                                         <ul>
-                                            <li><a href="http://www.facebook.com"><i className="bx bxl-facebook" /></a></li>
-                                            <li><a href="http://www.twitter.com"><i className="bx bxl-twitter" /></a></li>
-                                            <li><a href="https://www.pinterest.com/"><i className="bx bxl-pinterest-alt" /></a></li>
-                                            <li><a href="https://www.instagram.com/"><i className="bx bxl-instagram" /></a></li>
+
+                                            {
+                                                Socials.map((item, idx) => (
+
+                                                    <li><a href={item?.link}><i className={item?.icon} /></a></li>
+                                                ))
+                                            }
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="row mb-120">
+                        {/* <div className="row mb-120">
                             <div className="col-lg-12">
                                 <div className="details-navigation">
                                     <div className="single-navigation">
@@ -161,8 +165,8 @@ export default function page() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="row">
+                        </div> */}
+                        {/* <div className="row">
                             <div className="col-lg-9">
                                 <div className="comment-section">
                                     <div className="comment-title">
@@ -236,7 +240,7 @@ export default function page() {
                                     </form>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
