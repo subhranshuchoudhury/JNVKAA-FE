@@ -19,7 +19,7 @@ function Footer1() {
             </div>
 
           </div>
-          <div className="col-xl-4 col-lg-5 col-md-6">
+          {/* <div className="col-xl-4 col-lg-5 col-md-6">
             <h4 className="footer-title">Recent Posts by Members</h4>
             <div className="blog-list-1 mb-25">
               <Link legacyBehavior href="/post-format-no-sidebar-02">
@@ -49,7 +49,7 @@ function Footer1() {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-6">
             <h4 className="footer-title">Quick Link</h4>
             <ul className="footer-list">

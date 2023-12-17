@@ -40,7 +40,7 @@ function BlogSidebar() {
 
   const getConcurrent = async () => {
     setLoading(true);
-    const endpoints = ["/api/post/youtube", "/api/alumni-meet", "/api/event?limit=6"];
+    const endpoints = ["/api/post/youtube?limit=6", "/api/alumni-meet?limit=6", "/api/event?limit=6"];
     Promise.allSettled(endpoints.map(url =>
       fetch(GLOBAL_URL + url).then(response =>
         response.ok ? response.json() : Promise.reject(new Error('Failed to load'))
@@ -213,129 +213,33 @@ function BlogSidebar() {
                     </div>
                   </div>
                   {/* blog-list */}
-                  <div className="blog-list-2">
-                    <div className="date">
-                      <h3>20</h3>
-                      <p>November</p>
-                    </div>
-                    <div className="content">
-                      <ul>
-                        <li><Link legacyBehavior href="/author-details"><a>By Moderator</a></Link></li>
-                        <li><Link legacyBehavior href="/post-format-no-sidebar-02"><a>15-12-2023</a></Link></li>
-                      </ul>
-                      <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Our Begin Now To Beingonl What You Will Be.</a></Link></h4>
-                      <div className="bottom-area">
-                        <Link legacyBehavior href="/post-format-no-sidebar-02"><a className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
-                        <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5.85726 11.3009C7.14547 9.08822 6.60613 6.30362 4.57475 4.68025C4.57356 4.67933 4.57238 4.67818 4.57143 4.6775L4.58021 4.69862L4.57878 4.71446C4.97457 5.72599 4.91905 6.83648 4.43285 7.78924L4.09022 8.461L3.9851 7.71876C3.91368 7.21529 3.71745 6.735 3.41515 6.32382H3.36745L3.3423 6.25495C3.34586 7.02428 3.17834 7.78213 2.8497 8.49704C2.41856 9.43259 2.48191 10.5114 3.01936 11.3833L3.39023 11.9853L2.72299 11.7126C1.62271 11.2628 0.743103 10.3964 0.309587 9.33547C-0.176131 8.15083 -0.0862008 6.77725 0.550429 5.66194C0.882388 5.08179 1.11493 4.46582 1.24187 3.8308L1.36597 3.2084L1.68251 3.76353C1.83366 4.02824 1.94494 4.31476 2.01399 4.61574L2.02111 4.62285L2.02847 4.67107L2.03535 4.669C2.98353 3.45015 3.55158 1.93354 3.6344 0.397865L3.65575 0L4.00076 0.217643C5.4088 1.10544 6.38664 2.52976 6.6887 4.13017L6.69558 4.163L6.69914 4.16805L6.71457 4.14693C6.99053 3.79429 7.13622 3.37485 7.13622 2.93336V2.24967L7.56261 2.7947C8.55398 4.06153 9.06224 5.63301 8.99391 7.21988C8.90991 9.08776 7.85708 10.7272 6.17736 11.6154L5.45008 12L5.85726 11.3009Z" />
-                        </svg>5 Min Read</span>
-                      </div>
-                    </div>
-                    <Link legacyBehavior href="/post-format-no-sidebar-02">
-                      <a className="image">
-                        <img src="/assets/images/blog-list/blog-list2-1.jpg" alt="" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="blog-list-2">
-                    <div className="date">
-                      <h3>30</h3>
-                      <p>November</p>
-                    </div>
-                    <div className="content">
-                      <ul>
-                        <li><Link legacyBehavior href="/author-details"><a>By Miles Jaxon</a></Link></li>
-                        <li><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Travel</a></Link></li>
-                      </ul>
-                      <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>primis in faucibusori cubilia luctus et ultrices</a></Link></h4>
-                      <div className="bottom-area">
-                        <Link legacyBehavior href="/post-format-no-sidebar-02"><a className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
-                        <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5.85726 11.3009C7.14547 9.08822 6.60613 6.30362 4.57475 4.68025C4.57356 4.67933 4.57238 4.67818 4.57143 4.6775L4.58021 4.69862L4.57878 4.71446C4.97457 5.72599 4.91905 6.83648 4.43285 7.78924L4.09022 8.461L3.9851 7.71876C3.91368 7.21529 3.71745 6.735 3.41515 6.32382H3.36745L3.3423 6.25495C3.34586 7.02428 3.17834 7.78213 2.8497 8.49704C2.41856 9.43259 2.48191 10.5114 3.01936 11.3833L3.39023 11.9853L2.72299 11.7126C1.62271 11.2628 0.743103 10.3964 0.309587 9.33547C-0.176131 8.15083 -0.0862008 6.77725 0.550429 5.66194C0.882388 5.08179 1.11493 4.46582 1.24187 3.8308L1.36597 3.2084L1.68251 3.76353C1.83366 4.02824 1.94494 4.31476 2.01399 4.61574L2.02111 4.62285L2.02847 4.67107L2.03535 4.669C2.98353 3.45015 3.55158 1.93354 3.6344 0.397865L3.65575 0L4.00076 0.217643C5.4088 1.10544 6.38664 2.52976 6.6887 4.13017L6.69558 4.163L6.69914 4.16805L6.71457 4.14693C6.99053 3.79429 7.13622 3.37485 7.13622 2.93336V2.24967L7.56261 2.7947C8.55398 4.06153 9.06224 5.63301 8.99391 7.21988C8.90991 9.08776 7.85708 10.7272 6.17736 11.6154L5.45008 12L5.85726 11.3009Z" />
-                        </svg>5 Min Read</span>
-                      </div>
-                    </div>
-                    <Link legacyBehavior href="/post-format-no-sidebar-02">
-                      <a className="image">
-                        <img src="/assets/images/blog-list/blog-list2-2.jpg" alt="" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="blog-list-2">
-                    <div className="date">
-                      <h3>05</h3>
-                      <p>November</p>
-                    </div>
-                    <div className="content">
-                      <ul>
-                        <li><Link legacyBehavior href="/author-details"><a>By Miles Jaxon</a></Link></li>
-                        <li><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Travel</a></Link></li>
-                      </ul>
-                      <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>vestibulum ligula sodalesoi Morbi iaculis laoreet.</a></Link></h4>
-                      <div className="bottom-area">
-                        <Link legacyBehavior href="/post-format-no-sidebar-02"><a className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
-                        <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5.85726 11.3009C7.14547 9.08822 6.60613 6.30362 4.57475 4.68025C4.57356 4.67933 4.57238 4.67818 4.57143 4.6775L4.58021 4.69862L4.57878 4.71446C4.97457 5.72599 4.91905 6.83648 4.43285 7.78924L4.09022 8.461L3.9851 7.71876C3.91368 7.21529 3.71745 6.735 3.41515 6.32382H3.36745L3.3423 6.25495C3.34586 7.02428 3.17834 7.78213 2.8497 8.49704C2.41856 9.43259 2.48191 10.5114 3.01936 11.3833L3.39023 11.9853L2.72299 11.7126C1.62271 11.2628 0.743103 10.3964 0.309587 9.33547C-0.176131 8.15083 -0.0862008 6.77725 0.550429 5.66194C0.882388 5.08179 1.11493 4.46582 1.24187 3.8308L1.36597 3.2084L1.68251 3.76353C1.83366 4.02824 1.94494 4.31476 2.01399 4.61574L2.02111 4.62285L2.02847 4.67107L2.03535 4.669C2.98353 3.45015 3.55158 1.93354 3.6344 0.397865L3.65575 0L4.00076 0.217643C5.4088 1.10544 6.38664 2.52976 6.6887 4.13017L6.69558 4.163L6.69914 4.16805L6.71457 4.14693C6.99053 3.79429 7.13622 3.37485 7.13622 2.93336V2.24967L7.56261 2.7947C8.55398 4.06153 9.06224 5.63301 8.99391 7.21988C8.90991 9.08776 7.85708 10.7272 6.17736 11.6154L5.45008 12L5.85726 11.3009Z" />
-                        </svg>5 Min Read</span>
-                      </div>
-                    </div>
-                    <div className="image">
-                      <div className="video position-relative">
-                        <div className="video-play sibling-2">
-                          <div onClick={() => setOpen(true)} data-fancybox="popup-youtube"><i className="bx bx-play" /></div>
+                  {
+                    AlumniMeet?.length > 0 && AlumniMeet.map((item, index) => (
+                      <div key={index} className="blog-list-2">
+                        <div className="date">
+                          <h3>{new Date(item?.date).getDay()}</h3>
+                          <p>{new Date(item?.date).toLocaleString('default', { month: 'long' })}</p>
                         </div>
-                        <img src="/assets/images/blog-list/blog-list2-3.jpg" alt="image" />
+                        <div className="content">
+                          <ul>
+                            <li><Link legacyBehavior href={`/events/id/${item?._id}`}><a>By Moderator</a></Link></li>
+                            <li><Link legacyBehavior href={`/events/id/${item?._id}`}><a>{new Date(item?.created_at).toLocaleString()}</a></Link></li>
+                          </ul>
+                          <h4><Link legacyBehavior href={`/events/id/${item?._id}`}><a>{item?.title}</a></Link></h4>
+                          <div className="bottom-area">
+                            <Link legacyBehavior href={`/events/id/${item?._id}`}><a className=" eg-btn arrow-btn">View Event<i className="bi bi-arrow-right" /></a></Link>
+                            <span><svg width={20} height={20} viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#000000" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"></path><path fill="#000000" d="M512 448a64 64 0 1 0 0-128 64 64 0 0 0 0 128zm0 64a128 128 0 1 1 0-256 128 128 0 0 1 0 256zm345.6 192L960 960H672v-64H352v64H64l102.4-256h691.2zm-68.928 0H235.328l-76.8 192h706.944l-76.8-192z"></path></g></svg> {item?.location}</span>
+                          </div>
+                        </div>
+                        <Link legacyBehavior href={`/events/id/${item?._id}`}>
+                          <a className="image">
+                            <img src="https://thumbs.dreamstime.com/b/people-meeting-together-outdoor-friends-gathering-vector-illustration-concept-friend-meetup-celebration-collab-collaboration-197968976.jpg" alt="" />
+                          </a>
+                        </Link>
                       </div>
-                    </div>
-                  </div>
-                  <div className="blog-list-2">
-                    <div className="date">
-                      <h3>15</h3>
-                      <p>November</p>
-                    </div>
-                    <div className="content">
-                      <ul>
-                        <li><Link legacyBehavior href="/author-details"><a>By Miles Jaxon</a></Link></li>
-                        <li><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Travel</a></Link></li>
-                      </ul>
-                      <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Etiam et quam atentl tortor placerat facilisis.</a></Link></h4>
-                      <div className="bottom-area">
-                        <Link legacyBehavior href="/post-format-no-sidebar-02"><a className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
-                        <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5.85726 11.3009C7.14547 9.08822 6.60613 6.30362 4.57475 4.68025C4.57356 4.67933 4.57238 4.67818 4.57143 4.6775L4.58021 4.69862L4.57878 4.71446C4.97457 5.72599 4.91905 6.83648 4.43285 7.78924L4.09022 8.461L3.9851 7.71876C3.91368 7.21529 3.71745 6.735 3.41515 6.32382H3.36745L3.3423 6.25495C3.34586 7.02428 3.17834 7.78213 2.8497 8.49704C2.41856 9.43259 2.48191 10.5114 3.01936 11.3833L3.39023 11.9853L2.72299 11.7126C1.62271 11.2628 0.743103 10.3964 0.309587 9.33547C-0.176131 8.15083 -0.0862008 6.77725 0.550429 5.66194C0.882388 5.08179 1.11493 4.46582 1.24187 3.8308L1.36597 3.2084L1.68251 3.76353C1.83366 4.02824 1.94494 4.31476 2.01399 4.61574L2.02111 4.62285L2.02847 4.67107L2.03535 4.669C2.98353 3.45015 3.55158 1.93354 3.6344 0.397865L3.65575 0L4.00076 0.217643C5.4088 1.10544 6.38664 2.52976 6.6887 4.13017L6.69558 4.163L6.69914 4.16805L6.71457 4.14693C6.99053 3.79429 7.13622 3.37485 7.13622 2.93336V2.24967L7.56261 2.7947C8.55398 4.06153 9.06224 5.63301 8.99391 7.21988C8.90991 9.08776 7.85708 10.7272 6.17736 11.6154L5.45008 12L5.85726 11.3009Z" />
-                        </svg>5 Min Read</span>
-                      </div>
-                    </div>
-                    <Link legacyBehavior href="/post-format-no-sidebar-02">
-                      <a className="image">
-                        <img src="/assets/images/blog-list/blog-list2-4.jpg" alt="" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="blog-list-2">
-                    <div className="date">
-                      <h3>15</h3>
-                      <p>November</p>
-                    </div>
-                    <div className="content">
-                      <ul>
-                        <li><Link legacyBehavior href="/author-details"><a>By Miles Jaxon</a></Link></li>
-                        <li><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Travel</a></Link></li>
-                      </ul>
-                      <h4><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Etiam et quam atentl tortor placerat facilisis.</a></Link></h4>
-                      <div className="bottom-area">
-                        <Link legacyBehavior href="/post-format-no-sidebar-02"><a className=" eg-btn arrow-btn">View Details<i className="bi bi-arrow-right" /></a></Link>
-                        <span> <svg width={9} height={12} viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5.85726 11.3009C7.14547 9.08822 6.60613 6.30362 4.57475 4.68025C4.57356 4.67933 4.57238 4.67818 4.57143 4.6775L4.58021 4.69862L4.57878 4.71446C4.97457 5.72599 4.91905 6.83648 4.43285 7.78924L4.09022 8.461L3.9851 7.71876C3.91368 7.21529 3.71745 6.735 3.41515 6.32382H3.36745L3.3423 6.25495C3.34586 7.02428 3.17834 7.78213 2.8497 8.49704C2.41856 9.43259 2.48191 10.5114 3.01936 11.3833L3.39023 11.9853L2.72299 11.7126C1.62271 11.2628 0.743103 10.3964 0.309587 9.33547C-0.176131 8.15083 -0.0862008 6.77725 0.550429 5.66194C0.882388 5.08179 1.11493 4.46582 1.24187 3.8308L1.36597 3.2084L1.68251 3.76353C1.83366 4.02824 1.94494 4.31476 2.01399 4.61574L2.02111 4.62285L2.02847 4.67107L2.03535 4.669C2.98353 3.45015 3.55158 1.93354 3.6344 0.397865L3.65575 0L4.00076 0.217643C5.4088 1.10544 6.38664 2.52976 6.6887 4.13017L6.69558 4.163L6.69914 4.16805L6.71457 4.14693C6.99053 3.79429 7.13622 3.37485 7.13622 2.93336V2.24967L7.56261 2.7947C8.55398 4.06153 9.06224 5.63301 8.99391 7.21988C8.90991 9.08776 7.85708 10.7272 6.17736 11.6154L5.45008 12L5.85726 11.3009Z" />
-                        </svg>5 Min Read</span>
-                      </div>
-                    </div>
-                    <Link legacyBehavior href="/post-format-no-sidebar-02">
-                      <a className="image">
-                        <img src="/assets/images/blog-list/blog-list2-4.jpg" alt="" />
-                      </a>
-                    </Link>
-                  </div>
+                    ))
+                  }
+
                 </SwiperSlide>
               </div>
             </Swiper>
@@ -374,9 +278,10 @@ function BlogSidebar() {
 
                 </ul>
               </div>
-              <div className="sidebar-shop-card" style={{ backgroundImage: 'url("/assets/images/bg/shop-bg.jpg")' }}>
+              <div className="sidebar-shop-card" style={{ backgroundImage: 'url("https://img.freepik.com/free-vector/internet-forum-vector-illustration-communication-concept_6280-512.jpg?w=740")' }}>
+                {/* 380 x 399 */}
                 <span>30% Off</span>
-                <h3>Buy Membership</h3>
+                <h3 style={{ color: 'black' }}>Buy Membership</h3>
                 <a href="#" className="shop-btn">Start Membership</a>
               </div>
             </div>

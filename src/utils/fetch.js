@@ -358,3 +358,33 @@ export const getEventById = async (id) => {
 
     }
 };
+
+export const getLatestFourAlumni = async () => {
+    try {
+
+
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+        };
+
+        const response = await fetch(BASE_URL + "/api/alumni/profile/last-4", requestOptions);
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error",
+                error: String(error)
+            }
+        }
+
+    }
+}

@@ -68,76 +68,91 @@ Template Name: TechGen - Digital Agency Template
   --font-prompt: 'Prompt', sans-serif;
   --font-inter: 'Inter', sans-serif;
 }
+
 @font-face {
   font-family: "Prompt";
   src: url(../fonts/Prompt-Black.ttf) format("truetype");
   font-weight: 900;
 }
+
 @font-face {
   font-family: "Prompt";
   src: url(../fonts/Prompt-ExtraBold.ttf) format("truetype");
   font-weight: 800;
 }
+
 @font-face {
   font-family: "Prompt";
   src: url(../fonts/Prompt-Bold.ttf) format("truetype");
   font-weight: 700;
 }
+
 @font-face {
   font-family: "Prompt";
   src: url(../fonts/Prompt-SemiBold.ttf) format("truetype");
   font-weight: 600;
 }
+
 @font-face {
   font-family: "Prompt";
   src: url(../fonts/Prompt-Medium.ttf) format("truetype");
   font-weight: 500;
 }
+
 @font-face {
   font-family: "Prompt";
   src: url(../fonts/Prompt-Regular.ttf) format("truetype");
   font-weight: 400;
 }
+
 @font-face {
   font-family: "Prompt";
   src: url(../fonts/Prompt-Light.ttf) format("truetype");
   font-weight: 300;
 }
+
 @font-face {
   font-family: "Inter";
   src: url(../fonts/Inter-Black.ttf) format("truetype");
   font-weight: 900;
 }
+
 @font-face {
   font-family: "Inter";
   src: url(../fonts/Inter-ExtraBold.ttf) format("truetype");
   font-weight: 800;
 }
+
 @font-face {
   font-family: "Inter";
   src: url(../fonts/Inter-Bold.ttf) format("truetype");
   font-weight: 700;
 }
+
 @font-face {
   font-family: "Inter";
   src: url(../fonts/Inter-SemiBold.ttf) format("truetype");
   font-weight: 600;
 }
+
 @font-face {
   font-family: "Inter";
   src: url(../fonts/Inter-Medium.ttf) format("truetype");
   font-weight: 500;
 }
+
 @font-face {
   font-family: "Inter";
   src: url(../fonts/Inter-Regular.ttf) format("truetype");
   font-weight: 400;
 }
+
 @font-face {
   font-family: "Inter";
   src: url(../fonts/Inter-Light.ttf) format("truetype");
   font-weight: 300;
 }
+
 /*================================================
 1. Mixins Css
 =================================================*/
@@ -476,6 +491,7 @@ a {
 .mb-100 {
   margin-bottom: 100px;
 }
+
 .mt-100 {
   margin-top: 100px;
 }
@@ -862,6 +878,7 @@ body.tt-magic-cursor #magic-cursor {
   display: flex;
   align-items: center;
   justify-content: center;
+
   @keyframes seq-preloader {
     50% {
       opacity: 1;
@@ -872,7 +889,7 @@ body.tt-magic-cursor #magic-cursor {
     }
   }
 
-  
+
   .seq-preloader.seq-preloaded {
     opacity: 0;
     visibility: hidden;
@@ -935,22 +952,27 @@ body.tt-magic-cursor #magic-cursor {
     .seq-preload-circle {
       fill: #548F6F;
     }
+
     .seq-preload-indicator-fallback .seq-preload-circle {
       background-color: #548F6F;
     }
   }
+
   &.three {
     .seq-preload-circle {
       fill: var(--linear-two);
     }
+
     .seq-preload-indicator-fallback .seq-preload-circle {
       background-color: var(--linear-two);
     }
   }
+
   &.four {
     .seq-preload-circle {
       fill: var(--primary-four);
     }
+
     .seq-preload-indicator-fallback .seq-preload-circle {
       background-color: var(--primary-four);
     }
@@ -2539,19 +2561,23 @@ header.style-1 {
     .search-btn {
       margin-right: 30px;
       cursor: pointer;
-      @include lg-down-device(){
-        margin-right: 20px;   
+
+      @include lg-down-device() {
+        margin-right: 20px;
       }
+
       &:hover {
         i {
           color: var(--primary-one);
         }
       }
     }
-    .admin-area{
+
+    .admin-area {
       cursor: pointer;
-      @include lg-down-device(){
-        margin-right: 20px;   
+
+      @include lg-down-device() {
+        margin-right: 20px;
       }
 
       &:hover {
@@ -2566,8 +2592,9 @@ header.style-1 {
       color: var(--text-primary);
       transition: 0.35s ease;
     }
-    .mobile-menu-btn{
-      i{
+
+    .mobile-menu-btn {
+      i {
         font-size: 24px;
       }
     }
@@ -3547,7 +3574,8 @@ header.style-3 {
 
           a {
             padding: 20px 0;
-            @include lg-down-device(){
+
+            @include lg-down-device() {
               padding: 10px 0;
             }
           }
@@ -4426,7 +4454,8 @@ header.style-4 {
     top: 16px !important;
     border-radius: unset;
     background-color: var(--text-primary);
-    @include lg-down-device(){
+
+    @include lg-down-device() {
       top: 10px !important;
     }
 
@@ -4800,7 +4829,8 @@ header.style-4 {
     text-align: center;
     transition: 0.5s ease;
     border: 1px solid rgba(255, 255, 255, 0.45);
-    @include sm-down-device(){
+
+    @include sm-down-device() {
       height: 30px;
       min-width: 30px;
       line-height: 26px;
@@ -4827,7 +4857,8 @@ header.style-4 {
 
   .search-cross-btn i {
     font-size: 15px;
-    @include sm-down-device(){
+
+    @include sm-down-device() {
       font-size: 11px;
     }
   }
@@ -5814,6 +5845,7 @@ ul.social-4 {
           font-size: 14px;
           font-weight: 400;
         }
+
         @include sm-down-device() {
           margin-right: 15px;
           font-size: 12px;
@@ -5858,7 +5890,8 @@ ul.social-4 {
           height: 10px;
           background-color: var(--primary-four);
           border-radius: 4px;
-          @include sm-down-device(){
+
+          @include sm-down-device() {
             display: none;
             visibility: hidden;
           }
@@ -12521,7 +12554,8 @@ footer.style-4 {
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
-    @include md-down-device(){
+
+    @include md-down-device() {
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -12532,7 +12566,8 @@ footer.style-4 {
         font-size: 13px;
         font-weight: 400;
         color: var(--text-primary);
-        @include md-down-device(){
+
+        @include md-down-device() {
           margin-bottom: 5px;
         }
       }
@@ -13568,6 +13603,7 @@ footer.style-4 {
   @include md-down-device() {
     border-radius: 10px;
   }
+
   @include sm-down-device() {
     padding: 0;
     display: flex;
@@ -14508,9 +14544,10 @@ footer.style-4 {
     }
 
     .article-img {
-      @include sm-down-device(){
+      @include sm-down-device() {
         width: 100%;
       }
+
       img {
         min-width: 160px;
         border-radius: 5px;
@@ -15351,7 +15388,8 @@ footer.style-4 {
     width: 106%;
     background-color: rgba(#F1F1DD, 0.5);
     z-index: -1;
-    @include md-down-device(){
+
+    @include md-down-device() {
       width: 100%;
     }
   }
@@ -15787,6 +15825,7 @@ footer.style-4 {
       }
     }
   }
+
   select {
     word-wrap: normal;
     border: unset;
@@ -15800,7 +15839,7 @@ footer.style-4 {
       width: 100%;
       text-align: left;
     }
-}
+  }
 
 
   .nice-select.open .list {
@@ -15924,16 +15963,19 @@ footer.style-4 {
       }
     }
   }
-  .informations{
-    .single-info{
+
+  .informations {
+    .single-info {
       display: flex;
       align-items: center;
       margin-bottom: 30px;
       gap: 15px;
-      &:last-child{
+
+      &:last-child {
         margin-bottom: 0;
       }
-      .icon{
+
+      .icon {
         height: 2.8rem;
         min-width: 2.8rem;
         border-radius: 50%;
@@ -15942,18 +15984,20 @@ footer.style-4 {
         display: flex;
         align-items: center;
         justify-content: center;
-        i{
+
+        i {
           font-size: 20px;
         }
       }
-      .info{
-        a{
+
+      .info {
+        a {
           font-size: 16px;
           font-weight: 400;
           color: var(--text-secondary);
           display: block;
           transition: 0.4s ease;
-          
+
           &:hover {
             color: var(--primary-one);
           }
@@ -18278,6 +18322,7 @@ footer.style-4 {
           transform: translateY(50px) scaleY(0);
           opacity: 0;
           animation: 0.4s ease 0.5s 1 normal forwards running navLinkFade;
+
           &:last-child {
             border-bottom: 1px solid transparent;
           }
@@ -18551,6 +18596,6 @@ footer.style-4 {
   }
 }
 
-.initial-child-container{
+.initial-child-container {
   gap: 20px;
 }
