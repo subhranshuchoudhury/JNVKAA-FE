@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { getAlumniProfiles } from '@/utils/fetch';
+import { GLOBAL_URL, getAlumniProfiles } from '@/utils/fetch';
 import toast from 'react-hot-toast';
 function Author() {
 
@@ -79,7 +79,7 @@ function Author() {
                       {
                         alumnus?.mobile ? <img src={alumnus?.profileDetails?.profileImage ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" /> : <img style={{
                           filter: "blur(5px)"
-                        }} src={alumnus?.profileDetails?.profileImage ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" />
+                        }} src={`${GLOBAL_URL + alumnus?.profileDetails?.profileImage}` ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" />
                       }
 
                     </a>
