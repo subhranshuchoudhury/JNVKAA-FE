@@ -388,3 +388,103 @@ export const getLatestFourAlumni = async () => {
 
     }
 }
+
+
+export const getAlumniProfiles = async (skip) => {
+
+    try {
+        var myHeaders = new Headers();
+        myHeaders.append("x-access-token", getCookie('token'));
+
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+
+        const response = await fetch(BASE_URL + "/api/alumni/all?skip=" + skip, requestOptions);
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error",
+                error: String(error)
+            }
+        }
+
+    }
+
+}
+
+export const getAlumniProfileById = async () => {
+
+    try {
+        var myHeaders = new Headers();
+        myHeaders.append("x-access-token", getCookie('token'));
+
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+
+        const response = await fetch(BASE_URL + "/api/alumni/my-profile", requestOptions);
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error"
+            }
+        }
+
+    }
+}
+
+export const updateUserProfile = async (profileDetails) => {
+
+    try {
+        var myHeaders = new Headers();
+        myHeaders.append("x-access-token", getCookie('token'));
+        myHeaders.append("Content-Type", "application/json");
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            redirect: 'follow',
+            body: JSON.stringify(profileDetails)
+        };
+
+        const response = await fetch(BASE_URL + "/api/alumni/update-details", requestOptions);
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error"
+            }
+        }
+
+    }
+}

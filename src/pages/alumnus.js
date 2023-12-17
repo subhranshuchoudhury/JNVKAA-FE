@@ -1,11 +1,35 @@
 import Link from 'next/link'
-import React from 'react'
-import alumnusData from "../data/alumnus/alumnus.json"
+import React, { useEffect, useState } from 'react'
+import { getAlumniProfiles } from '@/utils/fetch';
+import toast from 'react-hot-toast';
 function Author() {
 
   const searchAlumni = (e) => {
     e.preventDefault();
     console.log(e.target.value);
+  }
+
+  const [Skip, setSkip] = useState(0);
+  const [AlumnusData, setAlumnusData] = useState([]);
+
+  useEffect(() => {
+    getAlumnusAllData(0)
+  }, [])
+
+  const getAlumnusAllData = async (skip) => {
+
+    const response = await getAlumniProfiles(skip);
+
+    if (response?.status !== 200) return; // error handle
+
+    if (response?.data?.length === 0) {
+      toast.error("No more data to load");
+      return;
+    }
+
+    setAlumnusData([...AlumnusData, ...response?.data]);
+    setSkip(skip);
+
   }
   return (
     <section className="author-section pt-100 pb-100">
@@ -46,13 +70,18 @@ function Author() {
         <div className="row g-4 mb-60">
 
           {
-            alumnusData.map((alumnus, index) => <div className="col-lg-3 col-md-6 col-sm-6">
+            AlumnusData?.length > 0 && AlumnusData.map((alumnus, index) => <div key={index} className="col-lg-3 col-md-6 col-sm-6">
               <div className="author-1">
                 <div className="author-front">
                   <span className="categoty">{alumnus?.batch}</span>
                   <Link legacyBehavior href="/author-details">
                     <a className="image">
-                      <img src={alumnus?.image} alt="image" />
+                      {
+                        alumnus?.mobile ? <img src={alumnus?.profileDetails?.profileImage ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" /> : <img style={{
+                          filter: "blur(5px)"
+                        }} src={alumnus?.profileDetails?.profileImage ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" />
+                      }
+
                     </a>
                   </Link>
                   <h4>{alumnus?.name}</h4>
@@ -85,7 +114,7 @@ function Author() {
         </div>
         <div className="row text-center justify-content-center">
           <div className="col-md-6">
-            <button className="eg-btn btn--primary btn--lg">Load More</button>
+            <button onClick={() => getAlumnusAllData(Skip + 16)} className="eg-btn btn--primary btn--lg">Load More</button>
           </div>
         </div>
       </div>
