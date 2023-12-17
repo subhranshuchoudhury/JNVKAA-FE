@@ -79,7 +79,7 @@ function Author() {
                       {
                         alumnus?.mobile ? <img src={alumnus?.profileDetails?.profileImage ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" /> : <img style={{
                           filter: "blur(5px)"
-                        }} src={`${GLOBAL_URL + alumnus?.profileDetails?.profileImage}` ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" />
+                        }} src={`${GLOBAL_URL + "/api/user/post/image/" + alumnus?.profileDetails?.profileImage}` ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" />
                       }
 
                     </a>
@@ -87,7 +87,7 @@ function Author() {
                   <h4>{alumnus?.name}</h4>
                   <ul>
                     <li><span>Mobile</span><span>{alumnus?.mobile}</span></li>
-                    <li><span>School No</span><span>{alumnus?.schoolno}</span></li>
+                    <li><span>School No</span><span>{alumnus?.schoolNo}</span></li>
                   </ul>
                 </div>
                 <div className="author-back">
