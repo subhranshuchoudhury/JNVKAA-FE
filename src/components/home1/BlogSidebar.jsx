@@ -108,7 +108,7 @@ function BlogSidebar() {
                     RecentEvents?.length > 0 && RecentEvents.map((item, index) => (
                       <div key={index} className="blog-list-2">
                         <div className="date">
-                          <h3>{new Date(item?.date).getDay()}</h3>
+                          <h3>{new Date(item?.date).getUTCDate()}</h3>
                           <p>{new Date(item?.date).toLocaleString('default', { month: 'long' })}</p>
                         </div>
                         <div className="content">
