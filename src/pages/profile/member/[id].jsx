@@ -80,20 +80,24 @@ export default function page() {
 
                                     <li>
                                         <img src="/assets/images/icons/view.svg" alt="image" />
-                                        Email: <span>{MemberData?.profileDetails?.mailId || "fake@gmail.com"}</span>
+                                        Email: <span>{MemberData?.profileDetails?.mailId || "..."}</span>
                                     </li>
+
+                                    {
+                                        MemberData?.profileDetails?.dob && <li>
+                                            <img src="/assets/images/icons/view.svg" alt="image" />
+                                            DOB: <span>{new Date().toLocaleDateString()}</span>
+                                        </li>
+                                    }
+
 
                                     <li>
                                         <img src="/assets/images/icons/view.svg" alt="image" />
-                                        DOB: <span>{new Date(MemberData?.profileDetails?.dob).toLocaleDateString()}</span>
+                                        Profession: <span>{MemberData?.profileDetails?.profession || "..."}</span>
                                     </li>
                                     <li>
                                         <img src="/assets/images/icons/view.svg" alt="image" />
-                                        Profession: <span>{MemberData?.profileDetails?.profession || "Plumber"}</span>
-                                    </li>
-                                    <li>
-                                        <img src="/assets/images/icons/view.svg" alt="image" />
-                                        Blood Group: <span>{MemberData?.profileDetails?.bloodGroup || "Z+"}</span>
+                                        Blood Group: <span>{MemberData?.profileDetails?.bloodGroup || "..."}</span>
                                     </li>
 
                                 </ul>
