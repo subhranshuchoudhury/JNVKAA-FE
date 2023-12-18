@@ -29,6 +29,7 @@ function Author() {
 
     setAlumnusData([...AlumnusData, ...response?.data]);
     setSkip(skip);
+    console.log(response?.data);
 
   }
   return (
@@ -73,7 +74,7 @@ function Author() {
             AlumnusData?.length > 0 && AlumnusData.map((alumnus, index) => <div key={index} className="col-lg-3 col-md-6 col-sm-6">
               <div className="author-1">
                 <div className="author-front">
-                  <span className="categoty">{alumnus?.batch}</span>
+                  <span className="categoty">{alumnus?.profileDetails?.graduationYear}</span>
                   <Link legacyBehavior href="/author-details">
                     <a className="image">
                       {
@@ -86,8 +87,12 @@ function Author() {
                   </Link>
                   <h4>{alumnus?.name}</h4>
                   <ul>
-                    <li><span>Mobile</span><span>{alumnus?.mobile}</span></li>
-                    <li><span>School No</span><span>{alumnus?.schoolNo}</span></li>
+                    <li><span>Mobile</span><span style={{
+                      filter: "blur(4px)"
+                    }}>{alumnus?.mobile || "1234567890"}</span></li>
+                    <li><span>School No</span><span style={{
+                      filter: "blur(4px)"
+                    }}>{alumnus?.schoolNo || "12345"}</span></li>
                   </ul>
                 </div>
                 <div className="author-back">
@@ -104,7 +109,10 @@ function Author() {
 
 
                   </ul>
-                  <Link legacyBehavior href="/author-details"><a className=" eg-btn arrow-btn four">View Details<i className="bi bi-arrow-right" /></a></Link>
+                  {
+                    alumnus?.mobile ? <Link legacyBehavior href="/author-details"><a className=" eg-btn arrow-btn four">View Details<i className="bi bi-arrow-right" /></a></Link> : <Link legacyBehavior href="/author-details"><a className=" eg-btn arrow-btn four">Buy Membership<i className="bi bi-arrow-right" /></a></Link>
+                  }
+
                 </div>
               </div>
             </div>)
