@@ -489,8 +489,6 @@ export const updateUserProfile = async (profileDetails) => {
     }
 }
 
-// /api/alumni/search
-
 export const searchAlumniByParameter = async (searchParameter, searchValue) => {
 
     try {
@@ -503,6 +501,40 @@ export const searchAlumniByParameter = async (searchParameter, searchValue) => {
         };
 
         const response = await fetch(BASE_URL + "/api/alumni/search?" + `${searchParameter}=${searchValue}`, requestOptions);
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error"
+            }
+        }
+
+    }
+}
+
+export const getAlumniProfileByID = async (ID) => {
+    try {
+        var myHeaders = new Headers();
+        myHeaders.append("x-access-token", getCookie('token'));
+        myHeaders.append("Content-Type", "application/json");
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            redirect: 'follow',
+            body: JSON.stringify({
+                id: ID
+            })
+        };
+
+        const response = await fetch(BASE_URL + "/api/alumni/search/id", requestOptions);
         const data = await response.json();
 
         return {

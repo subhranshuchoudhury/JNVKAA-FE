@@ -144,7 +144,7 @@ function Author() {
 
                   </ul>
                   {
-                    alumnus?.mobile ? <Link legacyBehavior href="/author-details"><a className=" eg-btn arrow-btn four">View Details<i className="bi bi-arrow-right" /></a></Link> : <Link legacyBehavior href="/author-details"><a className=" eg-btn arrow-btn four">Buy Membership<i className="bi bi-arrow-right" /></a></Link>
+                    alumnus?.mobile ? <Link legacyBehavior href={`/profile/member/${alumnus?._id}`}><a className=" eg-btn arrow-btn four">View Details<i className="bi bi-arrow-right" /></a></Link> : <Link legacyBehavior href="/author-details"><a className=" eg-btn arrow-btn four">Buy Membership<i className="bi bi-arrow-right" /></a></Link>
                   }
 
                 </div>

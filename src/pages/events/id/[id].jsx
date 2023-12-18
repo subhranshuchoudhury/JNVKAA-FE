@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { getEventById } from '@/utils/fetch';
+import { getAlumniProfileByID, getEventById } from '@/utils/fetch';
 import Link from 'next/link';
 import Socials from '@/data/topbar/social.json';
 export default function page() {

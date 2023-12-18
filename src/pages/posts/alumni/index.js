@@ -252,7 +252,7 @@ function BlogClassicPage() {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="sidebar-shop-card" style={{ backgroundImage: 'url("/assets/images/bg/shop-bg.jpg")' }}>
+                                <div className="sidebar-shop-card" style={{ backgroundImage: 'url("https://img.freepik.com/free-vector/internet-forum-vector-illustration-communication-concept_6280-512.jpg?w=740")' }}>
                                     <span>150+ Premium Members</span>
                                     <h3>Buy Membership</h3>
                                     <a href="#" className="shop-btn">Buy Now</a>
