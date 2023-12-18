@@ -1,17 +1,38 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { GLOBAL_URL, getAlumniProfiles } from '@/utils/fetch';
+import { GLOBAL_URL, getAlumniProfiles, searchAlumniByParameter } from '@/utils/fetch';
 import toast from 'react-hot-toast';
 function Author() {
 
-  const searchAlumni = (e) => {
-    e.preventDefault();
-    console.log(e.target.value);
+  const searchAlumni = async (value) => {
+    setLoading(true);
+    const response = await searchAlumniByParameter(SearchParameter, value)
+    setLoading(false);
+
+
+    if (response?.status !== 200) {
+      toast.error("Something went wrong");
+      return;
+    }
+
+    if (response?.status === 200) {
+      if (response?.data?.length === 0) {
+        toast.error("No data found");
+        return;
+      }
+      setAlumnusData(response?.data);
+      return;
+    }
+
+
+
   }
 
   const [Skip, setSkip] = useState(0);
   const [AlumnusData, setAlumnusData] = useState([]);
-
+  const [SearchParameter, setSearchParameter] = useState("name");
+  const [searchValue, setSearchValue] = useState("");
+  const [Loading, setLoading] = useState(true)
   useEffect(() => {
     getAlumnusAllData(0)
   }, [])
@@ -19,6 +40,8 @@ function Author() {
   const getAlumnusAllData = async (skip) => {
 
     const response = await getAlumniProfiles(skip);
+
+    setLoading(false);
 
     if (response?.status !== 200) return; // error handle
 
@@ -44,14 +67,16 @@ function Author() {
               <div className='category-wrap'>
 
                 <form>
-                  <select>
-                    <option>All Category</option>
-                    <option>Name</option>
-                    <option>Batch</option>
-                    <option>Location</option>
-                    <option>Blood Group</option>
+                  <select defaultValue={SearchParameter} onChange={(e) => {
+                    console.log(e.target.value);
+                    setSearchParameter(e.target.value?.toLocaleLowerCase());
+                  }}>
+                    <option value={"name"}>Name</option>
+                    <option value={"batch"}>Batch</option>
+                    <option value={"schoolNo"}>School No</option>
+                    <option value={"address"}>Address</option>
+                    <option value={"bloodGroup"}>Blood Group</option>
                   </select>
-                  <button onClick={(e) => e.preventDefault()}><i className="bi bi-funnel-fill" /></button>
                 </form>
               </div>
             </div>
@@ -62,14 +87,23 @@ function Author() {
               borderRadius: "23px",
             }} >
               <form>
-                <input type="text" placeholder="Search here..." />
-                <button><i className="bi bi-search" /></button>
+                <input name='searchValue' onChange={(e) => setSearchValue(e.target.value)} value={searchValue || ""} type="text" placeholder={`Search alumni by ${SearchParameter}...`} />
+                <button onClick={(e) => {
+                  e.preventDefault();
+                  searchAlumni(searchValue);
+                }}><i className="bi bi-search" /></button>
               </form>
             </div>
           </div>
         </div>
         <div className="row g-4 mb-60">
-
+          {
+            Loading && <div className="text-center">
+              <div className="spinner-border" style={{ width: "3rem", height: " 3rem" }} role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          }
           {
             AlumnusData?.length > 0 && AlumnusData.map((alumnus, index) => <div key={index} className="col-lg-3 col-md-6 col-sm-6">
               <div className="author-1">
@@ -87,12 +121,10 @@ function Author() {
                   </Link>
                   <h4>{alumnus?.name}</h4>
                   <ul>
-                    <li><span>Mobile</span><span style={{
+                    <li><span>Mobile</span><span style={!alumnus?.mobile && {
                       filter: "blur(4px)"
                     }}>{alumnus?.mobile || "1234567890"}</span></li>
-                    <li><span>School No</span><span style={{
-                      filter: "blur(4px)"
-                    }}>{alumnus?.schoolNo || "12345"}</span></li>
+                    <li><span>School No</span><span>{alumnus?.profileDetails?.schoolNo}</span></li>
                   </ul>
                 </div>
                 <div className="author-back">
@@ -122,7 +154,13 @@ function Author() {
         </div>
         <div className="row text-center justify-content-center">
           <div className="col-md-6">
-            <button onClick={() => getAlumnusAllData(Skip + 16)} className="eg-btn btn--primary btn--lg">Load More</button>
+            <button onClick={() => getAlumnusAllData(Skip + 16)} className="eg-btn btn--primary btn--lg">
+
+              {
+                Loading ? <><span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Loading...</> : "Load More"
+              }
+            </button>
           </div>
         </div>
       </div>
