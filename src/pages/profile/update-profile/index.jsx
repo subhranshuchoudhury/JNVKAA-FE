@@ -1,6 +1,6 @@
 import { batch } from "@/data/batch";
 import { bloodGroups } from "@/data/bloodgroup";
-import { createPostAlumni, deleteImage, getAlumniProfileById, updateUserProfile, uploadImage } from "@/utils/fetch";
+import { deleteImage, getAlumniProfileById, updateUserProfile, uploadImage } from "@/utils/fetch";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -217,6 +217,7 @@ function updateProfile() {
             UpdateUserData.dob = response.data.profileDetails.dob
             UpdateUserData.graduationYear = response.data.profileDetails.graduationYear
             UpdateUserData.about = response.data.profileDetails.about
+            UpdateUserData.profileImage = response.data.profileDetails.profileImage
 
         } else {
             toast.error("Something went wrong");
@@ -227,6 +228,7 @@ function updateProfile() {
     const updateDetails = async (e) => {
         e.preventDefault();
         const loadingToast = toast.loading("Updating profile...");
+
         UpdateUserData.location = isGeolocationAvailable && isGeolocationEnabled && coords ? `${coords.latitude}-${coords.longitude}` : UpdateUserData.location
         const response = await updateUserProfile(UpdateUserData);
         if (response.status === 200) {
