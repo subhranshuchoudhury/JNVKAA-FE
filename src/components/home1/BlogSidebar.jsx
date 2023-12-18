@@ -280,7 +280,7 @@ function BlogSidebar() {
               </div>
               <div className="sidebar-shop-card" style={{ backgroundImage: 'url("https://img.freepik.com/free-vector/internet-forum-vector-illustration-communication-concept_6280-512.jpg?w=740")' }}>
                 {/* 380 x 399 */}
-                <span>30% Off</span>
+                <span>Unlock premium features</span>
                 <h3 style={{ color: 'black' }}>Buy Membership</h3>
                 <a href="#" className="shop-btn">Start Membership</a>
               </div>

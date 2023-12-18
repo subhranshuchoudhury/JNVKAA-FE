@@ -395,7 +395,7 @@ function BlogClassicPage() {
                 </ul>
               </div>
               <div className="sidebar-shop-card" style={{ backgroundImage: 'url("/assets/images/bg/shop-bg.jpg")' }}>
-                <span>30% Off</span>
+                <span>Unlock premium features</span>
                 <h3>Apple Macbook </h3>
                 <a href="#" className="shop-btn">Shop Now</a>
               </div>

@@ -79,7 +79,7 @@ function Banner() {
                         </Link>
                         <div className="content">
                           <ul>
-                            <li><Link legacyBehavior href="/"><a>By Subhranshu Choudhury</a></Link></li>
+                            <li><Link legacyBehavior href="/"><a>By Admin</a></Link></li>
                             <li><Link legacyBehavior href="/"><a>Nov 10, 2022</a></Link></li>
                             <li>1.5k View</li>
                           </ul>
@@ -109,7 +109,7 @@ function Banner() {
                         </Link>
                         <div className="content">
                           <ul>
-                            <li><Link legacyBehavior href="/"><a>By Subhranshu Choudhury</a></Link></li>
+                            <li><Link legacyBehavior href="/"><a>By Admin</a></Link></li>
                             <li><Link legacyBehavior href="/"><a>Nov 10, 2022</a></Link></li>
                             <li>1.5k View</li>
                           </ul>
@@ -139,7 +139,7 @@ function Banner() {
                         </Link>
                         <div className="content">
                           <ul>
-                            <li><Link legacyBehavior href="/"><a>By Subhranshu Choudhury</a></Link></li>
+                            <li><Link legacyBehavior href="/"><a>By Admin</a></Link></li>
                             <li><Link legacyBehavior href="/"><a>Nov 10, 2022</a></Link></li>
                             <li>1.5k View</li>
                           </ul>
@@ -168,7 +168,7 @@ function Banner() {
                         </Link>
                         <div className="content">
                           <ul>
-                            <li><Link legacyBehavior href="/"><a>By Subhranshu Choudhury</a></Link></li>
+                            <li><Link legacyBehavior href="/"><a>By Admin</a></Link></li>
                             <li><Link legacyBehavior href="/"><a>Nov 10, 2022</a></Link></li>
                             <li>1.5k View</li>
                           </ul>
@@ -198,7 +198,7 @@ function Banner() {
                         </Link>
                         <div className="content">
                           <ul>
-                            <li><Link legacyBehavior href="/"><a>By Subhranshu Choudhury</a></Link></li>
+                            <li><Link legacyBehavior href="/"><a>By Admin</a></Link></li>
                             <li><Link legacyBehavior href="/"><a>Nov 10, 2022</a></Link></li>
                             <li>1.5k View</li>
                           </ul>
@@ -227,7 +227,7 @@ function Banner() {
                         </Link>
                         <div className="content">
                           <ul>
-                            <li><Link legacyBehavior href="/"><a>By Subhranshu Choudhury</a></Link></li>
+                            <li><Link legacyBehavior href="/"><a>By Admin</a></Link></li>
                             <li><Link legacyBehavior href="/"><a>Nov 10, 2022</a></Link></li>
                             <li>1.5k View</li>
                           </ul>
@@ -257,7 +257,7 @@ function Banner() {
                         </Link>
                         <div className="content">
                           <ul>
-                            <li><Link legacyBehavior href="/"><a>By Subhranshu Choudhury</a></Link></li>
+                            <li><Link legacyBehavior href="/"><a>By Admin</a></Link></li>
                             <li><Link legacyBehavior href="/"><a>Nov 10, 2022</a></Link></li>
                             <li>1.5k View</li>
                           </ul>
@@ -287,7 +287,7 @@ function Banner() {
                         </Link>
                         <div className="content">
                           <ul>
-                            <li><Link legacyBehavior href="/"><a>By Subhranshu Choudhury</a></Link></li>
+                            <li><Link legacyBehavior href="/"><a>By Admin</a></Link></li>
                             <li><Link legacyBehavior href="/"><a>Nov 10, 2022</a></Link></li>
                             <li>1.5k View</li>
                           </ul>
@@ -316,7 +316,7 @@ function Banner() {
                         </Link>
                         <div className="content">
                           <ul>
-                            <li><Link legacyBehavior href="/"><a>By Subhranshu Choudhury</a></Link></li>
+                            <li><Link legacyBehavior href="/"><a>By Admin</a></Link></li>
                             <li><Link legacyBehavior href="/"><a>Nov 10, 2022</a></Link></li>
                             <li>1.5k View</li>
                           </ul>
@@ -345,7 +345,7 @@ function Banner() {
                         </Link>
                         <div className="content">
                           <ul>
-                            <li><Link legacyBehavior href="/"><a>By Subhranshu Choudhury</a></Link></li>
+                            <li><Link legacyBehavior href="/"><a>By Admin</a></Link></li>
                             <li><Link legacyBehavior href="/"><a>Nov 10, 2022</a></Link></li>
                             <li>1.5k View</li>
                           </ul>
@@ -374,7 +374,7 @@ function Banner() {
                         </Link>
                         <div className="content">
                           <ul>
-                            <li><Link legacyBehavior href="/"><a>By Subhranshu Choudhury</a></Link></li>
+                            <li><Link legacyBehavior href="/"><a>By Admin</a></Link></li>
                             <li><Link legacyBehavior href="/"><a>Nov 10, 2022</a></Link></li>
                             <li>1.5k View</li>
                           </ul>
