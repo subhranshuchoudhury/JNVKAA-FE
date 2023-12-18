@@ -110,19 +110,21 @@ function Author() {
                 <div className="author-front">
                   <span className="categoty">{alumnus?.profileDetails?.graduationYear}</span>
                   <Link legacyBehavior href="/author-details">
-                    {/* <a className="image">
+                    <a className="image">
                       {
-                        alumnus?.mobile ? <img src={alumnus?.profileDetails?.profileImage ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" /> : <img style={{
+                        alumnus?.mobile ? <img src={`${GLOBAL_URL + "/api/user/post/image/" + alumnus?.profileDetails?.profileImage}` ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" /> : <img style={{
                           filter: "blur(5px)"
                         }} src={`${GLOBAL_URL + "/api/user/post/image/" + alumnus?.profileDetails?.profileImage}` ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" />
                       }
 
-                    </a> */}
+                    </a>
                   </Link>
                   <h4>{alumnus?.name}</h4>
                   <ul>
-                    <li><span>Mobile</span><span style={!alumnus?.mobile && {
+                    <li><span>Mobile</span><span style={!alumnus?.mobile ? {
                       filter: "blur(4px)"
+                    } : {
+                      filter: "blur(0px)"
                     }}>{alumnus?.mobile || "1234567890"}</span></li>
                     <li><span>School No</span><span>{alumnus?.profileDetails?.schoolNo}</span></li>
                   </ul>
