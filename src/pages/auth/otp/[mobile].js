@@ -11,7 +11,6 @@ import { useRouter } from 'next/router'
 function OTPVerify(props) {
 
     const router = useRouter()
-    const [Data, setData] = useState(null);
     const [OTP, setOTP] = useState("")
     const [IsOTPSent, setIsOTPSent] = useState(false)
 
@@ -26,7 +25,6 @@ function OTPVerify(props) {
         const loadingToast = toast.loading("Please wait...");
         const response = await sendOTP(mobile);
         toast.dismiss(loadingToast);
-        setData(response);
 
         if (response.status === 200) {
             toast.success(response.data.message);
@@ -51,13 +49,13 @@ function OTPVerify(props) {
         const loadingToast = toast.loading("Please wait...");
         const response = await verifyOTP(mobile, otp);
         toast.dismiss(loadingToast);
-        setData(response);
+
 
         if (response.status === 200) {
             toast.success(response.data.message);
             setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 * 365 * 3 });
             localStorage.setItem("userData", JSON.stringify(response.data.data));
-            window.location.href = "/posts/alumni";
+            window.location.href = "/profile/update-profile";
 
         } else {
             toast.error(response.data.message + " ECODE: " + response.status);

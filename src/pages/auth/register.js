@@ -3,8 +3,7 @@ import { RegisterAlumni } from '@/utils/fetch';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import social from '@/data/topbar/social.json';
-import { checkLogin, checkRegisterStepOne } from '@/utils/validator';
-import { setCookie } from "cookies-next";
+import { checkRegisterStepOne } from '@/utils/validator';
 import { useRouter } from 'next/router';
 
 function Register() {
