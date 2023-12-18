@@ -109,7 +109,7 @@ function Author() {
               <div className="author-1">
                 <div className="author-front">
                   <span className="categoty">{alumnus?.profileDetails?.graduationYear}</span>
-                  <Link legacyBehavior href="/author-details">
+                  <Link legacyBehavior href={`/profile/member/${alumnus?._id}`}>
                     <a className="image">
                       {
                         alumnus?.mobile ? <img src={`${GLOBAL_URL + "/api/user/post/image/" + alumnus?.profileDetails?.profileImage}` ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" /> : <img style={{
