@@ -1,5 +1,6 @@
 import React from "react";
-
+import socialHandles from "@/data/topbar/social.json";
+import Link from "next/link";
 function contact() {
   return (
     <section className="contact-section pt-100 pb-100">
@@ -10,32 +11,18 @@ function contact() {
               <div className="title">
                 <h3>Contact Us</h3>
                 <p>
-                  Morbi quis elementum ex, id commodo odio. In maximus, augue
-                  europea vestibulum gomat.{" "}
+                  If you have any queries or doubt then contact on our official handles.{" "}
                 </p>
               </div>
               <div className="left-social">
                 <ul>
-                  <li>
-                    <a href="https://www.facebook.com/">
-                      <i className="bx bxl-facebook" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.twitter.com/">
-                      <i className="bx bxl-twitter" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.pinterest.com/">
-                      <i className="bx bxl-pinterest-alt" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/">
-                      <i className="bx bxl-instagram" />
-                    </a>
-                  </li>
+                  {
+                    socialHandles?.map((social, index) => {
+                      return <li key={index}>
+                        <a href={social?.link}><i className={social?.icon} /></a>
+                      </li>
+                    })
+                  }
                 </ul>
               </div>
               <div className="informations">
@@ -44,8 +31,8 @@ function contact() {
                     <i className="bi bi-telephone-fill" />
                   </div>
                   <div className="info">
-                    <a href="tel:05661111985">+880 566 1111 985</a>
-                    <a href="tel:06571111576">+880 657 1111 576</a>
+                    <a href="tel:05661111985">+91 9348463339</a>
+                    <a href="tel:06571111576">+971 509046495</a>
                   </div>
                 </div>
                 <div className="single-info">
@@ -53,8 +40,8 @@ function contact() {
                     <i className="bi bi-envelope" />
                   </div>
                   <div className="info">
-                    <a href="mailto: info@example.com">info@example.com</a>
-                    <a href="mailto: info@support.com">info@support.com</a>
+                    <a href="mailto:jnvkpara@gmail.com">jnvkpara@gmail.com</a>
+                    {/* <a href="mailto: info@support.com">info@support.com</a> */}
                   </div>
                 </div>
               </div>
@@ -91,9 +78,9 @@ function contact() {
                   </div>
                 </div>
                 <div className="col-12">
-                  <button type="submit" className="eg-btn btn--primary btn--lg">
-                    Send Message
-                  </button>
+                  <Link href="mailto:jnvkpara@gmail.com" type="submit" className="eg-btn btn--primary btn--lg">
+                    Send Mail
+                  </Link>
                 </div>
               </div>
             </form>
