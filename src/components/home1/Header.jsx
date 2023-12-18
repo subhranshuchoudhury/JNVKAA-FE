@@ -149,11 +149,11 @@ function Header({ state, dispatch }) {
                   <a>About</a>
                 </Link>
               </li>
-              <li className="menu-item-has-children">
+              {/* <li className="menu-item-has-children">
                 <Link legacyBehavior href="/events">
                   <a>Events</a>
                 </Link>
-              </li>
+              </li> */}
 
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/alumnus">

@@ -72,7 +72,7 @@ function contact() {
                   <div className="form-inner">
                     <textarea
                       rows={5}
-                      placeholder="Enter Your Messege"
+                      placeholder="Enter Your Message"
                       defaultValue={""}
                     />
                   </div>
