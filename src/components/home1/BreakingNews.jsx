@@ -44,7 +44,7 @@ function BreakingNews() {
           {
             NewsUpdateData.map((item, index) => {
               return <div key={index}>
-                <Link legacyBehavior href="/post-format-no-sidebar-02">
+                <Link legacyBehavior href="/">
                   <a>{item?.title}</a>
                 </Link>
                 <i className="bi bi-star-fill" />

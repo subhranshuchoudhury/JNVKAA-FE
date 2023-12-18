@@ -194,7 +194,7 @@
 //                             <li>
 //                               <Link
 //                                 legacyBehavior
-//                                 href="/post-format-no-sidebar-02"
+//                                 href="/"
 //                               >
 //                                 <a>Post Format 02</a>
 //                               </Link>

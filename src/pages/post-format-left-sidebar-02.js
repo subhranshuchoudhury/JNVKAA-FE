@@ -69,11 +69,11 @@ function PostFormatLeftSidebar02() {
                 <div className="sidebar-widget-1">
                   <h6 className="title">Popular Post</h6>
                   <div className="blog-list-1 mb-25">
-                    <Link legacyBehavior href="/post-format-no-sidebar-02">
+                    <Link legacyBehavior href="/">
                       <a className="image"><img src="/assets/images/blog-list/blog-list1-3.jpg" alt="image" /></a>
                     </Link>
                     <div className="content">
-                      <h6><Link legacyBehavior href="/post-format-no-sidebar-02"><a>gravida orci sed jaritob laoreet tellus.</a></Link></h6>
+                      <h6><Link legacyBehavior href="/"><a>gravida orci sed jaritob laoreet tellus.</a></Link></h6>
                       <ul>
                         <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                         <li><Link legacyBehavior href="/blog-standard"><a>500 Comment</a></Link></li>
@@ -81,11 +81,11 @@ function PostFormatLeftSidebar02() {
                     </div>
                   </div>
                   <div className="blog-list-1 mb-25">
-                    <Link legacyBehavior href="/post-format-no-sidebar-02">
+                    <Link legacyBehavior href="/">
                       <a className="image"><img src="/assets/images/blog-list/blog-list1-4.jpg" alt="image" /></a>
                     </Link>
                     <div className="content">
-                      <h6><Link legacyBehavior href="/post-format-no-sidebar-02"><a>laoreet tellus Morbi uto dolor mattis.</a></Link></h6>
+                      <h6><Link legacyBehavior href="/"><a>laoreet tellus Morbi uto dolor mattis.</a></Link></h6>
                       <ul>
                         <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                         <li><Link legacyBehavior href="/blog-standard"><a>890 Comment</a></Link></li>
@@ -93,11 +93,11 @@ function PostFormatLeftSidebar02() {
                     </div>
                   </div>
                   <div className="blog-list-1">
-                    <Link legacyBehavior href="/post-format-no-sidebar-02">
+                    <Link legacyBehavior href="/">
                       <a className="image"><img src="/assets/images/blog-list/blog-list1-5.jpg" alt="image" /></a>
                     </Link>
                     <div className="content">
-                      <h6><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Nam ullamcorper risuso non commodo.</a></Link></h6>
+                      <h6><Link legacyBehavior href="/"><a>Nam ullamcorper risuso non commodo.</a></Link></h6>
                       <ul>
                         <li><Link legacyBehavior href="/blog-standard"><a>Nov 10, 2022</a></Link></li>
                         <li><Link legacyBehavior href="/blog-standard"><a>3.5k Comment</a></Link></li>

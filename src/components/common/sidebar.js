@@ -118,7 +118,7 @@ function Sidebar2() {
                 <li><a href="#">Post Format</a><i className="bi bi-plus dropdown-icon2" />
                   <ul className="sub-menu">
                     <li><Link legacyBehavior href="/post-format-no-sidebar-01"><a>Post Format 01</a></Link></li>
-                    <li><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Post Format 02</a></Link></li>
+                    <li><Link legacyBehavior href="/"><a>Post Format 02</a></Link></li>
                     <li><Link legacyBehavior href="/post-format-no-sidebar-03"><a>Post Format 03</a></Link></li>
                     <li><Link legacyBehavior href="/post-format-no-sidebar-04"><a>Post Format 04</a></Link></li>
                     <li><Link legacyBehavior href="/post-format-no-sidebar-05"><a>Post Format 05</a></Link></li>

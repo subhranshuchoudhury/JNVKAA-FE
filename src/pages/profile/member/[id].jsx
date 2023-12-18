@@ -145,12 +145,12 @@ export default function page() {
                                             </li>
                                         </ul>
                                         <h4>
-                                            <Link legacyBehavior href="/post-format-no-sidebar-02">
+                                            <Link legacyBehavior href="/">
                                                 <a>{title}</a>
                                             </Link>
                                         </h4>
                                         <div className="bottom-area">
-                                            <Link legacyBehavior href="/post-format-no-sidebar-02">
+                                            <Link legacyBehavior href="/">
                                                 <a className=" eg-btn arrow-btn">
                                                     View Details
                                                     <i className="bi bi-arrow-right" />
@@ -170,7 +170,7 @@ export default function page() {
                                             </span>
                                         </div>
                                     </div>
-                                    <Link legacyBehavior href="/post-format-no-sidebar-02">
+                                    <Link legacyBehavior href="/">
                                         <a className="image">
                                             <img src={img} alt="imgs" />
                                         </a>
@@ -227,7 +227,7 @@ export default function page() {
                             {/* <div className="sidebar-widget-1"> 
                                  <h6 className="title">Editor Choice</h6>
                                 <div className="blog-list-1 mb-25">
-                                    <Link legacyBehavior href="/post-format-no-sidebar-02">
+                                    <Link legacyBehavior href="/">
                                         <a className="image">
                                             <img
                                                 src="/assets/images/blog-list/blog-list1-3.jpg"
@@ -237,7 +237,7 @@ export default function page() {
                                     </Link>
                                     <div className="content">
                                         <h6>
-                                            <Link legacyBehavior href="/post-format-no-sidebar-02">
+                                            <Link legacyBehavior href="/">
                                                 <a>gravida orci sed jaritob laoreet tellus.</a>
                                             </Link>
                                         </h6>
@@ -256,7 +256,7 @@ export default function page() {
                                     </div>
                                 </div>
                                 <div className="blog-list-1 mb-25">
-                                    <Link legacyBehavior href="/post-format-no-sidebar-02">
+                                    <Link legacyBehavior href="/">
                                         <a className="image">
                                             <img
                                                 src="/assets/images/blog-list/blog-list1-4.jpg"
@@ -266,7 +266,7 @@ export default function page() {
                                     </Link>
                                     <div className="content">
                                         <h6>
-                                            <Link legacyBehavior href="/post-format-no-sidebar-02">
+                                            <Link legacyBehavior href="/">
                                                 <a>laoreet tellus Morbi uto dolor mattis.</a>
                                             </Link>
                                         </h6>
@@ -285,7 +285,7 @@ export default function page() {
                                     </div>
                                 </div>
                                 <div className="blog-list-1">
-                                    <Link legacyBehavior href="/post-format-no-sidebar-02">
+                                    <Link legacyBehavior href="/">
                                         <a className="image">
                                             <img
                                                 src="/assets/images/blog-list/blog-list1-5.jpg"
@@ -295,7 +295,7 @@ export default function page() {
                                     </Link>
                                     <div className="content">
                                         <h6>
-                                            <Link legacyBehavior href="/post-format-no-sidebar-02">
+                                            <Link legacyBehavior href="/">
                                                 <a>Nam ullamcorper risuso non commodo.</a>
                                             </Link>
                                         </h6>

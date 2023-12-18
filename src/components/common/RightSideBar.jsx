@@ -19,7 +19,7 @@ function RightSideBar({ state, dispatch }) {
           <div className="sidebar-widget mb-40">
             <h4 className="footer-title mb-4">Most Recent Article</h4>
             <div className="blog-list-5 mb-25">
-              <Link legacyBehavior href="/post-format-no-sidebar-02">
+              <Link legacyBehavior href="/">
                 <a className="image">
                   <img
                     src="/assets/images/blog-list/blog-list1-1.jpg"
@@ -29,7 +29,7 @@ function RightSideBar({ state, dispatch }) {
               </Link>
               <div className="content">
                 <h6>
-                  <Link legacyBehavior href="/post-format-no-sidebar-02">
+                  <Link legacyBehavior href="/">
                     <a> Our Begin Now To Being What You Will Be.</a>
                   </Link>
                 </h6>
@@ -44,7 +44,7 @@ function RightSideBar({ state, dispatch }) {
               </div>
             </div>
             <div className="blog-list-5 mb-25">
-              <Link legacyBehavior href="/post-format-no-sidebar-02">
+              <Link legacyBehavior href="/">
                 <a className="image">
                   <img
                     src="/assets/images/blog-list/blog-list1-3.jpg"
@@ -54,7 +54,7 @@ function RightSideBar({ state, dispatch }) {
               </Link>
               <div className="content">
                 <h6>
-                  <Link legacyBehavior href="/post-format-no-sidebar-02">
+                  <Link legacyBehavior href="/">
                     <a>Start now to become what you will be.</a>
                   </Link>
                 </h6>
@@ -69,7 +69,7 @@ function RightSideBar({ state, dispatch }) {
               </div>
             </div>
             <div className="blog-list-5">
-              <Link legacyBehavior href="/post-format-no-sidebar-02">
+              <Link legacyBehavior href="/">
                 <a className="image">
                   <img
                     src="/assets/images/blog-list/blog-list1-2.jpg"
@@ -79,7 +79,7 @@ function RightSideBar({ state, dispatch }) {
               </Link>
               <div className="content">
                 <h6>
-                  <Link legacyBehavior href="/post-format-no-sidebar-02">
+                  <Link legacyBehavior href="/">
                     <a>Fire up Now With What exactly You Are Going to Be.</a>
                   </Link>
                 </h6>

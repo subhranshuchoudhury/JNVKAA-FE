@@ -86,7 +86,7 @@ function RecentPost() {
                       <img src="/assets/images/recent-post/recent1-1.jpg" alt="image" />
                       <div className="content">
                         <Link legacyBehavior href="/blog-classic" className="subtitle"><a>Life Style</a></Link>
-                        <h4 className="title"><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Proin augue dolor ullamcorpert
+                        <h4 className="title"><Link legacyBehavior href="/"><a>Proin augue dolor ullamcorpert
                           id neque non eleifend.</a></Link></h4>
                         <ul>
                           <li><Link legacyBehavior href="/blog-standard"><a><i className="bi bi-calendar-check-fill" />12 December, 2022</a></Link>
@@ -103,7 +103,7 @@ function RecentPost() {
                       <img src="/assets/images/recent-post/recent1-2.jpg" alt="image" />
                       <div className="content">
                         <Link legacyBehavior href="/blog-classic" className="subtitle"><a>Fitness</a></Link>
-                        <h4 className="title"><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Imperdiet ident turpis Nunc
+                        <h4 className="title"><Link legacyBehavior href="/"><a>Imperdiet ident turpis Nunc
                           ont scelerisque ante.</a></Link></h4>
                         <ul>
                           <li><Link legacyBehavior href="/blog-standard"><a><i className="bi bi-calendar-check-fill" /> Novembar 04, 2022</a></Link>
@@ -121,7 +121,7 @@ function RecentPost() {
                       <img src="/assets/images/recent-post/recent1-3.jpg" alt="image" />
                       <div className="content">
                         <Link legacyBehavior href="/blog-classic" className="subtitle"><a>Pets Care</a></Link>
-                        <h4 className="title"><Link legacyBehavior href="/post-format-no-sidebar-02"><a>ur Begin Now To Beingonl Gon
+                        <h4 className="title"><Link legacyBehavior href="/"><a>ur Begin Now To Beingonl Gon
                           What You Will Be.</a></Link></h4>
                         <ul>
                           <li><Link legacyBehavior href="/blog-standard"><a><i className="bi bi-calendar-check-fill" /> Novembar 05, 2022</a></Link>
@@ -139,7 +139,7 @@ function RecentPost() {
                       <img src="/assets/images/recent-post/recent1-4.jpg" alt="image" />
                       <div className="content">
                         <Link legacyBehavior href="/blog-classic" className="subtitle"><a>Gym Train</a></Link>
-                        <h4 className="title"><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Consectetur quam Nam quisent
+                        <h4 className="title"><Link legacyBehavior href="/"><a>Consectetur quam Nam quisent
                           ante pharetra eleifend</a></Link></h4>
                         <ul>
                           <li><Link legacyBehavior href="/blog-standard"><a><i className="bi bi-calendar-check-fill" /> Novembar 08, 2022</a></Link>
@@ -157,7 +157,7 @@ function RecentPost() {
                       <img src="/assets/images/recent-post/recent1-5.jpg" alt="image" />
                       <div className="content">
                         <Link legacyBehavior href="/blog-classic" className="subtitle"><a>Fashion</a></Link>
-                        <h4 className="title"><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Fermentum eget odio at neque
+                        <h4 className="title"><Link legacyBehavior href="/"><a>Fermentum eget odio at neque
                           vestibulum rutrum sem.</a></Link></h4>
                         <ul>
                           <li><Link legacyBehavior href="/blog-standard"><a><i className="bi bi-calendar-check-fill" /> Novembar 10, 2022</a></Link>
@@ -175,7 +175,7 @@ function RecentPost() {
                       <img src="/assets/images/recent-post/recent1-6.jpg" alt="image" />
                       <div className="content">
                         <Link legacyBehavior href="/blog-classic" className="subtitle"><a>Travel</a></Link>
-                        <h4 className="title"><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Imperdiet ident turpis Nunc
+                        <h4 className="title"><Link legacyBehavior href="/"><a>Imperdiet ident turpis Nunc
                           ont scelerisque ante.</a></Link></h4>
                         <ul>
                           <li><Link legacyBehavior href="/blog-standard"><a><i className="bi bi-calendar-check-fill" /> December, 2022</a></Link>
@@ -192,7 +192,7 @@ function RecentPost() {
                       <img src="/assets/images/recent-post/recent1-7.jpg" alt="image" />
                       <div className="content">
                         <Link legacyBehavior href="/blog-classic" className="subtitle"><a>Restaurant</a></Link>
-                        <h4 className="title"><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Imperdiet ident turpis Nunc
+                        <h4 className="title"><Link legacyBehavior href="/"><a>Imperdiet ident turpis Nunc
                           ont scelerisque ante.</a></Link></h4>
                         <ul>
                           <li><Link legacyBehavior href="/blog-standard"><a><i className="bi bi-calendar-check-fill" /> December, 2022</a></Link>

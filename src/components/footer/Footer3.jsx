@@ -31,11 +31,11 @@ function Footer3() {
             <div className="footer-widget">
               <h4 className="footer-title">Top Article This Week</h4>
               <div className="blog-list-1 mb-25">
-                <Link legacyBehavior href="/post-format-no-sidebar-02">
+                <Link legacyBehavior href="/">
                   <a className="image"><img src="/assets/images/blog-list/blog-list1-1.jpg" alt="image" /></a>
                 </Link>
                 <div className="content">
-                  <h6><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Our Begin Now To Being What You Will Be.</a></Link></h6>
+                  <h6><Link legacyBehavior href="/"><a>Our Begin Now To Being What You Will Be.</a></Link></h6>
                   <ul>
                     <li><Link legacyBehavior href="/blog-standard"><a>Nov 02, 2022</a></Link></li>
                     <li><Link legacyBehavior href="/blog-standard"><a>520 Comment</a></Link></li>
@@ -43,11 +43,11 @@ function Footer3() {
                 </div>
               </div>
               <div className="blog-list-1">
-                <Link legacyBehavior href="/post-format-no-sidebar-02">
+                <Link legacyBehavior href="/">
                   <a className="image"><img src="/assets/images/blog-list/blog-list1-2.jpg" alt="image" /></a>
                 </Link>
                 <div className="content">
-                  <h6><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Our Begin Now To Being What You Will Be.</a></Link></h6>
+                  <h6><Link legacyBehavior href="/"><a>Our Begin Now To Being What You Will Be.</a></Link></h6>
                   <ul>
                     <li><Link legacyBehavior href="/blog-standard"><a>Nov 11, 2022</a></Link></li>
                     <li><Link legacyBehavior href="/blog-standard"><a>454 Comment</a></Link></li>

@@ -17,27 +17,27 @@ function MarqueeText() {
           </div>
           <h4 className="marquee-text2">
             <Marquee pauseOnHover={true}>
-              <Link legacyBehavior href="/post-format-no-sidebar-02">
+              <Link legacyBehavior href="/">
                 <a> Read article moreni urbano thona goblin</a>
               </Link>
               <img src="/assets/images/icons/start-2.svg" alt="image" />
-              <Link legacyBehavior href="/post-format-no-sidebar-02">
+              <Link legacyBehavior href="/">
                 <a> Gain your knowledge faster and moreathi</a>
               </Link>
               <img src="/assets/images/icons/start-2.svg" alt="image" />
-              <Link legacyBehavior href="/post-format-no-sidebar-02">
+              <Link legacyBehavior href="/">
                 <a> Make your brain sharper grow better option</a>
               </Link>
               <img src="/assets/images/icons/start-2.svg" alt="image" />
-              <Link legacyBehavior href="/post-format-no-sidebar-02">
+              <Link legacyBehavior href="/">
                 <a> Read article moreni urbano thona goblin</a>
               </Link>
               <img src="/assets/images/icons/start-2.svg" alt="image" />
-              <Link legacyBehavior href="/post-format-no-sidebar-02">
+              <Link legacyBehavior href="/">
                 <a> Gain your knowledge faster and moreathi</a>
               </Link>
               <img src="/assets/images/icons/start-2.svg" alt="image" />
-              <Link legacyBehavior href="/post-format-no-sidebar-02">
+              <Link legacyBehavior href="/">
                 <a> Make your brain sharper grow better option</a>
               </Link>
               <img src="/assets/images/icons/start-2.svg" alt="image" />

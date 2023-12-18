@@ -12,9 +12,9 @@ function WideThumbBlog() {
                 <div className="categoryd-date">
                   <Link legacyBehavior href="/blog-classic"><a>Creative</a></Link> <Link legacyBehavior href="/blog-standard"><a>26 Dec, 2022</a></Link>
                 </div>
-                <h3><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Our Begin Now To Beingonl What Your Will Be own fully gone..</a></Link> </h3>
+                <h3><Link legacyBehavior href="/"><a>Our Begin Now To Beingonl What Your Will Be own fully gone..</a></Link> </h3>
               </div>
-              <Link legacyBehavior href="/post-format-no-sidebar-02">
+              <Link legacyBehavior href="/">
                 <a className="image"><img src="/assets/images/blog-grid/blog-wide1.jpg" alt="image" /></a>
               </Link>
               <div className="content">
@@ -46,9 +46,9 @@ function WideThumbBlog() {
                 <div className="categoryd-date">
                   <Link legacyBehavior href="/blog-classic"><a>Travel</a></Link> <Link legacyBehavior href="/blog-standard"><a>26 Dec, 2022</a></Link>
                 </div>
-                <h3><Link legacyBehavior href="/post-format-no-sidebar-02"><a>blandit Vivamus egestas eu mauris sit ameti eleifend Fusce nibh purus.</a></Link> </h3>
+                <h3><Link legacyBehavior href="/"><a>blandit Vivamus egestas eu mauris sit ameti eleifend Fusce nibh purus.</a></Link> </h3>
               </div>
-              <Link legacyBehavior href="/post-format-no-sidebar-02">
+              <Link legacyBehavior href="/">
                 <a className="image"><img src="/assets/images/blog-grid/blog-wide2.jpg" alt="image" /></a>
               </Link>
               <div className="content">
@@ -79,9 +79,9 @@ function WideThumbBlog() {
                 <div className="categoryd-date">
                   <Link legacyBehavior href="/blog-classic"><a>Adventure</a></Link> <Link legacyBehavior href="/blog-standard"><a>26 Dec, 2022</a></Link>
                 </div>
-                <h3><Link legacyBehavior href="/post-format-no-sidebar-02"><a>tristique Quisque condimen tummo vitaego risus cursus et semper.</a></Link> </h3>
+                <h3><Link legacyBehavior href="/"><a>tristique Quisque condimen tummo vitaego risus cursus et semper.</a></Link> </h3>
               </div>
-              <Link legacyBehavior href="/post-format-no-sidebar-02" >
+              <Link legacyBehavior href="/" >
                 <a className="image"><img src="/assets/images/blog-grid/blog-wide3.jpg" alt="image" /></a>
               </Link>
               <div className="content">
@@ -114,9 +114,9 @@ function WideThumbBlog() {
                   <Link legacyBehavior href="/blog-classic"><a>Archiecture</a></Link>
                   <Link legacyBehavior href="/blog-standard"><a>05 Dec, 2022</a></Link>
                 </div>
-                <h3><Link legacyBehavior href="/post-format-no-sidebar-02"><a>Mauris auctor diami vitaent urnat imperdiet  sit amet fermentum neque.</a></Link> </h3>
+                <h3><Link legacyBehavior href="/"><a>Mauris auctor diami vitaent urnat imperdiet  sit amet fermentum neque.</a></Link> </h3>
               </div>
-              <Link legacyBehavior href="/post-format-no-sidebar-02">
+              <Link legacyBehavior href="/">
                 <a className="image"> <img src="/assets/images/blog-grid/blog-wide4.jpg" alt="image" /></a>
               </Link>
               <div className="content">

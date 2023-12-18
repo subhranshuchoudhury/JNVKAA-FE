@@ -92,7 +92,7 @@ function AuthorSection() {
                       <div className="author-1">
                         <div className="author-front">
                           <span className="categoty">{member?.profileDetails?.graduationYear}</span>
-                          <Link legacyBehavior href="/post-format-no-sidebar-02">
+                          <Link legacyBehavior href="/">
                             <a className="image">
                               <img src={`${GLOBAL_URL + "/api/user/post/image/" + member?.profileDetails?.profileImage}` ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="profile image" />
                             </a>

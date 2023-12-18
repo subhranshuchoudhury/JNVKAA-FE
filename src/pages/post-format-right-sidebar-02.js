@@ -266,7 +266,7 @@ function PostFormatRightSidebar02Page() {
                 <div className="sidebar-widget-1">
                   <h6 className="title">Popular Post</h6>
                   <div className="blog-list-1 mb-25">
-                    <Link legacyBehavior href="/post-format-no-sidebar-02">
+                    <Link legacyBehavior href="/">
                       <a className="image">
                         <img
                           src="/assets/images/blog-list/blog-list1-3.jpg"
@@ -276,7 +276,7 @@ function PostFormatRightSidebar02Page() {
                     </Link>
                     <div className="content">
                       <h6>
-                        <Link legacyBehavior href="/post-format-no-sidebar-02">
+                        <Link legacyBehavior href="/">
                           <a> gravida orci sed jaritob laoreet tellus.</a>
                         </Link>
                       </h6>
@@ -295,7 +295,7 @@ function PostFormatRightSidebar02Page() {
                     </div>
                   </div>
                   <div className="blog-list-1 mb-25">
-                    <Link legacyBehavior href="/post-format-no-sidebar-02">
+                    <Link legacyBehavior href="/">
                       <a className="image">
                         {" "}
                         <img
@@ -306,7 +306,7 @@ function PostFormatRightSidebar02Page() {
                     </Link>
                     <div className="content">
                       <h6>
-                        <Link legacyBehavior href="/post-format-no-sidebar-02">
+                        <Link legacyBehavior href="/">
                           <a>laoreet tellus Morbi uto dolor mattis.</a>
                         </Link>
                       </h6>
@@ -325,7 +325,7 @@ function PostFormatRightSidebar02Page() {
                     </div>
                   </div>
                   <div className="blog-list-1">
-                    <Link legacyBehavior href="/post-format-no-sidebar-02">
+                    <Link legacyBehavior href="/">
                       <a className="image">
                         <img
                           src="/assets/images/blog-list/blog-list1-5.jpg"
@@ -335,7 +335,7 @@ function PostFormatRightSidebar02Page() {
                     </Link>
                     <div className="content">
                       <h6>
-                        <Link legacyBehavior href="/post-format-no-sidebar-02">
+                        <Link legacyBehavior href="/">
                           <a>Nam ullamcorper risuso non commodo.</a>
                         </Link>
                       </h6>
