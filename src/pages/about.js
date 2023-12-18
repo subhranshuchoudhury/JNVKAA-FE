@@ -8,7 +8,7 @@ function about() {
     <>
       {/* <Title/>  */}
       <AboutContent />
-      <Testimonial />
+      {/* <Testimonial /> */}
     </>
   )
 }

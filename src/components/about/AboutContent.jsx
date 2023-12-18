@@ -43,14 +43,14 @@ function AboutContent() {
                                 <h2>Mission Statement</h2>
                                 <p>JNV Kendrapara Alumni Association (JNVKAA) is dedicated to cultivating enduring bonds among alumni and current students of JNVs, promoting their mutual growth, and contributing proactively towards the advancement of educational, cultural, and societal initiatives.
                                     We aim to uphold the values instilled by our Alma Mater, encouraging collaborative efforts, extending support to JNV aspirants, and enhancing the educational landscape while nurturing a spirit of unity, compassion, and lifelong learning among our members and the wider community.</p>
-                                <img src="/assets/images/about/about-left-img.jpg" alt="" />
+                                <img src="/assets/images/about/right_image.jpeg" alt="" />
                             </div>
                         </div>
                         <div className="col-lg-6">
                             <div className="about-us-left">
                                 <h2>Vision Statement</h2>
                                 <p>To foster a thriving and supportive community of Jawahar Navodaya Vidyalaya Kendrapara alumni committed to empowering educational excellence, social engagement, and holistic growth.</p>
-                                <img src="/assets/images/about/about-left-img.jpg" alt="" />
+                                <img src="/assets/images/about/left_image.jpeg" alt="" />
                             </div>
                         </div>
                     </div>
