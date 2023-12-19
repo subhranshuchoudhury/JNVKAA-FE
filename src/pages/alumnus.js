@@ -73,9 +73,9 @@ function Author() {
                   }}>
                     <option value={"name"}>Name</option>
                     <option value={"batch"}>Batch</option>
-                    <option value={"schoolNo"}>School No</option>
+                    <option value={"schoolno"}>School No</option>
                     <option value={"address"}>Address</option>
-                    <option value={"bloodGroup"}>Blood Group</option>
+                    <option value={"bloodgroup"}>Blood Group</option>
                   </select>
                 </form>
               </div>

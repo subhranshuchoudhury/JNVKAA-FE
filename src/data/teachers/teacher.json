@@ -1,37 +1,198 @@
 [
     {
-        "name": "Manisha Nath Sharma",
-        "image": "/assets/images/teachers/t (1).jpg",
-        "mobile": "+971 50 904 6495",
-        "designation": " TGT SCIENCE",
-        "since": "2008-2023"
+        "name": "PARBATI PRADHAN",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PRINCIPAL",
+        "since": ""
     },
     {
-        "name": "S.K Dash",
-        "image": "/assets/images/teachers/t (2).jpg",
-        "mobile": "+971 50 904 6495",
-        "designation": "Principal",
-        "since": "2008-2023"
+        "name": "GOPAL PATIDAR",
+        "image": "/assets/images/teachers/IMG11.jpg",
+        "mobile": "",
+        "designation": "TGT HINDI",
+        "since": "2017-2022"
     },
     {
-        "name": "Surabha Dash",
-        "image": "/assets/images/teachers/t (3).jpg",
-        "mobile": "+971 50 904 6495",
-        "designation": " TGT CHEMISTRY",
-        "since": "2008-2023"
+        "name": "BHUBNESH VERMA",
+        "image": "/assets/images/teachers/IMG10.jpg",
+        "mobile": "8917201688",
+        "designation": "PGT BIOLOGY",
+        "since": "2013-2022"
     },
     {
-        "name": "Santosh Mohanty",
-        "image": "/assets/images/teachers/t (4).jpg",
-        "mobile": "+971 50 904 6495",
+        "name": "D VENKET RAO",
+        "image": "/assets/images/teachers/IMG18.jpg",
+        "mobile": "",
+        "designation": "ART TEACHER",
+        "since": "1998-2016"
+    },
+    {
+        "name": "MANISHA NATH SHARMA",
+        "image": "/assets/images/teachers/IMG4.jpg",
+        "mobile": "",
+        "designation": "TGT SCIENCE",
+        "since": ""
+    },
+    {
+        "name": "NAVEEN KUMAR DHURVE",
+        "image": "/assets/images/teachers/IMG14.jpg",
+        "mobile": "9938731866",
+        "designation": "PGT (Comp.Sc.)",
+        "since": ""
+    },
+    {
+        "name": "SANSADHAR MALLICK",
+        "image": "/assets/images/teachers/IMG13.jpg",
+        "mobile": "9778775316",
+        "designation": "Music Teacher",
+        "since": ""
+    },
+    {
+        "name": "SURAVA DAS",
+        "image": "/assets/images/teachers/IMG15.jpg",
+        "mobile": "",
+        "designation": "PGT Chemistry",
+        "since": ""
+    },
+    {
+        "name": "SANTOSH MOHANTY",
+        "image": "/assets/images/teachers/IMG17.jpg",
+        "mobile": "",
         "designation": "LAB ASSISTANT",
-        "since": "2008-2023"
+        "since": ""
     },
     {
-        "name": "Prabhas Mallick",
-        "image": "/assets/images/teachers/t (5).jpg",
-        "mobile": "+971 50 904 6495",
-        "designation": "TGT CHEMISTRY",
-        "since": "2008-2023"
+        "name": "SUDHANSHUBALA DAS",
+        "image": "/assets/images/teachers/IMG19.jpg",
+        "mobile": "",
+        "designation": "PET Teacher",
+        "since": ""
+    },
+    {
+        "name": "AMULYA KUMAR JENA",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PET Teacher",
+        "since": ""
+    },
+    {
+        "name": "BISWAJYOTI DAS",
+        "image": "/assets/images/teachers/IMG22.jpg",
+        "mobile": "9337774449",
+        "designation": "PET Teacher",
+        "since": ""
+    },
+    {
+        "name": "BISHNUPRIYA BEHERA",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "LAB ASSISTANT",
+        "since": ""
+    },
+    {
+        "name": "DILIP KUMAR MOHANTY",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "TGT ODIA",
+        "since": ""
+    },
+    {
+        "name": "RAMSARAN CHAUDHARY",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "TGT ENGLISH",
+        "since": ""
+    },
+    {
+        "name": "RAMESH PURELLA",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "8500995546",
+        "designation": "Counsellor",
+        "since": ""
+    },
+    {
+        "name": "AYAN BENARJEE",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "9853867608",
+        "designation": "TGT ENGLISH",
+        "since": ""
+    },
+    {
+        "name": "Rudra Prasad Sahoo",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "Principal",
+        "since": "2022"
+    },
+    {
+        "name": "Shashikanta Pattanaik",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "Vice Principal",
+        "since": "2023"
+    },
+    {
+        "name": "Upendra Nath Mallick",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PGT BIOLOGY",
+        "since": "2022"
+    },
+    {
+        "name": "Sanjay Kumar Prasad",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PGT(Geo.)",
+        "since": "2023"
+    },
+    {
+        "name": "Rama Hari Shial",
+        "image": "/assets/images/teachers/IMG6.jpg",
+        "mobile": "9678090491",
+        "designation": "PGT Maths",
+        "since": "2017"
+    },
+    {
+        "name": "Rajesh Ghadai",
+        "image": "/assets/images/teachers/IMG12.jpg",
+        "mobile": "9974663169",
+        "designation": "PGT Physics",
+        "since": "2018"
+    },
+    {
+        "name": "Gouri Shankar Sahu",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PGT Chemistry",
+        "since": "2023"
+    },
+    {
+        "name": "Siddhartha Sinha",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PGT (Comp.Sc.)",
+        "since": "2023"
+    },
+    {
+        "name": "Arti Mishra",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PGT HINDI",
+        "since": "2023"
+    },
+    {
+        "name": "Anjali Sharma",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PGT English",
+        "since": "2023"
+    },
+    {
+        "name": "",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "",
+        "since": ""
     }
 ]
