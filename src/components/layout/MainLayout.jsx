@@ -72,7 +72,7 @@ function MainLayout({ children }) {
       <RightSideBar state={state} dispatch={dispatch} />
       {/* <CommonHeader state={state} dispatch={dispatch} /> */}
       <Header state={state} dispatch={dispatch} />
-      <Breadcrumb />
+      {/* <Breadcrumb /> */}
       <Toaster />
       {children}
       <NewsLatter />

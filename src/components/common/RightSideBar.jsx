@@ -4,6 +4,7 @@ import React from "react";
 function RightSideBar({ state, dispatch }) {
   const handleRightSidebarToggle = () =>
     dispatch({ type: "TOGGLE_RIGHT_SIDEBAR" });
+  return; // * This will remove after UI is ready.
   return (
     <div
       className={`sidebar-area ${state.isRightSidebarOpen ? "show-sidebar" : ""
