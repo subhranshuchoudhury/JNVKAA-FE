@@ -78,7 +78,7 @@ export default function Home() {
           <Topbar />
           <RightSideBar state={state} dispatch={dispatch} />
           <Header state={state} dispatch={dispatch} />
-          <BreakingNews/>
+          <BreakingNews />
           <Banner />
           {/* <Category /> */}
           <LatestBlog />

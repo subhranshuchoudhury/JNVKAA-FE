@@ -86,7 +86,7 @@ export default function page() {
                                     {
                                         MemberData?.profileDetails?.dob && <li>
                                             <img src="/assets/images/icons/view.svg" alt="image" />
-                                            DOB: <span>{new Date().toLocaleDateString()}</span>
+                                            DOB: <span>{new Date(MemberData?.profileDetails?.dob).toLocaleDateString()}</span>
                                         </li>
                                     }
 
@@ -213,7 +213,7 @@ export default function page() {
                     </div>
                     <div className="col-lg-4">
                         <div className="post-side-bar-1">
-                            <div className="sidebar-widget-1">
+                            {/* <div className="sidebar-widget-1">
                                 <h6 className="title">Quick Search</h6>
                                 <div className="search-box-2">
                                     <form>
@@ -223,7 +223,7 @@ export default function page() {
                                         </button>
                                     </form>
                                 </div>
-                            </div>
+                            </div> */}
                             {/* <div className="sidebar-widget-1"> 
                                  <h6 className="title">Editor Choice</h6>
                                 <div className="blog-list-1 mb-25">
@@ -343,13 +343,13 @@ export default function page() {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.pinterest.com/">
+                                        <a>
                                             <span>
                                                 <i className="bx bxl-whatsapp" />
                                                 &nbsp;Whatsapp
                                             </span>
                                             <span>
-                                                <strong>Chat</strong>
+                                                <strong>{MemberData?.profileDetails?.whatsappNo || "N/A"}</strong>
 
                                             </span>
                                         </a>
