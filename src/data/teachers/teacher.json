@@ -4,149 +4,34 @@
         "image": "/assets/images/teachers/t (1).jpg",
         "mobile": "+971 50 904 6495",
         "designation": " TGT SCIENCE",
-        "since": "2008-2023",
-        "socials": [
-            {
-                "name": "Facebook",
-                "link": "https://www.facebook.com/profile.php?id=100002000395446&mibextid=rS40aB7S9Ucbxw6v",
-                "index": "1",
-                "icon": "bx bxl-facebook",
-                "count": "234"
-            },
-            {
-                "name": "Instagram",
-                "link": "https://instagram.com/sekhali_world?igshid=NzZlODBkYWE4Ng==",
-                "index": "2",
-                "icon": "bx bxl-instagram",
-                "count": "234"
-            },
-            {
-                "name": "LinkedIn",
-                "link": "https://www.linkedin.com/in/sk-liaquat-ali-634ba7ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-                "index": "3",
-                "icon": "bx bxl-linkedin",
-                "count": "234"
-            }
-        ]
+        "since": "2008-2023"
     },
     {
         "name": "S.K Dash",
         "image": "/assets/images/teachers/t (2).jpg",
         "mobile": "+971 50 904 6495",
         "designation": "Principal",
-        "since": "2008-2023",
-        "socials": [
-            {
-                "name": "Facebook",
-                "link": "https://www.facebook.com/profile.php?id=100002000395446&mibextid=rS40aB7S9Ucbxw6v",
-                "index": "1",
-                "icon": "bx bxl-facebook",
-                "count": "234"
-            },
-            {
-                "name": "Instagram",
-                "link": "https://instagram.com/sekhali_world?igshid=NzZlODBkYWE4Ng==",
-                "index": "2",
-                "icon": "bx bxl-instagram",
-                "count": "234"
-            },
-            {
-                "name": "LinkedIn",
-                "link": "https://www.linkedin.com/in/sk-liaquat-ali-634ba7ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-                "index": "3",
-                "icon": "bx bxl-linkedin",
-                "count": "234"
-            }
-        ]
+        "since": "2008-2023"
     },
     {
         "name": "Surabha Dash",
         "image": "/assets/images/teachers/t (3).jpg",
         "mobile": "+971 50 904 6495",
         "designation": " TGT CHEMISTRY",
-        "since": "2008-2023",
-        "socials": [
-            {
-                "name": "Facebook",
-                "link": "https://www.facebook.com/profile.php?id=100002000395446&mibextid=rS40aB7S9Ucbxw6v",
-                "index": "1",
-                "icon": "bx bxl-facebook",
-                "count": "234"
-            },
-            {
-                "name": "Instagram",
-                "link": "https://instagram.com/sekhali_world?igshid=NzZlODBkYWE4Ng==",
-                "index": "2",
-                "icon": "bx bxl-instagram",
-                "count": "234"
-            },
-            {
-                "name": "LinkedIn",
-                "link": "https://www.linkedin.com/in/sk-liaquat-ali-634ba7ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-                "index": "3",
-                "icon": "bx bxl-linkedin",
-                "count": "234"
-            }
-        ]
+        "since": "2008-2023"
     },
     {
         "name": "Santosh Mohanty",
         "image": "/assets/images/teachers/t (4).jpg",
         "mobile": "+971 50 904 6495",
         "designation": "LAB ASSISTANT",
-        "since": "2008-2023",
-        "socials": [
-            {
-                "name": "Facebook",
-                "link": "https://www.facebook.com/profile.php?id=100002000395446&mibextid=rS40aB7S9Ucbxw6v",
-                "index": "1",
-                "icon": "bx bxl-facebook",
-                "count": "234"
-            },
-            {
-                "name": "Instagram",
-                "link": "https://instagram.com/sekhali_world?igshid=NzZlODBkYWE4Ng==",
-                "index": "2",
-                "icon": "bx bxl-instagram",
-                "count": "234"
-            },
-            {
-                "name": "LinkedIn",
-                "link": "https://www.linkedin.com/in/sk-liaquat-ali-634ba7ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-                "index": "3",
-                "icon": "bx bxl-linkedin",
-                "count": "234"
-            }
-        ]
+        "since": "2008-2023"
     },
     {
         "name": "Prabhas Mallick",
         "image": "/assets/images/teachers/t (5).jpg",
         "mobile": "+971 50 904 6495",
         "designation": "TGT CHEMISTRY",
-        "since": "2008-2023",
-        "socials": [
-            {
-                "name": "Facebook",
-                "link": "https://www.facebook.com/profile.php?id=100002000395446&mibextid=rS40aB7S9Ucbxw6v",
-                "index": "1",
-                "icon": "bx bxl-facebook",
-                "count": "234"
-            },
-            {
-                "name": "Instagram",
-                "link": "https://instagram.com/sekhali_world?igshid=NzZlODBkYWE4Ng==",
-                "index": "2",
-                "icon": "bx bxl-instagram",
-                "count": "234"
-            },
-            {
-                "name": "LinkedIn",
-                "link": "https://www.linkedin.com/in/sk-liaquat-ali-634ba7ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-                "index": "3",
-                "icon": "bx bxl-linkedin",
-                "count": "234"
-            }
-        ]
+        "since": "2008-2023"
     }
 ]
