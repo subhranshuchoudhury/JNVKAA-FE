@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { getEventById } from '@/utils/fetch';
+import { getEventById, isValidateInputID } from '@/utils/fetch';
 import Link from 'next/link';
 import Socials from '@/data/topbar/social.json';
 export default function page() {
@@ -17,11 +17,16 @@ export default function page() {
 
     const loadEvents = async (ID) => {
 
-        const res = await getEventById(ID);
-        console.log(res);
-        setEventData(res?.data);
-        setLoading(false);
+        if (isValidateInputID(ID)) {
+
+            const res = await getEventById(ID);
+            setEventData(res?.data);
+            setLoading(false);
+        }
+
     }
+
+
 
     return <>
         {

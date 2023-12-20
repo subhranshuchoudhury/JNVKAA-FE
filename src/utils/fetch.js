@@ -7,6 +7,24 @@ const BASE_URL = env == "development" ? LOCAL_URL : PRODUCTION_URL
 
 export const GLOBAL_URL = BASE_URL;
 
+export const isValidateInputID = (input) => {
+
+    // Check if input is a string
+    if (typeof input === 'string') {
+        // Check if string length is 12 or 24
+        if (input.length === 12 || input.length === 24) {
+            // Check if string is a valid hexadecimal
+            const hexRegex = /^[0-9A-Fa-f]{12,24}$/g;
+            if (hexRegex.test(input)) {
+                return true;
+            }
+        }
+    }
+
+    // If none of the above conditions are met, return false
+    return false;
+}
+
 export const LoginAlumni = async (mobile, password) => {
     try {
 
@@ -566,6 +584,37 @@ export const getAlumniPostByID = async (id) => {
         };
 
         const response = await fetch(BASE_URL + "/api/post/" + id, requestOptions);
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error"
+            }
+        }
+
+    }
+}
+
+export const getAdminYoutubePostById = async (id) => {
+    try {
+        var myHeaders = new Headers();
+        myHeaders.append("x-access-token", getCookie('token'));
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow',
+
+        };
+
+        const response = await fetch(BASE_URL + "/api/moderator/post/youtube/id/" + id, requestOptions);
         const data = await response.json();
 
         return {
