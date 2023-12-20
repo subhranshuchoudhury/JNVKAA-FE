@@ -1,9 +1,8 @@
 import React, { useReducer } from "react";
-// import CommonHeader from "./CommonHeader";
 import CommonFooter from "./CommonFooter";
 import NewsLatter from "../common/NewsLatter";
 import Topbar from "../home1/Topbar";
-import Breadcrumb from "../common/Breadcrumb";
+// import Breadcrumb from "../common/Breadcrumb";
 import RightSideBar from "../common/RightSideBar";
 import Head from "next/head";
 import { Toaster } from "react-hot-toast";
@@ -70,7 +69,6 @@ function MainLayout({ children }) {
       </Head>
       <Topbar />
       <RightSideBar state={state} dispatch={dispatch} />
-      {/* <CommonHeader state={state} dispatch={dispatch} /> */}
       <Header state={state} dispatch={dispatch} />
       {/* <Breadcrumb /> */}
       <Toaster />

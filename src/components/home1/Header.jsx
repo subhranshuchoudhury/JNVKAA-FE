@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import { getCookie } from 'cookies-next';
+import toast, { Toaster } from "react-hot-toast";
 function Header({ state, dispatch }) {
   const headerRef = useRef(null);
   const toggleMenu = (menu) => {
@@ -38,15 +39,19 @@ function Header({ state, dispatch }) {
 
   return (
     <>
+      <Toaster />
       <div className={`mobile-search ${state.isModal ? "slide" : ""}`}>
         <div className="container">
           <div className="row d-flex justify-content-center gy-4">
             <div className="col-10">
-              <label>What are you looking for?</label>
-              <input type="text" placeholder="Search Blog, Magazin" />
+              <label>Want to search an Alumni from database ?</label>
+              <input type="text" placeholder="eg. Subhranshu Choudhury" />
             </div>
             <div className="col-2 d-flex justify-content-end align-items-sm-center align-items-end gap-2">
-              <div className="search-cross-btn">
+              <div onClick={() => {
+
+                toast.error("This feature is under development.")
+              }} className="search-cross-btn">
                 <i className="bi bi-search" />
               </div>
               <div className="search-cross-btn" onClick={handelSearchModal}>
@@ -144,11 +149,7 @@ function Header({ state, dispatch }) {
                   </li>
                 </ul> */}
               </li>
-              <li className="menu-item-has-children">
-                <Link legacyBehavior href="/about">
-                  <a>About</a>
-                </Link>
-              </li>
+
               {/* <li className="menu-item-has-children">
                 <Link legacyBehavior href="/events">
                   <a>Events</a>
@@ -204,6 +205,11 @@ function Header({ state, dispatch }) {
                     </Link>
                   </li>
                 </ul>
+              </li>
+              <li className="menu-item-has-children">
+                <Link legacyBehavior href="/about">
+                  <a>About</a>
+                </Link>
               </li>
               <li>
                 <Link legacyBehavior href="/contact">
