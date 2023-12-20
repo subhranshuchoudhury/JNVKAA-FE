@@ -73,7 +73,7 @@ function updateProfile() {
                 300,
                 300,
                 "JPEG",
-                10,
+                100, // Quality
                 0,
                 (uri) => {
                     resolve(uri);
@@ -87,8 +87,8 @@ function updateProfile() {
 
 
 
-    const uploadImageToCloud = async (event) => {
-        event.preventDefault();
+    const uploadImageToCloud = async () => {
+
 
         if (!ImageBlob) {
             toast.error("Please select an image", {
@@ -166,8 +166,8 @@ function updateProfile() {
                 return;
             }
 
-            if (input.files[0].size >= 125000) {
-                toast.error("File size is greater than 1MB", {
+            if (input.files[0].size >= 500000) {
+                toast.error("File size is greater than 500 KB", {
                     icon: "⚠"
                 })
                 setPreviewImage(null)
@@ -227,6 +227,21 @@ function updateProfile() {
 
     const updateDetails = async (e) => {
         e.preventDefault();
+        const checkEmptyField = checkEmptyValuesAndAlert(UpdateUserData);
+        if (!checkEmptyField?.success) {
+            toast.error(checkEmptyField?.message);
+            return;
+        };
+
+        if (!IsUploaded && ImageBlob) {
+
+            try {
+                await uploadImageToCloud();
+            } catch (error) {
+                toast.error("Image Uploading failed");
+            }
+
+        }
         const loadingToast = toast.loading("Updating profile...");
 
         UpdateUserData.location = isGeolocationAvailable && isGeolocationEnabled && coords ? `${coords.latitude}-${coords.longitude}` : UpdateUserData.location
@@ -237,6 +252,35 @@ function updateProfile() {
         } else {
             toast.error("Something went wrong");
         }
+    }
+
+    const checkEmptyValuesAndAlert = (obj) => {
+        const keysToExclude = ["instagram", "linkedIn", "isProfileCompleted", "profileImage", "premiumExpiry", "location", "facebook"];
+        let hasEmptyValues = false;
+
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                if (keysToExclude.includes(key)) {
+                    continue; // Skip checking for specified keys
+                }
+
+                const value = obj[key];
+                if (value === "" || value === undefined || value === null) {
+                    hasEmptyValues = true;
+
+                    return {
+                        message: `Kindly fill details of "${key}".`,
+                        success: false
+                    }
+                }
+            }
+        }
+
+        return {
+            success: true
+        }
+
+
     }
 
 
@@ -261,7 +305,7 @@ function updateProfile() {
                     {
                         !Loading && isSuccessLoaded && <form className="contact-form">
                             <div className="row">
-                                <label htmlFor="">Profile Picture</label>
+                                <label htmlFor="">Profile Picture<span className="text-danger">*</span></label>
                                 {
                                     PreviewImageBase64 && <div className="col-12">
                                         <div className="form-inner">
@@ -285,7 +329,7 @@ function updateProfile() {
                                 }
 
 
-                                {
+                                {/* {
                                     !IsUploaded && ImageBlob && <div className="col-6">
                                         <div className="form-inner">
                                             <button onClick={uploadImageToCloud} type="submit" className="eg-btn btn--primary btn--sm m-2">
@@ -293,7 +337,7 @@ function updateProfile() {
                                             </button>
                                         </div>
                                     </div>
-                                }
+                                } */}
 
                                 {
                                     ImageBlob && <>
@@ -308,13 +352,13 @@ function updateProfile() {
                                 }
                                 <div className="col-12">
                                     <div className="form-inner">
-                                        <label htmlFor="">Name</label>
+                                        <label htmlFor="">Name<span className="text-danger">*</span></label>
                                         <input disabled value={UpdateUserData?.name || ""} name="name" onChange={handleChange} type="text" placeholder="Enter Your Name" />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="batch">Batch</label>
+                                        <label htmlFor="batch">Batch<span className="text-danger">*</span></label>
                                         <Select onChange={(e) => {
 
                                             handleChange({
@@ -331,13 +375,13 @@ function updateProfile() {
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="schoolID">School No.</label>
+                                        <label htmlFor="schoolID">School No<span className="text-danger">*</span></label>
                                         <input name="schoolNo" value={UpdateUserData?.schoolNo || ""} onChange={handleChange} type="text" placeholder="Enter School No." />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="bloodGroup">Blood Group</label>
+                                        <label htmlFor="bloodGroup">Blood Group<span className="text-danger">*</span></label>
                                         <Select onChange={(e) => {
                                             handleChange({
                                                 target: {
@@ -355,9 +399,9 @@ function updateProfile() {
 
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="bloodGroup">DOB</label>
+                                        <label htmlFor="bloodGroup">DOB<span className="text-danger">*</span></label>
                                         <br />
-                                        <DatePicker selected={startDate} onChange={(date) => {
+                                        <DatePicker showYearDropdown showPopperArrow dateFormat={"dd/MM/yyyy"} selected={startDate} onChange={(date) => {
                                             setStartDate(date); handleChange({
                                                 target: {
                                                     name: "dob",
@@ -370,25 +414,25 @@ function updateProfile() {
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="Batch">Mobile</label>
+                                        <label htmlFor="Batch">Mobile<span className="text-danger">*</span></label>
                                         <input disabled name="mobile" value={UpdateUserData?.mobile || ""} onChange={handleChange} type="text" placeholder="eg. +91 8249587552" />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="schoolID">Whatsapp</label>
+                                        <label htmlFor="schoolID">Whatsapp<span className="text-danger">*</span></label>
                                         <input value={UpdateUserData?.whatsappNo || ""} name="whatsappNo" onChange={handleChange} type="tel" placeholder="eg. +91 8249587552" />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="email">Email</label>
+                                        <label htmlFor="email">Email<span className="text-danger">*</span></label>
                                         <input type="email" name="mailId" onChange={handleChange} value={UpdateUserData?.mailId || ""} placeholder="eg. example@gmail.com" />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="schoolID">Profession</label>
+                                        <label htmlFor="schoolID">Profession<span className="text-danger">*</span></label>
                                         <input name="profession" value={UpdateUserData?.profession || ""} onChange={handleChange} type="text" placeholder="eg. Engineer" />
                                     </div>
                                 </div>
@@ -425,7 +469,19 @@ function updateProfile() {
                                 </div> */}
                                 <div className="col-12">
                                     <div className="form-inner">
-                                        <label htmlFor="about">About Yourself</label>
+                                        <label htmlFor="about">Your Address<span className="text-danger">*</span></label>
+                                        <textarea
+                                            rows={5}
+                                            placeholder="About Yourself"
+                                            name="address"
+                                            value={UpdateUserData?.address || ""}
+                                            onChange={handleChange}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="form-inner">
+                                        <label htmlFor="about">About Yourself<span className="text-danger">*</span></label>
                                         <textarea
                                             rows={5}
                                             placeholder="About Yourself"
