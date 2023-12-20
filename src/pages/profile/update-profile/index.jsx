@@ -199,9 +199,6 @@ function updateProfile() {
             setIsSuccessLoaded(true)
             console.log(isGeolocationAvailable, isGeolocationAvailable, coords
             );
-
-
-
             UpdateUserData.name = response.data.name
             UpdateUserData.mobile = response.data.mobile
             UpdateUserData.schoolNo = response.data.profileDetails.schoolNo
@@ -219,7 +216,6 @@ function updateProfile() {
             UpdateUserData.graduationYear = response.data.profileDetails.graduationYear
             UpdateUserData.about = response.data.profileDetails.about
             UpdateUserData.profileImage = response.data.profileDetails.profileImage
-
         } else {
             toast.error("Something went wrong");
         }

@@ -94,7 +94,7 @@ function AuthorSection() {
                           <span className="categoty">{member?.profileDetails?.graduationYear}</span>
                           <Link legacyBehavior href="/">
                             <a className="image">
-                              <img src={`${GLOBAL_URL + "/api/user/post/image/" + member?.profileDetails?.profileImage}` ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="profile image" />
+                              <img src={`${GLOBAL_URL + "/api/user/post/image/" + member?.profileDetails?.profileImage}` ?? "/assets/images/dummy/avatar/user.jpg"} alt="profile image" />
                             </a>
                           </Link>
                           <h4>{member?.name}</h4>

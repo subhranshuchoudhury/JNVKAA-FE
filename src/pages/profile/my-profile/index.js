@@ -44,7 +44,7 @@ export default function page() {
                                 style={
                                     MemberData?.mobile ? { filter: "blur(0px)" } : { filter: "blur(5px)" }
                                 }
-                                src={`${GLOBAL_URL + "/api/user/post/image/" + MemberData?.profileDetails?.profileImage}` ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"}
+                                src={`${GLOBAL_URL + "/api/user/post/image/" + MemberData?.profileDetails?.profileImage}` ?? "/assets/images/dummy/avatar/user.jpg"}
                                 alt="image"
 
                             />

@@ -112,9 +112,9 @@ function Author() {
                   <Link legacyBehavior href={`/profile/member/${alumnus?._id}`}>
                     <a className="image">
                       {
-                        alumnus?.mobile ? <img src={`${GLOBAL_URL + "/api/user/post/image/" + alumnus?.profileDetails?.profileImage}` ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" /> : <img style={{
+                        alumnus?.mobile ? <img src={alumnus?.profileDetails?.profileImage ? `${GLOBAL_URL + "/api/user/post/image/" + alumnus?.profileDetails?.profileImage}` : "/assets/images/dummy/avatar/user.jpg"} alt="image" /> : <img style={{
                           filter: "blur(5px)"
-                        }} src={`${GLOBAL_URL + "/api/user/post/image/" + alumnus?.profileDetails?.profileImage}` ?? "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg"} alt="image" />
+                        }} src={alumnus?.profileDetails?.profileImage ? `${GLOBAL_URL + "/api/user/post/image/" + alumnus?.profileDetails?.profileImage}` : "/assets/images/dummy/avatar/user.jpg"} alt="image" />
                       }
 
                     </a>
