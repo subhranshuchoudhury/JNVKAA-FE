@@ -111,6 +111,7 @@ function updateProfile() {
                     value: response.data._id
                 }
             })
+            return response.data._id;
             toast.success("Image uploaded successfully", {
                 icon: "✔"
             })
@@ -236,7 +237,8 @@ function updateProfile() {
         if (!IsUploaded && ImageBlob) {
 
             try {
-                await uploadImageToCloud();
+                const responseImageID = await uploadImageToCloud();
+                UpdateUserData.profileImage = responseImageID;
             } catch (error) {
                 toast.error("Image Uploading failed");
             }
