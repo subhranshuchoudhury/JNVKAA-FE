@@ -206,10 +206,10 @@ function BlogSidebar() {
                   <div className="search-area">
                     <span className="tag-name">Events</span>
                     <div className="search-form">
-                      <form>
+                      {/* <form>
                         <i className="bi bi-search" />
                         <input type="text" placeholder="Search" />
-                      </form>
+                      </form> */}
                     </div>
                   </div>
                   {/* blog-list */}
@@ -222,18 +222,22 @@ function BlogSidebar() {
                         </div>
                         <div className="content">
                           <ul>
-                            <li><Link legacyBehavior href={`/events/id/${item?._id}`}><a>By Moderator</a></Link></li>
-                            <li><Link legacyBehavior href={`/events/id/${item?._id}`}><a>{new Date(item?.created_at).toLocaleString()}</a></Link></li>
+                            <li><Link legacyBehavior href={`/posts/alumni/alumni-meet/id/${item?._id}`}><a>By Moderator</a></Link></li>
+                            <li><Link legacyBehavior href={`/posts/alumni/alumni-meet/id/${item?._id}`}><a>{new Date(item?.created_at).toLocaleString()}</a></Link></li>
                           </ul>
-                          <h4><Link legacyBehavior href={`/events/id/${item?._id}`}><a>{item?.title}</a></Link></h4>
+                          <h4><Link legacyBehavior href={`/posts/alumni/alumni-meet/id/${item?._id}`}><a>{item?.title}</a></Link></h4>
                           <div className="bottom-area">
-                            <Link legacyBehavior href={`/events/id/${item?._id}`}><a className=" eg-btn arrow-btn">View Event<i className="bi bi-arrow-right" /></a></Link>
+                            <Link legacyBehavior href={`/posts/alumni/alumni-meet/id/${item?._id}`}><a className=" eg-btn arrow-btn">View Event<i className="bi bi-arrow-right" /></a></Link>
                             <span><svg width={20} height={20} viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#000000" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"></path><path fill="#000000" d="M512 448a64 64 0 1 0 0-128 64 64 0 0 0 0 128zm0 64a128 128 0 1 1 0-256 128 128 0 0 1 0 256zm345.6 192L960 960H672v-64H352v64H64l102.4-256h691.2zm-68.928 0H235.328l-76.8 192h706.944l-76.8-192z"></path></g></svg> {item?.location}</span>
                           </div>
                         </div>
-                        <Link legacyBehavior href={`/events/id/${item?._id}`}>
+                        <Link legacyBehavior href={`/posts/alumni/alumni-meet/id/${item?._id}`}>
                           <a className="image">
-                            <img src="https://thumbs.dreamstime.com/b/people-meeting-together-outdoor-friends-gathering-vector-illustration-concept-friend-meetup-celebration-collab-collaboration-197968976.jpg" alt="" />
+
+                            {
+                              item?.image ? <img width={200} src={GLOBAL_URL + "/api/user/post/image/" + item?.image} alt="alumni meet image" /> : <img src="https://thumbs.dreamstime.com/b/people-meeting-together-outdoor-friends-gathering-vector-illustration-concept-friend-meetup-celebration-collab-collaboration-197968976.jpg" alt="" />
+                            }
+
                           </a>
                         </Link>
                       </div>

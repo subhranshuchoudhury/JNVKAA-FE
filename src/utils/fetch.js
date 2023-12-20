@@ -633,3 +633,33 @@ export const getAdminYoutubePostById = async (id) => {
 
     }
 }
+export const getAlumniMeetsPostById = async (id) => {
+    try {
+        var myHeaders = new Headers();
+        myHeaders.append("x-access-token", getCookie('token'));
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow',
+
+        };
+
+        const response = await fetch(BASE_URL + "/api/alumni-meet/id/" + id, requestOptions);
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error"
+            }
+        }
+
+    }
+}

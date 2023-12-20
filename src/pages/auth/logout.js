@@ -25,19 +25,20 @@ export default function logout() {
     }, [])
 
     return (
-        <section className="error-banner">
-            <div className="error-banner-content">
+        <div style={{
+            marginTop: "100px",
+            padding: "20px",
+        }} className="error-banner-content text-center">
 
-                <p>
-                    By clicking the button below, you will be logged out of the system.
-                </p>
+            <p>
+                By clicking the button below, you will be logged out of the system.
+            </p>
 
-                <button onClick={logOutUser} className="eg-btn btn--primary btn--lg">
-                    <i className="bi bi-house-door" />
-                    Logout
-                </button>
+            <button onClick={logOutUser} className="eg-btn btn--primary btn--lg">
+                <i className="bi bi-house-door" />
+                Logout
+            </button>
 
-            </div>
-        </section>
+        </div>
     );
 }
