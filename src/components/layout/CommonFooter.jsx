@@ -23,10 +23,8 @@ function CommonFooter() {
           <div className="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-6">
             <h4 className="footer-title">Quick Link</h4>
             <ul className="footer-list">
+              <li><Link legacyBehavior href="/teachers"><a>Teachers</a></Link></li>
               <li><Link legacyBehavior href="/about"><a>About</a></Link></li>
-              <li><Link legacyBehavior href="events"><a>Topic</a></Link></li>
-              <li><Link legacyBehavior href="/post"><a>Post</a></Link></li>
-              <li><Link legacyBehavior href="/feature"><a>Feature</a></Link></li>
               <li><Link legacyBehavior href="/contact"><a>Contact</a></Link></li>
             </ul>
           </div>
@@ -36,7 +34,7 @@ function CommonFooter() {
 
               {
                 Socials?.map((val, i) => (
-                  <li>
+                  <li key={i}>
                     <a href={val?.link}>
                       <div className="icon">
                         <i className={val?.icon} />
@@ -55,10 +53,9 @@ function CommonFooter() {
         <div className="help-center d-flex justify-content-md-between justify-content-center align-items-center">
           <h5><Link legacyBehavior href="/contact"><a>Contact Us</a></Link></h5>
           <ul className="help-list">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms &amp; Conditions</a></li>
-            <li><a href="#">Services</a></li>
-            <li><Link legacyBehavior href="/contact"><a>Help</a></Link></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+            <li><Link legacyBehavior href="/contact"><a>Contact</a></Link></li>
           </ul>
         </div>
         <div className="row copyright-area">

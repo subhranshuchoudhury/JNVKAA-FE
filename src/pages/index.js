@@ -1,5 +1,4 @@
 import { useEffect, useReducer, useState } from "react";
-import Footer1 from "@/components/footer/Footer1";
 import AuthorSection from "@/components/home1/AuthorSection";
 import Banner from "@/components/home1/Banner";
 import BlogSidebar from "@/components/home1/BlogSidebar";
@@ -11,6 +10,7 @@ import RightSideBar from "@/components/common/RightSideBar";
 import Preloader from "@/components/common/Preloader";
 import LatestBlog from "@/components/home1/LatestBlog";
 import BreakingNews from "@/components/home1/BreakingNews";
+import CommonFooter from "@/components/layout/CommonFooter";
 
 const initalState = {
   isRightSidebarOpen: false,
@@ -89,7 +89,7 @@ export default function Home() {
           <AuthorSection />
           <GetUpdate />
           {/* <NewsLatter /> */}
-          <Footer1 />
+          <CommonFooter />
         </>
       ) : (
         <Preloader />
