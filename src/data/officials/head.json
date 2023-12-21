@@ -1,8 +1,10 @@
-{
-    "name": "Anil Mishra",
-    "title": "President",
-    "heading": "The success of any educational institution can be measured by the contribution the alumni make to our society and nation.",
-    "description": "The world gets more complicated with every passing day. We get involved with our families and work and suddenly we've lost touch with those outside that close circle. The Alumni Association can help us stay connected to those friends and to the vast resources available here, from the faculty that taught and guided us to an extraordinary variety of “stay connected” programs designed with our mind. This is designed to support we all as we pursue our post-academic life and career.",
-    "date": "20 Dec, 2023",
-    "image": "/assets/images/officials/head.jpeg"
-}
+[
+    {
+        "name": "Anil Mishra",
+        "title": "President",
+        "heading": "The success of any educational institution can be measured by the contribution the alumni make to our society and nation.",
+        "description": "The world gets more complicated with every passing day. We get involved with our families and work and suddenly we've lost touch with those outside that close circle. The Alumni Association can help us stay connected to those friends and to the vast resources available here, from the faculty that taught and guided us to an extraordinary variety of “stay connected” programs designed with our mind. This is designed to support we all as we pursue our post-academic life and career.",
+        "date": "Dec 20, 2023",
+        "image": "/assets/images/officials/head.jpeg"
+    }
+]
