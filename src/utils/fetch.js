@@ -645,7 +645,7 @@ export const getYoutubePosts = async (skip, limit) => {
             redirect: 'follow'
         };
 
-        const response = await fetch(BASE_URL + "/api/post/youtube/all?skip=" + skip, requestOptions);
+        const response = await fetch(BASE_URL + "/api/alumni/all?skip=" + skip, requestOptions);
         const data = await response.json();
 
         return {
