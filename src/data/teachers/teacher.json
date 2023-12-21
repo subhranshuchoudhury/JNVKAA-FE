@@ -1,118 +1,146 @@
 [
     {
-        "name": "PARBATI PRADHAN",
-        "image": "/assets/images/teachers/IMG50.jpg",
-        "mobile": "",
+        "name": "Parbati Pradhan",
+        "image": "/assets/images/teachers/IMG23.jpeg",
+        "mobile": "8763374569",
         "designation": "PRINCIPAL",
         "since": ""
     },
     {
-        "name": "GOPAL PATIDAR",
+        "name": "Pitabash Praharaj",
+        "image": "/assets/images/teachers/IMG26.jpeg",
+        "mobile": "7008024071",
+        "designation": "PGD MATHS",
+        "since": "2003-2017"
+    },
+    {
+        "name": "Pruthwiraj Panda",
+        "image": "/assets/images/teachers/IMG24.jpeg",
+        "mobile": "9777130440",
+        "designation": "Music Teacher",
+        "since": ""
+    },
+    {
+        "name": "Gopal Patidar",
         "image": "/assets/images/teachers/IMG11.jpg",
-        "mobile": "",
+        "mobile": "9993570733",
         "designation": "TGT HINDI",
         "since": "2017-2022"
     },
     {
-        "name": "BHUBNESH VERMA",
+        "name": "Bhuvnesh Verma",
         "image": "/assets/images/teachers/IMG10.jpg",
         "mobile": "8917201688",
         "designation": "PGT BIOLOGY",
         "since": "2013-2022"
     },
     {
-        "name": "D VENKET RAO",
+        "name": "D Venkat Rao",
         "image": "/assets/images/teachers/IMG18.jpg",
         "mobile": "",
         "designation": "ART TEACHER",
         "since": "1998-2016"
     },
     {
-        "name": "MANISHA NATH SHARMA",
+        "name": "Manisha Nath Sharma",
         "image": "/assets/images/teachers/IMG4.jpg",
         "mobile": "",
         "designation": "TGT SCIENCE",
         "since": ""
     },
     {
-        "name": "NAVEEN KUMAR DHURVE",
+        "name": "Naveen Kumar Dhurve",
         "image": "/assets/images/teachers/IMG14.jpg",
         "mobile": "9938731866",
         "designation": "PGT (Comp.Sc.)",
+        "since": "2012-2023"
+    },
+    {
+        "name": "Sabita Samantaray",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "9439584096",
+        "designation": "TGT ODIA",
         "since": ""
     },
     {
-        "name": "SANSADHAR MALLICK",
+        "name": "Rama Hari Shial",
+        "image": "/assets/images/teachers/IMG6.jpg",
+        "mobile": "9678090491",
+        "designation": "PGT Maths",
+        "since": "2017"
+    },
+    {
+        "name": "Rajesh Ghadai",
+        "image": "/assets/images/teachers/IMG12.jpg",
+        "mobile": "9974663169",
+        "designation": "PGT Physics",
+        "since": "2018"
+    },
+    {
+        "name": "Sansadhar Mallick",
         "image": "/assets/images/teachers/IMG13.jpg",
         "mobile": "9778775316",
         "designation": "Music Teacher",
         "since": ""
     },
     {
-        "name": "SURAVA DAS",
+        "name": "Surava Das",
         "image": "/assets/images/teachers/IMG15.jpg",
-        "mobile": "",
+        "mobile": "8917262115",
         "designation": "PGT Chemistry",
         "since": ""
     },
     {
-        "name": "SANTOSH MOHANTY",
-        "image": "/assets/images/teachers/IMG17.jpg",
-        "mobile": "",
-        "designation": "LAB ASSISTANT",
-        "since": ""
-    },
-    {
-        "name": "SUDHANSHUBALA DAS",
+        "name": "Sudhanshubala Das",
         "image": "/assets/images/teachers/IMG19.jpg",
-        "mobile": "",
+        "mobile": "6370427008",
         "designation": "PET Teacher",
         "since": ""
     },
     {
-        "name": "AMULYA KUMAR JENA",
-        "image": "/assets/images/teachers/IMG50.jpg",
+        "name": "Amulya Kumar Jena",
+        "image": "/assets/images/teachers/IMG25.jpeg",
         "mobile": "",
         "designation": "PET Teacher",
-        "since": ""
+        "since": "2003-2018"
     },
     {
-        "name": "BISWAJYOTI DAS",
+        "name": "Biswajyoti Das",
         "image": "/assets/images/teachers/IMG22.jpg",
         "mobile": "9337774449",
         "designation": "PET Teacher",
         "since": ""
     },
     {
-        "name": "BISHNUPRIYA BEHERA",
+        "name": "Bishnupriya Behera",
         "image": "/assets/images/teachers/IMG50.jpg",
         "mobile": "",
-        "designation": "LAB ASSISTANT",
+        "designation": "PET Teacher",
         "since": ""
     },
     {
-        "name": "DILIP KUMAR MOHANTY",
+        "name": "Dilip Kumar Mohanty",
         "image": "/assets/images/teachers/IMG50.jpg",
-        "mobile": "",
+        "mobile": "9938686581",
         "designation": "TGT ODIA",
         "since": ""
     },
     {
-        "name": "RAMSARAN CHAUDHARY",
+        "name": "Ramsaran Chaudhary",
         "image": "/assets/images/teachers/IMG50.jpg",
         "mobile": "",
         "designation": "TGT ENGLISH",
         "since": ""
     },
     {
-        "name": "RAMESH PURELLA",
-        "image": "/assets/images/teachers/IMG50.jpg",
+        "name": "Ramesh Purella",
+        "image": "/assets/images/teachers/IMG27.jpeg",
         "mobile": "8500995546",
         "designation": "Counsellor",
-        "since": ""
+        "since": "2019-2021"
     },
     {
-        "name": "AYAN BENARJEE",
+        "name": "Ayan Benarjee",
         "image": "/assets/images/teachers/IMG50.jpg",
         "mobile": "9853867608",
         "designation": "TGT ENGLISH",
@@ -121,7 +149,7 @@
     {
         "name": "Rudra Prasad Sahoo",
         "image": "/assets/images/teachers/IMG50.jpg",
-        "mobile": "",
+        "mobile": "8763146855",
         "designation": "Principal",
         "since": "2022"
     },
@@ -147,18 +175,11 @@
         "since": "2023"
     },
     {
-        "name": "Rama Hari Shial",
-        "image": "/assets/images/teachers/IMG6.jpg",
-        "mobile": "9678090491",
-        "designation": "PGT Maths",
-        "since": "2017"
-    },
-    {
-        "name": "Rajesh Ghadai",
-        "image": "/assets/images/teachers/IMG12.jpg",
-        "mobile": "9974663169",
-        "designation": "PGT Physics",
-        "since": "2018"
+        "name": "Santosh Mohanty",
+        "image": "/assets/images/teachers/IMG17.jpg",
+        "mobile": "",
+        "designation": "LAB ASSISTANT",
+        "since": ""
     },
     {
         "name": "Gouri Shankar Sahu",

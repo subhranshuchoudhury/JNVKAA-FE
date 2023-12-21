@@ -1,7 +1,7 @@
 [
     {
         "name": "Anil Mishra",
-        "image": "/assets/images/alumnus/Anil.jpeg",
+        "image": "/assets/images/officials/official1.jpg",
         "mobile": "9658135692",
         "position": "PRESIDENT",
         "gmail": "mishra.anil380@gmail.com"
@@ -60,6 +60,13 @@
         "image": "/assets/images/alumnus/.jpeg",
         "mobile": "7735211634",
         "position": "Joint Treasure",
+        "gmail": "sjyotipradhan@gmail.com"
+    },
+    {
+        "name": "Sambit Mohapatra",
+        "image": "/assets/images/alumnus/.jpeg",
+        "mobile": "9348774322",
+        "position": "Digital Coordinator",
         "gmail": "sjyotipradhan@gmail.com"
     },
     {
