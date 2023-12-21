@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { GLOBAL_URL, getAlumniProfileByID } from '@/utils/fetch';
+import { GLOBAL_URL, getMyOwnProfile } from '@/utils/fetch';
 import Link from 'next/link';
 export default function page() {
 
@@ -8,16 +8,14 @@ export default function page() {
     const [Loading, setLoading] = useState(true);
     const [MemberData, setMemberData] = useState([]);
     const [toggleMap, settoggleMap] = useState(false)
-    const ID = router.query.id;
+
     useEffect(() => {
-        if (ID) {
-            loadMemberData(ID);
-        }
-    }, [ID])
+        loadMemberData();
+    }, [])
 
-    const loadMemberData = async (ID) => {
+    const loadMemberData = async () => {
 
-        const res = await getAlumniProfileByID(ID);
+        const res = await getMyOwnProfile();
         if (res.status === 200) {
 
             setMemberData(res?.data);
@@ -60,7 +58,7 @@ export default function page() {
 
                                 </ul>
                                 <p>
-                                    {MemberData?.profileDetails?.about}
+                                    About: {MemberData?.profileDetails?.about}
                                 </p>
 
 
@@ -99,7 +97,10 @@ export default function page() {
                                         <img src="/assets/images/icons/view.svg" alt="image" />
                                         Blood Group: <span>{MemberData?.profileDetails?.bloodGroup || "..."}</span>
                                     </li>
-
+                                    <li>
+                                        <img src="/assets/images/icons/view.svg" alt="image" />
+                                        WhatsApp No: <span>{MemberData?.profileDetails?.whatsappNo || "..."}</span>
+                                    </li>
                                 </ul>
 
 
@@ -113,7 +114,10 @@ export default function page() {
                             </>
                         }
 
-                        <p>This will add in future updates.</p>
+                        {/* <p>This will add in future updates.</p> */}
+                        <div className="load-more-btn">
+                            <Link legacyBehavior href="/profile/update-profile"><a className="eg-btn btn--primary btn--lg">Update Profile</a></Link>
+                        </div>
                         {/* {authorDetailsData.map((item) => {
                             const {
                                 id,
@@ -355,7 +359,7 @@ export default function page() {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.instagram.com/">
+                                        <a href={MemberData?.profileDetails?.instagram || ""}>
                                             <span>
                                                 <i className="bx bxl-instagram" />
                                                 Instagram

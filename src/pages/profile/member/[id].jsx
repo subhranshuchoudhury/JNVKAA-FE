@@ -113,7 +113,7 @@ export default function page() {
                             </>
                         }
 
-                        <p>This will add in future updates.</p>
+                        {/* <p>This will add in future updates.</p> */}
                         {/* {authorDetailsData.map((item) => {
                             const {
                                 id,

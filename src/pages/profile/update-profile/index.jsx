@@ -9,9 +9,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useGeolocated } from "react-geolocated";
 import Resizer from "react-image-file-resizer";
+import { useRouter } from "next/router";
 
 
 function updateProfile() {
+    const router = useRouter();
     const [startDate, setStartDate] = useState(new Date());
     const [PostData, setPostData] = useState({
         title: "",
@@ -112,9 +114,7 @@ function updateProfile() {
                 }
             })
             return response.data._id;
-            toast.success("Image uploaded successfully", {
-                icon: "✔"
-            })
+
         } else {
             setIsUploaded(false);
             toast.error("Image upload failed", {
@@ -246,7 +246,8 @@ function updateProfile() {
         const response = await updateUserProfile(UpdateUserData);
         if (response.status === 200) {
             toast.dismiss(loadingToast);
-            toast.success("Profile updated successfully")
+            toast.success("Profile updated successfully");
+            router.push("/profile/my-profile")
         } else {
             toast.error("Something went wrong");
         }
