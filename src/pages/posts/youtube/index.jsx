@@ -7,29 +7,7 @@ function page() {
     const [isOpen, setOpen] = useState(false);
     const [YTvideoID, setYTvideoID] = useState("");
 
-    const searchAlumni = async (value) => {
-        setLoading(true);
-        const response = await searchAlumniByParameter(SearchParameter, value)
-        setLoading(false);
 
-
-        if (response?.status !== 200) {
-            toast.error("Something went wrong");
-            return;
-        }
-
-        if (response?.status === 200) {
-            if (response?.data?.length === 0) {
-                toast.error("No data found");
-                return;
-            }
-            setYoutubePostsData(response?.data);
-            return;
-        }
-
-
-
-    }
 
     const [Skip, setSkip] = useState(0);
     const [YoutubePostsData, setYoutubePostsData] = useState([]);
