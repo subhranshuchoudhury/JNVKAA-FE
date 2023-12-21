@@ -238,9 +238,15 @@ function Header({ state, dispatch }) {
                     aria-labelledby="dropdownMenuButton2"
                   >
                     <li>
-                      <a className="dropdown-item " href="/profile/update-profile">
+                      <a className="dropdown-item " href="/profile/my-profile">
                         <i className="bi bi-person" />
                         Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="/profile/update-profile">
+                        <i className="bi bi-gear" />
+                        Update Profile
                       </a>
                     </li>
                     <li>
@@ -261,12 +267,7 @@ function Header({ state, dispatch }) {
                         Lock screen
                       </a>
                     </li> */}
-                    {/* <li>
-                      <a className="dropdown-item" href="#">
-                        <i className="bi bi-gear" />
-                        Settings
-                      </a>
-                    </li> */}
+
                     <li>
                       <Link className="dropdown-item" href="/auth/logout">
                         <i className="bi bi-box-arrow-left" />

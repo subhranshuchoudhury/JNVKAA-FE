@@ -29,8 +29,8 @@ export default function page() {
     return <section className="author-section pt-100 pb-100">
 
         {
-            Loading && <div class="text-center"><div class="spinner-border text-primary" style={{ width: "3rem", height: "3rem" }} role="status">
-                <span class="visually-hidden">Loading...</span>
+            Loading && <div className="text-center"><div className="spinner-border text-primary" style={{ width: "3rem", height: "3rem" }} role="status">
+                <span className="visually-hidden">Loading...</span>
             </div></div>
         }
 
@@ -60,7 +60,10 @@ export default function page() {
 
                                 </ul>
                                 <p>
-                                    {MemberData?.profileDetails?.about}
+                                    About: {MemberData?.profileDetails?.about}
+                                </p>
+                                <p>
+                                    Address: {MemberData?.profileDetails?.address}
                                 </p>
 
 
@@ -76,6 +79,10 @@ export default function page() {
                                     <li>
                                         <img src="/assets/images/icons/view.svg" alt="image" />
                                         Mobile: <span>{MemberData?.mobile || "123456789"}</span>
+                                    </li>
+                                    <li>
+                                        <img src="/assets/images/icons/view.svg" alt="image" />
+                                        WhatsApp: <span>{MemberData?.whatsappNo || "123456789"}</span>
                                     </li>
 
                                     <li>

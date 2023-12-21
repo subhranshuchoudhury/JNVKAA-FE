@@ -400,7 +400,10 @@ function Banner() {
             </div>
             <ul className="nav nav-tabs nav-style-1 justify-content-center" role="tablist">
               <li className="nav-item" role="presentation">
-                <a className="nav-link active" data-bs-toggle="tab" href="#tab-one" aria-selected="true" role="tab" tabIndex={-1}>Jawahar Navodaya Vidyalaya Alumni Association</a>
+                <p className="text-primary" style={{
+                  fontSize: '15px', fontWeight: 'bold', color: 'black',
+
+                }}>JNVKAA</p>
               </li>
 
             </ul>

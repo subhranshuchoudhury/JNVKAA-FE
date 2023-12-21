@@ -32,8 +32,8 @@ function BreakingNews() {
       </div>
 
       <span className="d-lg-block d-none">News Update {
-        NewsUpdateData?.length === 0 && <span class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
+        NewsUpdateData?.length === 0 && <span className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
         </span>
       }</span>
 

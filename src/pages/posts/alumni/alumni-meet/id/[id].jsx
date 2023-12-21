@@ -31,9 +31,9 @@ export default function page() {
 
     return <>
         {
-            Loading && EventData.length > 0 ? <div class="d-flex justify-content-center">
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
+            Loading && EventData.length > 0 ? <div className="d-flex justify-content-center">
+                <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
                 </div>
             </div> : <section className="post-gallery-details style-6 mt-100">
                 <div className="container">

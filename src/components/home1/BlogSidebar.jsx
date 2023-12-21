@@ -82,8 +82,8 @@ function BlogSidebar() {
                   <div className="section-title-1 mb-40">
                     <h2>Recent Events</h2>
                     {
-                      Loading && <div class="spinner-border text-primary m-2" role="status">
-                        <span class="visually-hidden">Loading...</span>
+                      Loading && <div className="spinner-border text-primary m-2" role="status">
+                        <span className="visually-hidden">Loading...</span>
                       </div>
                     }
 
@@ -147,7 +147,7 @@ function BlogSidebar() {
                     <span className="tag-name">Youtube</span>
                     <div className="search-form">
                       {/* <form action="/search" method="get">
-                        <i class="bi bi-search"></i>
+                        <i className="bi bi-search"></i>
                         <input type="text" placeholder="Search" name="title" />
                       </form> */}
                     </div>
