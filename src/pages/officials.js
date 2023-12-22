@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import officialData from "../data/officials/officials.json"
+import Image from 'next/image';
 function Officials() {
 
     const searchAlumni = (e) => {
@@ -52,7 +53,7 @@ function Officials() {
                                     <span className="categoty">{alumnus?.position}</span>
                                     {/* <Link legacyBehavior href="/author-details"> */}
                                     <a className="image">
-                                        <img src={"https://th.bing.com/th/id/OIP.audMX4ZGbvT2_GJTx2c4GgHaHw?rs=1&pid=ImgDetMain"} alt="image" />
+                                        <Image width={85} height={85} src={alumnus?.image} alt="profile image" />
                                     </a>
                                     {/* </Link> */}
                                     <h4>{alumnus?.name}</h4>
