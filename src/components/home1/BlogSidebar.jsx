@@ -124,7 +124,9 @@ function BlogSidebar() {
                         </div>
                         <Link legacyBehavior href={`/events/id/${item?._id}`}>
                           <a className="image">
-                            <img src="https://static.vecteezy.com/system/resources/previews/000/410/289/original/vector-illustration-of-notification-icon-on-blue-background.jpg" alt="" />
+                            {
+                              item?.image ? <img width={200} src={GLOBAL_URL + "/api/user/post/image/" + item?.image} alt="alumni meet image" /> : <img src="https://thumbs.dreamstime.com/b/people-meeting-together-outdoor-friends-gathering-vector-illustration-concept-friend-meetup-celebration-collab-collaboration-197968976.jpg" alt="" />
+                            }
                           </a>
                         </Link>
                       </div>
