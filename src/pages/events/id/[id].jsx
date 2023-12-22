@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { getEventById, isValidateInputID } from '@/utils/fetch';
+import { GLOBAL_URL, getEventById, isValidateInputID } from '@/utils/fetch';
 import Link from 'next/link';
 import Socials from '@/data/topbar/social.json';
+import Image from 'next/image';
 export default function page() {
 
     const router = useRouter()
@@ -10,13 +11,14 @@ export default function page() {
     const [EventData, setEventData] = useState([])
     const ID = router.query.id;
     useEffect(() => {
+        setLoading(true);
         if (ID) {
             loadEvents(ID);
         }
     }, [ID])
 
     const loadEvents = async (ID) => {
-
+        setLoading(true);
         if (isValidateInputID(ID)) {
 
             const res = await getEventById(ID);
@@ -30,7 +32,7 @@ export default function page() {
 
     return <>
         {
-            Loading && EventData.length > 0 ? <div className="d-flex justify-content-center">
+            Loading && EventData.length === 0 ? <div className="d-flex justify-content-center">
                 <div className="spinner-border" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
@@ -46,7 +48,7 @@ export default function page() {
                                 <div className="post-gallery-author-meta">
                                     <div className="author-area">
                                         <div className="author-img">
-                                            <img src="/assets/images/post-gallery-format/post-gallery-meta-author.jpg" alt="" />
+                                            <Image src="/assets/images/dummy/avatar/user.jpg" width={30} height={30} alt="" />
                                         </div>
                                         <div className="author-content">
                                             <p>By, Moderator</p>
@@ -73,8 +75,10 @@ export default function page() {
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="sidebar-thumb">
-                                    <img src="https://static.vecteezy.com/system/resources/previews/000/410/289/original/vector-illustration-of-notification-icon-on-blue-background.jpg" alt="Bell icon" />
+                                <div className="sidebar-thumb text-center">
+                                    {
+                                        EventData?.image ? <img width={100} height={100} src={GLOBAL_URL + "/api/user/post/image/" + EventData?.image} alt="alumni meet image" /> : <img src="https://thumbs.dreamstime.com/b/people-meeting-together-outdoor-friends-gathering-vector-illustration-concept-friend-meetup-celebration-collab-collaboration-197968976.jpg" alt="" />
+                                    }
                                     {/* <img src="/assets/images/post-format/Post-Format-01thumb-img.jpg" alt="" /> */}
                                 </div>
                             </div>
