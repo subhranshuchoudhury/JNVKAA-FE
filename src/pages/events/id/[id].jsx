@@ -42,7 +42,7 @@ export default function page() {
                         <div className="row">
                             <div className="col-12">
                                 <div className="post-gallery-title">
-                                    <span className="eg-badge2 badge--red">{new Date(EventData?.date).toLocaleString()}</span>
+                                    <span className="eg-badge2 badge--red">{new Date(EventData?.date).toDateString()}</span>
                                     <h2>{EventData?.name}</h2>
                                 </div>
                                 <div className="post-gallery-author-meta">

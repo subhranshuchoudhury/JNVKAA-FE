@@ -1,9 +1,12 @@
 import { createPostAlumni, deleteImage, uploadImage } from "@/utils/fetch";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
 function CreatePost() {
+
+    const router = useRouter()
 
     const [PostData, setPostData] = useState({
         title: "",
@@ -39,7 +42,10 @@ function CreatePost() {
         toast.dismiss(loading);
 
         if (response.status === 200) {
-            toast.success("Post published successfully")
+            console.log(response.data)
+            toast.success(response.data.message);
+            router.replace("/posts/alumni/id/" + response.data.id)
+
         } else {
             toast.error("Post publishing failed")
         }
@@ -127,7 +133,7 @@ function CreatePost() {
                 return;
             }
 
-            if (input.files[0].size >= 125000) {
+            if (input.files[0].size >= 1250000) {
                 toast.error("File size is greater than 1MB", {
                     icon: "⚠"
                 })
