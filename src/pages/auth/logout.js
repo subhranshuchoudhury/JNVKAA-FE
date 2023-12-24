@@ -29,6 +29,7 @@ export default function logout() {
     return (
         <div style={{
             marginTop: "100px",
+            marginBottom: "100px",
             padding: "20px",
         }} className="error-banner-content text-center">
 
