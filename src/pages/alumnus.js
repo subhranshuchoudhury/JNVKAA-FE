@@ -72,7 +72,7 @@ function Author() {
                     setSearchParameter(e.target.value?.toLocaleLowerCase());
                   }}>
                     <option value={"name"}>Name</option>
-                    <option value={"batch"}>Batch</option>
+                    <option value={"graduationyear"}>Batch</option>
                     <option value={"schoolno"}>School No</option>
                     <option value={"address"}>Address</option>
                     <option value={"bloodgroup"}>Blood Group</option>
