@@ -5,6 +5,7 @@ import Link from "next/link";
 import ModalVideo from 'react-modal-video';
 import Socials from "../../data/topbar/social.json";
 import { GLOBAL_URL } from "@/utils/fetch";
+import Image from "next/image";
 SwiperCore.use([Navigation, Autoplay, EffectFade]);
 
 function BlogSidebar() {
@@ -125,7 +126,10 @@ function BlogSidebar() {
                         <Link legacyBehavior href={`/events/id/${item?._id}`}>
                           <a className="image">
                             {
-                              item?.image ? <img width={100} height={100} src={GLOBAL_URL + "/api/user/post/image/" + item?.image} alt="alumni meet image" /> : <img src="https://thumbs.dreamstime.com/b/people-meeting-together-outdoor-friends-gathering-vector-illustration-concept-friend-meetup-celebration-collab-collaboration-197968976.jpg" alt="" />
+                              item?.image ? <Image height={100} width={200} style={{
+                                objectPosition: 'center',
+                                objectFit: 'cover'
+                              }} src={GLOBAL_URL + "/api/user/post/image/" + item?.image} alt="alumni meet image" /> : <img src="https://thumbs.dreamstime.com/b/people-meeting-together-outdoor-friends-gathering-vector-illustration-concept-friend-meetup-celebration-collab-collaboration-197968976.jpg" alt="" />
                             }
                           </a>
                         </Link>
