@@ -1,0 +1,92 @@
+[
+    {
+        "badge": "Alumni Meet",
+        "title": "This is a test title. 1",
+        "image": "/assets/images/carousel/image1.jpeg",
+        "description": "This is a test description",
+        "post_by": "Moderator",
+        "date": "Nov 10, 2023",
+        "views": "Official"
+    },
+    {
+        "badge": "Alumni Meet",
+        "title": "This is a test title. 2",
+        "image": "/assets/images/carousel/image2.jpeg",
+        "description": "This is a test description",
+        "post_by": "Moderator",
+        "date": "Nov 10, 2023",
+        "views": "Official"
+    },
+    {
+        "badge": "Alumni Meet",
+        "title": "This is a test title. 3",
+        "image": "/assets/images/carousel/image3.jpeg",
+        "description": "This is a test description",
+        "post_by": "Moderator",
+        "date": "Nov 10, 2023",
+        "views": "Official"
+    },
+    {
+        "badge": "Alumni Meet",
+        "title": "This is a test title. 4",
+        "image": "/assets/images/carousel/image4.jpeg",
+        "description": "This is a test description",
+        "post_by": "Moderator",
+        "date": "Nov 10, 2023",
+        "views": "Official"
+    },
+    {
+        "badge": "Alumni Meet",
+        "title": "This is a test title. 5",
+        "image": "/assets/images/carousel/image5.jpeg",
+        "description": "This is a test description",
+        "post_by": "Moderator",
+        "date": "Nov 10, 2023",
+        "views": "Official"
+    },
+    {
+        "badge": "Alumni Meet",
+        "title": "This is a test title. 6",
+        "image": "/assets/images/carousel/image6.jpeg",
+        "description": "This is a test description",
+        "post_by": "Moderator",
+        "date": "Nov 10, 2023",
+        "views": "Official"
+    },
+    {
+        "badge": "Alumni Meet",
+        "title": "This is a test title. 7",
+        "image": "/assets/images/carousel/image7.jpeg",
+        "description": "This is a test description",
+        "post_by": "Moderator",
+        "date": "Nov 10, 2023",
+        "views": "Official"
+    },
+    {
+        "badge": "Alumni Meet",
+        "title": "This is a test title. 8",
+        "image": "/assets/images/carousel/image8.jpeg",
+        "description": "This is a test description",
+        "post_by": "Moderator",
+        "date": "Nov 10, 2023",
+        "views": "Official"
+    },
+    {
+        "badge": "Alumni Meet",
+        "title": "This is a test title. 9",
+        "image": "/assets/images/carousel/image9.jpeg",
+        "description": "This is a test description",
+        "post_by": "Moderator",
+        "date": "Nov 10, 2023",
+        "views": "Official"
+    },
+    {
+        "badge": "Alumni Meet",
+        "title": "This is a test title. 10",
+        "image": "/assets/images/carousel/image10.jpeg",
+        "description": "This is a test description",
+        "post_by": "Moderator",
+        "date": "Nov 10, 2023",
+        "views": "Official"
+    }
+]
