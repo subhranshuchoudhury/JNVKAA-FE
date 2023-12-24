@@ -53,7 +53,9 @@ function Officials() {
                                     <span className="categoty">{alumnus?.position}</span>
                                     {/* <Link legacyBehavior href="/author-details"> */}
                                     <a className="image">
-                                        <Image width={85} height={85} src={alumnus?.image} alt="profile image" />
+                                        <Image width={85} height={85} style={{
+                                            objectPosition: 'center'
+                                        }} src={alumnus?.image} alt="profile image" />
                                     </a>
                                     {/* </Link> */}
                                     <h4>{alumnus?.name}</h4>
