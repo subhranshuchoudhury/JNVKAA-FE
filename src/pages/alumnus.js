@@ -5,8 +5,16 @@ import toast from 'react-hot-toast';
 function Author() {
 
   const searchAlumni = async (value) => {
+
+    let finalValue = value;
     setLoading(true);
-    const response = await searchAlumniByParameter(SearchParameter, value)
+    if (SearchParameter === "bloodgroup") {
+      if (finalValue.includes("+")) {
+        finalValue = finalValue.replace("+", "%2B")
+      }
+    }
+    console.log(finalValue)
+    const response = await searchAlumniByParameter(SearchParameter, finalValue)
     setLoading(false);
 
 
