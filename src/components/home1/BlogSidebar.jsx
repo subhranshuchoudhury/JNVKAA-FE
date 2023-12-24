@@ -219,7 +219,7 @@ function BlogSidebar() {
                     AlumniMeet?.length > 0 && AlumniMeet.map((item, index) => (
                       <div key={index} className="blog-list-2">
                         <div className="date">
-                          <h3>{new Date(item?.date).getDay()}</h3>
+                          <h3>{new Date(item?.date).getDate()}</h3>
                           <p>{new Date(item?.date).toLocaleString('default', { month: 'long' })}</p>
                         </div>
                         <div className="content">
