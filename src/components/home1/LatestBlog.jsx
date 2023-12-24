@@ -38,7 +38,10 @@ function LatestBlog() {
               headOfficials.map((official, index) => {
                 return <div key={index} className="col-lg-4 col-md-6 col-sm-10">
                   <div className="blog-grid-1 sibling-2">
-                    <span className="eg-badge badge--red">{official?.title}</span>
+                    <p className="text-center">
+
+                      <span className="eg-badge badge--red">{official?.title}</span>
+                    </p>
                     <Link legacyBehavior href="/official/president/statement">
                       <a className="image">
                         <img
