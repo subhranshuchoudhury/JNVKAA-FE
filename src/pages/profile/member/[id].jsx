@@ -381,9 +381,9 @@ export default function page() {
                                 }}
                             >
                                 <span>Early Bird</span>
-                                <h3 style={{ color: 'black' }}>Buy Membership </h3>
-                                <a href="#" className="shop-btn">
-                                    Buy Now
+                                <h3 style={{ color: 'black' }}>Activate Membership </h3>
+                                <a href="/membership/offer/free-trials" className="shop-btn">
+                                    Click Here
                                 </a>
                             </div>
                         </div>

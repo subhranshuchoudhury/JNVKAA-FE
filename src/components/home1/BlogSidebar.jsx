@@ -287,8 +287,8 @@ function BlogSidebar() {
               <div className="sidebar-shop-card" style={{ backgroundImage: 'url("https://img.freepik.com/free-vector/internet-forum-vector-illustration-communication-concept_6280-512.jpg?w=740")' }}>
                 {/* 380 x 399 */}
                 <span>Unlock premium features</span>
-                <h3 style={{ color: 'black' }}>Buy Membership</h3>
-                <a href="#" className="shop-btn">Start Membership</a>
+                <h3 style={{ color: 'black' }}>Activate Membership</h3>
+                <a href="/membership/offer/free-trials" className="shop-btn">Click Here</a>
               </div>
             </div>
           </div>

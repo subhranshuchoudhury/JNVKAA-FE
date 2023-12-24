@@ -62,7 +62,7 @@ function MainLayout({ children }) {
   return (
     <>
       <Head>
-        <title>Navodaya - The institute of dreamers.</title>
+        <title> JNVKAA - Connect, Inspire, Empower</title>
         <meta name="description" content="A media platform for Alumnus." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/assets/images/logo/jnvkaa-logo2.png" />

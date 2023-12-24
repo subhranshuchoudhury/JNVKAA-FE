@@ -255,6 +255,12 @@ function Header({ state, dispatch }) {
                         Create Post
                       </a>
                     </li>
+                    <li>
+                      <a className="dropdown-item " href="/membership/offer/free-trials">
+                        <i className="bi bi-cash-coin" />
+                        Coupons & Free Trials
+                      </a>
+                    </li>
                     {/* <li>
                       <a className="dropdown-item" href="#">
                         <i className="bi bi-chat-right-text" />

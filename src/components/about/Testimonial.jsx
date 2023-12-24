@@ -39,7 +39,7 @@ function Testimonial() {
                     <h2>Become A Member And Share
                       Your Great Stories.</h2>
                   </div>
-                  <a href="#" className="eg-btn btn--primary btn--lg">Buy Membership</a>
+                  <a href="/membership/offer/free-trials" className="eg-btn btn--primary btn--lg">Activate Membership</a>
                 </div>
               </div>
             </div>

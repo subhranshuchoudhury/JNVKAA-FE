@@ -726,3 +726,69 @@ export const getMyOwnProfile = async (req, res) => {
 
     }
 }
+
+// offers & free trials
+
+export const getFreeTrials = async () => {
+    try {
+        var myHeaders = new Headers();
+        myHeaders.append("x-access-token", getCookie('token'));
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow',
+
+        };
+
+        const response = await fetch(BASE_URL + "/api/user/free-trials", requestOptions);
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error"
+            }
+        }
+
+    }
+}
+
+// /api/user/free-trial/redeem/:code
+
+export const getRedeemFreeTrials = async (code) => {
+    try {
+        var myHeaders = new Headers();
+        myHeaders.append("x-access-token", getCookie('token'));
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow',
+
+        };
+
+        const response = await fetch(BASE_URL + "/api/user/free-trial/redeem/" + code, requestOptions);
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error"
+            }
+        }
+
+    }
+}
