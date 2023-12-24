@@ -76,7 +76,7 @@ export default function page() {
                                 </div>
                                 <div className="sidebar-thumb text-center">
                                     {
-                                        EventData?.image ? <img src={GLOBAL_URL + "/api/user/post/image/" + EventData?.image} alt="Post image" /> : <img src="https://static.vecteezy.com/system/resources/previews/000/410/289/original/vector-illustration-of-notification-icon-on-blue-background.jpg" alt="Bell icon" />
+                                        EventData?.image && <img src={GLOBAL_URL + "/api/user/post/image/" + EventData?.image} alt="Post image" />
                                     }
                                     {/* <img src="/assets/images/post-format/Post-Format-01thumb-img.jpg" alt="" /> */}
                                 </div>
