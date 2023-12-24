@@ -35,7 +35,7 @@ function Register() {
             // setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 });
             // localStorage.setItem("userData", JSON.stringify(response.data.data));
             // router.replace("/posts")
-            toast.success("Registered Successfully " + response.status);
+            toast.success(response.data.message);
             router.push(`/auth/otp/${Mobile}`);
         } else {
 

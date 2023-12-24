@@ -29,7 +29,7 @@ function OTPVerify(props) {
         if (response.status === 200) {
             toast.success(response.data.message);
         } else {
-            toast.error(response.data.message + " ECODE: " + response.status);
+            toast.error(response.data.message);
         }
 
         if (response.status === 200 || response.status === 400) {
@@ -59,7 +59,7 @@ function OTPVerify(props) {
             window.location.href = "/profile/update-profile";
 
         } else {
-            toast.error(response.data.message + " ECODE: " + response.status);
+            toast.error(response.data.message);
         }
     }
     return (
