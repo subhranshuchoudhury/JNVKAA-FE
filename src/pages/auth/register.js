@@ -49,7 +49,7 @@ function Register() {
 
             } else {
 
-                toast.error(response.data.message + " ECODE: " + response.status);
+                toast.error(response.data.message);
             }
         }
 
@@ -78,7 +78,7 @@ function Register() {
                                 </div>
                                 <div className="col-12">
                                     <div className="form-inner">
-                                        <input onChange={e => setPassword(e.target.value)} value={Password} type="text" placeholder="Password (min 6 characters)" />
+                                        <input onChange={e => setPassword(e.target.value)} value={Password} type="password" placeholder="Password (min 6 characters)" />
                                     </div>
                                 </div>
                                 <div className="col-12">

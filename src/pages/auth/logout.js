@@ -11,7 +11,9 @@ export default function logout() {
     const logOutUser = () => {
         toast.success("Logged out successfully");
         deleteCookie("token");
+        deleteCookie("isProfileCompleted");
         localStorage.removeItem("userData");
+
         window.location.href = "/auth/login";
     }
 

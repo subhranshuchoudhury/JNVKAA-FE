@@ -195,12 +195,12 @@ function Header({ state, dispatch }) {
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/blog-standard">
+                    <Link legacyBehavior href="/posts/alumni">
                       <a>Official</a>
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/wide-thumb-blog">
+                    <Link legacyBehavior href="/posts/youtube">
                       <a>Youtube</a>
                     </Link>
                   </li>

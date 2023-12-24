@@ -29,8 +29,15 @@ function Login() {
     if (response.status === 200) {
       toast.success("Welcome " + response.data.name.split(" ")?.[0] + " 👋");
       setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 * 365 * 3 });
+      setCookie("isProfileCompleted", response.data.isProfileCompleted, { maxAge: 60 * 60 * 24 * 365 * 3 })
       localStorage.setItem("userData", JSON.stringify(response.data.data));
-      window.location.href = "/posts/alumni";
+
+      if (response.data.isProfileCompleted) {
+        window.location.href = "/alumnus";
+      } else {
+        window.location.href = "/profile/update-profile";
+
+      }
     } else {
       toast.error(response.data.message);
     }

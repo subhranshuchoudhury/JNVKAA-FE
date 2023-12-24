@@ -10,6 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useGeolocated } from "react-geolocated";
 import Resizer from "react-image-file-resizer";
 import { useRouter } from "next/router";
+import { setCookie } from "cookies-next";
 
 
 function updateProfile() {
@@ -179,6 +180,7 @@ function updateProfile() {
             // setImageBlob(input.files[0]); // setting the image blob.
             const modifiedImageBlob = await resizeFile(input.files[0]);
             setImageBlob(modifiedImageBlob);
+            UpdateUserData.profileImage = "QUEUE";
 
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -197,6 +199,7 @@ function updateProfile() {
         const response = await getAlumniProfileById();
         if (response.status === 200) {
             setIsSuccessLoaded(true)
+            setCookie("isProfileCompleted", response.data.profileDetails.isProfileCompleted, { maxAge: 60 * 60 * 24 * 365 * 3 });
             console.log(isGeolocationAvailable, isGeolocationAvailable, coords
             );
             UpdateUserData.name = response.data.name
@@ -245,16 +248,18 @@ function updateProfile() {
         UpdateUserData.location = isGeolocationAvailable && isGeolocationEnabled && coords ? `${coords.latitude}-${coords.longitude}` : UpdateUserData.location
         const response = await updateUserProfile(UpdateUserData);
         if (response.status === 200) {
+            console.log(response.data)
+            setCookie("isProfileCompleted", response.data.alumni.profileDetails.isProfileCompleted, { maxAge: 60 * 60 * 24 * 365 * 3 })
             toast.dismiss(loadingToast);
             toast.success("Profile updated successfully");
-            router.push("/profile/my-profile")
+            router.push("/")
         } else {
             toast.error("Something went wrong");
         }
     }
 
     const checkEmptyValuesAndAlert = (obj) => {
-        const keysToExclude = ["instagram", "linkedIn", "isProfileCompleted", "profileImage", "premiumExpiry", "location", "facebook"];
+        const keysToExclude = ["instagram", "linkedIn", "isProfileCompleted", "premiumExpiry", "location", "facebook"];
         let hasEmptyValues = false;
 
         for (const key in obj) {

@@ -6,10 +6,21 @@ export function middleware(request) {
     const isPublicPath =
         path === "/" || path === "/auth/register" || path === "/auth/login" || path === "/auth/forgot-password" || path === "/about" || path === "/contact";
     const token = request.cookies.get("token")?.value || null;
+    const isProfileCompleted = request.cookies.get("isProfileCompleted")?.value || null;
 
 
     if (!isPublicPath && !token) {
         return NextResponse.redirect(new URL('/auth/login', request.url))
+    }
+
+    if (path === "/alumnus" && isProfileCompleted === "false") {
+        return NextResponse.redirect(new URL('/profile/update-profile', request.url))
+
+    }
+
+    if (path === "/posts/alumni/create-post" && isProfileCompleted === "false") {
+        return NextResponse.redirect(new URL('/profile/update-profile', request.url))
+
     }
 
     if (path === "/auth/login" && token) {
