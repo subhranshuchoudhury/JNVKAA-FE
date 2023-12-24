@@ -250,7 +250,7 @@ function Header({ state, dispatch }) {
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item " href="#">
+                      <a className="dropdown-item " href="/posts/alumni/create-post">
                         <i className="bi bi-plus" />
                         Create Post
                       </a>
