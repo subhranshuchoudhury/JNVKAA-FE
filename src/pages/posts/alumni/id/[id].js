@@ -68,7 +68,7 @@ export default function page() {
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="sidebar-thumb">
+                                <div className="sidebar-thumb text-center">
                                     {
                                         AlumniPost?.imageLink && <img src={GLOBAL_URL + "/api/user/post/image/" + AlumniPost?.imageLink} alt="Thumbnail Image" />
                                     }
