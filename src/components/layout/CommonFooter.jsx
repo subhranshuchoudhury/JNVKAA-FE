@@ -60,7 +60,7 @@ function CommonFooter() {
         </div>
         <div className="row copyright-area">
           <div className="col-lg-12 text-center">
-            <p>© 2023 <a href="#">Navodaya</a>, Kendrapara</p>
+            <p>© 2023 <a href="#">JNVKAA</a>, Kendrapara</p>
           </div>
         </div>
       </div>
