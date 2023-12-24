@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { getAlumniPostByID } from '@/utils/fetch';
+import { GLOBAL_URL, getAlumniPostByID } from '@/utils/fetch';
 import Link from 'next/link';
 import Socials from '@/data/topbar/social.json';
 export default function page() {
@@ -69,8 +69,10 @@ export default function page() {
                                     </div>
                                 </div>
                                 <div className="sidebar-thumb">
-                                    <img src="https://static.vecteezy.com/system/resources/previews/000/410/289/original/vector-illustration-of-notification-icon-on-blue-background.jpg" alt="Bell icon" />
-                                    {/* <img src="/assets/images/post-format/Post-Format-01thumb-img.jpg" alt="" /> */}
+                                    {
+                                        AlumniPost?.imageLink && <img src={GLOBAL_URL + "/api/user/post/image/" + AlumniPost?.imageLink} alt="Thumbnail Image" />
+                                    }
+
                                 </div>
                             </div>
                         </div>
