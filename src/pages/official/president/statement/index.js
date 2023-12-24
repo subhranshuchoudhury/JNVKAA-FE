@@ -11,8 +11,8 @@ function page() {
                     <div className="row">
                         <div className="col-12">
                             <div className="post-gallery-title">
-                                <span className="eg-badge2 badge--red">{presidentData?.title}</span>
-                                <h2>{presidentData?.heading}</h2>
+                                <span className="eg-badge2 badge--red">{presidentData[0]?.title}</span>
+                                <h2>{presidentData[0]?.heading}</h2>
                             </div>
                             <div className="post-gallery-author-meta">
                                 <div className="author-area">
@@ -20,7 +20,7 @@ function page() {
                                         <Image width={30} height={30} src="/assets/images/officials/head.jpeg" alt="" />
                                     </div>
                                     <div className="author-content">
-                                        <p>By, <Link legacyBehavior href="/official/president/statement"><a>{presidentData?.name}</a></Link></p>
+                                        <p>By, <Link legacyBehavior href="/official/president/statement"><a>{presidentData[0]?.name}</a></Link></p>
                                     </div>
                                 </div>
                                 <div className="post-meta">
@@ -53,8 +53,8 @@ function page() {
                     <div className="row justify-content-center g-4">
                         <div className="col-lg-8">
                             <blockquote className="text-center">
-                                <p className="blockquote-text">"{presidentData?.description}"</p>
-                                <h3 className="blockquote-author">{presidentData?.name}</h3>
+                                <p className="blockquote-text">"{presidentData[0]?.description}"</p>
+                                <h3 className="blockquote-author">{presidentData[0]?.name}</h3>
                             </blockquote>
 
                         </div>
