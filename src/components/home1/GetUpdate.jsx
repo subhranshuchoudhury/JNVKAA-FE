@@ -22,7 +22,7 @@ function GetUpdate() {
               </div>
               <h2>Become A Member And Share Your Great Stories.</h2>
             </div>
-            <a href="/auth/login" className="eg-btn btn--primary btn--lg">Become A Member</a>
+            <a href="/auth/register" className="eg-btn btn--primary btn--lg">Become A Member</a>
           </div>
 
         </div>

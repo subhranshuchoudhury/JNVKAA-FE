@@ -27,6 +27,11 @@ export function middleware(request) {
         return NextResponse.redirect(new URL('/auth/logout', request.url))
 
     }
+
+    if (path === "/auth/register" && token) {
+        return NextResponse.redirect(new URL('/auth/logout', request.url))
+
+    }
 }
 
 // See "Matching Paths" below to learn more
