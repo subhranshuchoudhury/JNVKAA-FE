@@ -194,11 +194,11 @@ function Header({ state, dispatch }) {
                       <a>Alumni</a>
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link legacyBehavior href="/posts/alumni">
                       <a>Official</a>
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link legacyBehavior href="/posts/youtube">
                       <a>Youtube</a>

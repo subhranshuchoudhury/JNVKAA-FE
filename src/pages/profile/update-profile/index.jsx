@@ -252,7 +252,7 @@ function updateProfile() {
             setCookie("isProfileCompleted", response.data.alumni.profileDetails.isProfileCompleted, { maxAge: 60 * 60 * 24 * 365 * 3 })
             toast.dismiss(loadingToast);
             toast.success("Profile updated successfully");
-            router.push("/")
+            window.location.href = "/";
         } else {
             toast.error("Something went wrong");
         }
