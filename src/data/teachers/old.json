@@ -56,6 +56,13 @@
         "since": "2012-2023"
     },
     {
+        "name": "Sabita Samantaray",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "9439584096",
+        "designation": "TGT ODIA",
+        "since": ""
+    },
+    {
         "name": "Rama Hari Shial",
         "image": "/assets/images/teachers/IMG6.jpg",
         "mobile": "9678090491",
@@ -105,6 +112,20 @@
         "since": ""
     },
     {
+        "name": "Bishnupriya Behera",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PET Teacher",
+        "since": ""
+    },
+    {
+        "name": "Dilip Kumar Mohanty",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "9938686581",
+        "designation": "TGT ODIA",
+        "since": ""
+    },
+    {
         "name": "Ramsaran Chaudhary",
         "image": "/assets/images/teachers/IMG50.jpg",
         "mobile": "",
@@ -112,10 +133,87 @@
         "since": ""
     },
     {
+        "name": "Ramesh Purella",
+        "image": "/assets/images/teachers/IMG27.jpeg",
+        "mobile": "8500995546",
+        "designation": "Counsellor",
+        "since": "2019-2021"
+    },
+    {
+        "name": "Ayan Benarjee",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "9853867608",
+        "designation": "TGT ENGLISH",
+        "since": ""
+    },
+    {
+        "name": "Rudra Prasad Sahoo",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "8763146855",
+        "designation": "Principal",
+        "since": "2022"
+    },
+    {
+        "name": "Shashikanta Pattanaik",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "Vice Principal",
+        "since": "2023"
+    },
+    {
+        "name": "Upendra Nath Mallick",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PGT BIOLOGY",
+        "since": "2022"
+    },
+    {
+        "name": "Sanjay Kumar Prasad",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PGT(Geo.)",
+        "since": "2023"
+    },
+    {
         "name": "Santosh Mohanty",
         "image": "/assets/images/teachers/IMG17.jpg",
         "mobile": "",
         "designation": "LAB ASSISTANT",
+        "since": ""
+    },
+    {
+        "name": "Gouri Shankar Sahu",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PGT Chemistry",
+        "since": "2023"
+    },
+    {
+        "name": "Siddhartha Sinha",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PGT (Comp.Sc.)",
+        "since": "2023"
+    },
+    {
+        "name": "Arti Mishra",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PGT HINDI",
+        "since": "2023"
+    },
+    {
+        "name": "Anjali Sharma",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "PGT English",
+        "since": "2023"
+    },
+    {
+        "name": "",
+        "image": "/assets/images/teachers/IMG50.jpg",
+        "mobile": "",
+        "designation": "",
         "since": ""
     }
 ]

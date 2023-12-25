@@ -36,8 +36,7 @@ function Testimonial() {
                       </svg>
                       <span>&nbsp;Get Every Update</span>
                     </div>
-                    <h2>Become A Member And Share
-                      Your Great Stories.</h2>
+                    <h2>Become A Premium Member</h2>
                   </div>
                   <a href="/membership/offer/free-trials" className="eg-btn btn--primary btn--lg">Activate Membership</a>
                 </div>
