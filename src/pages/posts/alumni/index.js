@@ -114,7 +114,7 @@ function BlogClassicPage() {
 
                             </div>
                             {/* pagiantion */}
-                            <nav className="mt-60">
+                            {/* <nav className="mt-60">
                                 <ul className="pagination-list">
                                     <li><a href="#"><i className="bi bi-chevron-left" /></a></li>
                                     <li><a href="#">1</a></li>
@@ -122,7 +122,7 @@ function BlogClassicPage() {
                                     <li><a href="#">3</a></li>
                                     <li><a href="#"><i className="bi bi-chevron-right" /></a></li>
                                 </ul>
-                            </nav>
+                            </nav> */}
                         </div>
                         <div className="col-lg-4">
                             <div className="post-side-bar-1">
