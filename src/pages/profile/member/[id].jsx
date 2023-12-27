@@ -82,7 +82,7 @@ export default function page() {
                                     </li>
                                     <li>
                                         <img src="/assets/images/icons/view.svg" alt="image" />
-                                        WhatsApp: <span>{MemberData?.profileDetails?.whatsappNo || "123456789"}</span>
+                                        WhatsApp: <span>{MemberData?.profileDetails?.whatsappNo}</span>
                                     </li>
 
                                     <li>
