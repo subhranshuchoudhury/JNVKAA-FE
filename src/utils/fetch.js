@@ -792,3 +792,7 @@ export const getRedeemFreeTrials = async (code) => {
 
     }
 }
+
+export const getOfficialPosts = async () => {
+
+}
