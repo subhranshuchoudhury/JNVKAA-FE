@@ -7,7 +7,7 @@ export default function page() {
 
     const router = useRouter()
     const [Loading, setLoading] = useState(true);
-    const [AlumniPost, setAlumniPost] = useState([])
+    const [AlumniPost, setAlumniPost] = useState(null)
     const ID = router.query.id;
     useEffect(() => {
         if (ID) {
@@ -25,7 +25,7 @@ export default function page() {
 
     return <>
         {
-            Loading && AlumniPost.length > 0 ? <div className="d-flex justify-content-center">
+            Loading && AlumniPost ? <div className="d-flex justify-content-center">
                 <div className="spinner-border" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
