@@ -326,30 +326,34 @@ export default function page() {
                                 <ul style={MemberData?.mobile ? { filter: "blur(0px)" } : {
                                     filter: "blur(3px)"
                                 }} className="social-3">
-                                    <li >
-                                        <a href={MemberData?.profileDetails?.facebook || ""}>
-                                            <span>
-                                                <i className="bx bxl-facebook" />
-                                                Facebook
-                                            </span>
-                                            <span>
-                                                <strong>Add Friend</strong>
+                                    {
+                                        MemberData?.profileDetails?.facebook && <li >
+                                            <a href={MemberData?.profileDetails?.facebook || ""}>
+                                                <span>
+                                                    <i className="bx bxl-facebook" />
+                                                    Facebook
+                                                </span>
+                                                <span>
+                                                    <strong>Add Friend</strong>
 
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href={MemberData?.profileDetails?.linkedin || ""}>
-                                            <span>
-                                                <i className="bx bxl-linkedin" />
-                                                &nbsp;LinkedIn
-                                            </span>
-                                            <span>
-                                                <strong>Follow</strong>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    }
+                                    {
+                                        MemberData?.profileDetails?.linkedIn && <li>
+                                            <a href={MemberData?.profileDetails?.linkedIn || ""}>
+                                                <span>
+                                                    <i className="bx bxl-linkedin" />
+                                                    LinkedIn
+                                                </span>
+                                                <span>
+                                                    <strong>Follow</strong>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    }
+                                    {MemberData?.profileDetails?.whatsappNo && <li>
                                         <a>
                                             <span>
                                                 <i className="bx bxl-whatsapp" />
@@ -360,9 +364,9 @@ export default function page() {
 
                                             </span>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/">
+                                    </li>}
+                                    {MemberData?.profileDetails?.instagram && <li>
+                                        <a href={MemberData?.profileDetails?.instagram || ""}>
                                             <span>
                                                 <i className="bx bxl-instagram" />
                                                 Instagram
@@ -371,7 +375,7 @@ export default function page() {
                                                 <strong>Follow</strong>
                                             </span>
                                         </a>
-                                    </li>
+                                    </li>}
                                 </ul>
                             </div>
                             <div
