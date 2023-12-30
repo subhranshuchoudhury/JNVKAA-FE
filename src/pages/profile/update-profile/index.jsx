@@ -362,7 +362,7 @@ function updateProfile() {
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="batch">Batch<span className="text-danger">*</span></label>
+                                        <label htmlFor="batch">12th Pass Out Year<span className="text-danger">*</span></label>
                                         <Select onChange={(e) => {
 
                                             handleChange({
