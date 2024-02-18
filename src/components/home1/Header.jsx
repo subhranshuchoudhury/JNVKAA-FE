@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import { getCookie } from 'cookies-next';
-import toast, { Toaster } from "react-hot-toast";
+// import toast, { Toaster } from "react-hot-toast";
 function Header({ state, dispatch }) {
   const headerRef = useRef(null);
   const toggleMenu = (menu) => {
@@ -37,20 +37,26 @@ function Header({ state, dispatch }) {
 
   }, [])
 
+
+  const [searchValue, setSearchValue] = useState("");
+  const router = useRouter();
+
   return (
     <>
-      <Toaster />
+      {/* <Toaster /> */}
       <div className={`mobile-search ${state.isModal ? "slide" : ""}`}>
         <div className="container">
           <div className="row d-flex justify-content-center gy-4">
             <div className="col-10">
-              <label>Want to search an Alumni from database ?</label>
-              <input type="text" placeholder="eg. Subhranshu Choudhury" />
+              <label>Want to search an Alumni?</label>
+              <input type="text" onChange={e => setSearchValue(e.target.value)} placeholder="eg. Rahul Biswal" />
             </div>
             <div className="col-2 d-flex justify-content-end align-items-sm-center align-items-end gap-2">
               <div onClick={() => {
+                if (searchValue) {
+                  router.push(`/search/alumni/${searchValue}`)
+                }
 
-                toast.error("This feature is under development.")
               }} className="search-cross-btn">
                 <i className="bi bi-search" />
               </div>

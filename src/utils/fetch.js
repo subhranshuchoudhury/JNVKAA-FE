@@ -3,7 +3,7 @@ import { getCookie } from "cookies-next"
 const env = process.env.NODE_ENV
 const LOCAL_URL = "http://localhost:5000"
 const PRODUCTION_URL = "https://jnvkaa-backend.onrender.com"
-const BASE_URL = env == "development" ? LOCAL_URL : PRODUCTION_URL
+const BASE_URL = env == "development" ? PRODUCTION_URL : PRODUCTION_URL
 
 export const GLOBAL_URL = BASE_URL;
 
@@ -56,6 +56,86 @@ export const LoginAlumni = async (mobile, password) => {
             data: {
                 message: "Internal Server Error",
                 error: String(error)
+            }
+        }
+
+    }
+}
+
+export const LoginTeacher = async (mobile, password) => {
+    try {
+
+        const response = await fetch(BASE_URL + "/api/teacher/auth/login/", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                mobile: mobile,
+                password: password
+
+            })
+        });
+        const data = await response.json();
+        console.log(data);
+
+        return {
+            status: response.status,
+            data
+        }
+
+
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error",
+                error: String(error)
+            }
+        }
+
+    }
+}
+
+
+
+export const RegisterTeacher = async (mobile, password, name, joiningYear, leavingYear, subject) => {
+    try {
+
+        const response = await fetch(BASE_URL + "/api/teacher/auth/register/", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                mobile: mobile,
+                password: password,
+                name: name,
+                joiningYear: joiningYear,
+                leavingYear: leavingYear,
+                subject: subject
+
+            })
+        });
+        const data = await response.json();
+        console.log("DATA", data);
+
+        return {
+            status: response.status,
+            data
+        }
+
+
+    } catch (error) {
+
+        console.log("ERR", error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error",
+                // error: String(error)
             }
         }
 

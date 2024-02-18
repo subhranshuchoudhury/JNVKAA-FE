@@ -84,6 +84,82 @@ export const checkRegisterStepOne = (name, mobile, password, confirmPassword) =>
     }
 }
 
+export const checkRegisterTeacher = (name, mobile, password, confirmPassword, joiningYear, teacherSubject) => {
+    if (!name || name?.length < 3) {
+        return {
+            response: true,
+            message: 'Please Enter Your Name'
+        }
+    }
+
+    if (!mobile || mobile?.length !== 10) {
+        return {
+            response: true,
+            message: 'Please Enter Valid Mobile Number'
+        }
+    }
+
+    if (!password) {
+        return {
+            response: true,
+            message: 'Please Enter Password'
+        }
+    }
+
+    if (password.length < 6) {
+        return {
+            response: true,
+            message: 'Password must be 6 digit'
+        }
+    }
+
+    if (!confirmPassword) {
+        return {
+            response: true,
+            message: 'Please Enter Confirm Password'
+        }
+    }
+
+    if (confirmPassword.length < 6) {
+        return {
+            response: true,
+            message: 'Confirm Password must be 6 digit'
+        }
+    }
+
+    if (password !== confirmPassword) {
+        return {
+            response: true,
+            message: 'Password and Confirm Password must be same'
+        }
+    }
+
+    if (!joiningYear) {
+        return {
+            response: true,
+            message: 'Please Enter Joining Year'
+        }
+    }
+
+    if (!teacherSubject) {
+        return {
+            response: true,
+            message: 'Please Enter Teacher Subject'
+        }
+    }
+
+
+
+
+
+
+
+    return {
+        response: false,
+        message: ''
+    }
+}
+
 export const checkOTP = (otp) => {
     if (!otp || otp?.length !== 8) {
         return {

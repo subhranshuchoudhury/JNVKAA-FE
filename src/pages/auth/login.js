@@ -109,12 +109,20 @@ function Login() {
                     {/* <a href="tel:06571111576">+880 657 1111 576</a> */}
                   </div>
                 </div>
-                <div className="single-info">
+                {/* <div className="single-info">
                   <div className="icon">
                     <i className="bi bi-envelope" />
                   </div>
                   <div className="info">
                     <Link href="/forgot-password">Forgot Password?</Link>
+                  </div>
+                </div> */}
+                <div className="single-info">
+                  <div className="icon">
+                    <i className="bi bi-person-square" />
+                  </div>
+                  <div className="info">
+                    <Link href="/auth/login-teacher">Are you a teacher?</Link>
                   </div>
                 </div>
               </div>

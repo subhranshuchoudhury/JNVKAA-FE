@@ -1,56 +1,45 @@
 import React, { useState } from 'react'
-import { RegisterAlumni } from '@/utils/fetch';
+import { LoginTeacher } from '@/utils/fetch';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import social from '@/data/topbar/social.json';
-import { checkRegisterStepOne } from '@/utils/validator';
+import { checkLogin } from '@/utils/validator';
+import { setCookie } from "cookies-next";
 import { useRouter } from 'next/router';
 
-function Register() {
+function Login() {
 
     const [Data, setData] = useState(null);
-    const [Name, setName] = useState("");
     const [Mobile, setMobile] = useState("");
     const [Password, setPassword] = useState("");
-    const [ConfirmPassword, setConfirmPassword] = useState("");
-
 
     const router = useRouter();
 
-    const AsyncRegister = async (event) => {
+    const AsyncLogin = async (event) => {
         event.preventDefault();
 
-        const validatorResponse = checkRegisterStepOne(Name, Mobile, Password, ConfirmPassword);
-
-        if (validatorResponse.response) {
-            return toast.error(validatorResponse.message);
+        if (checkLogin(Mobile, Password).response) {
+            return toast.error(checkLogin(Mobile, Password).message);
         }
         const loadingToast = toast.loading("Please wait...");
-        const response = await RegisterAlumni(Mobile, Password, Name);
+        const response = await LoginTeacher(Mobile, Password);
         toast.dismiss(loadingToast);
         setData(response);
 
         if (response.status === 200) {
-            // toast.success("Welcome " + response.data.name.split(" ")[0] + " 👋");
-            // setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 });
-            // localStorage.setItem("userData", JSON.stringify(response.data.data));
-            // router.replace("/posts")
-            toast.success(response.data.message);
-            router.push(`/auth/otp/${Mobile}`);
-        } else {
+            toast.success("Welcome " + response.data.name.split(" ")?.[0] + " 👋");
+            setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 * 365 * 3 });
+            setCookie("isProfileCompleted", response.data.isProfileCompleted, { maxAge: 60 * 60 * 24 * 365 * 3 })
+            localStorage.setItem("userData", JSON.stringify(response.data.data));
 
-            if (response.status === 301) {
-
-                toast.error("Redirecting to verify...", {
-                    icon: "🚀",
-                })
-
-                router.push(`/auth/otp/${Mobile}`);
-
+            if (response.data.isProfileCompleted) {
+                window.location.href = "/teachers";
             } else {
+                window.location.href = "/profile/teacher/update-profile";
 
-                toast.error("response.data.message");
             }
+        } else {
+            toast.error(response.data.message);
         }
 
     }
@@ -62,32 +51,22 @@ function Register() {
 
                     <div className="col-lg-7">
                         <div className="form-title">
-                            <h2>Register Here!</h2>
+                            <h2>Teacher Login!</h2>
                         </div>
                         <form className="contact-form">
                             <div className="row">
-                                <div className="col-12">
-                                    <div className="form-inner">
-                                        <input onChange={e => setName(e.target.value)} value={Name} type="text" placeholder="Enter Your Name" />
-                                    </div>
-                                </div>
-                                <div className="col-12">
+                                <div className="col-6">
                                     <div className="form-inner">
                                         <input onChange={e => setMobile(e.target.value)} value={Mobile} type="tel" placeholder="Mobile" />
                                     </div>
                                 </div>
-                                <div className="col-12">
+                                <div className="col-6">
                                     <div className="form-inner">
-                                        <input onChange={e => setPassword(e.target.value)} value={Password} type="password" placeholder="Password (min 6 characters)" />
+                                        <input onChange={e => setPassword(e.target.value)} value={Password} type="password" placeholder="Password" />
                                     </div>
                                 </div>
                                 <div className="col-12">
-                                    <div className="form-inner">
-                                        <input onChange={e => setConfirmPassword(e.target.value)} value={ConfirmPassword} type="password" placeholder="Confirm Password" />
-                                    </div>
-                                </div>
-                                <div className="col-12">
-                                    <button onClick={AsyncRegister} type="submit" className="eg-btn btn--primary btn--lg">
+                                    <button onClick={AsyncLogin} type="submit" className="eg-btn btn--primary btn--lg">
                                         Submit
                                     </button>
                                 </div>
@@ -100,8 +79,7 @@ function Register() {
                             <div className="title">
                                 <h3>Any Issues?</h3>
                                 <p>
-                                    If you are facing any problem please contact with us. We will
-                                    reply you as soon as possible. Otherwise you can forgot your password whenever you want.
+                                    Make sure your account has been reviewed and verified by the admin. If you have any issues, please contact us.
                                 </p>
                             </div>
                             <div className="left-social">
@@ -130,23 +108,21 @@ function Register() {
                                         {/* <a href="tel:06571111576">+880 657 1111 576</a> */}
                                     </div>
                                 </div>
-                                <div className="single-info">
+                                {/* <div className="single-info">
                                     <div className="icon">
-                                        <i className="bi bi-lock" />
+                                        <i className="bi bi-envelope" />
                                     </div>
                                     <div className="info">
-                                        <Link href="/auth/login">Already have an account?</Link>
+                                        <Link href="/forgot-password">Forgot Password?</Link>
                                     </div>
-
-                                </div>
+                                </div> */}
                                 <div className="single-info">
                                     <div className="icon">
-                                        <i className="bi bi-person-square" />
+                                        <i className="bi bi-person" />
                                     </div>
                                     <div className="info">
-                                        <Link href="/auth/register-teacher">Are you a teacher?</Link>
+                                        <Link href="/auth/login">Are you a student?</Link>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -157,4 +133,4 @@ function Register() {
     )
 }
 
-export default Register;
+export default Login;

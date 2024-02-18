@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
-import { RegisterAlumni } from '@/utils/fetch';
+import { RegisterTeacher } from '@/utils/fetch';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import social from '@/data/topbar/social.json';
-import { checkRegisterStepOne } from '@/utils/validator';
+import { checkRegisterTeacher } from '@/utils/validator';
 import { useRouter } from 'next/router';
 
 function Register() {
 
-    const [Data, setData] = useState(null);
+    // const [Data, setData] = useState(null);
     const [Name, setName] = useState("");
     const [Mobile, setMobile] = useState("");
     const [Password, setPassword] = useState("");
     const [ConfirmPassword, setConfirmPassword] = useState("");
+    const [joiningYear, setJoiningYear] = useState("");
+    const [teacherSubject, setTeacherSubject] = useState("");
+    const [leavingYear, setLeavingYear] = useState("")
 
 
     const router = useRouter();
@@ -20,40 +23,33 @@ function Register() {
     const AsyncRegister = async (event) => {
         event.preventDefault();
 
-        const validatorResponse = checkRegisterStepOne(Name, Mobile, Password, ConfirmPassword);
+        const validatorResponse = checkRegisterTeacher(Name, Mobile, Password, ConfirmPassword, joiningYear, teacherSubject);
 
         if (validatorResponse.response) {
             return toast.error(validatorResponse.message);
         }
         const loadingToast = toast.loading("Please wait...");
-        const response = await RegisterAlumni(Mobile, Password, Name);
+        const response = await RegisterTeacher(Mobile, Password, Name, joiningYear, leavingYear, teacherSubject);
         toast.dismiss(loadingToast);
-        setData(response);
+        // setData(response);
 
         if (response.status === 200) {
-            // toast.success("Welcome " + response.data.name.split(" ")[0] + " 👋");
-            // setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 });
-            // localStorage.setItem("userData", JSON.stringify(response.data.data));
-            // router.replace("/posts")
+
             toast.success(response.data.message);
-            router.push(`/auth/otp/${Mobile}`);
+
+
+
         } else {
 
-            if (response.status === 301) {
+            toast.error(response.data.message);
 
-                toast.error("Redirecting to verify...", {
-                    icon: "🚀",
-                })
 
-                router.push(`/auth/otp/${Mobile}`);
 
-            } else {
-
-                toast.error("response.data.message");
-            }
         }
-
     }
+
+
+
     return (
 
         <section className="contact-section pt-100 pb-100">
@@ -62,7 +58,7 @@ function Register() {
 
                     <div className="col-lg-7">
                         <div className="form-title">
-                            <h2>Register Here!</h2>
+                            <h2>Teacher Register!</h2>
                         </div>
                         <form className="contact-form">
                             <div className="row">
@@ -84,6 +80,21 @@ function Register() {
                                 <div className="col-12">
                                     <div className="form-inner">
                                         <input onChange={e => setConfirmPassword(e.target.value)} value={ConfirmPassword} type="password" placeholder="Confirm Password" />
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="form-inner">
+                                        <input onWheel={(e) => e.target.blur()} onChange={e => setJoiningYear(e.target.value)} value={joiningYear} type="number" placeholder="Joining Year" />
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="form-inner">
+                                        <input onChange={e => setTeacherSubject(e.target.value)} value={teacherSubject} type="text" placeholder="Teaching Subject" />
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="form-inner">
+                                        <input onWheel={(e) => e.target.blur()} onChange={e => setLeavingYear(e.target.value)} value={leavingYear} type="number" placeholder="Leaving Year (if applicable)" />
                                     </div>
                                 </div>
                                 <div className="col-12">
@@ -135,16 +146,16 @@ function Register() {
                                         <i className="bi bi-lock" />
                                     </div>
                                     <div className="info">
-                                        <Link href="/auth/login">Already have an account?</Link>
+                                        <Link href="/auth/login/teacher">Already have an account?</Link>
                                     </div>
 
                                 </div>
                                 <div className="single-info">
                                     <div className="icon">
-                                        <i className="bi bi-person-square" />
+                                        <i className="bi bi-person" />
                                     </div>
                                     <div className="info">
-                                        <Link href="/auth/register-teacher">Are you a teacher?</Link>
+                                        <Link href="/auth/login">Are you a student?</Link>
                                     </div>
 
                                 </div>
@@ -155,6 +166,8 @@ function Register() {
             </div>
         </section>
     )
+
 }
+
 
 export default Register;
