@@ -1,9 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import socialHandles from "@/data/topbar/social.json";
 import Link from "next/link";
+import toast, { Toaster } from "react-hot-toast";
+import { postSupport } from "@/utils/fetch";
 function contact() {
+
+  const [PostData, setPostData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+
+  });
+
+  const handleInputChange = (e) => {
+    setPostData({ ...PostData, [e.target.name]: e.target.value });
+  }
+
+  const sendMail = async (e) => {
+    e.preventDefault();
+    if (!PostData.name || !PostData.email || !PostData.subject || !PostData.message) {
+      toast.error("All fields are required");
+      return;
+    }
+    const sendingMailToast = toast.loading("Sending mail...");
+    const response = await postSupport(PostData);
+    toast.dismiss(sendingMailToast);
+    if (response?.status === 200) {
+      toast.success("Mail sent successfully");
+    } else {
+      toast.error("Mail not sent");
+    }
+  }
   return (
     <section className="contact-section pt-100 pb-100">
+      <Toaster />
       <div className="container">
         <div className="row gy-4 justify-cotnent-center align-items-center">
           <div className="col-lg-5 pe-lg-5 pe-0">
@@ -55,22 +86,25 @@ function contact() {
               <div className="row">
                 <div className="col-12">
                   <div className="form-inner">
-                    <input type="text" placeholder="Enter Your Name" />
+                    <input value={PostData.name} name="name" onChange={handleInputChange} type="text" placeholder="Enter Your Name" />
                   </div>
                 </div>
                 <div className="col-6">
                   <div className="form-inner">
-                    <input type="email" placeholder="Enter your email" />
+                    <input value={PostData.email} name="email" onChange={handleInputChange} type="email" placeholder="Enter your email" />
                   </div>
                 </div>
                 <div className="col-6">
                   <div className="form-inner">
-                    <input type="text" placeholder="Enter Your Subject" />
+                    <input value={PostData.subject} name="subject" onChange={handleInputChange} type="text" placeholder="Enter Your Subject" />
                   </div>
                 </div>
                 <div className="col-12">
                   <div className="form-inner">
                     <textarea
+                      name="message"
+                      value={PostData.message}
+                      onChange={handleInputChange}
                       rows={5}
                       placeholder="Enter Your Message"
                       defaultValue={""}
@@ -78,9 +112,9 @@ function contact() {
                   </div>
                 </div>
                 <div className="col-12">
-                  <Link href="mailto:jnvkpara@gmail.com" type="submit" className="eg-btn btn--primary btn--lg">
+                  <button onClick={sendMail} className="eg-btn btn--primary btn--lg">
                     Send Mail
-                  </Link>
+                  </button>
                 </div>
               </div>
             </form>

@@ -25,6 +25,43 @@ export const isValidateInputID = (input) => {
     return false;
 }
 
+export const postSupport = async (body) => {
+
+
+    try {
+        const response = await fetch(BASE_URL + "/api/user/support", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "name": body?.name,
+                "email": body?.email,
+                "subject": body?.subject,
+                "message": body?.message
+
+            })
+        });
+
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+
+
+    } catch (error) {
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error",
+                error: String(error)
+            }
+        }
+    }
+}
+
 export const LoginAlumni = async (mobile, password) => {
     try {
 
@@ -141,6 +178,8 @@ export const RegisterTeacher = async (mobile, password, name, joiningYear, leavi
 
     }
 }
+
+
 
 export const RegisterAlumni = async (mobile, password, name) => {
     try {
