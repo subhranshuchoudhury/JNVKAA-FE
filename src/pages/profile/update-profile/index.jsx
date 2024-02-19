@@ -419,13 +419,13 @@ function updateProfile() {
                                 <div className="col-6">
                                     <div className="form-inner">
                                         <label htmlFor="Batch">Mobile<span className="text-danger">*</span></label>
-                                        <input disabled name="mobile" value={UpdateUserData?.mobile || ""} onChange={handleChange} type="text" placeholder="eg. +91 8249587552" />
+                                        <input disabled name="mobile" value={UpdateUserData?.mobile || ""} onChange={handleChange} type="text" placeholder="eg. +91 7656826945" />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
                                         <label htmlFor="schoolID">Whatsapp<span className="text-danger">*</span></label>
-                                        <input value={UpdateUserData?.whatsappNo || ""} name="whatsappNo" onChange={handleChange} type="tel" placeholder="eg. +91 8249587552" />
+                                        <input value={UpdateUserData?.whatsappNo || ""} name="whatsappNo" onChange={handleChange} type="tel" placeholder="eg. +91 7656826945" />
                                     </div>
                                 </div>
                                 <div className="col-6">

@@ -105,7 +105,7 @@ function Login() {
                     <i className="bi bi-telephone-fill" />
                   </div>
                   <div className="info">
-                    <a href="tel:8249587552">+91 8249587552</a>
+                    <a href="tel:7656826945">+91 7656826945</a>
                     {/* <a href="tel:06571111576">+880 657 1111 576</a> */}
                   </div>
                 </div>
