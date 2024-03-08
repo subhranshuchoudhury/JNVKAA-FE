@@ -1,4 +1,4 @@
-import { deleteCookie, getCookie } from "cookies-next";
+import { deleteCookie, getCookie, } from "cookies-next";
 import { useRouter } from "next/router";
 
 import React, { useEffect } from "react";
@@ -9,11 +9,11 @@ export default function logout() {
     const router = useRouter();
 
     const logOutUser = () => {
-        toast.success("Logged out successfully");
+        localStorage.clear();
         deleteCookie("token");
         deleteCookie("isProfileCompleted");
-        localStorage.removeItem("userData");
-
+        deleteCookie("userType");
+        toast.success("Logged out successfully");
         window.location.href = "/auth/login";
     }
 

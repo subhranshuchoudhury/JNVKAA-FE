@@ -1,11 +1,14 @@
-import { batch } from "@/data/batch";
-import { bloodGroups } from "@/data/bloodgroup";
-import { deleteImage, getAlumniProfileById, updateUserProfile, uploadImage } from "@/utils/fetch";
+// teacher profile
+
+
+// import { batch } from "@/data/batch";
+// import { bloodGroups } from "@/data/bloodgroup";
+// import Select from 'react-select'
+// import DatePicker from "react-datepicker";
+import { deleteImage, getTeacherOwnProfileByToken, uploadImage, updateTeacherProfile } from "@/utils/fetch";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import Select from 'react-select'
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useGeolocated } from "react-geolocated";
 import Resizer from "react-image-file-resizer";
@@ -15,7 +18,7 @@ import { setCookie } from "cookies-next";
 
 function updateProfile() {
     const router = useRouter();
-    const [startDate, setStartDate] = useState(new Date());
+    // const [startDate, setStartDate] = useState(new Date());
     const [PostData, setPostData] = useState({
         title: "",
         description: "",
@@ -47,19 +50,11 @@ function updateProfile() {
         premiumExpiry: "",
         isProfileCompleted: false,
         profileImage: null,
-        graduationYear: "",
-        dob: "",
-        bloodGroup: "",
+        joiningYear: "",
+        leavingYear: "",
+        subject: "",
         whatsappNo: "",
-        mailId: "",
-        location: "",
-        schoolNo: "",
-        address: "",
-        profession: "",
-        instagram: "",
-        facebook: "",
-        linkedIn: "",
-        about: ""
+        designation: ""
     });
 
     const handleChange = (event) => {
@@ -196,29 +191,19 @@ function updateProfile() {
 
     const getMyProfile = async () => {
         setLoading(true)
-        const response = await getAlumniProfileById();
+        const response = await getTeacherOwnProfileByToken();
         if (response.status === 200) {
+            console.log("TEACHER DATA", response.data)
             setIsSuccessLoaded(true)
             setCookie("isProfileCompleted", response.data.profileDetails.isProfileCompleted, { maxAge: 60 * 60 * 24 * 365 * 3 });
-            console.log(isGeolocationAvailable, isGeolocationAvailable, coords
-            );
             UpdateUserData.name = response.data.name
             UpdateUserData.mobile = response.data.mobile
-            UpdateUserData.schoolNo = response.data.profileDetails.schoolNo
-            UpdateUserData.whatsappNo = response.data.profileDetails.whatsappNo
-            UpdateUserData.mailId = response.data.profileDetails.mailId
-            setStartDate(new Date(response.data.profileDetails.dob))
-            UpdateUserData.address = response.data.profileDetails.address
-            UpdateUserData.profession = response.data.profileDetails.profession
-            UpdateUserData.instagram = response.data.profileDetails.instagram
-            UpdateUserData.facebook = response.data.profileDetails.facebook
-            UpdateUserData.linkedIn = response.data.profileDetails.linkedIn
-            UpdateUserData.about = response.data.profileDetails.about
-            UpdateUserData.bloodGroup = response.data.profileDetails.bloodGroup
-            UpdateUserData.dob = response.data.profileDetails.dob
-            UpdateUserData.graduationYear = response.data.profileDetails.graduationYear
-            UpdateUserData.about = response.data.profileDetails.about
+            UpdateUserData.subject = response.data.profileDetails.subject
+            UpdateUserData.joiningYear = response.data.profileDetails.joiningYear
+            UpdateUserData.leavingYear = response.data.profileDetails.leavingYear
             UpdateUserData.profileImage = response.data.profileDetails.profileImage
+            UpdateUserData.whatsappNo = response.data.profileDetails.whatsappNo
+            UpdateUserData.designation = response.data.profileDetails.designation
         } else {
             toast.error("Something went wrong");
         }
@@ -245,21 +230,19 @@ function updateProfile() {
         }
         const loadingToast = toast.loading("Updating profile...");
 
-        UpdateUserData.location = isGeolocationAvailable && isGeolocationEnabled && coords ? `${coords.latitude}-${coords.longitude}` : UpdateUserData.location
-        const response = await updateUserProfile(UpdateUserData);
+        const response = await updateTeacherProfile(UpdateUserData);
         if (response.status === 200) {
             console.log(response.data)
-            setCookie("isProfileCompleted", response.data.alumni.profileDetails.isProfileCompleted, { maxAge: 60 * 60 * 24 * 365 * 3 })
+            setCookie("isProfileCompleted", response.data.teacher.profileDetails.isProfileCompleted, { maxAge: 60 * 60 * 24 * 365 * 3 })
             toast.dismiss(loadingToast);
             toast.success("Profile updated successfully");
-            window.location.href = "/";
+            // window.location.href = "/";
         } else {
             toast.error("Something went wrong");
         }
     }
-
     const checkEmptyValuesAndAlert = (obj) => {
-        const keysToExclude = ["instagram", "linkedIn", "isProfileCompleted", "premiumExpiry", "location", "facebook"];
+        const keysToExclude = ["isProfileCompleted", "premiumExpiry", "leavingYear"];
         let hasEmptyValues = false;
 
         for (const key in obj) {
@@ -360,62 +343,7 @@ function updateProfile() {
                                         <input disabled value={UpdateUserData?.name || ""} name="name" onChange={handleChange} type="text" placeholder="Enter Your Name" />
                                     </div>
                                 </div>
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="batch">12th Pass Out Year<span className="text-danger">*</span></label>
-                                        <Select onChange={(e) => {
 
-                                            handleChange({
-                                                target: {
-                                                    name: "graduationYear",
-                                                    value: e?.value || ""
-                                                }
-                                            })
-                                        }} value={{
-                                            label: UpdateUserData?.graduationYear || ""
-                                        }} options={batch} />
-
-                                    </div>
-                                </div>
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="schoolID">School No<span className="text-danger">*</span></label>
-                                        <input name="schoolNo" value={UpdateUserData?.schoolNo || ""} onChange={handleChange} type="text" placeholder="Enter School No." />
-                                    </div>
-                                </div>
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="bloodGroup">Blood Group<span className="text-danger">*</span></label>
-                                        <Select onChange={(e) => {
-                                            handleChange({
-                                                target: {
-                                                    name: "bloodGroup",
-                                                    value: e?.value || ""
-                                                }
-                                            })
-                                        }} value={{
-                                            label: UpdateUserData?.bloodGroup || ""
-
-                                        }} options={bloodGroups} />
-
-                                    </div>
-                                </div>
-
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="bloodGroup">DOB<span className="text-danger">*</span></label>
-                                        <br />
-                                        <DatePicker showYearDropdown showPopperArrow dateFormat={"dd/MM/yyyy"} selected={startDate} onChange={(date) => {
-                                            setStartDate(date); handleChange({
-                                                target: {
-                                                    name: "dob",
-                                                    value: date
-                                                }
-                                            })
-                                        }} />
-
-                                    </div>
-                                </div>
                                 <div className="col-6">
                                     <div className="form-inner">
                                         <label htmlFor="Batch">Mobile<span className="text-danger">*</span></label>
@@ -424,78 +352,34 @@ function updateProfile() {
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="schoolID">Whatsapp<span className="text-danger">*</span></label>
-                                        <input value={UpdateUserData?.whatsappNo || ""} name="whatsappNo" onChange={handleChange} type="tel" placeholder="eg. +91 7656826945" />
+                                        <label htmlFor="whatsappNo">WhatsApp<span className="text-danger">*</span></label>
+                                        <input name="whatsappNo" value={UpdateUserData?.whatsappNo || ""} onChange={handleChange} type="text" placeholder="eg. +91 7656826945" />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="email">Email<span className="text-danger">*</span></label>
-                                        <input type="email" name="mailId" onChange={handleChange} value={UpdateUserData?.mailId || ""} placeholder="eg. example@gmail.com" />
+                                        <label htmlFor="subject">Subject<span className="text-danger">*</span></label>
+                                        <input value={UpdateUserData?.subject || ""} name="subject" onChange={handleChange} type="text" placeholder="eg. Economics" />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="schoolID">Profession<span className="text-danger">*</span></label>
-                                        <input name="profession" value={UpdateUserData?.profession || ""} onChange={handleChange} type="text" placeholder="eg. Engineer" />
+                                        <label htmlFor="designation">Designation<span className="text-danger">*</span></label>
+                                        <input value={UpdateUserData?.designation || ""} name="designation" onChange={handleChange} type="text" placeholder="eg. PHD Mathematics" />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="Batch">Instagram</label>
-
-                                        <input name="instagram" value={UpdateUserData?.instagram || ""} onChange={handleChange} type="text" placeholder="eg. https://instagram.com/..." />
+                                        <label htmlFor="joiningYear">Joining Year<span className="text-danger">*</span></label>
+                                        <input type="number" name="joiningYear" onChange={handleChange} value={UpdateUserData?.joiningYear || ""} placeholder="eg. 2003" />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-inner">
-                                        <label htmlFor="schoolID">Facebook</label>
-                                        <input name="facebook" value={UpdateUserData?.facebook || ""} onChange={handleChange} type="text" placeholder="eg. https://facebook.com/..." />
+                                        <label htmlFor="leavingYear">Joining Year<span className="text-danger">*</span></label>
+                                        <input type="number" name="leavingYear" onChange={handleChange} value={UpdateUserData?.leavingYear || ""} placeholder="eg. 2003" />
                                     </div>
                                 </div>
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="Batch">LinkedIn</label>
-
-                                        <input name="linkedIn" value={UpdateUserData?.linkedIn || ""} onChange={handleChange} type="text" placeholder="eg. https://linkedin.com/..." />
-                                    </div>
-                                </div>
-                                {/* <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="Batch">Location</label>
-
-                                        {
-                                            isGeolocationAvailable && isGeolocationEnabled && coords && <input name="location" onChange={handleChange} type="text" value={"ABC" || ""} placeholder="Kindly give location permission." />
-                                        }
-
-
-                                    </div>
-                                </div> */}
-                                <div className="col-12">
-                                    <div className="form-inner">
-                                        <label htmlFor="about">Your Address<span className="text-danger">*</span></label>
-                                        <textarea
-                                            rows={5}
-                                            placeholder="About Yourself"
-                                            name="address"
-                                            value={UpdateUserData?.address || ""}
-                                            onChange={handleChange}
-                                        />
-                                    </div>
-                                </div>
-                                <div className="col-12">
-                                    <div className="form-inner">
-                                        <label htmlFor="about">About Yourself<span className="text-danger">*</span></label>
-                                        <textarea
-                                            rows={5}
-                                            placeholder="About Yourself"
-                                            name="about"
-                                            value={UpdateUserData?.about || ""}
-                                            onChange={handleChange}
-                                        />
-                                    </div>
-                                </div>
-
                                 <div className="col-12">
                                     <button onClick={updateDetails} className="eg-btn btn--primary btn--lg">
                                         Update
@@ -504,7 +388,6 @@ function updateProfile() {
                             </div>
                         </form>
                     }
-
                 </div>
             </div>
         </section>

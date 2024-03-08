@@ -244,13 +244,13 @@ function Header({ state, dispatch }) {
                     aria-labelledby="dropdownMenuButton2"
                   >
                     <li>
-                      <a className="dropdown-item " href="/profile/my-profile">
+                      <a className="dropdown-item " href={`${getCookie('userType') === "TEACHER" ? "/profile/teacher/my-profile" : "/profile/my-profile"}`}>
                         <i className="bi bi-person" />
                         Profile
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="/profile/update-profile">
+                      <a className="dropdown-item" href={`${getCookie('userType') === "TEACHER" ? "/profile/teacher/update-profile" : "/profile/update-profile"}`}>
                         <i className="bi bi-gear" />
                         Update Profile
                       </a>

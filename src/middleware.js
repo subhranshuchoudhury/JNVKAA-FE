@@ -7,6 +7,8 @@ export function middleware(request) {
         path === "/" || path === "/auth/register" || path === "/auth/login" || path === "/auth/forgot-password" || path === "/about" || path === "/contact";
     const token = request.cookies.get("token")?.value || null;
     const isProfileCompleted = request.cookies.get("isProfileCompleted")?.value || null;
+    const userType = request.cookies.get("userType")?.value || null;
+    const destURL = userType === "TEACHER" ? "/profile/teacher/update-profile" : "/profile/update-profile";
 
 
     if (!isPublicPath && !token) {
@@ -14,12 +16,12 @@ export function middleware(request) {
     }
 
     if (path === "/alumnus" && isProfileCompleted === "false") {
-        return NextResponse.redirect(new URL('/profile/update-profile', request.url))
+        return NextResponse.redirect(new URL(destURL, request.url))
 
     }
 
     if (path === "/posts/alumni/create-post" && isProfileCompleted === "false") {
-        return NextResponse.redirect(new URL('/profile/update-profile', request.url))
+        return NextResponse.redirect(new URL(destURL, request.url))
 
     }
 

@@ -55,6 +55,7 @@ function OTPVerify(props) {
             toast.success(response.data.message);
             setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 * 365 * 3 });
             setCookie("isProfileCompleted", response.data.isProfileCompleted, { maxAge: 60 * 60 * 24 * 365 * 3 });
+            setCookie("userType", "ALUMNI", { maxAge: 60 * 60 * 24 * 365 * 3 });
             localStorage.setItem("userData", JSON.stringify(response.data.data));
             window.location.href = "/profile/update-profile";
 

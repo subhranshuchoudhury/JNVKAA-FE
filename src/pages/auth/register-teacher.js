@@ -37,6 +37,10 @@ function Register() {
 
             toast.success(response.data.message);
 
+            setTimeout(() => {
+                router.push("/auth/login-teacher");
+            }, 2000);
+
 
 
         } else {
