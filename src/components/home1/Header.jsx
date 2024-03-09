@@ -255,18 +255,26 @@ function Header({ state, dispatch }) {
                         Update Profile
                       </a>
                     </li>
-                    <li>
-                      <a className="dropdown-item " href="/posts/alumni/create-post">
-                        <i className="bi bi-plus" />
-                        Create Post
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item " href="/membership/offer/free-trials">
-                        <i className="bi bi-cash-coin" />
-                        Coupons & Free Trials
-                      </a>
-                    </li>
+
+                    {
+                      getCookie('userType') !== "TEACHER" && <li>
+                        <a className="dropdown-item " href="/posts/alumni/create-post">
+                          <i className="bi bi-plus" />
+                          Create Post
+                        </a>
+                      </li>
+                    }
+
+                    {
+                      getCookie('userType') !== "TEACHER" && <li>
+                        <a className="dropdown-item " href="/membership/offer/free-trials">
+                          <i className="bi bi-cash-coin" />
+                          Coupons & Free Trials
+                        </a>
+                      </li>
+                    }
+
+
                     {/* <li>
                       <a className="dropdown-item" href="#">
                         <i className="bi bi-chat-right-text" />

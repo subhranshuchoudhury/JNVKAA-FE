@@ -627,6 +627,37 @@ export const getAlumniProfileById = async () => {
     }
 }
 
+export const getAlumniBirthday = async () => {
+
+
+    try {
+        var myHeaders = new Headers();
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+
+        const response = await fetch(BASE_URL + "/api/alumni/birthdays", requestOptions);
+        const data = await response.json();
+
+        return {
+            status: response.status,
+            data
+        }
+    } catch (error) {
+
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error"
+            }
+        }
+
+    }
+}
+
 // access by token
 export const getTeacherOwnProfileByToken = async () => {
 

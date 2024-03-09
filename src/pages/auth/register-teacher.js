@@ -88,14 +88,15 @@ function Register() {
                                 </div>
                                 <div className="col-12">
                                     <div className="form-inner">
-                                        <input onWheel={(e) => e.target.blur()} onChange={e => setJoiningYear(e.target.value)} value={joiningYear} type="number" placeholder="Joining Year" />
+                                        <input onChange={e => setTeacherSubject(e.target.value)} value={teacherSubject} type="text" placeholder="Teaching Subject" />
                                     </div>
                                 </div>
                                 <div className="col-12">
                                     <div className="form-inner">
-                                        <input onChange={e => setTeacherSubject(e.target.value)} value={teacherSubject} type="text" placeholder="Teaching Subject" />
+                                        <input onWheel={(e) => e.target.blur()} onChange={e => setJoiningYear(e.target.value)} value={joiningYear} type="number" placeholder="Joining Year" />
                                     </div>
                                 </div>
+
                                 <div className="col-12">
                                     <div className="form-inner">
                                         <input onWheel={(e) => e.target.blur()} onChange={e => setLeavingYear(e.target.value)} value={leavingYear} type="number" placeholder="Leaving Year (if applicable)" />

@@ -1,22 +1,51 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import social from "../../data/topbar/social.json";
+import { useState } from "react";
+import { getAlumniBirthday } from "@/utils/fetch";
 function Topbar() {
+
+  useEffect(() => {
+    getBirthdaysAlumni()
+  }, [])
+
+  const [Loading, setLoading] = useState(true);
+  const [Birthdays, setBirthdays] = useState([]);
+
+  const getBirthdaysAlumni = async () => {
+    const response = await getAlumniBirthday();
+    if (response.status === 200) {
+      if (response.data.length === 0) {
+        setBirthdays([{
+          name: `${new Date().toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })
+            }`
+        }])
+      } else {
+
+        setBirthdays(response.data);
+      }
+      setLoading(false);
+
+    }
+  }
+
+
   return (
     <div className="topbar-1 d-lg-flex d-none">
       <div className="container d-flex justify-content-between align-items-center">
-        <div style={{
-          color: 'black'
-        }} className="date">
-          {
-            new Date().toLocaleDateString('en-US', {
-              weekday: 'long',
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })
-          } <span>29°C</span>
-        </div>
+        {
+          Loading ? <div style={{
+            color: 'black'
+          }} className="date">
+            🎂 <span>Please wait...</span>
+          </div> : <div>🎂 {Birthdays[Math.floor(Math.random() * Birthdays.length)].name}</div>
+        }
+
         <div className="header-logo">
           <Link legacyBehavior href="/">
             <a>
