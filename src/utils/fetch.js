@@ -635,7 +635,8 @@ export const getAlumniBirthday = async () => {
         var requestOptions = {
             method: 'GET',
             headers: myHeaders,
-            redirect: 'follow'
+            redirect: 'follow',
+            caches: 'no-store'
         };
 
         const response = await fetch(BASE_URL + "/api/alumni/birthdays", requestOptions);
