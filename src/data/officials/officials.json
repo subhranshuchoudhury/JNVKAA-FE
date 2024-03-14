@@ -63,6 +63,13 @@
         "gmail": "sambitkumarbehera373@gmail.com"
     },
     {
+        "name": "Sekh Liaquat Ali",
+        "image": "/assets/images/officials/official16.jpg",
+        "mobile": "6370819806",
+        "position": "Advisor",
+        "gmail": "aliliaquat704@gmail.com"
+    },
+    {
         "name": "Ahemad Raja Khan",
         "image": "/assets/images/officials/official17.jpg",
         "mobile": "7809876591",
@@ -103,12 +110,5 @@
         "mobile": "9549414879",
         "position": "Advisor",
         "gmail": "smohapatra015@gmail.com"
-    },
-    {
-        "name": "Sekh Liaquat Ali",
-        "image": "/assets/images/officials/official16.jpg",
-        "mobile": "6370819806",
-        "position": "Advisor",
-        "gmail": "aliliaquat704@gmail.com"
     }
 ]
