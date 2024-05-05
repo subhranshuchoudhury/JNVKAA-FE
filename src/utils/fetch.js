@@ -138,41 +138,33 @@ export const LoginTeacher = async (mobile, password) => {
 
 
 
-export const RegisterTeacher = async (mobile, password, name, joiningYear, leavingYear, subject) => {
+export const RegisterTeacher = async (profileDetails) => {
+
     try {
-
-        const response = await fetch(BASE_URL + "/api/teacher/auth/register/", {
+        var myHeaders = new Headers();
+        // myHeaders.append("x-access-token", getCookie('token'));
+        myHeaders.append("Content-Type", "application/json");
+        var requestOptions = {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                mobile: mobile,
-                password: password,
-                name: name,
-                joiningYear: joiningYear,
-                leavingYear: leavingYear,
-                subject: subject
+            headers: myHeaders,
+            redirect: 'follow',
+            body: JSON.stringify(profileDetails)
+        };
 
-            })
-        });
+        const response = await fetch(BASE_URL + "/api/teacher/auth/register", requestOptions);
         const data = await response.json();
-        console.log("DATA", data);
 
         return {
             status: response.status,
             data
         }
-
-
     } catch (error) {
 
-        console.log("ERR", error);
+        console.log(error);
         return {
             status: 500,
             data: {
-                message: "Internal Server Error",
-                // error: String(error)
+                message: "Internal Server Error"
             }
         }
 
@@ -342,6 +334,43 @@ export const uploadImage = async (image) => {
         };
 
         const response = await fetch(BASE_URL + "/api/user/post/image", requestOptions);
+        const data = await response.json();
+
+        console.log(data);
+
+        return {
+            status: response.status,
+            data
+        }
+
+    } catch (error) {
+        console.log(error);
+        return {
+            status: 500,
+            data: {
+                message: "Internal Server Error",
+                error: String(error)
+            }
+        }
+    }
+}
+export const uploadImageNonAuth = async (image) => {
+    try {
+
+        var myHeaders = new Headers();
+        // myHeaders.append("x-access-token", getCookie('token'));
+
+        var formdata = new FormData();
+        formdata.append("image", image); // fileInput.files[0]
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: formdata,
+            redirect: 'follow'
+        };
+
+        const response = await fetch(BASE_URL + "/api/user/post/image/non-auth", requestOptions);
         const data = await response.json();
 
         console.log(data);

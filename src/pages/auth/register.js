@@ -140,7 +140,7 @@ function Register() {
                                         <i className="bi bi-person-square" />
                                     </div>
                                     <div className="info">
-                                        <Link href="/auth/register-teacher">Are you a teacher?</Link>
+                                        <Link href="/auth/teacher-register">Are you a teacher?</Link>
                                     </div>
 
                                 </div>
