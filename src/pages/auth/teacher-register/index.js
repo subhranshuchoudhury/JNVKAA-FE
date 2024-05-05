@@ -10,7 +10,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import "react-datepicker/dist/react-datepicker.css";
-import { useGeolocated } from "react-geolocated";
+// import { useGeolocated } from "react-geolocated";
 import Resizer from "react-image-file-resizer";
 import { useRouter } from "next/router";
 import { setCookie } from "cookies-next";
@@ -25,13 +25,13 @@ function updateProfile() {
         externalLink: null,
         imageSrcId: null
     });
-    const { coords, isGeolocationAvailable, isGeolocationEnabled } =
-        useGeolocated({
-            positionOptions: {
-                enableHighAccuracy: true,
-            },
-            userDecisionTimeout: 5000,
-        });
+    // const { coords, isGeolocationAvailable, isGeolocationEnabled } =
+    //     useGeolocated({
+    //         positionOptions: {
+    //             enableHighAccuracy: true,
+    //         },
+    //         userDecisionTimeout: 5000,
+    //     });
 
 
     const [IsUploaded, setIsUploaded] = useState(false)
@@ -40,9 +40,9 @@ function updateProfile() {
 
 
 
-    const [Loading, setLoading] = useState(false);
+    // const [Loading, setLoading] = useState(false);
 
-    const [isSuccessLoaded, setIsSuccessLoaded] = useState(true)
+    // const [isSuccessLoaded, setIsSuccessLoaded] = useState(true)
 
     const [UpdateUserData, setUpdateUserData] = useState({
         name: "",
@@ -267,44 +267,36 @@ function updateProfile() {
                 <div className="col-lg-7">
                     <div className="form-title">
                         <h2>Teacher Register</h2>
-
-                        {
-                            Loading && <div className="d-flex justify-content-center">
-                                <div className="spinner-border text-primary" role="status">
-                                    <span className="visually-hidden">Loading...</span>
-                                </div>
-                            </div>
-                        }
                     </div>
 
-                    {
-                        !Loading && isSuccessLoaded && <form className="contact-form">
-                            <div className="row">
-                                <label htmlFor="">Profile Picture<span className="text-danger">*</span></label>
-                                {
-                                    PreviewImageBase64 && <div className="col-12">
-                                        <div className="form-inner">
-                                            <Image style={
-                                                IsUploaded ? {
-                                                    filter: "grayscale(0)"
-                                                } : {
-                                                    filter: "grayscale(1)"
-                                                }
-                                            } alt="preview image" width={200} height={200} src={PreviewImageBase64} />
-                                        </div>
+
+                    <form className="contact-form">
+                        <div className="row">
+                            <label htmlFor="">Profile Picture<span className="text-danger">*</span></label>
+                            {
+                                PreviewImageBase64 && <div className="col-12">
+                                    <div className="form-inner">
+                                        <Image style={
+                                            IsUploaded ? {
+                                                filter: "grayscale(0)"
+                                            } : {
+                                                filter: "grayscale(1)"
+                                            }
+                                        } alt="preview image" width={200} height={200} src={PreviewImageBase64} />
                                     </div>
-                                }
+                                </div>
+                            }
 
-                                {
-                                    !ImageBlob && <div className="col-12">
-                                        <div className="form-inner">
-                                            <input onChange={previewImage} type="file" accept="image/png, image/jpeg" />
-                                        </div>
+                            {
+                                !ImageBlob && <div className="col-12">
+                                    <div className="form-inner">
+                                        <input onChange={previewImage} type="file" accept="image/png, image/jpeg" />
                                     </div>
-                                }
+                                </div>
+                            }
 
 
-                                {/* {
+                            {/* {
                                     !IsUploaded && ImageBlob && <div className="col-6">
                                         <div className="form-inner">
                                             <button onClick={uploadImageToCloud} type="submit" className="eg-btn btn--primary btn--sm m-2">
@@ -314,80 +306,80 @@ function updateProfile() {
                                     </div>
                                 } */}
 
-                                {
-                                    ImageBlob && <>
-                                        <div className="col-6">
-                                            <div className="form-inner">
-                                                <button onClick={clearImageSelection} type="submit" className="eg-btn btn--primary-3 btn--sm m-2">
-                                                    Remove
-                                                </button>
-                                            </div>
+                            {
+                                ImageBlob && <>
+                                    <div className="col-6">
+                                        <div className="form-inner">
+                                            <button onClick={clearImageSelection} type="submit" className="eg-btn btn--primary-3 btn--sm m-2">
+                                                Remove
+                                            </button>
                                         </div>
-                                    </>
-                                }
-                                <div className="col-12">
-                                    <div className="form-inner">
-                                        <label htmlFor="">Name<span className="text-danger">*</span></label>
-                                        <input value={UpdateUserData?.name || ""} name="name" onChange={handleChange} type="text" placeholder="Enter Your Name" />
                                     </div>
-                                </div>
-
-                                <div className="col-12">
-                                    <div className="form-inner">
-                                        <label htmlFor="Batch">Mobile<span className="text-danger">*</span></label>
-                                        <input name="mobile" value={UpdateUserData?.mobile || ""} onChange={handleChange} type="text" placeholder="eg. +91 7656826945" />
-                                    </div>
-                                </div>
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="Password">Password<span className="text-danger">*</span></label>
-                                        <input onChange={handleChange} name="password" value={UpdateUserData?.password} type="password" placeholder="Password (min 6 characters)" />
-                                    </div>
-                                </div>
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="Password">Confirm Password<span className="text-danger">*</span></label>
-                                        <input onChange={handleChange} name="confirmPassword" value={UpdateUserData?.confirmPassword} type="password" placeholder="Confirm Password" />
-                                    </div>
-                                </div>
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="whatsappNo">WhatsApp<span className="text-danger">*</span></label>
-                                        <input name="whatsappNo" value={UpdateUserData?.whatsappNo || ""} onChange={handleChange} type="text" placeholder="eg. +91 7656826945" />
-                                    </div>
-                                </div>
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="subject">Subject<span className="text-danger">*</span></label>
-                                        <input value={UpdateUserData?.subject || ""} name="subject" onChange={handleChange} type="text" placeholder="eg. Economics" />
-                                    </div>
-                                </div>
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="designation">Designation<span className="text-danger">*</span></label>
-                                        <input value={UpdateUserData?.designation || ""} name="designation" onChange={handleChange} type="text" placeholder="eg. PHD Mathematics" />
-                                    </div>
-                                </div>
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="joiningYear">Joining Year<span className="text-danger">*</span></label>
-                                        <input type="number" name="joiningYear" onChange={handleChange} value={UpdateUserData?.joiningYear || ""} placeholder="eg. 2003" />
-                                    </div>
-                                </div>
-                                <div className="col-6">
-                                    <div className="form-inner">
-                                        <label htmlFor="leavingYear">Leaving Year<span className="text-danger">*</span></label>
-                                        <input type="number" name="leavingYear" onChange={handleChange} value={UpdateUserData?.leavingYear || ""} placeholder="eg. 2003" />
-                                    </div>
-                                </div>
-                                <div className="col-12">
-                                    <button onClick={updateDetails} className="eg-btn btn--primary btn--lg">
-                                        Create Profile
-                                    </button>
+                                </>
+                            }
+                            <div className="col-12">
+                                <div className="form-inner">
+                                    <label htmlFor="">Name<span className="text-danger">*</span></label>
+                                    <input value={UpdateUserData?.name || ""} name="name" onChange={handleChange} type="text" placeholder="Enter Your Name" />
                                 </div>
                             </div>
-                        </form>
-                    }
+
+                            <div className="col-12">
+                                <div className="form-inner">
+                                    <label htmlFor="Batch">Mobile<span className="text-danger">*</span></label>
+                                    <input name="mobile" value={UpdateUserData?.mobile || ""} onChange={handleChange} type="text" placeholder="eg. +91 7656826945" />
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className="form-inner">
+                                    <label htmlFor="Password">Password<span className="text-danger">*</span></label>
+                                    <input onChange={handleChange} name="password" value={UpdateUserData?.password} type="password" placeholder="Password (min 6 characters)" />
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className="form-inner">
+                                    <label htmlFor="Password">Confirm Password<span className="text-danger">*</span></label>
+                                    <input onChange={handleChange} name="confirmPassword" value={UpdateUserData?.confirmPassword} type="password" placeholder="Confirm Password" />
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className="form-inner">
+                                    <label htmlFor="whatsappNo">WhatsApp<span className="text-danger">*</span></label>
+                                    <input name="whatsappNo" value={UpdateUserData?.whatsappNo || ""} onChange={handleChange} type="text" placeholder="eg. +91 7656826945" />
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className="form-inner">
+                                    <label htmlFor="subject">Subject<span className="text-danger">*</span></label>
+                                    <input value={UpdateUserData?.subject || ""} name="subject" onChange={handleChange} type="text" placeholder="eg. Economics" />
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className="form-inner">
+                                    <label htmlFor="designation">Designation<span className="text-danger">*</span></label>
+                                    <input value={UpdateUserData?.designation || ""} name="designation" onChange={handleChange} type="text" placeholder="eg. PHD Mathematics" />
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className="form-inner">
+                                    <label htmlFor="joiningYear">Joining Year<span className="text-danger">*</span></label>
+                                    <input type="number" name="joiningYear" onChange={handleChange} value={UpdateUserData?.joiningYear || ""} placeholder="eg. 2003" />
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className="form-inner">
+                                    <label htmlFor="leavingYear">Leaving Year<span className="text-danger">*</span></label>
+                                    <input type="number" name="leavingYear" onChange={handleChange} value={UpdateUserData?.leavingYear || ""} placeholder="eg. 2003" />
+                                </div>
+                            </div>
+                            <div className="col-12">
+                                <button onClick={updateDetails} className="eg-btn btn--primary btn--lg">
+                                    Create Profile
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </section>
