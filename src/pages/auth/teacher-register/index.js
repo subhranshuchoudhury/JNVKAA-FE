@@ -368,7 +368,7 @@ function updateProfile() {
                             </div>
                             <div className="col-6">
                                 <div className="form-inner">
-                                    <label htmlFor="leavingYear">Leaving Year<span className="text-danger">*</span></label>
+                                    <label htmlFor="leavingYear">Leaving Year</label>
                                     <input type="number" name="leavingYear" onChange={handleChange} value={UpdateUserData?.leavingYear || ""} placeholder="eg. 2003" />
                                 </div>
                             </div>
