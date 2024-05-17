@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import React from 'react'
 import Socials from '@/data/topbar/social.json'
+import { VisitorCounter } from '../VisitorCounter'
 function CommonFooter() {
   return (
     <footer className="style-1">
@@ -49,6 +50,12 @@ function CommonFooter() {
 
             </ul>
           </div>
+          <div className="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6">
+            <h4 className="footer-title">Visitor Counter</h4>
+            <ul className="social-2">
+              <VisitorCounter />
+            </ul>
+          </div>
         </div>
         <div className="help-center d-flex justify-content-md-between justify-content-center align-items-center">
           <h5><Link legacyBehavior href="/contact"><a>Contact Us</a></Link></h5>
@@ -59,6 +66,7 @@ function CommonFooter() {
           </ul>
         </div>
         <div className="row copyright-area">
+
           <div className="col-lg-12 text-center">
             <p>© 2023 <a href="#">JNVKAA</a>, Kendrapara</p>
           </div>
