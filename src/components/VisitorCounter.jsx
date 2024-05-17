@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 export const VisitorCounter = () => {
-    const [visitorCount, setVisitorCount] = useState(0);
+    const [visitorCount, setVisitorCount] = useState(-1);
 
     useEffect(() => {
 
@@ -26,21 +26,35 @@ export const VisitorCounter = () => {
 
     return (
         <>
-            <div style={{
-                backgroundColor: "#FF5F00",
-                padding: 10,
-                borderRadius: 40,
-                height: 65,
-                border: "4px solid #FF9F66"
-            }}>
-                <p style={{
-                    fontSize: 20,
-                    padding: 5,
-                    color: 'white',
-                    fontWeight: 'bold',
-                    fontFamily: 'sans-serif'
-                }}>{visitorCount}</p>
-            </div>
+
+            {
+                visitorCount === -1 ? <div className="spinner-border text-primary m-2" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div> : <>
+                    <div style={{
+                        backgroundColor: "#FF5F00",
+                        padding: 10,
+                        borderRadius: 40,
+                        height: 65,
+                        border: "4px solid #FF9F66"
+                    }}>
+
+
+                        <p style={{
+                            fontSize: 20,
+                            padding: 5,
+                            color: 'white',
+                            fontWeight: 'bold',
+                            fontFamily: 'sans-serif'
+                        }}>
+                            {visitorCount}
+                        </p>
+
+
+                    </div>
+                </>
+            }
+
         </>
     );
 }
