@@ -1,15 +1,6 @@
 [
     {
         "id": 0,
-        "name": "Biswabijayee Parida",
-        "title": "Vice President",
-        "heading": "It is one of the most beautiful compensations of this life that you cannot sincerely try to help another without helping yourself.",
-        "description": "The world gets more complicated with every passing day. We get involved with our families and work and suddenly we've lost touch with those outside that close circle. The Alumni Association can help us stay connected to those friends and to the vast resources available here, from the faculty that taught and guided us to an extraordinary variety of “stay connected” programs designed with our mind. This is designed to support we all as we pursue our post-academic life and career.",
-        "date": "Dec 22, 2023",
-        "image": "/assets/images/officials/official2.jpeg"
-    },
-    {
-        "id": 1,
         "name": "Anil Mishra",
         "title": "President",
         "heading": "The success of any educational institution can be measured by the contribution the alumni make to our society and nation.",
@@ -18,12 +9,21 @@
         "image": "/assets/images/officials/head.jpeg"
     },
     {
-        "id": 2,
+        "id": 1,
         "name": "Bidyaraj Mishra",
         "title": "Vice President",
-        "heading": "The success of any educational institution can be measured by the contribution the alumni make to our society and nation.",
-        "description": "The world gets more complicated with every passing day. We get involved with our families and work and suddenly we've lost touch with those outside that close circle. The Alumni Association can help us stay connected to those friends and to the vast resources available here, from the faculty that taught and guided us to an extraordinary variety of “stay connected” programs designed with our mind. This is designed to support we all as we pursue our post-academic life and career.",
+        "heading": "It is one of the most beautiful compensations of this life that you cannot sincerely try to help another without helping yourself.",
+        "description": "When you genuinely try to help others, you end up benefiting yourself as well. The act of giving and supporting others can lead to personal growth, satisfaction, and a sense of fulfillment, demonstrating the interconnectedness of human kindness and self-improvement.",
         "date": "Dec 24, 2023",
         "image": "/assets/images/officials/official3.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Biswabijayee Parida",
+        "title": "Vice President",
+        "heading": "It is one of the most beautiful compensations of this life that you cannot sincerely try to help another without helping yourself.",
+        "description": "When you genuinely try to help others, you end up benefiting yourself as well. The act of giving and supporting others can lead to personal growth, satisfaction, and a sense of fulfillment, demonstrating the interconnectedness of human kindness and self-improvement.",
+        "date": "Dec 22, 2023",
+        "image": "/assets/images/officials/official2.jpeg"
     }
 ]

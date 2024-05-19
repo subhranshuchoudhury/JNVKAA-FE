@@ -165,15 +165,15 @@ function updateProfile() {
                 return;
             }
 
-            if (input.files[0].size >= 500000) {
-                toast.error("File size is greater than 500 KB", {
-                    icon: "⚠"
-                })
-                setPreviewImage(null)
-                setImageBlob(null)
-                input.value = null;
-                return;
-            }
+            // if (input.files[0].size >= 500000) {
+            //     toast.error("File size is greater than 500 KB", {
+            //         icon: "⚠"
+            //     })
+            //     setPreviewImage(null)
+            //     setImageBlob(null)
+            //     input.value = null;
+            //     return;
+            // }
             // setImageBlob(input.files[0]); // setting the image blob.
             const modifiedImageBlob = await resizeFile(input.files[0]);
             setImageBlob(modifiedImageBlob);
