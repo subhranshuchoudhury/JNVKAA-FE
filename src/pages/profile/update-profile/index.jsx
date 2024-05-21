@@ -380,7 +380,7 @@ function updateProfile() {
                                 <div className="col-6">
                                     <div className="form-inner">
                                         <label htmlFor="schoolID">School No<span className="text-danger">*</span></label>
-                                        <input name="schoolNo" value={UpdateUserData?.schoolNo || ""} onChange={handleChange} type="text" placeholder="Enter School No." />
+                                        <input name="schoolNo" value={UpdateUserData?.schoolNo || ""} onChange={handleChange} type="number" placeholder="Enter School No." />
                                     </div>
                                 </div>
                                 <div className="col-6">
