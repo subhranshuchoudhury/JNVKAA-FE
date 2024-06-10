@@ -2,7 +2,8 @@ import { getCookie } from "cookies-next"
 
 const env = process.env.NODE_ENV
 const LOCAL_URL = "http://localhost:5000"
-const PRODUCTION_URL = "https://jnvkaa-backend.onrender.com"
+// const PRODUCTION_URL = "https://jnvkaa-backend.onrender.com"
+const PRODUCTION_URL = "http://23.94.59.111:5000"
 const BASE_URL = env == "development" ? LOCAL_URL : PRODUCTION_URL
 
 export const GLOBAL_URL = BASE_URL;
