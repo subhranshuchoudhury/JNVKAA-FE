@@ -8,13 +8,16 @@ import '../../public/assets/css/slick-theme.css';
 import '../../public/assets/css/slick.css';
 import '../../public/assets/css/style.css';
 import 'node_modules/react-modal-video/css/modal-video.css';
-import { useEffect } from 'react';
+import "@/styles/globals.css";
+import { useEffect , useState } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import SmoothPageScroll from '@/components/common/SmoothPageScroll';
+import { ThemeContext } from '@/components/ThemeContext';
 
 export default function App({ Component, pageProps }) {
+  const [theme, setTheme] = useState(""); 
   const router = useRouter();
   const excludedPages = ['/', "/index-2", "/index-3", "/index-4"]; // Add the paths of excluded pages here
 
@@ -23,9 +26,19 @@ export default function App({ Component, pageProps }) {
     import('../../public/assets/js/audio.js');
   }, []);
 
-  if (excludedPages.includes(router.asPath)) {
-    // Render the component without the layout for the excluded pages
-    return <>
+  useEffect(() => {
+    const localTheme = localStorage.getItem('theme');
+    if (localTheme) {
+      setTheme(localTheme);
+    }else {
+      setTheme("light");
+    }
+  }, []);
+
+  if(theme === "") return null;
+
+  return (
+    <>
       <Head>
         <title>
           JNVKAA - Connect, Inspire, Empower
@@ -34,18 +47,19 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/assets/images/logo/jnvkaa-logo2.png" />
       </Head>
-      <Component {...pageProps} />;
-      <SmoothPageScroll />
-    </>
-  }
-
-  // Render the component with the layout for other pages
-  return (
-    <>
-      <MainLayout>
-        <Component {...pageProps} />
-      </MainLayout>
-      <SmoothPageScroll />
+      <ThemeContext.Provider value={{ theme , setTheme}}>
+        {excludedPages.includes(router.asPath) ? (
+          <>
+            <Component {...pageProps} />
+            <SmoothPageScroll />
+          </>
+        ) : (
+          <MainLayout>
+            <Component {...pageProps} />
+            <SmoothPageScroll />
+          </MainLayout>
+        )}
+      </ThemeContext.Provider>
     </>
   );
 }

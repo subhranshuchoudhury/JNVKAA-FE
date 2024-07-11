@@ -1,8 +1,11 @@
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { GLOBAL_URL, getAlumniProfiles, searchAlumniByParameter } from '@/utils/fetch';
 import toast from 'react-hot-toast';
+import { ThemeContext, darkTheme } from '@/components/ThemeContext';
 function Author() {
+
+  const { theme } = useContext(ThemeContext);
 
   const searchAlumni = async (value) => {
 
@@ -72,13 +75,13 @@ function Author() {
             <div className="search-box" style={{
               borderRadius: "5px",
             }}>
-              <div className='category-wrap'>
+              <div className={`category-wrap ${theme === "dark" ? darkTheme : ""}`}>
 
                 <form>
                   <select defaultValue={SearchParameter} onChange={(e) => {
                     console.log(e.target.value);
                     setSearchParameter(e.target.value?.toLocaleLowerCase());
-                  }}>
+                  }} className={`${theme === "dark" ? darkTheme : ""}`}>
                     <option value={"name"}>Name</option>
                     <option value={"graduationyear"}>Batch</option>
                     <option value={"schoolno"}>School No</option>
@@ -114,7 +117,7 @@ function Author() {
           }
           {
             AlumnusData?.length > 0 && AlumnusData.map((alumnus, index) => <div key={index} className="col-lg-3 col-md-6 col-sm-6">
-              <div className="author-1">
+              <div className={`author-1 ${theme === "dark" ? "bg-dark" : ""}`}>
                 <div className="author-front">
                   <span className="categoty">{alumnus?.profileDetails?.graduationYear}</span>
                   <Link legacyBehavior href={`/profile/member/${alumnus?._id}`}>
@@ -127,23 +130,23 @@ function Author() {
 
                     </a>
                   </Link>
-                  <h4>{alumnus?.name}</h4>
+                  <h4 className={`${theme === "dark" ? "text-light" : ""}`}>{alumnus?.name}</h4>
                   <ul>
-                    <li><span>Mobile</span><span style={!alumnus?.mobile ? {
+                    <li><span className={`${theme === "dark" ? "text-light" : ""}`}>Mobile</span><span className={`${theme === "dark" ? "text-light" : ""}`} style={!alumnus?.mobile ? {
                       filter: "blur(4px)"
                     } : {
                       filter: "blur(0px)"
                     }}>{alumnus?.mobile || "1234567890"}</span></li>
-                    <li><span>School No</span><span>{alumnus?.profileDetails?.schoolNo}</span></li>
+                    <li><span className={`${theme === "dark" ? "text-light" : ""}`}>School No</span><span className={`${theme === "dark" ? "text-light" : ""}`}>{alumnus?.profileDetails?.schoolNo}</span></li>
                   </ul>
                 </div>
-                <div className="author-back">
+                <div className={`author-back ${theme === "dark" ? "bg-dark" : ""}`}>
                   <ul className="social-list">
 
                     {
                       alumnus?.socials?.map((social, index) => {
                         return <li key={index}>
-                          <a href={social?.link}><span><i className={social?.icon} />{social?.name}</span><span><strong>{social?.count}</strong>
+                          <a href={social?.link} className={`${theme === "dark" ? "text-light text-hover" : ""}`}><span className={`${theme === "dark" ? "text-light" : ""}`}><i className={social?.icon} />{social?.name}</span><span><strong className={`${theme === "dark" ? "text-light" : ""}`}>{social?.count}</strong>
                             &nbsp;</span></a>
                         </li>
                       })
@@ -152,7 +155,7 @@ function Author() {
 
                   </ul>
                   {
-                    alumnus?.mobile ? <Link legacyBehavior href={`/profile/member/${alumnus?._id}`}><a className=" eg-btn arrow-btn four">View Details<i className="bi bi-arrow-right" /></a></Link> : <Link legacyBehavior href="/membership/offer/free-trials"><a className="eg-btn arrow-btn four">Activate Membership<i className="bi bi-arrow-right" /></a></Link>
+                    alumnus?.mobile ? <Link legacyBehavior href={`/profile/member/${alumnus?._id}`}><a className={`eg-btn arrow-btn four ${theme === "dark" ? "text-light" : ""}`}>View Details<i className="bi bi-arrow-right" /></a></Link> : <Link legacyBehavior href="/membership/offer/free-trials"><a className={`eg-btn arrow-btn four ${theme === "dark" ? "text-light" : ""}`}>Activate Membership<i className="bi bi-arrow-right" /></a></Link>
                   }
 
                 </div>

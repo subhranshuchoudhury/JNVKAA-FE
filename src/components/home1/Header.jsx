@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext} from "react";
 import { getCookie } from 'cookies-next';
-// import toast, { Toaster } from "react-hot-toast";
+import { DarkModeToggle } from "../DarkModeToggle";
+import { darkTheme,ThemeContext } from "../ThemeContext";
+
 function Header({ state, dispatch }) {
   const headerRef = useRef(null);
   const toggleMenu = (menu) => {
@@ -40,6 +42,7 @@ function Header({ state, dispatch }) {
 
   const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
+  const { theme } = useContext(ThemeContext);
 
   return (
     <>
@@ -69,16 +72,16 @@ function Header({ state, dispatch }) {
       </div>
       <header
         ref={headerRef}
-        className={`header-area style-1 ${state.scrollY > 10 ? "sticky" : ""}`}
+        className={`header-area style-1 ${state.scrollY > 10 ? "sticky" : ""} ${theme === "dark" ? "bg-dark border border-white border-start-0 border-end-0" : ""}}`}
       >
         <div className="container d-flex justify-content-between align-items-center">
           <div
             className="sidebar-button  mobile-menu-btn d-lg-flex d-none"
             onClick={handleRightSidebarToggle}
           >
-            <span />
-            <span />
-            <span />
+            <span className={`${theme === "dark" ? "bg-light" : ""}`}/>
+            <span className={`${theme === "dark" ? "bg-light" : ""}`}/>
+            <span className={`${theme === "dark" ? "bg-light" : ""}`}/>
           </div>
           <div className="header-resp-logo d-lg-none d-flex">
             <Link legacyBehavior href="/">
@@ -94,7 +97,7 @@ function Header({ state, dispatch }) {
             </Link>
           </div>
           <div
-            className={`main-nav ${state.isleftSidebarOpen ? "show-menu" : ""}`}
+            className={`main-nav ${state.isleftSidebarOpen ? "show-menu" : ""} ${theme === "dark" ? darkTheme : ""}`}
           >
             <div className="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
               <div className="mobile-logo-wrap">
@@ -110,85 +113,46 @@ function Header({ state, dispatch }) {
                 </Link>
               </div>
               <div className="menu-close-btn" onClick={handleLeftSidebarToggle}>
-                <i className="bi bi-x-lg text-dark" />
+                <i className={`bi bi-x-lg ${theme === "dark" ? "text-light" : "text-dark"}`} />
               </div>
             </div>
             <ul className="menu-list">
               <li className="menu-item-has-children">
-                <a
+                <Link
                   href="/"
-                  className={`drop-down ${curerntRoute === "/" ? "active" : ""
-                    }`}
+                  className={`drop-down ${curerntRoute === "/" ? "active" : ""} ${theme === "dark" ? "text-light text-hover" : ""}`}
                   onClick={() => toggleMenu("home-one")}
                 >
                   Home
-                </a>
-                {/* <i
-                  className={`bi bi-chevron-${state.activeMenu === "home-one" ? "up" : "down"
-                    } dropdown-icon ${state.activeMenu === "home-one" ? "active" : ""
-                    }`}
-                  onClick={() => toggleMenu("home-one")}
-                /> */}
-                {/* <ul
-                  className={`sub-menu ${state.activeMenu === "home-one" ? "d-block" : ""
-                    }`}
-                >
-                  <li>
-                    <Link legacyBehavior href="/" className="active">
-                      <a className={curerntRoute === "/" ? "active" : ""}>Home 01</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link legacyBehavior href="/index-2">
-                      <a>Home 02</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link legacyBehavior href="/index-3">
-                      <a>Home 03</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link legacyBehavior href="/index-4">
-                      <a>Home 04</a>
-                    </Link>
-                  </li>
-                </ul> */}
-              </li>
-
-              {/* <li className="menu-item-has-children">
-                <Link legacyBehavior href="/events">
-                  <a>Events</a>
                 </Link>
-              </li> */}
+              </li>
 
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/alumnus">
-                  <a>Alumnus</a>
+                  <a className={`${theme === "dark" ? "active text-light text-hover" : ""}`}>Alumnus</a>
                 </Link>
               </li>
 
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/teachers">
-                  <a>Teachers</a>
+                  <a className={`${theme === "dark" ? "active text-light text-hover" : ""}`}>Teachers</a>
                 </Link>
               </li>
 
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/officials">
-                  <a>Officials</a>
+                  <a className={`${theme === "dark" ? "active text-light text-hover" : ""}`}>Officials</a>
                 </Link>
               </li>
 
-
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/posts/alumni">
-                  <a>Posts</a>
+                  <a className={`${theme === "dark" ? "active text-light text-hover" : ""}`}>Posts</a>
                 </Link>
                 <i
                   className={`bi bi-chevron-${state.activeMenu === "posts" ? "up" : "down"
                     } dropdown-icon ${state.activeMenu === "posts" ? "active" : ""
-                    }`}
+                    } ${theme === "dark" ? "text-light" : ""}`}
                   onClick={() => toggleMenu("posts")}
                 />
                 <ul
@@ -197,39 +161,40 @@ function Header({ state, dispatch }) {
                 >
                   <li>
                     <Link legacyBehavior href="/posts/alumni">
-                      <a>Alumni</a>
+                      <a className={`${theme === "dark" ? "active text-light text-hover" : ""}`}>Alumni</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/posts/official">
-                      <a>Official</a>
+                      <a className={`${theme === "dark" ? "active text-light text-hover" : ""}`}>Official</a>
                     </Link>
                   </li>
                   <li>
                     <Link legacyBehavior href="/posts/youtube">
-                      <a>Youtube</a>
+                      <a className={`${theme === "dark" ? "active text-light text-hover" : ""}`}>Youtube</a>
                     </Link>
                   </li>
                 </ul>
               </li>
               <li className="menu-item-has-children">
                 <Link legacyBehavior href="/about">
-                  <a>About</a>
+                  <a className={`${theme === "dark" ? "active text-light text-hover" : ""}`}>About</a>
                 </Link>
               </li>
               <li>
                 <Link legacyBehavior href="/contact">
-                  <a>Contact</a>
+                  <a className={`${theme === "dark" ? "active text-light text-hover" : ""}`}>Contact</a>
                 </Link>
+              </li>
+              <li>
+                <DarkModeToggle />
               </li>
             </ul>
           </div>
-          <div className="header-icons d-flex flex-row">
+          <div className="header-icons d-flex flex-row align-items-center">
             {
               IsAuthenticated ? <>
-
-
-                <div className="search-btn" onClick={handelSearchModal}> <i className="bi bi-search" /> </div>
+                <div className="search-btn" onClick={handelSearchModal}> <i className={`bi bi-search ${theme === "dark" ? "text-light text-hover" : ""}`} /> </div>
                 <div className="admin-area">
                   <button
                     className=" dropdown-toggle d-flex justify-content-start align-items-center"
@@ -237,57 +202,40 @@ function Header({ state, dispatch }) {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <i className="bi bi-person" />
+                    <i className={`bi bi-person ${theme === "dark" ? "text-light text-hover" : ""}`} />
                   </button>
                   <ul
                     className="dropdown-menu"
                     aria-labelledby="dropdownMenuButton2"
                   >
                     <li>
-                      <a className="dropdown-item " href={`${getCookie('userType') === "TEACHER" ? "/profile/teacher/my-profile" : "/profile/my-profile"}`}>
+                      <Link className="dropdown-item " href={`${getCookie('userType') === "TEACHER" ? "/profile/teacher/my-profile" : "/profile/my-profile"}`}>
                         <i className="bi bi-person" />
                         Profile
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href={`${getCookie('userType') === "TEACHER" ? "/profile/teacher/update-profile" : "/profile/update-profile"}`}>
+                      <Link className="dropdown-item" href={`${getCookie('userType') === "TEACHER" ? "/profile/teacher/update-profile" : "/profile/update-profile"}`}>
                         <i className="bi bi-gear" />
                         Update Profile
-                      </a>
+                      </Link>
                     </li>
-
                     {
                       getCookie('userType') !== "TEACHER" && <li>
-                        <a className="dropdown-item " href="/posts/alumni/create-post">
+                        <Link className="dropdown-item " href="/posts/alumni/create-post">
                           <i className="bi bi-plus" />
                           Create Post
-                        </a>
+                        </Link>
                       </li>
                     }
-
                     {
                       getCookie('userType') !== "TEACHER" && <li>
-                        <a className="dropdown-item " href="/membership/offer/free-trials">
+                        <Link className="dropdown-item " href="/membership/offer/free-trials">
                           <i className="bi bi-cash-coin" />
                           Coupons & Free Trials
-                        </a>
+                        </Link>
                       </li>
                     }
-
-
-                    {/* <li>
-                      <a className="dropdown-item" href="#">
-                        <i className="bi bi-chat-right-text" />
-                        Message
-                      </a>
-                    </li> */}
-                    {/* <li>
-                      <a className="dropdown-item" href="#">
-                        <i className="bi bi-file-lock" />
-                        Lock screen
-                      </a>
-                    </li> */}
-
                     <li>
                       <Link className="dropdown-item" href="/auth/logout">
                         <i className="bi bi-box-arrow-left" />
@@ -316,10 +264,12 @@ function Header({ state, dispatch }) {
             }
 
             <div
-              className="mobile-menu-btn d-lg-none d-block"
+              className="sidebar-button  mobile-menu-btn d-md-flex d-lg-none"
               onClick={handleLeftSidebarToggle}
             >
-              <i className="bi bi-list text-dark" />
+                <span className={`${theme === "dark" ? "bg-light" : ""}`}/>
+                <span className={`${theme === "dark" ? "bg-light" : ""}`}/>
+                <span className={`${theme === "dark" ? "bg-light" : ""}`}/>
             </div>
           </div>
         </div>

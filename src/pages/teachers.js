@@ -1,8 +1,12 @@
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { GLOBAL_URL, getTeachersProfiles, searchAlumniByParameter } from '@/utils/fetch';
 import toast from 'react-hot-toast';
+import { ThemeContext } from '@/components/ThemeContext';
 function TeachersPage() {
+
+
+    const { theme } = useContext(ThemeContext);
 
     // const searchAlumni = async (value) => {
 
@@ -114,7 +118,7 @@ function TeachersPage() {
                     }
                     {
                         AlumnusData?.length > 0 && AlumnusData.map((alumnus, index) => <div key={index} className="col-lg-3 col-md-6 col-sm-6">
-                            <div className="author-1">
+                            <div className={`author-1 ${theme === "dark" ? "bg-dark" : ""}`}>
                                 <div className="author-front">
                                     <span className="categoty">{alumnus?.profileDetails?.joiningYear}{alumnus?.profileDetails?.leavingYear && " - " + alumnus?.profileDetails?.leavingYear}</span>
                                     <Link legacyBehavior href={``}>
@@ -127,23 +131,23 @@ function TeachersPage() {
 
                                         </a>
                                     </Link>
-                                    <h4>{alumnus?.name}</h4>
+                                    <h4 className={`${theme === "dark" ? "text-light" : ""}`}>{alumnus?.name}</h4>
                                     <ul>
-                                        <li><span>Mobile</span><span style={!alumnus?.mobile ? {
+                                        <li><span className={`${theme === "dark" ? "text-light" : ""}`}>Mobile</span><span className={`${theme === "dark" ? "text-light" : ""}`} style={!alumnus?.mobile ? {
                                             filter: "blur(4px)"
                                         } : {
                                             filter: "blur(0px)"
                                         }}>{alumnus?.mobile || "1234567890"}</span></li>
-                                        <li><span>Designation</span><span>{alumnus?.profileDetails?.designation}</span></li>
+                                        <li><span className={`${theme === "dark" ? "text-light" : ""}`}>Designation</span><span className={`${theme === "dark" ? "text-light" : ""}`}>{alumnus?.profileDetails?.designation}</span></li>
                                     </ul>
                                 </div>
-                                <div className="author-back">
+                                <div className={`author-back ${theme === "dark" ? "bg-dark" : ""}`}>
                                     <ul className="social-list">
 
                                         {
                                             alumnus?.socials?.map((social, index) => {
                                                 return <li key={index}>
-                                                    <a href={social?.link}><span><i className={social?.icon} />{social?.name}</span><span><strong>{social?.count}</strong>
+                                                    <a href={social?.link} className={`${theme === "dark" ? "text-light text-hover" : ""}`}><span className={`${theme === "dark" ? "text-light" : ""}`}><i className={social?.icon} />{social?.name}</span><span><strong className={`${theme === "dark" ? "text-light" : ""}`}>{social?.count}</strong>
                                                         &nbsp;</span></a>
                                                 </li>
                                             })
@@ -155,10 +159,10 @@ function TeachersPage() {
                                         alumnus?.mobile ? <Link legacyBehavior href={``}>
                                             <ul>
 
-                                                <li><span>Joining Year: </span><span className='text-primary'>{alumnus?.profileDetails?.joiningYear}</span></li>
-                                                <li><span>Leaving Year: </span><span className='text-primary'>{alumnus?.profileDetails?.leavingYear || "N/A"}</span></li>
+                                                <li className={`${theme === "dark" ? "text-light" : ""}`}><span>Joining Year: </span><span className={`text-${theme === "dark" ? "light" : "primary"}`}>{alumnus?.profileDetails?.joiningYear}</span></li>
+                                                <li className={`${theme === "dark" ? "text-light" : ""}`}><span>Leaving Year: </span><span className={`text-${theme === "dark" ? "light" : "primary"}`}>{alumnus?.profileDetails?.leavingYear || "N/A"}</span></li>
                                             </ul>
-                                        </Link> : <Link legacyBehavior href="/membership/offer/free-trials"><a className="eg-btn arrow-btn four">Activate Membership<i className="bi bi-arrow-right" /></a></Link>
+                                        </Link> : <Link legacyBehavior href="/membership/offer/free-trials"><a className={`eg-btn arrow-btn four ${theme === "dark" ? "text-light" : ""}`}>Activate Membership<i className="bi bi-arrow-right" /></a></Link>
                                     }
 
                                 </div>

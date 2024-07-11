@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { GLOBAL_URL, getFreeTrials, getMyOwnProfile, getRedeemFreeTrials } from '@/utils/fetch';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+import { ThemeContext } from '@/components/ThemeContext';
 export default function page() {
+
+
+    const { theme } = useContext(ThemeContext);
+
 
     const router = useRouter()
     const [Loading, setLoading] = useState(true);
@@ -47,7 +52,7 @@ export default function page() {
     return <section className="author-section pt-100 pb-100">
 
         {
-            Loading && <div className="text-center"><div className="spinner-border text-primary" style={{ width: "3rem", height: "3rem" }} role="status">
+            Loading && <div className="text-center"><div className={`spinner-border text-${theme === "dark" ? "light" : "primary"}`} style={{ width: "3rem", height: "3rem" }} role="status">
                 <span className="visually-hidden">Loading...</span>
             </div></div>
         }
@@ -60,11 +65,11 @@ export default function page() {
 
                         <div className="author-details">
                             <div className="author-info">
-                                <h2>Active Your Membership ✨</h2>
+                                <h2 className={`${theme === "dark" ? "text-light" : ""}`}>Active Your Membership ✨</h2>
                             </div>
                         </div>
                         <div className="sidebar-widget-1">
-                            <h6 className="title">Redeem Coupons</h6>
+                            <h6 className={`title ${theme === "dark" ? "text-light" : ""}`}>Redeem Coupons</h6>
                             <ul className="social-3">
 
                                 {
@@ -73,18 +78,17 @@ export default function page() {
                                             if (!coupon.isActivated) {
                                                 toast.error("Coupon has been expired.")
                                             }
-                                        }} title={coupon?.name} key={index} >
+                                        }} title={coupon?.name} key={index} className={`${theme === "dark" ? "dark-li" : ""}`} >
                                             <a href={coupon.isActivated && '#'} onClick={() => {
                                                 coupon.isActivated &&
                                                     redeemCoupon(coupon?.code);
-                                            }} >
-                                                <span>
-                                                    <i className={coupon.isActivated ? "bi bi-award-fill" : "bi bi-award"} />
+                                            }} className={`${theme === "dark" ? "text-hover" : ""}`}>
+                                                <span className={`${theme === "dark" ? "text-light" : ""}`} >
+                                                    <i className={`${coupon.isActivated ? "bi bi-award-fill" : "bi bi-award"} ${theme === "dark" ? "text-light" : ""}`}  />
                                                     {coupon?.code}
                                                 </span>
-                                                <span>
-                                                    <strong>{coupon?.isActivated ? "Redeem Now" : "Expired"}</strong>(
-                                                    <strong>{coupon?.duration_in_days} Days Free</strong>)
+                                                <span className={`${theme === "dark" ? "text-light" : ""}`}>
+                                                    <strong>{coupon?.isActivated ? "Redeem Now" : "Expired"} ({coupon?.duration_in_days} Days Free</strong>)
                                                 </span>
                                             </a>
                                         </li>

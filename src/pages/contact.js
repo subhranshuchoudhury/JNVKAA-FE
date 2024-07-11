@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import socialHandles from "@/data/topbar/social.json";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
 import { postSupport } from "@/utils/fetch";
+import { ThemeContext } from "@/components/ThemeContext";
 function contact() {
+
+  const { theme } = useContext(ThemeContext);
 
   const [PostData, setPostData] = useState({
     name: "",
@@ -40,8 +43,8 @@ function contact() {
           <div className="col-lg-5 pe-lg-5 pe-0">
             <div className="contact-box">
               <div className="title">
-                <h3>Contact Us</h3>
-                <p>
+                <h3 className={`${theme === "dark" ? "text-light" : ""}`}>Contact Us</h3>
+                <p className={`${theme === "dark" ? "text-light" : ""}`}>
                   If you have any queries or doubt then contact on our official handles.{" "}
                 </p>
               </div>
@@ -50,7 +53,7 @@ function contact() {
                   {
                     socialHandles?.map((social, index) => {
                       return <li key={index}>
-                        <a href={social?.link}><i className={social?.icon} /></a>
+                        <a href={social?.link} className={`${theme === "dark" ? "text-light text-hover" : ""}`}><i className={social?.icon} /></a>
                       </li>
                     })
                   }
@@ -62,8 +65,8 @@ function contact() {
                     <i className="bi bi-telephone-fill" />
                   </div>
                   <div className="info">
-                    <a href="tel:05661111985">+91 9348463339</a>
-                    <a href="tel:06571111576">+971 509046495</a>
+                    <a href="tel:05661111985" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>+91 9348463339</a>
+                    <a href="tel:06571111576" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>+971 509046495</a>
                   </div>
                 </div>
                 <div className="single-info">
@@ -71,7 +74,7 @@ function contact() {
                     <i className="bi bi-envelope" />
                   </div>
                   <div className="info">
-                    <a href="mailto:jnvkpara@gmail.com">jnvkpara@gmail.com</a>
+                    <a href="mailto:jnvkpara@gmail.com" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>jnvkpara@gmail.com</a>
                     {/* <a href="mailto: info@support.com">info@support.com</a> */}
                   </div>
                 </div>
@@ -80,7 +83,7 @@ function contact() {
           </div>
           <div className="col-lg-7">
             <div className="form-title">
-              <h2>Have Any Questions</h2>
+              <h2 className={`${theme === "dark" ? "text-light" : ""}`}>Have Any Questions</h2>
             </div>
             <form className="contact-form">
               <div className="row">

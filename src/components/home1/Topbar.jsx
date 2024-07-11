@@ -1,8 +1,10 @@
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import social from "../../data/topbar/social.json";
 import { useState } from "react";
 import { getAlumniBirthday } from "@/utils/fetch";
+import { ThemeContext , darkTheme } from "../ThemeContext";
+
 function Topbar() {
 
   useEffect(() => {
@@ -11,6 +13,7 @@ function Topbar() {
 
   const [Loading, setLoading] = useState(true);
   const [Birthdays, setBirthdays] = useState([]);
+  const { theme } = useContext(ThemeContext);
 
   const getBirthdaysAlumni = async () => {
     const response = await getAlumniBirthday();
@@ -26,21 +29,19 @@ function Topbar() {
             }`
         }])
       } else {
-
         setBirthdays(response.data);
       }
       setLoading(false);
-
     }
   }
 
 
   return (
-    <div className="topbar-1 d-lg-flex d-none">
+    <div className={`topbar-1 d-lg-flex d-none ${theme === "dark" ? darkTheme : ""}`}>
       <div className="container d-flex justify-content-between align-items-center">
         {
           Loading ? <div style={{
-            color: 'black'
+            color: `${theme === "dark" ? "white" : "black"}`
           }} className="date">
             🎂 <span>Please wait...</span>
           </div> : <div>🎂 {Birthdays[Math.floor(Math.random() * Birthdays.length)].name}</div>
@@ -64,13 +65,11 @@ function Topbar() {
             social.map((item, index) => {
               return <li key={index}>
                 <a href={item?.link}>
-                  <i className={item?.icon} />
-                  {/* {item?.count} */}
+                  <i className={`${item?.icon} ${theme === "dark" ? darkTheme : ""}`} />
                 </a>
               </li>
             })
           }
-
         </ul>
       </div>
     </div>

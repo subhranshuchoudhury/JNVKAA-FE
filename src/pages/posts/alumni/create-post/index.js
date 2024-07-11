@@ -1,12 +1,14 @@
+import { ThemeContext } from "@/components/ThemeContext";
 import { createPostAlumni, deleteImage, uploadImage } from "@/utils/fetch";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 
 function CreatePost() {
 
-    const router = useRouter()
+    const router = useRouter();
+    const { theme } = useContext(ThemeContext);
 
     const [PostData, setPostData] = useState({
         title: "",
@@ -158,7 +160,7 @@ function CreatePost() {
 
                 <div className="col-lg-7">
                     <div className="form-title">
-                        <h2>Publish A Post</h2>
+                        <h2 className={`${theme === "dark" ? "text-light" : ""}`}>Publish A Post</h2>
                     </div>
                     <form className="contact-form">
                         <div className="row">
@@ -206,7 +208,7 @@ function CreatePost() {
                             {
                                 !ImageBlob && <div className="col-12">
                                     <div className="form-inner">
-                                        <input onChange={previewImage} type="file" />
+                                        <input onChange={previewImage} type="file" className={`${theme === "dark" ? "text-light" : ""}`} />
                                     </div>
                                 </div>
                             }

@@ -1,9 +1,11 @@
 import { getNewsUpdate } from "@/utils/fetch";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import Marquee from "react-fast-marquee";
-function BreakingNews() {
+import { ThemeContext, darkTheme } from "../ThemeContext";
 
+function BreakingNews() {
+  const { theme } = useContext(ThemeContext)
   const [NewsUpdateData, setNewsUpdateData] = useState([])
   useEffect(() => {
     handleNewsData()
@@ -38,14 +40,13 @@ function BreakingNews() {
       }</span>
 
 
-      <div className="marquee-text">
+      <div className={`marquee-text ${theme === "dark" ? darkTheme : ""}`}>
         <Marquee pauseOnHover={true}>
-
           {
             NewsUpdateData.map((item, index) => {
               return <div key={index}>
                 <Link legacyBehavior href="/">
-                  <a>{item?.title}</a>
+                  <a className={`${theme === "dark" ? "text-hover" : ""}`}>{item?.title}</a>
                 </Link>
                 <i className="bi bi-star-fill" />
               </div>
