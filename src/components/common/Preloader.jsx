@@ -1,8 +1,11 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext, darkTheme } from "../ThemeContext";
 
 function Preloader() {
   const currentPath = useRouter().pathname;
+  const { theme } = useContext(ThemeContext)
+
   return (
     <div
       className={`egns-preloader ${
@@ -11,7 +14,7 @@ function Preloader() {
             ? "three" || currentPath === "/index-2"
             : "two"
           : ""
-      }`}
+      } ${theme === "dark" ? darkTheme : ""}`}
     >
       <div className="sequence">
         <div className="seq-preloader">

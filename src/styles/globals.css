@@ -16,3 +16,7 @@
   color: #7c51ff !important;
   transition: color 0.35s !important;
 } 
+
+.first-letter-in-dark::first-letter{
+  color: #fff !important;
+}
