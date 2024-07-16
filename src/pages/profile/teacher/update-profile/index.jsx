@@ -7,17 +7,19 @@
 // import DatePicker from "react-datepicker";
 import { deleteImage, getTeacherOwnProfileByToken, uploadImage, updateTeacherProfile } from "@/utils/fetch";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import "react-datepicker/dist/react-datepicker.css";
 import { useGeolocated } from "react-geolocated";
 import Resizer from "react-image-file-resizer";
 import { useRouter } from "next/router";
 import { setCookie } from "cookies-next";
+import { ThemeContext } from "@/components/ThemeContext";
 
 
 function updateProfile() {
     const router = useRouter();
+    const { theme } = useContext(ThemeContext);
     // const [startDate, setStartDate] = useState(new Date());
     const [PostData, setPostData] = useState({
         title: "",
@@ -278,11 +280,11 @@ function updateProfile() {
 
                 <div className="col-lg-7">
                     <div className="form-title">
-                        <h2>Profile Update</h2>
+                        <h2 className={`${theme === "dark" ? "text-light" : ""}`}>Profile Update</h2>
 
                         {
                             Loading && <div className="d-flex justify-content-center">
-                                <div className="spinner-border text-primary" role="status">
+                                <div className={`spinner-border text-${theme === "dark" ? "light" : "primary"}`} role="status">
                                     <span className="visually-hidden">Loading...</span>
                                 </div>
                             </div>
@@ -295,7 +297,7 @@ function updateProfile() {
                                 <label htmlFor="">Profile Picture<span className="text-danger">*</span></label>
                                 {
                                     PreviewImageBase64 && <div className="col-12">
-                                        <div className="form-inner">
+                                        <div className='form-inner'>
                                             <Image style={
                                                 IsUploaded ? {
                                                     filter: "grayscale(0)"
@@ -309,7 +311,7 @@ function updateProfile() {
 
                                 {
                                     !ImageBlob && <div className="col-12">
-                                        <div className="form-inner">
+                                        <div className={`form-inner ${theme === "dark" ? "bg-light" : ""}`}>
                                             <input onChange={previewImage} type="file" />
                                         </div>
                                     </div>
@@ -340,14 +342,14 @@ function updateProfile() {
                                 <div className="col-12">
                                     <div className="form-inner">
                                         <label htmlFor="">Name<span className="text-danger">*</span></label>
-                                        <input disabled value={UpdateUserData?.name || ""} name="name" onChange={handleChange} type="text" placeholder="Enter Your Name" />
+                                        <input className={`${theme === "dark" ? "text-light" : ""}`} disabled value={UpdateUserData?.name || ""} name="name" onChange={handleChange} type="text" placeholder="Enter Your Name" />
                                     </div>
                                 </div>
 
                                 <div className="col-6">
                                     <div className="form-inner">
                                         <label htmlFor="Batch">Mobile<span className="text-danger">*</span></label>
-                                        <input disabled name="mobile" value={UpdateUserData?.mobile || ""} onChange={handleChange} type="text" placeholder="eg. +91 7656826945" />
+                                        <input className={`${theme === "dark" ? "text-light" : ""}`} disabled name="mobile" value={UpdateUserData?.mobile || ""} onChange={handleChange} type="text" placeholder="eg. +91 7656826945" />
                                     </div>
                                 </div>
                                 <div className="col-6">

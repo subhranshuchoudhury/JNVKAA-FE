@@ -1,8 +1,11 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
 import officialData from "../data/officials/officials.json"
 import Image from 'next/image';
+import { ThemeContext } from '@/components/ThemeContext';
 function Officials() {
+
+    const { theme } = useContext(ThemeContext);
 
     const searchAlumni = (e) => {
         e.preventDefault();
@@ -11,44 +14,11 @@ function Officials() {
     return (
         <section className="author-section pt-100 pb-100">
             <div className="container">
-                {/* <div className="row gy-2 mb-60">
-
-                    <div className="col-lg-4">
-                        <div className="search-box" style={{
-                            borderRadius: "5px",
-                        }}>
-                            <div className='category-wrap'>
-
-                                <form>
-                                    <select>
-                                        <option>All Category</option>
-                                        <option>Name</option>
-                                        <option>Batch</option>
-                                        <option>Location</option>
-                                        <option>Blood Group</option>
-                                    </select>
-                                    <button onClick={(e) => e.preventDefault()}><i className="bi bi-funnel-fill" /></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-8">
-                        <div className="search-box" style={{
-                            backgroundColor: "#EEEEEE",
-                            borderRadius: "23px",
-                        }} >
-                            <form>
-                                <input type="text" placeholder="Search here..." />
-                                <button><i className="bi bi-search" /></button>
-                            </form>
-                        </div>
-                    </div>
-                </div> */}
                 <div className="row g-4 mb-60">
 
                     {
                         officialData.map((alumnus, index) => <div className="col-lg-3 col-md-6 col-sm-6">
-                            <div key={index} className="author-1">
+                            <div key={index} className={`author-1 ${theme === "dark" ? "bg-dark" : ""}`}>
                                 <div className="author-front">
                                     <span className="categoty">{alumnus?.position}</span>
                                     {/* <Link legacyBehavior href="/author-details"> */}
@@ -58,13 +28,13 @@ function Officials() {
                                         }} src={alumnus?.image} alt="profile image" />
                                     </a>
                                     {/* </Link> */}
-                                    <h4>{alumnus?.name}</h4>
+                                    <h4 className={`${theme === "dark" ? "text-light" : ""}`}>{alumnus?.name}</h4>
                                     <ul>
-                                        <li><span>Mobile</span><span>{alumnus?.mobile}</span></li>
+                                        <li className={`${theme === "dark" ? "text-light" : ""}`}><span className={`${theme === "dark" ? "text-light" : ""}`}>Mobile</span><span>{alumnus?.mobile}</span></li>
                                         {/* <li><span>Mail</span><span>{alumnus?.gmail}</span></li> */}
                                     </ul>
                                 </div>
-                                <div className="author-back">
+                                <div className={`author-back ${theme === "dark" ? "bg-dark" : ""}`}>
                                     <ul className="social-list">
 
                                         {/* {
@@ -77,12 +47,12 @@ function Officials() {
                                         } */}
 
                                         <li>
-                                            <a href={`mailto:${alumnus?.gmail}`}><span><i className={"bx bi-envelope"} />{alumnus?.gmail}</span><span><strong>Mail</strong>
+                                            <a href={`mailto:${alumnus?.gmail}`}><span className={`${theme === "dark" ? "text-light" : ""}`}><i className={"bx bi-envelope"} />{alumnus?.gmail}</span><span><strong className={`${theme === "dark" ? "text-light" : ""}`}>Mail</strong>
                                                 &nbsp;</span></a>
                                         </li>
 
                                         <li>
-                                            <a href={`callto:${alumnus?.mobile}`}><span><i className={"bx bi-phone"} />{alumnus?.mobile}</span><span><strong>Call</strong>
+                                            <a href={`callto:${alumnus?.mobile}`}><span className={`${theme === "dark" ? "text-light" : ""}`}><i className={"bx bi-phone"} />{alumnus?.mobile}</span><span><strong className={`${theme === "dark" ? "text-light" : ""}`}>Call</strong>
                                                 &nbsp;</span></a>
                                         </li>
 

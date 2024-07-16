@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { GLOBAL_URL, searchAlumniByParameter } from '@/utils/fetch';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/router';
+import { ThemeContext, darkTheme } from '@/components/ThemeContext';
 function Author() {
     const router = useRouter();
-
+    const { theme } = useContext(ThemeContext);
     const searchAlumni = async (value) => {
 
 
@@ -125,7 +126,7 @@ function Author() {
                     }
                     {
                         AlumnusData?.length > 0 && AlumnusData.map((alumnus, index) => <div key={index} className="col-lg-3 col-md-6 col-sm-6">
-                            <div className="author-1">
+                            <div className={`author-1 ${theme === "dark" ? darkTheme : ""}`}>
                                 <div className="author-front">
                                     <span className="categoty">{alumnus?.profileDetails?.graduationYear}</span>
                                     <Link legacyBehavior href={`/profile/member/${alumnus?._id}`}>
@@ -138,23 +139,23 @@ function Author() {
 
                                         </a>
                                     </Link>
-                                    <h4>{alumnus?.name}</h4>
+                                    <h4 className={`${theme === "dark" ? "text-light" : ""}`}>{alumnus?.name}</h4>
                                     <ul>
-                                        <li><span>Mobile</span><span style={!alumnus?.mobile ? {
+                                        <li><span className={`${theme === "dark" ? "text-light" : ""}`}>Mobile</span><span  className={`${theme === "dark" ? "text-light" : ""}`} style={!alumnus?.mobile ? {
                                             filter: "blur(4px)"
                                         } : {
                                             filter: "blur(0px)"
                                         }}>{alumnus?.mobile || "1234567890"}</span></li>
-                                        <li><span>School No</span><span>{alumnus?.profileDetails?.schoolNo}</span></li>
+                                        <li><span className={`${theme === "dark" ? "text-light" : ""}`}>School No</span><span className={`${theme === "dark" ? "text-light" : ""}`}>{alumnus?.profileDetails?.schoolNo}</span></li>
                                     </ul>
                                 </div>
-                                <div className="author-back">
+                                <div className={`author-back ${theme === "dark" ? darkTheme : ""}`}>
                                     <ul className="social-list">
 
                                         {
                                             alumnus?.socials?.map((social, index) => {
                                                 return <li key={index}>
-                                                    <a href={social?.link}><span><i className={social?.icon} />{social?.name}</span><span><strong>{social?.count}</strong>
+                                                    <a href={social?.link} className={`${theme === "dark" ? "text-light text-hover" : ""}`}><span><i className={social?.icon} />{social?.name}</span><span><strong>{social?.count}</strong>
                                                         &nbsp;</span></a>
                                                 </li>
                                             })
@@ -163,7 +164,7 @@ function Author() {
 
                                     </ul>
                                     {
-                                        alumnus?.mobile ? <Link legacyBehavior href={`/profile/member/${alumnus?._id}`}><a className=" eg-btn arrow-btn four">View Details<i className="bi bi-arrow-right" /></a></Link> : <Link legacyBehavior href="/membership/offer/free-trials"><a className="eg-btn arrow-btn four">Activate Membership<i className="bi bi-arrow-right" /></a></Link>
+                                        alumnus?.mobile ? <Link legacyBehavior href={`/profile/member/${alumnus?._id}`}><a className={`eg-btn arrow-btn four ${theme === "dark" ? "text-light" : ""}`}>View Details<i className="bi bi-arrow-right" /></a></Link> : <Link legacyBehavior href="/membership/offer/free-trials"><a className="eg-btn arrow-btn four">Activate Membership<i className="bi bi-arrow-right" /></a></Link>
                                     }
 
                                 </div>
@@ -173,7 +174,7 @@ function Author() {
 
                     {
                         !Loading && AlumnusData?.length === 0 && <div className="text-center">
-                            <h4>No Alumni found for "{router?.query?.name}"</h4>
+                            <h4 className={`${theme === "dark" ? "text-light" : ""}`}>No Alumni found for "{router?.query?.name}"</h4>
                         </div>
                     }
 

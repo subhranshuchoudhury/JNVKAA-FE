@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { LoginAlumni } from '@/utils/fetch';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
@@ -6,8 +6,11 @@ import social from '@/data/topbar/social.json';
 import { checkLogin } from '@/utils/validator';
 import { setCookie } from "cookies-next";
 import { useRouter } from 'next/router';
+import { ThemeContext } from '@/components/ThemeContext';
 
 function Login() {
+
+  const { theme } = useContext(ThemeContext);
 
   const [Data, setData] = useState(null);
   const [Mobile, setMobile] = useState("");
@@ -53,7 +56,7 @@ function Login() {
 
           <div className="col-lg-7">
             <div className="form-title">
-              <h2>Login Here!</h2>
+              <h2 className={`${theme === "dark" ? "text-light" : ""}`}>Login Here!</h2>
             </div>
             <form className="contact-form">
               <div className="row">
@@ -79,7 +82,7 @@ function Login() {
           <div className="col-lg-5 pe-lg-5 pe-0">
             <div className="contact-box">
               <div className="title">
-                <h3>Any Issues?</h3>
+                <h3 className={`${theme === "dark" ? "text-light" : ""}`}>Any Issues?</h3>
                 <p>
                   If you are facing any problem please contact with us. We will
                   reply you as soon as possible. Otherwise you can forgot your password whenever you want.
@@ -91,7 +94,7 @@ function Login() {
                   {
                     social.map((item, index) => {
                       return <li key={index}>
-                        <a href={item?.link}>
+                        <a href={item?.link} className={`${theme === "dark" ? "text-light text-hover" : ""}`}>
                           <i className={item?.icon} />
                           {/* {item?.count} */}
                         </a>
@@ -107,7 +110,7 @@ function Login() {
                     <i className="bi bi-telephone-fill" />
                   </div>
                   <div className="info">
-                    <a href="tel:7656826945">+91 7656826945</a>
+                    <a href="tel:7656826945" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>+91 7656826945</a>
                     {/* <a href="tel:06571111576">+880 657 1111 576</a> */}
                   </div>
                 </div>
@@ -124,7 +127,7 @@ function Login() {
                     <i className="bi bi-person-square" />
                   </div>
                   <div className="info">
-                    <Link href="/auth/login-teacher">Are you a teacher?</Link>
+                    <Link href="/auth/login-teacher" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Are you a teacher?</Link>
                   </div>
                 </div>
               </div>

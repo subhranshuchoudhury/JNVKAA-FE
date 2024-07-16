@@ -2,7 +2,7 @@ import { batch } from "@/data/batch";
 import { bloodGroups } from "@/data/bloodgroup";
 import { deleteImage, getAlumniProfileById, updateUserProfile, uploadImage } from "@/utils/fetch";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import Select from 'react-select'
 import DatePicker from "react-datepicker";
@@ -11,10 +11,12 @@ import { useGeolocated } from "react-geolocated";
 import Resizer from "react-image-file-resizer";
 import { useRouter } from "next/router";
 import { setCookie } from "cookies-next";
+import { ThemeContext } from "@/components/ThemeContext";
 
 
 function updateProfile() {
     const router = useRouter();
+    const { theme } = useContext(ThemeContext);
     const [startDate, setStartDate] = useState(new Date());
     const [PostData, setPostData] = useState({
         title: "",
@@ -287,6 +289,28 @@ function updateProfile() {
 
     }
 
+    const selectStyle = 
+    {
+        menu: (provided, state) => ({
+            ...provided,
+            backgroundColor: `${theme === "dark" ? "#212529" : "#fafafa"}`,
+            color: `${theme === "dark" ? "#fafafa" : "#212529"}`, 
+        }),
+        option: (provided, state) => ({
+            ...provided,
+            backgroundColor: `${theme === "dark" ? "#212529" : "#fafafa"}`,
+            color: `${theme === "dark" ? "#fafafa" : "#212529"}`, 
+        }),
+        singleValue: (provided, state) => ({
+            ...provided,
+            color: `${theme === "dark" ? "#fafafa" : "#212529"}`,  
+        }),
+        control: (provided, state) => ({
+            ...provided,
+            backgroundColor: `${theme === "dark" ? "#212529" : "#fafafa"}`,
+        }),
+    }
+
 
     return (
         <section className="contact-section pt-100 pb-100">
@@ -295,11 +319,11 @@ function updateProfile() {
 
                 <div className="col-lg-7">
                     <div className="form-title">
-                        <h2>Profile Update</h2>
+                        <h2 className={`${theme === "dark" ? "text-light" : ""}`}>Profile Update</h2>
 
                         {
                             Loading && <div className="d-flex justify-content-center">
-                                <div className="spinner-border text-primary" role="status">
+                                <div className={`spinner-border text-${theme === "dark" ? "light" : "primary"}`} role="status">
                                     <span className="visually-hidden">Loading...</span>
                                 </div>
                             </div>
@@ -327,7 +351,7 @@ function updateProfile() {
                                 {
                                     !ImageBlob && <div className="col-12">
                                         <div className="form-inner">
-                                            <input onChange={previewImage} type="file" />
+                                            <input onChange={previewImage} type="file" className={`${theme === "dark" ? "text-light" : ""}`} />
                                         </div>
                                     </div>
                                 }
@@ -357,7 +381,7 @@ function updateProfile() {
                                 <div className="col-12">
                                     <div className="form-inner">
                                         <label htmlFor="">Name<span className="text-danger">*</span></label>
-                                        <input disabled value={UpdateUserData?.name || ""} name="name" onChange={handleChange} type="text" placeholder="Enter Your Name" />
+                                        <input disabled value={UpdateUserData?.name || ""} name="name" onChange={handleChange} type="text" placeholder="Enter Your Name" className={`${theme === "dark" ? "text-light" : ""}`} />
                                     </div>
                                 </div>
                                 <div className="col-6">
@@ -373,7 +397,9 @@ function updateProfile() {
                                             })
                                         }} value={{
                                             label: UpdateUserData?.graduationYear || ""
-                                        }} options={batch} />
+                                        }} options={batch} 
+                                            styles={selectStyle}
+                                        />
 
                                     </div>
                                 </div>
@@ -396,7 +422,9 @@ function updateProfile() {
                                         }} value={{
                                             label: UpdateUserData?.bloodGroup || ""
 
-                                        }} options={bloodGroups} />
+                                        }} options={bloodGroups}
+                                            styles={selectStyle}                                       
+                                         />
 
                                     </div>
                                 </div>
@@ -419,7 +447,7 @@ function updateProfile() {
                                 <div className="col-6">
                                     <div className="form-inner">
                                         <label htmlFor="Batch">Mobile<span className="text-danger">*</span></label>
-                                        <input disabled name="mobile" value={UpdateUserData?.mobile || ""} onChange={handleChange} type="text" placeholder="eg. +91 7656826945" />
+                                        <input disabled name="mobile" value={UpdateUserData?.mobile || ""} onChange={handleChange} type="text" placeholder="eg. +91 7656826945" className={`${theme === "dark" ? "text-light" : ""}`} />
                                     </div>
                                 </div>
                                 <div className="col-6">

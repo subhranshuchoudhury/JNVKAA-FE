@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { LoginTeacher } from '@/utils/fetch';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
@@ -6,12 +6,14 @@ import social from '@/data/topbar/social.json';
 import { checkLogin } from '@/utils/validator';
 import { setCookie } from "cookies-next";
 import { useRouter } from 'next/router';
+import { ThemeContext } from '@/components/ThemeContext';
 
 function Login() {
 
     const [Data, setData] = useState(null);
     const [Mobile, setMobile] = useState("");
     const [Password, setPassword] = useState("");
+    const { theme } = useContext(ThemeContext);
 
     const router = useRouter();
 
@@ -52,7 +54,7 @@ function Login() {
 
                     <div className="col-lg-7">
                         <div className="form-title">
-                            <h2>Teacher Login!</h2>
+                            <h2 className={`${theme === "dark" ? "text-light" : ""}`}>Teacher Login!</h2>
                         </div>
                         <form className="contact-form">
                             <div className="row">
@@ -78,7 +80,7 @@ function Login() {
                     <div className="col-lg-5 pe-lg-5 pe-0">
                         <div className="contact-box">
                             <div className="title">
-                                <h3>Any Issues?</h3>
+                                <h3 className={`${theme === "dark" ? "text-light" : ""}`}>Any Issues?</h3>
                                 <p>
                                     Make sure your account has been reviewed and verified by the admin. If you have any issues, please contact us.
                                 </p>
@@ -89,9 +91,8 @@ function Login() {
                                     {
                                         social.map((item, index) => {
                                             return <li key={index}>
-                                                <a href={item?.link}>
+                                                <a href={item?.link} className={`${theme === "dark" ? "text-light text-hover" : ""}`}>
                                                     <i className={item?.icon} />
-                                                    {/* {item?.count} */}
                                                 </a>
                                             </li>
                                         })
@@ -105,7 +106,7 @@ function Login() {
                                         <i className="bi bi-telephone-fill" />
                                     </div>
                                     <div className="info">
-                                        <a href="tel:7656826945">+91 7656826945</a>
+                                        <a href="tel:7656826945" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>+91 7656826945</a>
                                         {/* <a href="tel:06571111576">+880 657 1111 576</a> */}
                                     </div>
                                 </div>
@@ -122,7 +123,7 @@ function Login() {
                                         <i className="bi bi-person" />
                                     </div>
                                     <div className="info">
-                                        <Link href="/auth/login">Are you a student?</Link>
+                                        <Link href="/auth/login" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Are you a student?</Link>
                                     </div>
                                 </div>
                             </div>

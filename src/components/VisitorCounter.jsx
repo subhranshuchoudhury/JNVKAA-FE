@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useContext } from 'react';
+import { ThemeContext } from './ThemeContext';
+
 export const VisitorCounter = () => {
     const [visitorCount, setVisitorCount] = useState(-1);
+    const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
 
@@ -32,11 +35,11 @@ export const VisitorCounter = () => {
                     <span className="visually-hidden">Loading...</span>
                 </div> : <>
                     <div style={{
-                        backgroundColor: "#FF5F00",
+                        backgroundColor: `${theme === "dark" ? "#000" : "#FF5F00"}`,
                         padding: 10,
                         borderRadius: 40,
                         height: 65,
-                        border: "4px solid #FF9F66"
+                        border: `${theme === "dark" ? "4px solid #fff" : "4px solid #FF9F66"}`
                     }}>
 
 

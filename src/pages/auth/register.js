@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { RegisterAlumni } from '@/utils/fetch';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import social from '@/data/topbar/social.json';
 import { checkRegisterStepOne } from '@/utils/validator';
 import { useRouter } from 'next/router';
+import { ThemeContext } from '@/components/ThemeContext';
 
 function Register() {
+
+    const { theme } = useContext(ThemeContext);
 
     const [Data, setData] = useState(null);
     const [Name, setName] = useState("");
@@ -58,7 +61,7 @@ function Register() {
 
                     <div className="col-lg-7">
                         <div className="form-title">
-                            <h2>Register Here!</h2>
+                            <h2 className={`${theme === "dark" ? "text-light" : ""}`}>Register Here!</h2>
                         </div>
                         <form className="contact-form">
                             <div className="row">
@@ -94,7 +97,7 @@ function Register() {
                     <div className="col-lg-5 pe-lg-5 pe-0">
                         <div className="contact-box">
                             <div className="title">
-                                <h3>Any Issues?</h3>
+                                <h3 className={`${theme === "dark" ? "text-light" : ""}`}>Any Issues?</h3>
                                 <p>
                                     If you are facing any problem please contact with us. We will
                                     reply you as soon as possible. Otherwise you can forgot your password whenever you want.
@@ -106,7 +109,7 @@ function Register() {
                                     {
                                         social.map((item, index) => {
                                             return <li key={index}>
-                                                <a href={item?.link}>
+                                                <a href={item?.link} className={`${theme === "dark" ? "text-light text-hover" : ""}`}>
                                                     <i className={item?.icon} />
                                                     {/* {item?.count} */}
                                                 </a>
@@ -122,7 +125,7 @@ function Register() {
                                         <i className="bi bi-telephone-fill" />
                                     </div>
                                     <div className="info">
-                                        <a href="tel:7656826945">+91 7656826945</a>
+                                        <a href="tel:7656826945" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>+91 7656826945</a>
                                         {/* <a href="tel:06571111576">+880 657 1111 576</a> */}
                                     </div>
                                 </div>
@@ -131,7 +134,7 @@ function Register() {
                                         <i className="bi bi-lock" />
                                     </div>
                                     <div className="info">
-                                        <Link href="/auth/login">Already have an account?</Link>
+                                        <Link href="/auth/login" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Already have an account?</Link>
                                     </div>
 
                                 </div>
@@ -140,7 +143,7 @@ function Register() {
                                         <i className="bi bi-person-square" />
                                     </div>
                                     <div className="info">
-                                        <Link href="/auth/teacher-register">Are you a teacher?</Link>
+                                        <Link href="/auth/teacher-register" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Are you a teacher?</Link>
                                     </div>
 
                                 </div>

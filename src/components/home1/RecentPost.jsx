@@ -5,9 +5,9 @@ import Link from "next/link";
 SwiperCore.use([Navigation, Autoplay, EffectFade]);
 
 function RecentPost() {
+
   const slider = useMemo(() => {
     return {
-
       speed: 1500,
       spaceBetween: 20,
       slidesPerView: "auto",
