@@ -3,7 +3,7 @@ import React from "react";
 
 export default function error() {
   return (
-    <section className="error-banner">
+    <section className="error-banner mt-70">
       <div className="error-banner-content">
         <h1>404</h1>
         <h2>Error page</h2>

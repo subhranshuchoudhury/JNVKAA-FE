@@ -20,3 +20,31 @@
 .first-letter-in-dark::first-letter{
   color: #fff !important;
 }
+
+.span-li a span{
+  color: #fff !important;
+  transition: color 0.35s !important;
+}
+
+.span-li:hover a span{
+  color: #7c51ff !important;
+}
+
+.border-hover:hover{
+  border-color: #7c51ff !important;
+  transition: border-color 0.3s !important;
+}
+
+.fill-hover:hover span{
+  color: #7c51ff !important;
+  transition: color 0.3s !important;
+}
+
+.fill-hover:hover span svg  {
+  fill: #7c51ff !important;
+  transition: fill 0.3s !important;
+}
+
+.white-placeholder::placeholder{
+  color: #fff !important;
+}

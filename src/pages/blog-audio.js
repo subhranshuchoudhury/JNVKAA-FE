@@ -1,7 +1,11 @@
+import { ThemeContext } from '@/components/ThemeContext'
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
 
 function BlogAudio() {
+
+  const { theme } = useContext(ThemeContext)
+
   return (
     <section className="blog-video pt-100 pb-100">
       <div className="container">
@@ -9,7 +13,7 @@ function BlogAudio() {
           <div className="col">
             <div className="blog-video-2 style-2 three">
               <div className="audio-player">
-                <div className="player">
+                <div className="player" style={{boxShadow: `${theme === "dark" ? "none" : "0 50px 80px #ffeded"}`}}>
                   <div className="imgbx">
                     <img src="/assets/images/blog-audio/audeo-img-4.png" />
                   </div>
@@ -20,11 +24,11 @@ function BlogAudio() {
               </div>
               <div className="content">
                 <ul>
-                  <li><Link legacyBehavior href="author-details"><a>By Jace Emmett</a></Link></li>
-                  <li><Link legacyBehavior href="/blog-standard"><a>Nov 15, 2022</a></Link></li>
-                  <li>2.2k View</li>
+                  <li><Link legacyBehavior href="author-details"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>By Jace Emmett</a></Link></li>
+                  <li><Link legacyBehavior href="/blog-standard"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Nov 15, 2022</a></Link></li>
+                  <li className={`${theme === "dark" ? "text-light" : ""}`}>2.2k View</li>
                 </ul>
-                <h4><Link legacyBehavior href="audio-post-format"><a>Cras congue est eget nisi lacinia non sagittis.</a></Link>
+                <h4><Link legacyBehavior href="audio-post-format"><a  className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Cras congue est eget nisi lacinia non sagittis.</a></Link>
                 </h4>
               </div>
             </div>
@@ -32,7 +36,7 @@ function BlogAudio() {
           <div className="col">
             <div className="blog-video-2 style-2 three">
               <div className="audio-player">
-                <div className="player">
+                <div className="player" style={{boxShadow: `${theme === "dark" ? "none" : ""}`}}>
                   <div className="imgbx">
                     <img src="/assets/images/blog-audio/audeo-img-5.png" />
                   </div>
@@ -43,11 +47,11 @@ function BlogAudio() {
               </div>
               <div className="content">
                 <ul>
-                  <li><Link legacyBehavior href="/author-details"><a>By Rison donec</a></Link></li>
-                  <li><Link legacyBehavior href="/blog-standard"><a>Dec 26, 2022</a></Link></li>
-                  <li>1.9k View</li>
+                  <li><Link legacyBehavior href="/author-details"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>By Rison donec</a></Link></li>
+                  <li><Link legacyBehavior href="/blog-standard"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Dec 26, 2022</a></Link></li>
+                  <li className={`${theme === "dark" ? "text-light" : ""}`}>1.9k View</li>
                 </ul>
-                <h4><Link legacyBehavior href="/audio-post-format"><a>Nam mauris mauris rutum ultricies nonme.</a></Link>
+                <h4><Link legacyBehavior href="/audio-post-format"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Nam mauris mauris rutum ultricies nonme.</a></Link>
                 </h4>
               </div>
             </div>
@@ -55,7 +59,7 @@ function BlogAudio() {
           <div className="col">
             <div className="blog-video-2 style-2 three">
               <div className="audio-player">
-                <div className="player">
+                <div className="player" style={{boxShadow: `${theme === "dark" ? "none" : ""}`}}>
                   <div className="imgbx">
                     <img src="/assets/images/blog-audio/audeo-img-6.png" />
                   </div>
@@ -66,11 +70,11 @@ function BlogAudio() {
               </div>
               <div className="content">
                 <ul>
-                  <li><Link legacyBehavior href="/author-details"><a>By Harlem Jair</a></Link></li>
-                  <li><Link legacyBehavior href="/blog-standard"><a>Dec 18, 2022</a></Link></li>
-                  <li>1.8k View</li>
+                  <li><Link legacyBehavior href="/author-details"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>By Harlem Jair</a></Link></li>
+                  <li><Link legacyBehavior href="/blog-standard"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Dec 18, 2022</a></Link></li>
+                  <li className={`${theme === "dark" ? "text-light" : ""}`}>1.8k View</li>
                 </ul>
-                <h4><Link legacyBehavior href="/audio-post-format"><a>Proin ultrices lacus sedal convallis placerat.</a></Link>
+                <h4><Link legacyBehavior href="/audio-post-format"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Proin ultrices lacus sedal convallis placerat.</a></Link>
                 </h4>
               </div>
             </div>
@@ -78,7 +82,7 @@ function BlogAudio() {
           <div className="col">
             <div className="blog-video-2 style-2 three">
               <div className="audio-player">
-                <div className="player">
+                <div className="player" style={{boxShadow: `${theme === "dark" ? "none" : ""}`}}>
                   <div className="imgbx">
                     <img src="/assets/images/blog-audio/audeo-img-7.png" />
                   </div>
@@ -89,11 +93,11 @@ function BlogAudio() {
               </div>
               <div className="content">
                 <ul>
-                  <li><Link legacyBehavior href="/author-details"><a>By Osiris Azael</a></Link></li>
-                  <li><Link legacyBehavior href="/blog-standard"><a>Dec 10, 2022</a></Link></li>
-                  <li>1.7k View</li>
+                  <li><Link legacyBehavior href="/author-details"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>By Osiris Azael</a></Link></li>
+                  <li><Link legacyBehavior href="/blog-standard"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Dec 10, 2022</a></Link></li>
+                  <li className={`${theme === "dark" ? "text-light" : ""}`}>1.7k View</li>
                 </ul>
-                <h4><Link legacyBehavior href="/audio-post-format"><a>Laoreet ligula mauris nec velit. Nullam.</a></Link>
+                <h4><Link legacyBehavior href="/audio-post-format"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Laoreet ligula mauris nec velit. Nullam.</a></Link>
                 </h4>
               </div>
             </div>
@@ -101,7 +105,7 @@ function BlogAudio() {
           <div className="col">
             <div className="blog-video-2 style-2 three">
               <div className="audio-player">
-                <div className="player">
+                <div className="player" style={{boxShadow: `${theme === "dark" ? "none" : ""}`}}>
                   <div className="imgbx">
                     <img src="/assets/images/blog-audio/audeo-img-8.png" />
                   </div>
@@ -112,11 +116,11 @@ function BlogAudio() {
               </div>
               <div className="content">
                 <ul>
-                  <li><Link legacyBehavior href="/author-details"><a>By Bowe Canan</a></Link></li>
-                  <li><Link legacyBehavior href="/blog-standard"><a>Nov 30, 2022</a></Link></li>
-                  <li>1.6k View</li>
+                  <li><Link legacyBehavior href="/author-details"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>By Bowe Canan</a></Link></li>
+                  <li><Link legacyBehavior href="/blog-standard"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Nov 30, 2022</a></Link></li>
+                  <li className={`${theme === "dark" ? "text-light" : ""}`}>1.6k View</li>
                 </ul>
-                <h4><Link legacyBehavior href="/audio-post-format"><a>Consectetur adipi scingoi elitInte rdumet.</a></Link>
+                <h4><Link legacyBehavior href="/audio-post-format"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Consectetur adipi scingoi elitInte rdumet.</a></Link>
                 </h4>
               </div>
             </div>
@@ -124,7 +128,7 @@ function BlogAudio() {
           <div className="col">
             <div className="blog-video-2 style-2 three">
               <div className="audio-player">
-                <div className="player">
+                <div className="player" style={{boxShadow: `${theme === "dark" ? "none" : ""}`}}>
                   <div className="imgbx">
                     <img src="/assets/images/blog-audio/audeo-img-9.png" />
                   </div>
@@ -135,11 +139,11 @@ function BlogAudio() {
               </div>
               <div className="content">
                 <ul>
-                  <li><Link legacyBehavior href="/author-details"><a>By Karsyn Zavir</a></Link></li>
-                  <li><Link legacyBehavior href="/blog-standard"><a>Nov 25, 2022</a></Link></li>
-                  <li>1.5k View</li>
+                  <li><Link legacyBehavior href="/author-details"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>By Karsyn Zavir</a></Link></li>
+                  <li><Link legacyBehavior href="/blog-standard"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Nov 25, 2022</a></Link></li>
+                  <li className={`${theme === "dark" ? "text-light" : ""}`}>1.5k View</li>
                 </ul>
-                <h4><Link legacyBehavior href="/audio-post-format"><a>Cras bibendum lacus dict nulla vehicula.</a></Link>
+                <h4><Link legacyBehavior href="/audio-post-format"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Cras bibendum lacus dict nulla vehicula.</a></Link>
                 </h4>
               </div>
             </div>
@@ -147,7 +151,7 @@ function BlogAudio() {
           <div className="col">
             <div className="blog-video-2 style-2 three">
               <div className="audio-player">
-                <div className="player">
+                <div className="player" style={{boxShadow: `${theme === "dark" ? "none" : ""}`}}>
                   <div className="imgbx">
                     <img src="/assets/images/blog-audio/audeo-img-10.png" />
                   </div>
@@ -158,11 +162,11 @@ function BlogAudio() {
               </div>
               <div className="content">
                 <ul>
-                  <li><Link legacyBehavior href="/author-details"><a>By Heath Yisrol</a></Link></li>
-                  <li><Link legacyBehavior href="/blog-standard"><a>Nov 20, 2022</a></Link></li>
-                  <li>1.4k View </li>
+                  <li><Link legacyBehavior href="/author-details"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>By Heath Yisrol</a></Link></li>
+                  <li><Link legacyBehavior href="/blog-standard"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Nov 20, 2022</a></Link></li>
+                  <li className={`${theme === "dark" ? "text-light" : ""}`}>1.4k View </li>
                 </ul>
-                <h4><Link legacyBehavior href="/audio-post-format"><a>euismod vitae sapien act ultricies egestas.</a></Link>
+                <h4><Link legacyBehavior href="/audio-post-format"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>euismod vitae sapien act ultricies egestas.</a></Link>
                 </h4>
               </div>
             </div>
@@ -170,7 +174,7 @@ function BlogAudio() {
           <div className="col">
             <div className="blog-video-2 style-2 three">
               <div className="audio-player">
-                <div className="player">
+                <div className="player" style={{boxShadow: `${theme === "dark" ? "none" : ""}`}}>
                   <div className="imgbx">
                     <img src="/assets/images/blog-audio/audeo-img-11.png" />
                   </div>
@@ -181,11 +185,11 @@ function BlogAudio() {
               </div>
               <div className="content">
                 <ul>
-                  <li><Link legacyBehavior href="/author-details"><a>By Koen Maxto</a></Link></li>
-                  <li><Link legacyBehavior href="/blog-standard"><a>Nov 15, 2022</a></Link></li>
-                  <li>1.3k View</li>
+                  <li><Link legacyBehavior href="/author-details"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>By Koen Maxto</a></Link></li>
+                  <li><Link legacyBehavior href="/blog-standard"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Nov 15, 2022</a></Link></li>
+                  <li className={`${theme === "dark" ? "text-light" : ""}`}>1.3k View</li>
                 </ul>
-                <h4><Link legacyBehavior href="/audio-post-format"><a>vestibulum Mecenas utot congue lectus.</a></Link>
+                <h4><Link legacyBehavior href="/audio-post-format"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>vestibulum Mecenas utot congue lectus.</a></Link>
                 </h4>
               </div>
             </div>
@@ -193,7 +197,7 @@ function BlogAudio() {
           <div className="col">
             <div className="blog-video-2 style-2 three">
               <div className="audio-player">
-                <div className="player">
+                <div className="player" style={{boxShadow: `${theme === "dark" ? "none" : ""}`}}>
                   <div className="imgbx">
                     <img src="/assets/images/blog-audio/audeo-img-12.png" />
                   </div>
@@ -204,11 +208,11 @@ function BlogAudio() {
               </div>
               <div className="content">
                 <ul>
-                  <li><Link legacyBehavior href="/author-details"><a>By Blaise Davia</a></Link></li>
-                  <li><Link legacyBehavior href="/blog-standard"><a>Nov 05, 2022</a></Link></li>
-                  <li>1.1k View</li>
+                  <li><Link legacyBehavior href="/author-details"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>By Blaise Davia</a></Link></li>
+                  <li><Link legacyBehavior href="/blog-standard"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Nov 05, 2022</a></Link></li>
+                  <li className={`${theme === "dark" ? "text-light" : ""}`}>1.1k View</li>
                 </ul>
-                <h4><Link legacyBehavior href="/audio-post-format"><a>Our Begin Now To Being What You Will Be.</a></Link>
+                <h4><Link legacyBehavior href="/audio-post-format"><a className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Our Begin Now To Being What You Will Be.</a></Link>
                 </h4>
               </div>
             </div>
@@ -217,11 +221,11 @@ function BlogAudio() {
         {/* pagiantion */}
         <nav className="mt-60">
           <ul className="pagination-list">
-            <li><a href="#"><i className="bi bi-chevron-left" /></a></li>
-            <li><a href="#">1</a></li>
+            <li><a href="#" className={`${theme === "dark" ? "border border-hover" : ""}`}><i className={`bi bi-chevron-left ${theme === "dark" ? "text-light" : ""}`}/></a></li>
+            <li><a href="#" className={`${theme === "dark" ? "border border-hover text-light" : ""}`}>1</a></li>
             <li><a href="#" className="active">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#"><i className="bi bi-chevron-right" /></a></li>
+            <li><a href="#" className={`${theme === "dark" ? "border border-hover text-light" : ""}`}>3</a></li>
+            <li><a href="#" className={`${theme === "dark" ? "border border-hover" : ""}`}><i className={`bi bi-chevron-right ${theme === "dark" ? "text-light" : ""}`}/></a></li>
           </ul>
         </nav>
       </div>

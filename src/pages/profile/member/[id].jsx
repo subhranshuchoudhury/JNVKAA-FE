@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { GLOBAL_URL, getAlumniProfileByID } from '@/utils/fetch';
 import Link from 'next/link';
+import { ThemeContext } from '@/components/ThemeContext';
 export default function page() {
 
     const router = useRouter()
+    const { theme } = useContext(ThemeContext)
     const [Loading, setLoading] = useState(true);
     const [MemberData, setMemberData] = useState([]);
     const [toggleMap, settoggleMap] = useState(false)
@@ -29,7 +31,7 @@ export default function page() {
     return <section className="author-section pt-100 pb-100">
 
         {
-            Loading && <div className="text-center"><div className="spinner-border text-primary" style={{ width: "3rem", height: "3rem" }} role="status">
+            Loading && <div className="text-center"><div className={`spinner-border text-${theme === "dark" ? "light" : "primary"}`} style={{ width: "3rem", height: "3rem" }} role="status">
                 <span className="visually-hidden">Loading...</span>
             </div></div>
         }
@@ -49,20 +51,20 @@ export default function page() {
 
                             />
                             <div className="author-info">
-                                <h2>{MemberData?.name}</h2>
+                                <h2 className={`${theme === "dark" ? "text-light" : ""}`}>{MemberData?.name}</h2>
                                 <ul className="category">
-                                    <li>
-                                        <p>Batch: {MemberData.profileDetails?.graduationYear}</p>
+                                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
+                                        <p className={`${theme === "dark" ? "text-light" : ""}`}>Batch: {MemberData.profileDetails?.graduationYear}</p>
                                     </li>
-                                    <li>
-                                        <p>School No: {MemberData.profileDetails?.schoolNo}</p>
+                                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
+                                        <p className={`${theme === "dark" ? "text-light" : ""}`}>School No: {MemberData.profileDetails?.schoolNo}</p>
                                     </li>
 
                                 </ul>
-                                <p>
+                                <p className={`${theme === "dark" ? "text-light" : ""}`}>
                                     About: {MemberData?.profileDetails?.about}
                                 </p>
-                                <p>
+                                <p className={`${theme === "dark" ? "text-light" : ""}`}>
                                     Address: {MemberData?.profileDetails?.address}
                                 </p>
 
@@ -71,40 +73,40 @@ export default function page() {
                                     filter: "blur(4px)"
                                 }}>
                                     {
-                                        MemberData?.profileDetails.location && <li>
+                                        MemberData?.profileDetails.location && <li className={`${theme === "dark" ? "text-light" : ""}`}>
                                             <img src="/assets/images/icons/view.svg" alt="image" />
-                                            Location:<span onClick={() => settoggleMap(!toggleMap)} className='text-primary'>View</span>
+                                            Location:<span onClick={() => settoggleMap(!toggleMap)} className={`text-${theme === "dark" ? "light" : "primary"}`}>View</span>
                                         </li>
                                     }
-                                    <li>
+                                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
                                         <img src="/assets/images/icons/view.svg" alt="image" />
-                                        Mobile: <span>{MemberData?.mobile || "123456789"}</span>
+                                        Mobile: <span className={`${theme === "dark" ? "text-light" : ""}`}>{MemberData?.mobile || "123456789"}</span>
                                     </li>
-                                    <li>
+                                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
                                         <img src="/assets/images/icons/view.svg" alt="image" />
-                                        WhatsApp: <span>{MemberData?.profileDetails?.whatsappNo}</span>
+                                        WhatsApp: <span className={`${theme === "dark" ? "text-light" : ""}`}>{MemberData?.profileDetails?.whatsappNo}</span>
                                     </li>
 
-                                    <li>
+                                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
                                         <img src="/assets/images/icons/view.svg" alt="image" />
-                                        Email: <span>{MemberData?.profileDetails?.mailId || "..."}</span>
+                                        Email: <span className={`${theme === "dark" ? "text-light" : ""}`}>{MemberData?.profileDetails?.mailId || "..."}</span>
                                     </li>
 
                                     {
-                                        MemberData?.profileDetails?.dob && <li>
+                                        MemberData?.profileDetails?.dob && <li className={`${theme === "dark" ? "text-light" : ""}`}>
                                             <img src="/assets/images/icons/view.svg" alt="image" />
-                                            DOB: <span>{new Date(MemberData?.profileDetails?.dob).toLocaleDateString()}</span>
+                                            DOB: <span className={`${theme === "dark" ? "text-light" : ""}`}>{new Date(MemberData?.profileDetails?.dob).toLocaleDateString()}</span>
                                         </li>
                                     }
 
 
-                                    <li>
+                                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
                                         <img src="/assets/images/icons/view.svg" alt="image" />
-                                        Profession: <span>{MemberData?.profileDetails?.profession || "..."}</span>
+                                        Profession: <span className={`${theme === "dark" ? "text-light" : ""}`}>{MemberData?.profileDetails?.profession || "..."}</span>
                                     </li>
-                                    <li>
+                                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
                                         <img src="/assets/images/icons/view.svg" alt="image" />
-                                        Blood Group: <span>{MemberData?.profileDetails?.bloodGroup || "..."}</span>
+                                        Blood Group: <span className={`${theme === "dark" ? "text-light" : ""}`}>{MemberData?.profileDetails?.bloodGroup || "..."}</span>
                                     </li>
 
                                 </ul>
@@ -115,7 +117,7 @@ export default function page() {
                         {
 
                             MemberData?.profileDetails?.location && toggleMap && <>
-                                <h2>Last Location</h2>
+                                <h2 className={`${theme === "dark" ? "text-light" : ""}`}>Last Location</h2>
                                 <iframe src={`https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d17807.039960760754!2d${MemberData?.profileDetails?.location?.split("-")?.[1]}!3d${MemberData?.profileDetails?.location?.split("-")?.[0]}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1702899473454!5m2!1sen!2sin`} width="400" height="300" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                             </>
                         }
@@ -322,18 +324,18 @@ export default function page() {
                                 </div>
                             {/* </div> */}
                             <div className="sidebar-widget-1">
-                                <h6 className="title">Stay Connected</h6>
+                                <h6 className={`title ${theme === "dark" ? "text-light" : ""}`}>Stay Connected</h6>
                                 <ul style={MemberData?.mobile ? { filter: "blur(0px)" } : {
                                     filter: "blur(3px)"
                                 }} className="social-3">
                                     {
-                                        MemberData?.profileDetails?.facebook && <li >
-                                            <a href={MemberData?.profileDetails?.facebook || ""}>
-                                                <span>
-                                                    <i className="bx bxl-facebook" />
+                                        MemberData?.profileDetails?.facebook && <li className={`${theme === "dark" ? "dark-li" : ""}`}>
+                                            <a href={MemberData?.profileDetails?.facebook || ""} className={`${theme === "dark" ? "text-hover" : ""}`}>
+                                                <span className={`${theme === "dark" ? "text-light border" : ""}`}>
+                                                    <i className={`bx bxl-facebook ${theme === "dark" ? "text-light" : ""}`} />
                                                     Facebook
                                                 </span>
-                                                <span>
+                                                <span className={`${theme === "dark" ? "text-light" : ""}`}>
                                                     <strong>Add Friend</strong>
 
                                                 </span>
@@ -341,37 +343,37 @@ export default function page() {
                                         </li>
                                     }
                                     {
-                                        MemberData?.profileDetails?.linkedIn && <li>
-                                            <a href={MemberData?.profileDetails?.linkedIn || ""}>
-                                                <span>
-                                                    <i className="bx bxl-linkedin" />
+                                        MemberData?.profileDetails?.linkedIn && <li className={`${theme === "dark" ? "dark-li" : ""}`}>
+                                            <a href={MemberData?.profileDetails?.linkedIn || ""} className={`${theme === "dark" ? "text-hover" : ""}`}>
+                                                <span className={`${theme === "dark" ? "text-light border" : ""}`}>
+                                                    <i className={`bx bxl-linkedin ${theme === "dark" ? "text-light" : ""}`} />
                                                     LinkedIn
                                                 </span>
-                                                <span>
+                                                <span className={`${theme === "dark" ? "text-light" : ""}`}>
                                                     <strong>Follow</strong>
                                                 </span>
                                             </a>
                                         </li>
                                     }
-                                    {MemberData?.profileDetails?.whatsappNo && <li>
-                                        <a>
-                                            <span>
-                                                <i className="bx bxl-whatsapp" />
+                                    {MemberData?.profileDetails?.whatsappNo && <li className={`${theme === "dark" ? "dark-li" : ""}`}>
+                                        <a className={`${theme === "dark" ? "text-hover" : ""}`}>
+                                            <span className={`${theme === "dark" ? "text-light border" : ""}`}>
+                                                <i className={`bx bxl-whatsapp ${theme === "dark" ? "text-light" : ""}`} />
                                                 &nbsp;Whatsapp
                                             </span>
-                                            <span>
+                                            <span className={`${theme === "dark" ? "text-light" : ""}`}>
                                                 <strong>{MemberData?.profileDetails?.whatsappNo || "N/A"}</strong>
 
                                             </span>
                                         </a>
                                     </li>}
-                                    {MemberData?.profileDetails?.instagram && <li>
-                                        <a href={MemberData?.profileDetails?.instagram || ""}>
-                                            <span>
-                                                <i className="bx bxl-instagram" />
+                                    {MemberData?.profileDetails?.instagram && <li className={`${theme === "dark" ? "dark-li" : ""}`}>
+                                        <a href={MemberData?.profileDetails?.instagram || ""} className={`${theme === "dark" ? "text-hover" : ""}`}>
+                                            <span className={`${theme === "dark" ? "text-light border" : ""}`}>
+                                                <i className={`bx bxl-instagram ${theme === "dark" ? "text-light" : ""}`} />
                                                 Instagram
                                             </span>
-                                            <span>
+                                            <span className={`${theme === "dark" ? "text-light" : ""}`}>
                                                 <strong>Follow</strong>
                                             </span>
                                         </a>

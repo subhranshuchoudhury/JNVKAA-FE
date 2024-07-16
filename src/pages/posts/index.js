@@ -1,11 +1,13 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ModalVideo from 'react-modal-video';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay, EffectFade } from "swiper";
+import { ThemeContext } from '@/components/ThemeContext';
 SwiperCore.use([Navigation, Autoplay, EffectFade]);
 function Posts() {
     const [isOpen, setOpen] = useState(false);
+    const { theme } = useContext(ThemeContext);
     const slider = {
         slidesPerView: "auto",
         speed: 1500,
@@ -165,7 +167,7 @@ function Posts() {
                     <div className="col-lg-4">
                         <div className="post-side-bar-1">
                             <div className="sidebar-widget-1">
-                                <h6 className="title">Quick Search</h6>
+                                <h6 className={`title ${theme === "dark" ? "text-light" : ""}`}>Quick Search</h6>
                                 <div className="search-box-2">
                                     <form>
                                         <input type="text" placeholder="Search here..." />
