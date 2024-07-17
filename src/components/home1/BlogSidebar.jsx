@@ -110,7 +110,7 @@ function BlogSidebar() {
                   {
                     RecentEvents?.length > 0 && RecentEvents.map((item, index) => (
                       <div key={index} className="blog-list-2">
-                        <div className="date">
+                        <div className={`date ${theme === "dark" ? "dark-mode-circle" : ""}`}>
                           <h3 className={`${theme === "dark" ? "text-light" : ""}`}>{new Date(item?.date).getUTCDate()}</h3>
                           <p>{new Date(item?.date).toLocaleString('default', { month: 'long' })}</p>
                         </div>
@@ -165,7 +165,7 @@ function BlogSidebar() {
                   {
                     YoutubeResponse?.length > 0 && YoutubeResponse.map((item, index) => (
                       <div key={index} className="blog-list-2">
-                        <div className="date">
+                        <div className={`date ${theme === "dark" ? "dark-mode-circle" : ""}`}>
                           <h3 className={`${theme === "dark" ? "text-light" : ""}`}>{new Date(item?.date).getDay()}</h3>
                           <p>{new Date(item?.date).toLocaleString('default', { month: 'long' })}</p>
                         </div>
@@ -224,7 +224,7 @@ function BlogSidebar() {
                   {
                     AlumniMeet?.length > 0 && AlumniMeet.map((item, index) => (
                       <div key={index} className="blog-list-2">
-                        <div className="date">
+                        <div className={`date ${theme === "dark" ? "dark-mode-circle" : ""}`}>
                           <h3 className={`${theme === "dark" ? "text-light" : ""}`}>{new Date(item?.date).getDate()}</h3>
                           <p>{new Date(item?.date).toLocaleString('default', { month: 'long' })}</p>
                         </div>

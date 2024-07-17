@@ -48,3 +48,12 @@
 .white-placeholder::placeholder{
   color: #fff !important;
 }
+
+@media (max-width: 576px) {
+  .dark-mode-circle{
+    background-color: #212529 !important;
+  }
+  .padding-low-on-media{
+    padding: 0 20px !important;
+  }
+}
