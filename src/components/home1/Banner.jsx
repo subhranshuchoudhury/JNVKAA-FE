@@ -95,7 +95,7 @@ function Banner() {
             <ul className="nav nav-tabs nav-style-1 justify-content-center" role="tablist">
               <li className="nav-item" role="presentation">
                 <p className={`${theme === "dark" ? "text-light" : "text-primary"}`} style={{
-                  fontSize: '15px', fontWeight: 'bold', color: 'black',margin: "1rem 0"
+                  fontSize: '15px', fontWeight: 'bold', color: 'black',margin: ".6rem 0"
                 }}>JNVKAA</p>
               </li>
 
