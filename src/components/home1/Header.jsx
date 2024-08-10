@@ -220,6 +220,12 @@ function Header({ state, dispatch }) {
                         Update Profile
                       </Link>
                     </li>
+                    <li>
+                      <Link className="dropdown-item" href={"/profile/change-password"}> 
+                        <i className="bi bi-shield-lock" />
+                        Change Password
+                      </Link>
+                    </li>
                     {
                       getCookie('userType') !== "TEACHER" && <li>
                         <Link className="dropdown-item " href="/posts/alumni/create-post">

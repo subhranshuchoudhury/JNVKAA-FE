@@ -114,14 +114,14 @@ function Login() {
                     {/* <a href="tel:06571111576">+880 657 1111 576</a> */}
                   </div>
                 </div>
-                {/* <div className="single-info">
+                <div className="single-info">
                   <div className="icon">
                     <i className="bi bi-envelope" />
                   </div>
                   <div className="info">
-                    <Link href="/forgot-password">Forgot Password?</Link>
+                    <Link href="/auth/forgot-password">Forgot Password?</Link>
                   </div>
-                </div> */}
+                </div>
                 <div className="single-info">
                   <div className="icon">
                     <i className="bi bi-person-square" />

@@ -48,3 +48,13 @@
 .white-placeholder::placeholder{
   color: #fff !important;
 }
+
+.default-arrow-remove::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.default-arrow-remove[type=number]{
+  -moz-appearance: textfield;
+  appearance: none;
+}
