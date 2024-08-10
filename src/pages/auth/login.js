@@ -119,7 +119,7 @@ function Login() {
                     <i className="bi bi-envelope" />
                   </div>
                   <div className="info">
-                    <Link href="/auth/forgot-password">Forgot Password?</Link>
+                    <Link href="/auth/forgot-password" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Forgot Password?</Link>
                   </div>
                 </div>
                 <div className="single-info">
