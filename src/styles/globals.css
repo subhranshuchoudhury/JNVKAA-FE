@@ -65,5 +65,6 @@
   }
   .nav-pills-padding{
     padding-inline: 20px !important;
+    padding-block: 0px !important;
   }
 }
