@@ -3,8 +3,7 @@ import { forgotPassword, sendOTP, verifyOTP } from "@/utils/fetch";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import social from "@/data/topbar/social.json";
-import { setCookie } from "cookies-next";
-import { checkOTP, checkResetPassword, checkSendOTP } from "@/utils/validator";
+import { checkResetPassword, checkSendOTP } from "@/utils/validator";
 import { useRouter } from "next/router";
 
 function ResetPassword() {
