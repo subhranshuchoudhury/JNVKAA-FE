@@ -92,7 +92,7 @@ function Banner() {
             <div className={`banner1-prev swiper-prev-arrow ${theme === "dark" ? "border border-white rounded-circle" : ""}`} tabIndex={0} role="button" aria-label="Previous slide">
               <i className={`bi bi-arrow-left ${theme === "dark" ? "text-light" : ""}`} />
             </div>
-            <ul className="nav nav-tabs nav-style-1 justify-content-center" role="tablist">
+            <ul className={`nav nav-tabs nav-style-1 justify-content-center ${theme === "dark" ? "nav-pills-padding" : ""}`} role="tablist">
               <li className="nav-item" role="presentation">
                 <p className={`${theme === "dark" ? "text-light" : "text-primary"}`} style={{
                   fontSize: '15px', fontWeight: 'bold', color: 'black',margin: "1rem 0"

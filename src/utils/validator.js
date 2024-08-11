@@ -161,7 +161,7 @@ export const checkRegisterTeacher = (name, mobile, password, confirmPassword, jo
 }
 
 export const checkOTP = (otp) => {
-    if (!otp || otp?.length !== 8) {
+    if (!otp || otp?.length !== 4) {
         return {
             response: true,
             message: 'Please Enter Valid OTP'
@@ -189,7 +189,7 @@ export const checkSendOTP = (mobile) => {
 }
 
 export const checkResetPassword = (newPassword,otp,mobile) => {
-    if (!otp || otp?.length !== 8) {
+    if (!otp || otp?.length !== 4) {
         return {
             response: true,
             message: 'Please Enter Valid OTP'

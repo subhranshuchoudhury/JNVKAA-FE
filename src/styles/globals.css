@@ -58,3 +58,12 @@
   -moz-appearance: textfield;
   appearance: none;
 }
+
+@media (width <= 576px) {
+  .circle-color {
+    background-color: #7c51ff !important;
+  }
+  .nav-pills-padding{
+    padding-inline: 20px !important;
+  }
+}
