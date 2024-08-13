@@ -139,6 +139,7 @@ function TeachersPage() {
                                             filter: "blur(0px)"
                                         }}>{alumnus?.mobile || "1234567890"}</span></li>
                                         <li><span className={`${theme === "dark" ? "text-light" : ""}`}>Designation</span><span className={`${theme === "dark" ? "text-light" : ""}`}>{alumnus?.profileDetails?.designation}</span></li>
+                                        <li><span className={`${theme === "dark" ? "text-light" : ""}`}>Subject</span><span className={`${theme === "dark" ? "text-light" : ""}`} style={{ textTransform:'capitalize' }}>{alumnus?.profileDetails?.subject}</span></li>
                                     </ul>
                                 </div>
                                 <div className={`author-back ${theme === "dark" ? "bg-dark" : ""}`}>
