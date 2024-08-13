@@ -7,16 +7,18 @@
 // import DatePicker from "react-datepicker";
 import { RegisterTeacher, deleteImage, uploadImageNonAuth } from "@/utils/fetch";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import "react-datepicker/dist/react-datepicker.css";
 // import { useGeolocated } from "react-geolocated";
 import Resizer from "react-image-file-resizer";
 import { useRouter } from "next/router";
 import { setCookie } from "cookies-next";
+import { ThemeContext } from "@/components/ThemeContext";
 
 
 function updateProfile() {
+    const { theme } = useContext(ThemeContext)
     const router = useRouter();
     // const [startDate, setStartDate] = useState(new Date());
     const [PostData, setPostData] = useState({
@@ -266,7 +268,7 @@ function updateProfile() {
 
                 <div className="col-lg-7">
                     <div className="form-title">
-                        <h2>Teacher Register</h2>
+                        <h2 className={`${theme === "dark" ? "text-light" : ""}`}>Teacher Register</h2>
                     </div>
 
 
@@ -290,7 +292,7 @@ function updateProfile() {
                             {
                                 !ImageBlob && <div className="col-12">
                                     <div className="form-inner">
-                                        <input onChange={previewImage} type="file" accept="image/png, image/jpeg" />
+                                        <input onChange={previewImage} className={`${theme === "dark" ? "bg-light" : ""}`} type="file" accept="image/png, image/jpeg" />
                                     </div>
                                 </div>
                             }

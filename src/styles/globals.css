@@ -48,3 +48,23 @@
 .white-placeholder::placeholder{
   color: #fff !important;
 }
+
+.default-arrow-remove::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.default-arrow-remove[type=number]{
+  -moz-appearance: textfield;
+  appearance: none;
+}
+
+@media (width <= 576px) {
+  .circle-color {
+    background-color: #7c51ff !important;
+  }
+  .nav-pills-padding{
+    padding-inline: 20px !important;
+    padding-block: 0px !important;
+  }
+}

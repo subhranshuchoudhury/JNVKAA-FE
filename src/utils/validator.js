@@ -161,7 +161,7 @@ export const checkRegisterTeacher = (name, mobile, password, confirmPassword, jo
 }
 
 export const checkOTP = (otp) => {
-    if (!otp || otp?.length !== 8) {
+    if (!otp || otp?.length !== 4) {
         return {
             response: true,
             message: 'Please Enter Valid OTP'
@@ -179,6 +179,70 @@ export const checkSendOTP = (mobile) => {
         return {
             response: true,
             message: 'Please Enter Valid Mobile Number'
+        }
+    }
+
+    return {
+        response: false,
+        message: ''
+    }
+}
+
+export const checkResetPassword = (newPassword,otp,mobile) => {
+    if (!otp || otp?.length !== 4) {
+        return {
+            response: true,
+            message: 'Please Enter Valid OTP'
+        }
+    }
+
+    if (!newPassword) {
+        return {
+            response: true,
+            message: 'Please Enter New Password'
+        }
+    }
+
+    if (newPassword.length < 6) {
+        return {
+            response: true,
+            message: 'Password must be 6 digit'
+        }
+    }
+
+
+    if (!mobile || mobile?.length !== 10) {
+        return {
+            response: true,
+            message: 'Please Enter Valid Mobile Number'
+        }
+    }
+
+    return {
+        response: false,
+        message: ''
+    }
+}
+
+export const checkChangePassword = (oldPassword,newPassword) => {
+    if (!oldPassword) {
+        return {
+            response: true,
+            message: 'Please Enter Old Password'
+        }
+    }
+
+    if (!newPassword) {
+        return {
+            response: true,
+            message: 'Please Enter New Password'
+        }
+    }
+
+    if (newPassword.length < 6) {
+        return {
+            response: true,
+            message: 'Password must be 6 digit'
         }
     }
 

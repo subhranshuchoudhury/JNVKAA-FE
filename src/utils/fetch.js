@@ -5,7 +5,7 @@ const LOCAL_URL = "http://localhost:5000"
 // const PRODUCTION_URL = "https://jnvkaa-backend.onrender.com"
 const PRODUCTION_URL = "https://subhranshu.devverse.io"
 // const BASE_URL = env == "development" ? LOCAL_URL : PRODUCTION_URL
-const BASE_URL = PRODUCTION_URL
+const BASE_URL = PRODUCTION_URL 
 export const GLOBAL_URL = BASE_URL;
 
 export const isValidateInputID = (input) => {
@@ -137,7 +137,64 @@ export const LoginTeacher = async (mobile, password) => {
     }
 }
 
+export const forgotPassword = async (mobile, password, otp) => {
+  try {
+    const response = await fetch(BASE_URL + "/api/user/auth/forget-password", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        mobile,
+        password,
+        otp,
+      }),
+    });
+    const data = await response.json();
+    return {
+      status: response.status,
+      data,
+    };
+  } catch (error) {
+    return {
+      status: 500,
+      data: {
+        message: "Internal Server Error",
+        error: String(error),
+      },
+    };
+  }
+};
 
+export const changePassword = async (oldPassword, newPassword) => {
+  try {
+    const response = await fetch(BASE_URL + "/api/user/auth/change-password", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-access-token": getCookie("token"),
+      },
+      body: JSON.stringify({
+        oldPassword,
+        newPassword,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+    return {
+      status: response.status,
+      data,
+    };
+  } catch (error) {
+    return {
+      status: 500,
+      data: {
+        message: "Internal Server Error",
+        error: String(error),
+      },
+    };
+  }
+};
 
 export const RegisterTeacher = async (profileDetails) => {
 
