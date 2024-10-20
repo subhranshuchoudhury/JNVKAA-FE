@@ -5,7 +5,7 @@ import { GLOBAL_URL, getFreeTrials, getMyOwnProfile, getRedeemFreeTrials } from 
 import toast from 'react-hot-toast';
 import { ThemeContext } from '@/components/ThemeContext';
 import Image from 'next/image';
-import upiImage from "../upi/upiqr.jpeg";
+import upiImage from "../upi/UPI.JPG";
 
 export default function Page() {
     const { theme } = useContext(ThemeContext);
