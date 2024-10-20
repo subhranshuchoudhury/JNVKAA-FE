@@ -88,7 +88,7 @@ export default function Page() {
                                         <Image
                                             src={upiImage}
                                             alt="UPI QR"
-                                            width={100} // Make it square
+                                            width={150} // Make it square
                                             height={100} // Make it square
                                             style={{ borderRadius: '10px' }} // Optional: Rounded corners for square image
                                         />
@@ -103,7 +103,7 @@ export default function Page() {
                                     </div>
                                 </div>
                                 {/* Pay Now Button */}
-                                <div className="text-end mt-3">
+                                <div className="text-end mb-60">
                                     <button
                                         className="btn btn-primary"
                                         onClick={handleUPIPayment} // Use function to handle UPI payment
