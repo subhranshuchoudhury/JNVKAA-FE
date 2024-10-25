@@ -7,7 +7,7 @@ import '../../public/assets/css/slick.css';
 import '../../public/assets/css/style.css';
 import 'node_modules/react-modal-video/css/modal-video.css';
 import "@/styles/globals.css";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -16,55 +16,47 @@ import { ThemeContext } from '@/components/ThemeContext';
 import OSModal from '@/components/home1/OSModal';
 
 export default function App({ Component, pageProps }) {
-  // Lazy initialize theme state, which will only be evaluated once on mount
   const [theme, setTheme] = useState(() => {
     if (typeof window !== "undefined") {
       const localTheme = localStorage.getItem('theme');
-      return localTheme ? localTheme : "light"; // Return the theme or default to "light"
+      return localTheme ? localTheme : "light";
     }
-    return "light"; // Default to "light" for SSR
+    return "light";
   });
 
-  const [showFirstModal, setShowFirstModal] = useState(false);
-  const [showSecondModal, setShowSecondModal] = useState(false);
-  const [showThirdModal, setShowThirdModal] = useState(false);
-
+  const [modalStep, setModalStep] = useState(0); 
   const router = useRouter();
-  const excludedPages = ['/', "/index-2", "/index-3", "/index-4"]; // Add the paths of excluded pages here
+  const excludedPages = ['/', "/index-2", "/index-3", "/index-4"];
 
-  // Set up timeouts
-  const firstModalTimeout = setTimeout(() => {
-    if (!showFirstModal) {
-      setShowFirstModal(true);
-      console.log("Showing first modal");
+  useEffect(() => {
+    const isWindows = () => {
+      return /Windows/i.test(navigator.userAgent); 
+    };
+
+    if (isWindows()) {
+      const modalTimings = [15000, 20000, 10000]; 
+      const timeouts = [];
+
+      const showNextModal = (step) => {
+        if (step < modalTimings.length) {
+          const timeoutId = setTimeout(() => {
+            setModalStep(step + 1);
+            console.log(`Showing modal ${step + 1}`);
+            showNextModal(step + 1);
+          }, modalTimings[step]);
+          
+          timeouts.push(timeoutId);
+        }
+      };
+
+      showNextModal(0); 
+
+      return () => {
+        timeouts.forEach(clearTimeout);
+        setModalStep(0); 
+      };
     }
-  }, 15000); // 15 seconds
-
-  const secondModalTimeout = setTimeout(() => {
-    if (!showSecondModal) {
-      setShowSecondModal(true);
-      console.log("Showing second modal");
-    }
-  }, 350000); // 35 seconds
-
-  const thirdModalTimeout = setTimeout(() => {
-    if (!showThirdModal) {
-      setShowThirdModal(true);
-      console.log("Showing Third modal");
-    }
-  }, 45000); // 45 seconds
-
-  // Clear timeouts on unmount
-  const clearTimeouts = () => {
-    clearTimeout(firstModalTimeout);
-    clearTimeout(secondModalTimeout);
-    clearTimeout(thirdModalTimeout);
-  };
-
-  // Cleanup when the component unmounts or before running the timeouts again
-  if (showFirstModal || showSecondModal || showThirdModal) {
-    clearTimeouts();
-  }
+  }, []);
 
   if (theme === "") return null;
 
@@ -76,9 +68,8 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/assets/images/logo/jnvkaa-logo2.png" />
       </Head>
-      {showFirstModal&&<OSModal/>}
-      {showSecondModal&&<OSModal/>}
-      {showThirdModal&&<OSModal/>}
+      {modalStep > 0 && <OSModal modalIndex={modalStep - 1} onClose={() => setModalStep(0)} />}
+
       <ThemeContext.Provider value={{ theme, setTheme }}>
         {excludedPages.includes(router.asPath) ? (
           <>
