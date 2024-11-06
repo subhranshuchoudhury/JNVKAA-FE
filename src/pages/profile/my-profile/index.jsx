@@ -1,130 +1,204 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
-import { GLOBAL_URL, getMyOwnProfile } from '@/utils/fetch';
-import Link from 'next/link';
-import { ThemeContext } from '@/components/ThemeContext';
+import React, { useContext, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { GLOBAL_URL, getMyOwnProfile } from "@/utils/fetch";
+import Link from "next/link";
+import { ThemeContext } from "@/components/ThemeContext";
 export default function page() {
+  const { theme } = useContext(ThemeContext);
+  const [Loading, setLoading] = useState(true);
+  const [MemberData, setMemberData] = useState([]);
+  const [toggleMap, settoggleMap] = useState(false);
 
-    const router = useRouter()
-    const { theme } = useContext(ThemeContext);
-    const [Loading, setLoading] = useState(true);
-    const [MemberData, setMemberData] = useState([]);
-    const [toggleMap, settoggleMap] = useState(false)
+  useEffect(() => {
+    loadMemberData();
+  }, []);
 
-    useEffect(() => {
-        loadMemberData();
-    }, [])
-
-    const loadMemberData = async () => {
-
-        const res = await getMyOwnProfile();
-        if (res.status === 200) {
-
-            setMemberData(res?.data);
-        }
-        console.log(res);
-        setLoading(false);
+  const loadMemberData = async () => {
+    const res = await getMyOwnProfile();
+    if (res.status === 200) {
+      setMemberData(res?.data);
     }
+    console.log(res);
+    setLoading(false);
+  };
 
-    return <section className="author-section pt-100 pb-100">
+  return (
+    <section className="author-section pt-100 pb-100">
+      {Loading && (
+        <div className="text-center">
+          <div
+            className={`spinner-border text-${
+              theme === "dark" ? "light" : "primary"
+            }`}
+            style={{ width: "3rem", height: "3rem" }}
+            role="status"
+          >
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      )}
 
-        {
-            Loading && <div className="text-center"><div className={`spinner-border text-${theme === "dark" ? "light" : "primary"}`} style={{ width: "3rem", height: "3rem" }} role="status">
-                <span className="visually-hidden">Loading...</span>
-            </div></div>
-        }
+      {!Loading && MemberData && (
+        <div className="container">
+          <div className="row gy-5">
+            <div className="col-lg-8">
+              <div className="author-details">
+                <img
+                  className="image"
+                  style={
+                    MemberData?.mobile
+                      ? { filter: "blur(0px)" }
+                      : { filter: "blur(5px)" }
+                  }
+                  src={
+                    `${
+                      GLOBAL_URL +
+                      "/api/user/post/image/" +
+                      MemberData?.profileDetails?.profileImage
+                    }` ?? "/assets/images/dummy/avatar/user.jpg"
+                  }
+                  alt="image"
+                />
+                <div className="author-info">
+                  <h2 className={`${theme === "dark" ? "text-light" : ""}`}>
+                    {MemberData?.name}
+                  </h2>
+                  <ul className="category">
+                    <li>
+                      <p className={`${theme === "dark" ? "text-light" : ""}`}>
+                        Batch: {MemberData.profileDetails?.graduationYear}
+                      </p>
+                    </li>
+                    <li>
+                      <p className={`${theme === "dark" ? "text-light" : ""}`}>
+                        School No: {MemberData.profileDetails?.schoolNo}
+                      </p>
+                    </li>
+                  </ul>
+                  <p className={`${theme === "dark" ? "text-light" : ""}`}>
+                    About: {MemberData?.profileDetails?.about}
+                  </p>
 
-        {
-            !Loading && MemberData && <div className="container">
-                <div className="row gy-5">
-                    <div className="col-lg-8">
-                        <div className="author-details">
-                            <img
-                                className="image"
-                                style={
-                                    MemberData?.mobile ? { filter: "blur(0px)" } : { filter: "blur(5px)" }
-                                }
-                                src={`${GLOBAL_URL + "/api/user/post/image/" + MemberData?.profileDetails?.profileImage}` ?? "/assets/images/dummy/avatar/user.jpg"}
-                                alt="image"
+                  <p className={`${theme === "dark" ? "text-light" : ""}`}>
+                    Address: {MemberData?.profileDetails?.address}
+                  </p>
 
-                            />
-                            <div className="author-info">
-                                <h2 className={`${theme === "dark" ? "text-light" : ""}`}>{MemberData?.name}</h2>
-                                <ul className="category">
-                                    <li>
-                                        <p className={`${theme === "dark" ? "text-light" : ""}`}>Batch: {MemberData.profileDetails?.graduationYear}</p>
-                                    </li>
-                                    <li>
-                                        <p className={`${theme === "dark" ? "text-light" : ""}`}>School No: {MemberData.profileDetails?.schoolNo}</p>
-                                    </li>
+                  <ul
+                    className="meta-list"
+                    style={
+                      MemberData?.mobile
+                        ? { filter: "blur(0px)" }
+                        : {
+                            filter: "blur(4px)",
+                          }
+                    }
+                  >
+                    {MemberData?.profileDetails.location && (
+                      <li className={`${theme === "dark" ? "text-light" : ""}`}>
+                        <img src="/assets/images/icons/view.svg" alt="image" />
+                        Location:
+                        <span
+                          onClick={() => settoggleMap(!toggleMap)}
+                          className={`text-${
+                            theme === "dark" ? "light" : "primary"
+                          }`}
+                        >
+                          View
+                        </span>
+                      </li>
+                    )}
+                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
+                      <img src="/assets/images/icons/view.svg" alt="image" />
+                      Mobile:{" "}
+                      <span
+                        className={`${theme === "dark" ? "text-light" : ""}`}
+                      >
+                        {MemberData?.mobile || "123456789"}
+                      </span>
+                    </li>
 
-                                </ul>
-                                <p className={`${theme === "dark" ? "text-light" : ""}`}>
-                                    About: {MemberData?.profileDetails?.about}
-                                </p>
+                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
+                      <img src="/assets/images/icons/view.svg" alt="image" />
+                      Email:{" "}
+                      <span
+                        className={`${theme === "dark" ? "text-light" : ""}`}
+                      >
+                        {MemberData?.profileDetails?.mailId || "..."}
+                      </span>
+                    </li>
 
-                                <p className={`${theme === "dark" ? "text-light" : ""}`}>
-                                    Address: {MemberData?.profileDetails?.address}
-                                </p>
+                    {MemberData?.profileDetails?.dob && (
+                      <li className={`${theme === "dark" ? "text-light" : ""}`}>
+                        <img src="/assets/images/icons/view.svg" alt="image" />
+                        DOB:{" "}
+                        <span
+                          className={`${theme === "dark" ? "text-light" : ""}`}
+                        >
+                          {new Date(
+                            MemberData?.profileDetails?.dob
+                          ).toLocaleDateString()}
+                        </span>
+                      </li>
+                    )}
 
+                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
+                      <img src="/assets/images/icons/view.svg" alt="image" />
+                      Profession:{" "}
+                      <span
+                        className={`${theme === "dark" ? "text-light" : ""}`}
+                      >
+                        {MemberData?.profileDetails?.profession || "..."}
+                      </span>
+                    </li>
+                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
+                      <img src="/assets/images/icons/view.svg" alt="image" />
+                      Blood Group:{" "}
+                      <span
+                        className={`${theme === "dark" ? "text-light" : ""}`}
+                      >
+                        {MemberData?.profileDetails?.bloodGroup || "..."}
+                      </span>
+                    </li>
+                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
+                      <img src="/assets/images/icons/view.svg" alt="image" />
+                      WhatsApp No:{" "}
+                      <span
+                        className={`${theme === "dark" ? "text-light" : ""}`}
+                      >
+                        {MemberData?.profileDetails?.whatsappNo || "..."}
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              {MemberData?.profileDetails?.location && toggleMap && (
+                <>
+                  <h2 className={`${theme === "dark" ? "text-light" : ""}`}>
+                    Last Location
+                  </h2>
+                  <iframe
+                    src={`https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d17807.039960760754!2d${
+                      MemberData?.profileDetails?.location?.split("-")?.[1]
+                    }!3d${
+                      MemberData?.profileDetails?.location?.split("-")?.[0]
+                    }!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1702899473454!5m2!1sen!2sin`}
+                    width="400"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </>
+              )}
 
-                                <ul className="meta-list" style={MemberData?.mobile ? { filter: "blur(0px)" } : {
-                                    filter: "blur(4px)"
-                                }}>
-                                    {
-                                        MemberData?.profileDetails.location && <li className={`${theme === "dark" ? "text-light" : ""}`}>
-                                            <img src="/assets/images/icons/view.svg" alt="image" />
-                                            Location:<span onClick={() => settoggleMap(!toggleMap)} className={`text-${theme === "dark" ? "light" : "primary"}`}>View</span>
-                                        </li>
-                                    }
-                                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
-                                        <img src="/assets/images/icons/view.svg" alt="image" />
-                                        Mobile: <span className={`${theme === "dark" ? "text-light" : ""}`}>{MemberData?.mobile || "123456789"}</span>
-                                    </li>
-
-                                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
-                                        <img src="/assets/images/icons/view.svg" alt="image" />
-                                        Email: <span className={`${theme === "dark" ? "text-light" : ""}`}>{MemberData?.profileDetails?.mailId || "..."}</span>
-                                    </li>
-
-                                    {
-                                        MemberData?.profileDetails?.dob && <li className={`${theme === "dark" ? "text-light" : ""}`}>
-                                            <img src="/assets/images/icons/view.svg" alt="image" />
-                                            DOB: <span className={`${theme === "dark" ? "text-light" : ""}`}>{new Date(MemberData?.profileDetails?.dob).toLocaleDateString()}</span>
-                                        </li>
-                                    }
-
-
-                                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
-                                        <img src="/assets/images/icons/view.svg" alt="image" />
-                                        Profession: <span className={`${theme === "dark" ? "text-light" : ""}`}>{MemberData?.profileDetails?.profession || "..."}</span>
-                                    </li>
-                                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
-                                        <img src="/assets/images/icons/view.svg" alt="image" />
-                                        Blood Group: <span className={`${theme === "dark" ? "text-light" : ""}`}>{MemberData?.profileDetails?.bloodGroup || "..."}</span>
-                                    </li>
-                                    <li className={`${theme === "dark" ? "text-light" : ""}`}>
-                                        <img src="/assets/images/icons/view.svg" alt="image" />
-                                        WhatsApp No: <span className={`${theme === "dark" ? "text-light" : ""}`}>{MemberData?.profileDetails?.whatsappNo || "..."}</span>
-                                    </li>
-                                </ul>
-
-
-                            </div>
-                        </div>
-                        {
-
-                            MemberData?.profileDetails?.location && toggleMap && <>
-                                <h2 className={`${theme === "dark" ? "text-light" : ""}`}>Last Location</h2>
-                                <iframe src={`https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d17807.039960760754!2d${MemberData?.profileDetails?.location?.split("-")?.[1]}!3d${MemberData?.profileDetails?.location?.split("-")?.[0]}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1702899473454!5m2!1sen!2sin`} width="400" height="300" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                            </>
-                        }
-
-                        {/* <p>This will add in future updates.</p> */}
-                        <div className="load-more-btn">
-                            <Link legacyBehavior href="/profile/update-profile"><a className="eg-btn btn--primary btn--lg">Update Profile</a></Link>
-                        </div>
-                        {/* {authorDetailsData.map((item) => {
+              {/* <p>This will add in future updates.</p> */}
+              <div className="load-more-btn">
+                <Link legacyBehavior href="/profile/update-profile">
+                  <a className="eg-btn btn--primary btn--lg">Update Profile</a>
+                </Link>
+              </div>
+              {/* {authorDetailsData.map((item) => {
                             const {
                                 id,
                                 date_day,
@@ -188,8 +262,8 @@ export default function page() {
                                 </div>
                             );
                         })} */}
-                        {/* pagiantion */}
-                        {/* <nav className="mt-60">
+              {/* pagiantion */}
+              {/* <nav className="mt-60">
                             <ul className="pagination-list">
                                 <li>
                                     <a href="#">
@@ -220,10 +294,10 @@ export default function page() {
                                 </li>
                             </ul>
                         </nav> */}
-                    </div>
-                    <div className="col-lg-4">
-                        <div className="post-side-bar-1">
-                            {/* <div className="sidebar-widget-1">
+            </div>
+            <div className="col-lg-4">
+              <div className="post-side-bar-1">
+                {/* <div className="sidebar-widget-1">
                                 <h6 className="title">Quick Search</h6>
                                 <div className="search-box-2">
                                     <form>
@@ -234,7 +308,7 @@ export default function page() {
                                     </form>
                                 </div>
                             </div> */}
-                            {/* <div className="sidebar-widget-1"> 
+                {/* <div className="sidebar-widget-1"> 
                                  <h6 className="title">Editor Choice</h6>
                                 <div className="blog-list-1 mb-25">
                                     <Link legacyBehavior href="/">
@@ -324,81 +398,155 @@ export default function page() {
                                     </div>
                                 </div>
                             {/* </div> */}
-                            <div className="sidebar-widget-1">
-                                <h6 className={`title ${theme === "dark" ? "text-light" : ""}`}>Stay Connected</h6>
-                                <ul style={MemberData?.mobile ? { filter: "blur(0px)" } : {
-                                    filter: "blur(3px)"
-                                }} className="social-3">
-                                    {
-                                        MemberData?.profileDetails?.facebook && <li className={`${theme === "dark" ? "dark-li" : ""}`}>
-                                            <a className={`${theme === "dark" ? "text-hover" : ""}`} href={MemberData?.profileDetails?.facebook || ""}>
-                                                <span className={`${theme === "dark" ? "text-light border" : ""}`}>
-                                                    <i className={`bx bxl-facebook ${theme === "dark" ? "text-light" : ""}`} />
-                                                    Facebook
-                                                </span>
-                                                <span className={`${theme === "dark" ? "text-light" : ""}`}>
-                                                    <strong>Add Friend</strong>
-
-                                                </span>
-                                            </a>
-                                        </li>
-                                    }
-                                    {
-                                        MemberData?.profileDetails?.linkedIn && <li className={`${theme === "dark" ? "dark-li" : ""}`}>
-                                            <a className={`${theme === "dark" ? "text-hover" : ""}`} href={MemberData?.profileDetails?.linkedIn || ""}>
-                                                <span className={`${theme === "dark" ? "text-light border" : ""}`}>
-                                                    <i className={`bx bxl-linkedin ${theme === "dark" ? "text-light" : ""}`} />
-                                                    LinkedIn
-                                                </span>
-                                                <span className={`${theme === "dark" ? "text-light" : ""}`}>
-                                                    <strong>Follow</strong>
-                                                </span>
-                                            </a>
-                                        </li>
-                                    }
-                                    {MemberData?.profileDetails?.whatsappNo && <li className={`${theme === "dark" ? "dark-li" : ""}`}>
-                                        <a className={`${theme === "dark" ? "text-hover" : ""}`}>
-                                            <span className={`${theme === "dark" ? "text-light border" : ""}`}>
-                                                <i className={`bx bxl-whatsapp ${theme === "dark" ? "text-light" : ""}`} />
-                                                &nbsp;Whatsapp
-                                            </span>
-                                            <span className={`${theme === "dark" ? "text-light" : ""}`}>
-                                                <strong>{MemberData?.profileDetails?.whatsappNo || "N/A"}</strong>
-
-                                            </span>
-                                        </a>
-                                    </li>}
-                                    {MemberData?.profileDetails?.instagram && <li className={`${theme === "dark" ? "dark-li" : ""}`}>
-                                        <a className={`${theme === "dark" ? "text-hover" : ""}`} href={MemberData?.profileDetails?.instagram || ""}>
-                                            <span className={`${theme === "dark" ? "text-light border" : ""}`}>
-                                                <i className={`bx bxl-instagram ${theme === "dark" ? "text-light" : ""}`} />
-                                                Instagram
-                                            </span>
-                                            <span className={`${theme === "dark" ? "text-light" : ""}`}>
-                                                <strong>Follow</strong>
-                                            </span>
-                                        </a>
-                                    </li>}
-                                </ul>
-                            </div>
-                            <div
-                                className="sidebar-shop-card"
-                                style={{
-                                    backgroundImage: 'url("https://img.freepik.com/free-vector/internet-forum-vector-illustration-communication-concept_6280-512.jpg?w=740")',
-                                }}
-                            >
-                                <span>Early Bird</span>
-                                <h3 style={{ color: 'black' }}>Activate Membership </h3>
-                                <a href="/membership/offer/free-trials" className="shop-btn">
-                                    Click Here
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div className="sidebar-widget-1">
+                  <h6
+                    className={`title ${theme === "dark" ? "text-light" : ""}`}
+                  >
+                    Stay Connected
+                  </h6>
+                  <ul
+                    style={
+                      MemberData?.mobile
+                        ? { filter: "blur(0px)" }
+                        : {
+                            filter: "blur(3px)",
+                          }
+                    }
+                    className="social-3"
+                  >
+                    {MemberData?.profileDetails?.facebook && (
+                      <li className={`${theme === "dark" ? "dark-li" : ""}`}>
+                        <a
+                          className={`${theme === "dark" ? "text-hover" : ""}`}
+                          href={MemberData?.profileDetails?.facebook || ""}
+                        >
+                          <span
+                            className={`${
+                              theme === "dark" ? "text-light border" : ""
+                            }`}
+                          >
+                            <i
+                              className={`bx bxl-facebook ${
+                                theme === "dark" ? "text-light" : ""
+                              }`}
+                            />
+                            Facebook
+                          </span>
+                          <span
+                            className={`${
+                              theme === "dark" ? "text-light" : ""
+                            }`}
+                          >
+                            <strong>Add Friend</strong>
+                          </span>
+                        </a>
+                      </li>
+                    )}
+                    {MemberData?.profileDetails?.linkedIn && (
+                      <li className={`${theme === "dark" ? "dark-li" : ""}`}>
+                        <a
+                          className={`${theme === "dark" ? "text-hover" : ""}`}
+                          href={MemberData?.profileDetails?.linkedIn || ""}
+                        >
+                          <span
+                            className={`${
+                              theme === "dark" ? "text-light border" : ""
+                            }`}
+                          >
+                            <i
+                              className={`bx bxl-linkedin ${
+                                theme === "dark" ? "text-light" : ""
+                              }`}
+                            />
+                            LinkedIn
+                          </span>
+                          <span
+                            className={`${
+                              theme === "dark" ? "text-light" : ""
+                            }`}
+                          >
+                            <strong>Follow</strong>
+                          </span>
+                        </a>
+                      </li>
+                    )}
+                    {MemberData?.profileDetails?.whatsappNo && (
+                      <li className={`${theme === "dark" ? "dark-li" : ""}`}>
+                        <a
+                          className={`${theme === "dark" ? "text-hover" : ""}`}
+                        >
+                          <span
+                            className={`${
+                              theme === "dark" ? "text-light border" : ""
+                            }`}
+                          >
+                            <i
+                              className={`bx bxl-whatsapp ${
+                                theme === "dark" ? "text-light" : ""
+                              }`}
+                            />
+                            &nbsp;Whatsapp
+                          </span>
+                          <span
+                            className={`${
+                              theme === "dark" ? "text-light" : ""
+                            }`}
+                          >
+                            <strong>
+                              {MemberData?.profileDetails?.whatsappNo || "N/A"}
+                            </strong>
+                          </span>
+                        </a>
+                      </li>
+                    )}
+                    {MemberData?.profileDetails?.instagram && (
+                      <li className={`${theme === "dark" ? "dark-li" : ""}`}>
+                        <a
+                          className={`${theme === "dark" ? "text-hover" : ""}`}
+                          href={MemberData?.profileDetails?.instagram || ""}
+                        >
+                          <span
+                            className={`${
+                              theme === "dark" ? "text-light border" : ""
+                            }`}
+                          >
+                            <i
+                              className={`bx bxl-instagram ${
+                                theme === "dark" ? "text-light" : ""
+                              }`}
+                            />
+                            Instagram
+                          </span>
+                          <span
+                            className={`${
+                              theme === "dark" ? "text-light" : ""
+                            }`}
+                          >
+                            <strong>Follow</strong>
+                          </span>
+                        </a>
+                      </li>
+                    )}
+                  </ul>
                 </div>
+                <div
+                  className="sidebar-shop-card"
+                  style={{
+                    backgroundImage:
+                      'url("https://img.freepik.com/free-vector/internet-forum-vector-illustration-communication-concept_6280-512.jpg?w=740")',
+                  }}
+                >
+                  <span>Early Bird</span>
+                  <h3 style={{ color: "black" }}>Activate Membership </h3>
+                  <a href="/membership/offer/free-trials" className="shop-btn">
+                    Click Here
+                  </a>
+                </div>
+              </div>
             </div>
-        }
-
+          </div>
+        </div>
+      )}
     </section>
-
+  );
 }

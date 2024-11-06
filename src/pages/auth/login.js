@@ -1,15 +1,14 @@
-import React, { useContext, useState } from 'react'
-import { LoginAlumni } from '@/utils/fetch';
-import toast from 'react-hot-toast';
-import Link from 'next/link';
-import social from '@/data/topbar/social.json';
-import { checkLogin } from '@/utils/validator';
+import React, { useContext, useState } from "react";
+import { LoginAlumni } from "@/utils/fetch";
+import toast from "react-hot-toast";
+import Link from "next/link";
+import social from "@/data/topbar/social.json";
+import { checkLogin } from "@/utils/validator";
 import { setCookie } from "cookies-next";
-import { useRouter } from 'next/router';
-import { ThemeContext } from '@/components/ThemeContext';
+import { useRouter } from "next/router";
+import { ThemeContext } from "@/components/ThemeContext";
 
 function Login() {
-
   const { theme } = useContext(ThemeContext);
 
   const [Data, setData] = useState(null);
@@ -31,47 +30,63 @@ function Login() {
 
     if (response.status === 200) {
       toast.success("Welcome " + response.data.name.split(" ")?.[0] + " 👋");
-      setCookie("token", response.data.accessToken, { maxAge: 60 * 60 * 24 * 365 * 3 });
-      setCookie("isProfileCompleted", response.data.isProfileCompleted, { maxAge: 60 * 60 * 24 * 365 * 3 })
+      setCookie("token", response.data.accessToken, {
+        maxAge: 60 * 60 * 24 * 365 * 3,
+      });
+      setCookie("isProfileCompleted", response.data.isProfileCompleted, {
+        maxAge: 60 * 60 * 24 * 365 * 3,
+      });
       setCookie("userType", "ALUMNI", { maxAge: 60 * 60 * 24 * 365 * 3 });
 
-      localStorage.setItem("userData", JSON.stringify(response.data.data));
+      localStorage.setItem("userData", JSON.stringify(response.data));
 
       if (response.data.isProfileCompleted) {
         window.location.href = "/alumnus";
       } else {
         window.location.href = "/profile/update-profile";
-
       }
     } else {
       toast.error(response.data.message);
     }
-
-  }
+  };
   return (
-
     <section className="contact-section pt-100 pb-100">
       <div className="container">
         <div className="row gy-4 justify-content-center align-items-center">
-
           <div className="col-lg-7">
             <div className="form-title">
-              <h2 className={`${theme === "dark" ? "text-light" : ""}`}>Login Here!</h2>
+              <h2 className={`${theme === "dark" ? "text-light" : ""}`}>
+                Login Here!
+              </h2>
             </div>
             <form className="contact-form">
               <div className="row">
                 <div className="col-6">
                   <div className="form-inner">
-                    <input onChange={e => setMobile(e.target.value)} value={Mobile} type="tel" placeholder="Mobile" />
+                    <input
+                      onChange={(e) => setMobile(e.target.value)}
+                      value={Mobile}
+                      type="tel"
+                      placeholder="Mobile"
+                    />
                   </div>
                 </div>
                 <div className="col-6">
                   <div className="form-inner">
-                    <input onChange={e => setPassword(e.target.value)} value={Password} type="password" placeholder="Password" />
+                    <input
+                      onChange={(e) => setPassword(e.target.value)}
+                      value={Password}
+                      type="password"
+                      placeholder="Password"
+                    />
                   </div>
                 </div>
                 <div className="col-12">
-                  <button onClick={AsyncLogin} type="submit" className="eg-btn btn--primary btn--lg">
+                  <button
+                    onClick={AsyncLogin}
+                    type="submit"
+                    className="eg-btn btn--primary btn--lg"
+                  >
                     Submit
                   </button>
                 </div>
@@ -82,26 +97,32 @@ function Login() {
           <div className="col-lg-5 pe-lg-5 pe-0">
             <div className="contact-box">
               <div className="title">
-                <h3 className={`${theme === "dark" ? "text-light" : ""}`}>Any Issues?</h3>
+                <h3 className={`${theme === "dark" ? "text-light" : ""}`}>
+                  Any Issues?
+                </h3>
                 <p>
                   If you are facing any problem please contact with us. We will
-                  reply you as soon as possible. Otherwise you can forgot your password whenever you want.
+                  reply you as soon as possible. Otherwise you can forgot your
+                  password whenever you want.
                 </p>
               </div>
               <div className="left-social">
                 <ul>
-
-                  {
-                    social.map((item, index) => {
-                      return <li key={index}>
-                        <a href={item?.link} className={`${theme === "dark" ? "text-light text-hover" : ""}`}>
+                  {social.map((item, index) => {
+                    return (
+                      <li key={index}>
+                        <a
+                          href={item?.link}
+                          className={`${
+                            theme === "dark" ? "text-light text-hover" : ""
+                          }`}
+                        >
                           <i className={item?.icon} />
                           {/* {item?.count} */}
                         </a>
                       </li>
-                    })
-                  }
-
+                    );
+                  })}
                 </ul>
               </div>
               <div className="informations">
@@ -110,7 +131,14 @@ function Login() {
                     <i className="bi bi-telephone-fill" />
                   </div>
                   <div className="info">
-                    <a href="tel:7656826945" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>+91 7656826945</a>
+                    <a
+                      href="tel:7656826945"
+                      className={`${
+                        theme === "dark" ? "text-light text-hover" : ""
+                      }`}
+                    >
+                      +91 7656826945
+                    </a>
                     {/* <a href="tel:06571111576">+880 657 1111 576</a> */}
                   </div>
                 </div>
@@ -119,7 +147,14 @@ function Login() {
                     <i className="bi bi-envelope" />
                   </div>
                   <div className="info">
-                    <Link href="/auth/forgot-password" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Forgot Password?</Link>
+                    <Link
+                      href="/auth/forgot-password"
+                      className={`${
+                        theme === "dark" ? "text-light text-hover" : ""
+                      }`}
+                    >
+                      Forgot Password?
+                    </Link>
                   </div>
                 </div>
                 <div className="single-info">
@@ -127,7 +162,14 @@ function Login() {
                     <i className="bi bi-person-square" />
                   </div>
                   <div className="info">
-                    <Link href="/auth/login-teacher" className={`${theme === "dark" ? "text-light text-hover" : ""}`}>Are you a teacher?</Link>
+                    <Link
+                      href="/auth/login-teacher"
+                      className={`${
+                        theme === "dark" ? "text-light text-hover" : ""
+                      }`}
+                    >
+                      Are you a teacher?
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -136,7 +178,7 @@ function Login() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default Login;

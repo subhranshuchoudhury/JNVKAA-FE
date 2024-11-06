@@ -4,6 +4,7 @@ import React, { useEffect, useState, useContext } from "react";
 import Marquee from "react-fast-marquee";
 import { ThemeContext, darkTheme } from "../ThemeContext";
 import AppDownloadModal from "../AppDownloadModal";
+import AlumniMeetResponsePopup from "../AlumniMeetResponsePopup";
 
 function BreakingNews() {
   const { theme } = useContext(ThemeContext);
@@ -33,7 +34,7 @@ function BreakingNews() {
         <img src="/assets/images/bg/top-ellipse.png" alt="image" />
       </div>
 
-      <AppDownloadModal />
+      {true ? <AlumniMeetResponsePopup /> : <AppDownloadModal />}
 
       <span className="d-lg-block d-none">
         News Update{" "}
