@@ -12,7 +12,10 @@ const AlumniMeetResponsePopup = () => {
     // const hasShownModal = false;
     const isTokenExist = getCookie("token");
     const hasShownModal = sessionStorage.getItem("hasShownModal");
-    if (!hasShownModal) {
+    const isAlreadyRegistered = localStorage.getItem(
+      "ALUMNI_MEET_REGISTERED_22_12_2024"
+    );
+    if (!hasShownModal && !isAlreadyRegistered) {
       setShowModal(true);
       if (isTokenExist) {
         sessionStorage.setItem("hasShownModal", "true");
@@ -62,6 +65,7 @@ const AlumniMeetResponsePopup = () => {
         if (response.status === 200) {
           setShowModal(false);
           toast.success("Registered for Alumni Meet");
+          localStorage.setItem("ALUMNI_MEET_REGISTERED_22_12_2024", "true");
         }
       }
     } catch (error) {
