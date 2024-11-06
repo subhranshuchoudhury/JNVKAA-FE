@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState, useContext } from "react";
 import { ThemeContext } from "../ThemeContext";
 import Link from "next/link";
 import { GLOBAL_URL, getLatestFourAlumni } from "@/utils/fetch";
-import OSModal from "./OSModal";
 SwiperCore.use([Navigation, Autoplay, EffectFade]);
 
 function AuthorSection() {
