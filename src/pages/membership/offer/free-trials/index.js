@@ -40,12 +40,25 @@ export default function Page() {
     console.log(res);
   };
 
-  const handleUPIPayment = () => {
-    // This will open the UPI app if available
-    const upiUrl =
-      "upi://pay?pa=abhiseksahoo.07@axl&pn=ABHISEK%20SAHOO&mc=0000&mode=02&purpose=00";
-    window.location.href = upiUrl;
-  };
+  // const handleUPIPayment = () => {
+  //   // This will open the UPI app if available
+  //   const upiUrl =
+  //     "upi://pay?pa=abhiseksahoo.07@axl&pn=ABHISEK%20SAHOO&mc=0000&mode=02&purpose=00";
+  //   window.location.href = upiUrl;
+  // };
+
+  function copyToClipboard(text) {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        toast.success("Text copied to clipboard");
+        console.log("Text copied to clipboard");
+      })
+      .catch((err) => {
+        toast.error("Failed to copy text");
+        console.error("Failed to copy text: ", err);
+      });
+  }
 
   return (
     <section className="author-section pt-100 pb-100">
@@ -91,7 +104,7 @@ export default function Page() {
                     style={{ marginRight: "15px" }}
                   >
                     <Image
-                      src={"/assets/images/upi/UPI.jpg"}
+                      src={"/assets/images/upi/upi_new.png"}
                       alt="UPI QR"
                       width={150} // Make it square
                       height={100} // Make it square
@@ -101,43 +114,37 @@ export default function Page() {
 
                   {/* Right Side - Bank Details */}
                   <div className="membership-details ms-auto">
-                    <p
+                    <div
                       className={`${
                         theme === "dark" ? "text-light" : ""
                       } text-end`}
+                      style={{
+                        fontSize: "14px",
+                        lineHeight: "1.5",
+                        padding: "10px",
+                        border: "1px solid #ccc",
+                        borderRadius: "10px",
+                        display: "flex",
+                        justifyContent: "center",
+                        flexDirection: "column",
+                      }}
                     >
-                      A/c No - 8846832519
-                    </p>
-                    <p
-                      className={`${
-                        theme === "dark" ? "text-light" : ""
-                      } text-end`}
-                    >
-                      IFSC - KKBK0007241
-                    </p>
-                    <p
-                      className={`${
-                        theme === "dark" ? "text-light" : ""
-                      } text-end`}
-                    >
-                      Bank - Kotak Mahindra
-                    </p>
-                    <p
-                      className={`${
-                        theme === "dark" ? "text-light" : ""
-                      } text-end`}
-                    >
-                      A/c Holder - ABHISEK SAHOO
-                    </p>
+                      <b>A/C HOLDER - JNV KENDRAPARA ALUMNI ASSOCIATION</b>
+                      <b>A/C NO - 512910510000400</b>
+                      <b>IFSC - BKID0005129</b>
+                      <b>BANK - Bank Of India</b>
+                    </div>
                   </div>
                 </div>
                 {/* Pay Now Button */}
                 <div className="text-end mb-60">
                   <button
                     className="btn btn-primary"
-                    onClick={handleUPIPayment} // Use function to handle UPI payment
+                    onClick={() => {
+                      copyToClipboard("9439034620@ptyes");
+                    }} // Use function to handle UPI payment
                   >
-                    Pay Now
+                    Copy UPI Details
                   </button>
                 </div>
               </div>
