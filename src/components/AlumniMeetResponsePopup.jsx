@@ -6,6 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 const AlumniMeetResponsePopup = () => {
   const [showModal, setShowModal] = useState(false);
   const [IsLoading, setIsLoading] = useState(false);
+  const [IsSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
     // Check if the modal has been shown before in the current session
@@ -63,9 +64,13 @@ const AlumniMeetResponsePopup = () => {
         );
 
         if (response.status === 200) {
-          setShowModal(false);
+          setIsSuccess(true);
           toast.success("Registered for Alumni Meet");
           localStorage.setItem("ALUMNI_MEET_REGISTERED_22_12_2024", "true");
+          // delay 5 seconds
+          setTimeout(() => {
+            setShowModal(false);
+          }, 5000);
         }
       }
     } catch (error) {
@@ -90,7 +95,9 @@ const AlumniMeetResponsePopup = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  Are you attending Alumni Meet 2024?
+                  {IsSuccess
+                    ? "Thank you for registering!"
+                    : "Are you attending Alumni Meet 2024?"}
                 </h5>
                 <button
                   type="button"
@@ -102,22 +109,33 @@ const AlumniMeetResponsePopup = () => {
               </div>
               <div className="modal-body">
                 <p>
-                  The alumni meet is going to be held on 22nd of December at JNV
-                  Kendrapara. Register yourself & mark the calendar ❤️
+                  {IsSuccess
+                    ? "You have successfully registered for the Alumni Meet 2024. We will send you more details soon."
+                    : "The alumni meet is going to be held on 22nd of December at JNV Kendrapara. Register yourself & mark the calendar ❤️"}
                 </p>
               </div>
               <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={() => registerOnAlumniMeet(true)}
-                >
-                  {IsLoading ? (
-                    <div class="spinner-border" role="status"></div>
-                  ) : (
-                    "Register"
-                  )}
-                </button>
+                {IsSuccess ? (
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Close 🙏
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => registerOnAlumniMeet(true)}
+                  >
+                    {IsLoading ? (
+                      <div class="spinner-border" role="status"></div>
+                    ) : (
+                      "Register"
+                    )}
+                  </button>
+                )}
               </div>
             </div>
           </div>

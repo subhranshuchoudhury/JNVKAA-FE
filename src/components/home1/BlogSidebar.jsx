@@ -309,17 +309,9 @@ function BlogSidebar() {
                           <a className="image">
                             {item?.image ? (
                               <Image
-                                height={100}
-                                width={200}
-                                style={{
-                                  objectPosition: "center",
-                                  objectFit: "cover",
-                                }}
-                                src={
-                                  GLOBAL_URL +
-                                  "/api/user/post/image/" +
-                                  item?.image
-                                }
+                                width={500}
+                                height={500}
+                                src={`https://jnvkaa.pockethost.io/api/files/q4ctle5s2mnsipd/39izh7l27064i1r/${item.image}?token=`}
                                 alt="alumni meet image"
                               />
                             ) : (
@@ -660,13 +652,10 @@ function BlogSidebar() {
                         >
                           <a className="image">
                             {item?.image ? (
-                              <img
-                                width={200}
-                                src={
-                                  GLOBAL_URL +
-                                  "/api/user/post/image/" +
-                                  item?.image
-                                }
+                              <Image
+                                width={500}
+                                height={500}
+                                src={`https://jnvkaa.pockethost.io/api/files/q4ctle5s2mnsipd/39izh7l27064i1r/${item.image}?token=`}
                                 alt="alumni meet image"
                               />
                             ) : (

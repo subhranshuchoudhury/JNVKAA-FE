@@ -21,9 +21,15 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "jnvkaa.pockethost.io",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
-}
+};
 // https://jnvkaa-backend.onrender.com/api/user/post/image/65880d3f0cc72df2eeb9c5e2
 
-module.exports = nextConfig
+module.exports = nextConfig;
