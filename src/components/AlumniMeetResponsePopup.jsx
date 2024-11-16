@@ -54,6 +54,15 @@ const AlumniMeetResponsePopup = () => {
           event_date: "2024-12-22",
         });
 
+        // check if user filed there email id and graduation year
+
+        if (
+          !userData.data.profileDetails.mailId ||
+          !userData.data.profileDetails.graduationYear
+        ) {
+          window.location.href = "/profile/update-profile";
+        }
+
         let response = await fetch(
           "https://jnvkaa.pockethost.io/api/collections/alumni_meet_attendees/records",
           {
