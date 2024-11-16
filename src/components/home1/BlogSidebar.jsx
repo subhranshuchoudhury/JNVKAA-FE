@@ -311,7 +311,7 @@ function BlogSidebar() {
                               <Image
                                 width={500}
                                 height={500}
-                                src={`https://jnvkaa.pockethost.io/api/files/q4ctle5s2mnsipd/39izh7l27064i1r/${item.image}?token=`}
+                                src={`https://jnvkaa.pockethost.io/api/files/${item.image}?token=`}
                                 alt="alumni meet image"
                               />
                             ) : (
@@ -655,7 +655,7 @@ function BlogSidebar() {
                               <Image
                                 width={500}
                                 height={500}
-                                src={`https://jnvkaa.pockethost.io/api/files/q4ctle5s2mnsipd/39izh7l27064i1r/${item.image}?token=`}
+                                src={`https://jnvkaa.pockethost.io/api/files/${item.image}?token=`}
                                 alt="alumni meet image"
                               />
                             ) : (

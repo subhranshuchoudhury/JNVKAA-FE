@@ -119,7 +119,7 @@ export default function page() {
                       <Image
                         width={500}
                         height={500}
-                        src={`https://jnvkaa.pockethost.io/api/files/q4ctle5s2mnsipd/39izh7l27064i1r/${EventData.image}?token=`}
+                        src={`https://jnvkaa.pockethost.io/api/files/${EventData.image}?token=`}
                         alt="alumni meet image"
                       />
                     ) : (
