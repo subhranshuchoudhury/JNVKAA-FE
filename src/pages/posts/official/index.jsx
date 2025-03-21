@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import socialHandles from '@/data/topbar/social.json'
 import { ThemeContext } from "@/components/ThemeContext";
+import Image from "next/image";
 function OfficialPosts() {
 
     const [PostData, setPostData] = useState([])
@@ -63,11 +64,23 @@ function OfficialPosts() {
                                                 {
                                                     post?.imageLink ? <Link legacyBehavior href={`/posts/official/id/${post._id}`}>
                                                         <a className="image">
-                                                            <img src={`${GLOBAL_URL}/api/user/post/image/${post?.imageLink}`} alt="image" />
+                                                            <Image src={`
+                                                            ${post?.imageLink?.includes("http") 
+                                                            || post?.imageLink?.includes("https")
+                                                            ? post?.imageLink :
+                                                            `${GLOBAL_URL}/api/user/post/image/${post?.imageLink}`}`} alt="image"
+                                                                height={300}
+                                                                width={300}
+                                                                loading="lazy"
+                                                             />
                                                         </a>
                                                     </Link> : <Link legacyBehavior href={`/posts/official/id/${post._id}`}>
                                                         <a className="image">
-                                                            <img src={`/assets/images/alumnus/no-image-post-alumni.jpg`} alt="image" />
+                                                            <Image src={`/assets/images/alumnus/no-image-post-alumni.jpg`} alt="image"
+                                                            height={300}
+                                                            width={300}
+                                                            loading="lazy"
+                                                            />
                                                         </a>
                                                     </Link>
                                                 }
