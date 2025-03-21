@@ -76,7 +76,10 @@ export default function page() {
                                 </div>
                                 <div className="sidebar-thumb text-center">
                                     {
-                                        OfficialPost?.imageLink && <Image width={300} height={300} src={GLOBAL_URL + "/api/user/post/image/" + OfficialPost?.imageLink} alt="Thumbnail Image" />
+                                        OfficialPost?.imageLink && <Image width={300} height={300} src={
+                                        OfficialPost?.imageLink.startsWith("http") || 
+                                        OfficialPost?.imageLink.startsWith('https') ? OfficialPost?.imageLink :       
+                                            GLOBAL_URL + "/api/user/post/image/" + OfficialPost?.imageLink} alt="Thumbnail Image" />
                                     }
 
                                 </div>
