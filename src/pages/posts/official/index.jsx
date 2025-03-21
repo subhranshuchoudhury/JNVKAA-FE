@@ -65,8 +65,8 @@ function OfficialPosts() {
                                                     post?.imageLink ? <Link legacyBehavior href={`/posts/official/id/${post._id}`}>
                                                         <a className="image">
                                                             <Image src={`
-                                                            ${post?.imageLink?.includes("http") 
-                                                            || post?.imageLink?.includes("https")
+                                                            ${post?.imageLink?.startsWith("http") 
+                                                            || post?.imageLink?.startsWith("https")
                                                             ? post?.imageLink :
                                                             `${GLOBAL_URL}/api/user/post/image/${post?.imageLink}`}`} alt="image"
                                                                 height={300}
