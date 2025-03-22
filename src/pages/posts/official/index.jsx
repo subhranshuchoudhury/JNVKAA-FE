@@ -71,7 +71,6 @@ function OfficialPosts() {
                                                             `${GLOBAL_URL}/api/user/post/image/${post?.imageLink}`}`} alt="image"
                                                                 height={300}
                                                                 width={300}
-                                                                loading="lazy"
                                                              />
                                                         </a>
                                                     </Link> : <Link legacyBehavior href={`/posts/official/id/${post._id}`}>
