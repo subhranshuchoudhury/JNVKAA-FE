@@ -8,23 +8,23 @@ const AlumniMeetResponsePopup = () => {
   const [IsLoading, setIsLoading] = useState(false);
   const [IsSuccess, setIsSuccess] = useState(false);
 
-  useEffect(() => {
-    // Check if the modal has been shown before in the current session
-    // const hasShownModal = false;
-    const isTokenExist = getCookie("token");
-    const hasShownModal = sessionStorage.getItem("hasShownModal");
-    const isAlreadyRegistered = localStorage.getItem(
-      "ALUMNI_MEET_REGISTERED_22_12_2024"
-    );
-    if (!hasShownModal && !isAlreadyRegistered) {
-      setShowModal(true);
-      if (isTokenExist) {
-        sessionStorage.setItem("hasShownModal", "true");
-      } else {
-        sessionStorage.removeItem("hasShownModal");
-      }
-    }
-  }, []);
+  // useEffect(() => {
+  //   // Check if the modal has been shown before in the current session
+  //   // const hasShownModal = false;
+  //   const isTokenExist = getCookie("token");
+  //   const hasShownModal = sessionStorage.getItem("hasShownModal");
+  //   const isAlreadyRegistered = localStorage.getItem(
+  //     "ALUMNI_MEET_REGISTERED_22_12_2024"
+  //   );
+  //   if (!hasShownModal && !isAlreadyRegistered) {
+  //     setShowModal(true);
+  //     if (isTokenExist) {
+  //       sessionStorage.setItem("hasShownModal", "true");
+  //     } else {
+  //       sessionStorage.removeItem("hasShownModal");
+  //     }
+  //   }
+  // }, []);
 
   const registerOnAlumniMeet = async (userResponse = true) => {
     const isTokenExist = getCookie("token");
